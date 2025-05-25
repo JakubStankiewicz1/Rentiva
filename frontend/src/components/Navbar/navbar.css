@@ -5,7 +5,7 @@
     height: 100%;
     
 
-    background-color: lightcyan;
+    /* background-color: lightcyan; */
 }
 
 .navbarContainer {
@@ -16,7 +16,7 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    padding-top: 10px;
+    padding-top: 20px;
     padding-bottom: 10px;
 }
 
@@ -98,7 +98,7 @@
     top: 100%;
     left: 0;
     background: #ffffff;
-    border-radius: 12px;
+    /* border-radius: 12px; */
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
     min-width: 220px;
     opacity: 0;
