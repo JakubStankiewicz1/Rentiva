@@ -18,19 +18,19 @@ const HomeHero = () => {
             acceleration: "3.2",
         },
         {
-            image: assets.HomeHeroImageOne,
-            brand: "Ferrari",
-            model: "SF90",
-            power: "1000",
-            acceleration: "2.5",
-        },
-        {
-            image: assets.HomeHeroImageOne,
+            image: assets.HomeHeroImageTwo,
             brand: "McLaren",
             model: "720S",
             power: "720",
             acceleration: "2.9",
-        }
+        },
+        {
+            image: assets.HomeHeroImageThree,
+            brand: "Porsche",
+            model: "911 turbo S",
+            power: "640",
+            acceleration: "2.5",
+        },
     ];
 
     const svgRefs = useRef([]);

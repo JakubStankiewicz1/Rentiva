@@ -344,17 +344,17 @@
 
 .homeHeroContainerInfoContainerLeftDotsContainerOne .progress-ring-svg {
     position: absolute;
-    top: -4px;
-    left: -4px;
-    width: 38px;
-    height: 38px;
+    /* top: -4px;
+    left: -4px; */
+    width: 30px;
+    height: 30px;
     pointer-events: none;
     z-index: 2;
     opacity: 0;
     transition: opacity 0.2s;
     display: block;
     border-radius: 50%;
-    border: 2px solid transparent;
+    border: 1px solid transparent;
     /* mask na border, nie na tło */
     -webkit-mask-image: conic-gradient(#000 var(--progress, 0deg), transparent 0deg 360deg);
     mask-image: conic-gradient(#000 var(--progress, 0deg), transparent 0deg 360deg);
