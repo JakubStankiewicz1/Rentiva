@@ -2,10 +2,13 @@
     width: 95%;
     margin-left: auto;
     margin-right: auto;
-    height: 100%;
-    
-
-    /* background-color: lightcyan; */
+    height: 80px;
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 999;
+    background: transparent;
 }
 
 .navbarContainer {
@@ -16,8 +19,8 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    padding-top: 20px;
-    padding-bottom: 10px;
+    padding-top: 0;
+    padding-bottom: 0;
 }
 
 .navbarContainerLeftContainer {
