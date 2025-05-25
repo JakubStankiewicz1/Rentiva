@@ -3,53 +3,432 @@
     min-height: 100vh;
     max-height: 100vh;
     width: 100%;
+    position: relative;
+    overflow: hidden;
 }
 
 .homeHeroContainer {
-    width: 100%;
-    height: 100%;
+    width: 100vw;
+    height: 100vh;
+    position: relative;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
+    align-items: flex-start;
 }
 
 .homeHeroContainerImage {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
 }
 
 .homeHeroContainerImageContainer {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    width: 100vw;
+    height: 100vh;
     position: relative;
 }
 
 .homeHeroContainerImageContainerImage {
+    width: 100vw;
     height: 100vh;
-    width: 100%;
     object-fit: cover;
     object-position: center;
+    display: block;
+    animation: fadeIn 1s ease-in-out;
 }
 
 .homeHeroContainerImageContainerOverlay {
     position: absolute;
     top: 0;
     left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.50);
+    z-index: 2;
+    pointer-events: none;
+}
+
+/* Info Layer */
+.homeHeroContainerInfo {
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 3;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.homeHeroContainerInfoContainer {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    padding-left: 40px;
+    padding-right: 60px;
+}
+
+.homeHeroContainerInfoContainerLeft {
+    display: flex;
+    flex-direction: row;
+    /* justify-content: center; */
+    /* align-items: flex-start; */
+    align-items: center;
+    gap: 32px;
+    max-width: 55vw;
+}
+
+.homeHeroContainerInfoContainerLeftContainerTopCOntainerTwoText {
+    color: #e6f0fa;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 26px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-bottom: 24px;
+    margin-left: 32px;
+    position: relative;
+}
+
+.homeHeroContainerInfoContainerLeftContainerTopCOntainerTwoText::before {
+    content: '';
+    display: inline-block;
+    width: 32px;
+    height: 2px;
+    background: #e8a075;
+    position: absolute;
+    left: -40px;
+    top: 50%;
+    transform: translateY(-50%);
+    border-radius: 2px;
+}
+
+.homeHeroContainerInfoContainerLeftContainerMiddleContainerText {
+    color: #fff;
+    font-size: 110px;
+    font-weight: 600;
+    line-height: 1.05;
+    letter-spacing: -2px;
+    margin-bottom: 24px;
+    /* text-shadow: 0 4px 32px rgba(0, 0, 0, 0.28); */
+}
+
+.homeHeroContainerInfoContainerLeftContainerBottom {
+    /* width: 400px; */
+    /* height: 60px; */
+    /* background-color: #C3845E; */
+}
+
+.homeHeroContainerInfoContainerLeftContainerBottomContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 24px;
+    /* border: 2px solid #C3845E; */
+    width: auto;
+    overflow: hidden;
+}
+
+.homeHeroContainerInfoContainerLeftContainerBottomContainerLeft {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: auto;
+}
+
+.homeHeroContainerInfoContainerLeftContainerBottomContainerLeftContainer {
+    background: #C3845E;
+    padding: 16px 36px;
+    box-shadow: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s;
+    cursor: pointer;
+    border: none;
+    height: 56px;
+}
+
+
+
+.homeHeroContainerInfoContainerLeftContainerBottomContainerLeftContainerText {
+    color: #fff;
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+
+.homeHeroContainerInfoContainerLeftContainerBottomContainerRight {
+    margin-left: 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    outline: none;
+    border: none;
+    width: 56px;
+    height: 56px;
+        border: 2px solid #C3845E;
+
+}
+
+.homeHeroContainerInfoContainerLeftContainerBottomContainerRightContainer {
+    background: transparent;
+    width: 56px;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* transition: background 0.2s; */
+    cursor: pointer;
+    border: none;
+    margin: 0;
+}
+
+.homeHeroContainerInfoContainerLeftContainerBottomContainerRightContainerIcon {
+    color: #FFF;
+    font-size: 28px;
+    transition: color 0.2s;
+}
+
+
+.homeHeroContainerInfoContainerRight {
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    /* align-items: flex-end; */
+    min-width: 400px;
+    margin-top: 80px;
+}
+
+.homeHeroContainerInfoContainerRightContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 24px;
+}
+
+.homeHeroContainerInfoContainerRightContainerContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+}
+
+.homeHeroContainerInfoContainerRightContainerContainerTopContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 8px;
+}
+
+.homeHeroContainerInfoContainerRightContainerContainerTopContainerTextOne {
+    color: #fff;
+    font-size: 20px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.homeHeroContainerInfoContainerRightContainerContainerTopContainerTextTwo {
+    color: #fff;
+    font-size: 20px;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.homeHeroContainerInfoContainerRightContainerContainerMiddle {
     width: 100%;
     height: 100%;
-    background: linear-gradient(
-        135deg,
-        rgba(0, 0, 0, 0.3) 0%,
-        rgba(0, 0, 0, 0.1) 50%,
-        rgba(195, 132, 94, 0.2) 100%
-    );
-    z-index: 1;
+}
+
+.homeHeroContainerInfoContainerRightContainerContainerMiddleDiv {
+    width: 100%;
+    height: 1px;
+    background: #e8a075;
+    margin: 8px 0;
+    border-radius: 2px;
+}
+
+.homeHeroContainerInfoContainerRightContainerContainerBottomContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 40px;
+}
+
+.homeHeroContainerInfoContainerRightContainerContainerBottomContainerOneContainer {
+    /* background-color: red; */
+    display: flex;
+    flex-direction: row;
+}
+
+.homeHeroContainerInfoContainerRightContainerContainerBottomContainerOneContainerOneText {
+    color: #e8a075;
+    font-size: 54px;
+    font-weight: 700;
+    line-height: 1;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.homeHeroContainerInfoContainerRightContainerContainerBottomContainerOneContainerTwoText {
+    color: #e8a075;
+    font-size: 18px;
+    font-weight: 500;
+    margin-left: 8px;
+    text-transform: lowercase;
+    letter-spacing: 1px;
+}
+
+.homeHeroContainerInfoContainerRightContainerContainerBottomContainerTwoContainer {
+    width: 100%;
+    /* background-color: red; */
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+}
+
+.homeHeroContainerInfoContainerRightContainerContainerBottomContainerTwoContainerOneText {
+    color: #e8a075;
+    font-size: 44px;
+    font-weight: 700;
+    line-height: 1;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.homeHeroContainerInfoContainerRightContainerContainerBottomContainerTwoContainerTwoText {
+    color: #e8a075;
+    font-size: 16px;
+    font-weight: 500;
+    margin-left: 8px;
+    text-transform: lowercase;
+    letter-spacing: 1px;
+}
+
+.homeHeroContainerInfoContainerLeftDotsContainer {
+    gap: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.homeHeroContainerInfoContainerLeftDotsContainerOne {
+    width: 30px;
+    height: 30px;
+    border: 1px solid #C3845E;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    background: transparent;
+    overflow: visible;
+}
+
+.homeHeroContainerInfoContainerLeftDotsContainerOne .progress-ring-svg {
+    position: absolute;
+    top: -4px;
+    left: -4px;
+    width: 38px;
+    height: 38px;
     pointer-events: none;
+    z-index: 2;
+    opacity: 0;
+    transition: opacity 0.2s;
+    display: block;
+    border-radius: 50%;
+    border: 2px solid transparent;
+    /* mask na border, nie na tło */
+    -webkit-mask-image: conic-gradient(#000 var(--progress, 0deg), transparent 0deg 360deg);
+    mask-image: conic-gradient(#000 var(--progress, 0deg), transparent 0deg 360deg);
+    border-color: #C3845E;
+    /* tło wyłączone */
+    background: none;
+}
+
+.homeHeroContainerInfoContainerLeftDotsContainerOne.active .progress-ring-svg {
+    opacity: 1;
+}
+
+.homeHeroContainerInfoContainerLeftDotsContainerOne .dot-center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 5px;
+    height: 5px;
+    background: #C3845E;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 3;
+}
+
+.homeHeroContainerInfoContainerLeftDotsContainerOne.active {
+    border-color: transparent;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideInFromLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@media (max-width: 1200px) {
+    .homeHeroContainerInfoContainerLeftContainerMiddleContainerText {
+        font-size: 64px;
+    }
+    .homeHeroContainerInfoContainerRight {
+        min-width: 240px;
+    }
+    .homeHeroContainerInfoContainer {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+}
+
+@media (max-width: 900px) {
+    .homeHeroContainerInfoContainer {
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-end;
+        padding-left: 8px;
+        padding-right: 8px;
+    }
+    .homeHeroContainerInfoContainerLeft {
+        max-width: 100vw;
+    }
+    .homeHeroContainerInfoContainerRight {
+        margin-top: 24px;
+        align-items: flex-start;
+    }
 }
