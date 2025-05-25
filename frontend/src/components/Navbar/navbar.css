@@ -1,0 +1,213 @@
+.navbar {
+    width: 95%;
+    margin-left: auto;
+    margin-right: auto;
+    height: 100%;
+    
+
+    background-color: lightcyan;
+}
+
+.navbarContainer {
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.navbarContainerLeftContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.navbarContainerLeftContainerOneContainerText {
+    color: #000;
+    font-size: 44px;
+    font-weight: 400;
+    line-height: 21px;
+}
+
+.navbarContainerLeftContainerTwoContainerText {
+    color: #000;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 21px;
+}
+
+
+
+.navbarContainerRightContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 65px;
+}
+
+.navbarContainerRightContainerOne {
+    position: relative;
+}
+
+.navbarContainerRightContainerOneContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+}
+
+.navbarContainerRightContainerOneContainerOne {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.navbarContainerRightContainerOneContainerOneText {
+    color: #000;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 21px;
+    text-transform: uppercase;
+}
+
+.navbarContainerRightContainerOneContainerTwo {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.navbarContainerRightContainerOneContainerTwoIcon {
+    width: 20px;
+    height: auto;
+    color: #000;
+    transition: transform 0.3s ease;
+}
+
+.navbarContainerRightContainerOneContainerTwoIcon.rotated {
+    transform: rotate(180deg);
+}
+
+.navbarContainerRightContainerOneDropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+    min-width: 220px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 1000;
+    border: 1px solid #f0f0f0;
+    overflow: hidden;
+    margin-top: 10px;
+}
+
+.navbarContainerRightContainerOneDropdownOpen {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.navbarContainerRightContainerOneDropdownItem {
+    padding: 16px 20px;
+    border-bottom: 1px solid #f5f5f5;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    position: relative;
+}
+
+.navbarContainerRightContainerOneDropdownItem:last-child {
+    border-bottom: none;
+}
+
+.navbarContainerRightContainerOneDropdownItem:hover {
+    background: linear-gradient(135deg, #C3845E 0%, #A66B47 100%);
+    transform: translateX(5px);
+}
+
+.navbarContainerRightContainerOneDropdownItem:hover .navbarContainerRightContainerOneDropdownItemText {
+    color: #ffffff;
+}
+
+.navbarContainerRightContainerOneDropdownItemText {
+    color: #333;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.4;
+    margin: 0;
+    transition: color 0.2s ease;
+}
+
+.navbarContainerRightContainerOneDropdownItem::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 3px;
+    background: #C3845E;
+    transform: scaleY(0);
+    transition: transform 0.2s ease;
+}
+
+.navbarContainerRightContainerOneDropdownItem:hover::before {
+    transform: scaleY(1);
+}
+
+.navbarContainerRightContainerTwoContainer {
+    cursor: pointer;
+}
+
+.navbarContainerRightContainerTwoContainerText {
+    color: #000;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 21px;
+    text-transform: uppercase;
+}
+
+.navbarContainerRightContainerFourContainer {
+    cursor: pointer;
+}
+
+.navbarContainerRightContainerFourContainerText {
+    color: #000;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 21px;
+    text-transform: uppercase;
+}
+
+.navbarContainerRightContainerFiveContainerButton {
+    background-color: #C3845E;
+    width: 220px;
+    height: 50px;
+    cursor: pointer;
+}
+
+.navbarContainerRightContainerFiveContainerButtonContainer {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.navbarContainerRightContainerFiveContainerButtonContainerText {
+    color: #FFF;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 21px;
+    text-transform: uppercase;
+    text-align: center;
+}
