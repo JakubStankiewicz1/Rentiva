@@ -5,7 +5,7 @@ import { PiEngineBold } from "react-icons/pi";
 import { IoMdSpeedometer } from "react-icons/io";
 import { MdOutlineTimer } from "react-icons/md";
 import { GoArrowRight } from "react-icons/go";
-import OurCollectionCar from "./OurCollectionCar";
+import CarCard from "../Car/CarCard";
 import carsData from "../../assets/carsData.json";
 
 const OurCollectionList = () => {
@@ -254,7 +254,7 @@ const OurCollectionList = () => {
           <div className="ourCollectionListContainerBottomContainer">
 
             {carsData.map(car => (
-              <OurCollectionCar
+              <CarCard
                 key={car.id}
                 id={car.id}
                 image={assets[car.images[0]]}

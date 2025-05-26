@@ -14,8 +14,16 @@ import OurCollectionListImageFour from "./OurCollectionListImageFour.png";
 import OurCollectionListImageFive from "./OurCollectionListImageFive.png";
 
 import roma from './roma.png';
-
 import BugattiDivo from "./BugattiDivo.jpg";
+
+
+import BugattiChironOne from "./BugattiChironOne.jpg";
+import BugattiChironTwo from "./BugattiChironTwo.jpg";
+import BugattiChironThree from "./BugattiChironThree.jpg";
+import BugattiChironFour from "./BugattiChironFour.jpg";
+import BugattiChironFive from "./BugattiChironFive.jpg";
+
+
 
 export default {
     HomeHeroImageOne,
@@ -29,5 +37,10 @@ export default {
     OurCollectionListImageFour,
     OurCollectionListImageFive,
     roma,
-    BugattiDivo
+    BugattiDivo,
+    BugattiChironOne,
+    BugattiChironTwo,
+    BugattiChironThree,
+    BugattiChironFour,
+    BugattiChironFive
 }

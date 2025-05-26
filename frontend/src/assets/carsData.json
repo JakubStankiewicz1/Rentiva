@@ -1,11 +1,12 @@
 [
   {
     "id": "bugatti-chiron-110",
-    "images": ["BugattiDivo", "BugattiDivo2"],
+    "images": ["BugattiChironOne", "BugattiChironTwo", "BugattiChironThree", "BugattiChironFour", "BugattiChironFive"],
     "title": "Bugatti Chiron 110 ANS",
     "engine": "8.0L",
     "power": "1500KM",
-    "acceleration": "2.4s"
+    "acceleration": "2.4s",
+    "grossPrice": "1566"
   },
   {
     "id": "bugatti-chiron-111",
@@ -13,7 +14,8 @@
     "title": "Bugatti Chiron 110 ANS",
     "engine": "8.0L",
     "power": "1500KM",
-    "acceleration": "2.4s"
+    "acceleration": "2.4s",
+        "grossPrice": "1566"
   },
   {
     "id": "bugatti-chiron-112",
@@ -21,6 +23,7 @@
     "title": "Bugatti Chiron 110 ANS",
     "engine": "8.0L",
     "power": "1500KM",
-    "acceleration": "2.4s"
+    "acceleration": "2.4s",
+        "grossPrice": "1566"
   }
 ]
