@@ -1,0 +1,136 @@
+.ourCollectionHero {
+    width: 100%;
+    height: 56vh;
+    background-color: black;
+}
+
+.ourCollectionHeroContainerImage {
+    width: 100%;
+    height: 56vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.ourCollectionHeroContainerImageContainer {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.ourCollectionHeroContainerImageContainerImage {
+    width: 100%;
+    height: 56vh;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+}
+
+.ourCollectionHeroContainerImageOverlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 56vh;
+    background: rgba(0,0,0,0.60);
+    z-index: 2;
+    pointer-events: none;
+}
+
+.ourCollectionHeroContainerInfo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 56vh;
+    z-index: 3;
+    display: flex;
+    pointer-events: none;
+}
+
+.ourCollectionHeroContainerInfoContainer {
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    pointer-events: auto;
+    padding: 0 50px;
+}
+
+.ourCollectionHeroContainerInfoContainerTop {
+    margin-top: 40px;
+}
+
+.ourCollectionHeroContainerInfoContainerTopContainer {
+    display: flex;
+    flex-direction: row;
+    /* justify-content: center; */
+    align-items: center;
+    gap: 15px;
+}
+
+.ourCollectionHeroContainerInfoContainerTopContainerOneDiv {
+    width: 35px;
+    height: 1.2px;
+    background-color: #E8A075;
+}
+
+.ourCollectionHeroContainerInfoContainerTopContainerTwo {
+    width: 20%;
+}
+
+.ourCollectionHeroContainerInfoContainerTopContainerTwoText {
+    color: #D7D5D3;
+    font-size: 16px;
+    font-weight: 550;
+    line-height: 26px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.ourCollectionHeroContainerInfoContainerMiddle {
+    margin-top: 25px;
+}
+
+.ourCollectionHeroContainerInfoContainerMiddleText {
+    color: #FFFFFF;
+    font-size: 66px;
+    font-weight: 600;
+    line-height: 64px;
+}
+
+.ourCollectionHeroContainerInfoContainerBottom {
+    margin-top: 40px;
+}
+
+.ourCollectionHeroContainerInfoContainerBottomContainer {
+    width: 40px;
+    height: 40px;
+    border: 1px solid #E8A075;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+
+.ourCollectionHeroContainerInfoContainerBottomContainer:hover {
+    background-color: rgba(0, 0, 0,);
+}
+
+.ourCollectionHeroContainerInfoContainerBottomContainerButton {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.ourCollectionHeroContainerInfoContainerBottomContainerButtonIcon {
+    color: #fff;
+    width: 15px;
+    height: 15px;
+}

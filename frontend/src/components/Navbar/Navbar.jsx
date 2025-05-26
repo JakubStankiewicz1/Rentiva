@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import "./navbar.css";
 import { IoIosArrowDown } from "react-icons/io";
 
+import { NavLink } from 'react-router-dom';
+
 const Navbar = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
@@ -86,11 +88,11 @@ const Navbar = () => {
                     <div className="navbarContainerRightContainerFive">
                         <div className="navbarContainerRightContainerFiveContainer">
                             <div className="navbarContainerRightContainerFiveContainerButton">
-                                <div className="navbarContainerRightContainerFiveContainerButtonContainer">
+                                <NavLink to="/collection" className="navbarContainerRightContainerFiveContainerButtonContainer">
                                     <p className="navbarContainerRightContainerFiveContainerButtonContainerText bai-jamjuree-regular">
                                         Our collection
                                     </p>
-                                </div>
+                                </NavLink>
                             </div>
                         </div>
                     </div>

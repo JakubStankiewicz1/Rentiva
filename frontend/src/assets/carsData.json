@@ -1,0 +1,26 @@
+[
+  {
+    "id": "bugatti-chiron-110",
+    "images": ["BugattiDivo", "BugattiDivo2"],
+    "title": "Bugatti Chiron 110 ANS",
+    "engine": "8.0L",
+    "power": "1500KM",
+    "acceleration": "2.4s"
+  },
+  {
+    "id": "bugatti-chiron-111",
+    "images": ["BugattiDivo"],
+    "title": "Bugatti Chiron 110 ANS",
+    "engine": "8.0L",
+    "power": "1500KM",
+    "acceleration": "2.4s"
+  },
+  {
+    "id": "bugatti-chiron-112",
+    "images": ["BugattiDivo"],
+    "title": "Bugatti Chiron 110 ANS",
+    "engine": "8.0L",
+    "power": "1500KM",
+    "acceleration": "2.4s"
+  }
+]
