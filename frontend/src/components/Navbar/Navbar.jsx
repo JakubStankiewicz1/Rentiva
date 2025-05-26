@@ -15,11 +15,11 @@ const Navbar = () => {
             <div className="navbarContainerLeft">
                 <div className="navbarContainerLeftContainer">
                     <div className="navbarContainerLeftContainerOne">
-                        <div className="navbarContainerLeftContainerOneContainer">
+                        <NavLink to="/" className="navbarContainerLeftContainerOneContainer">
                             <p className="navbarContainerLeftContainerOneContainerText bai-jamjuree-regular">
                                 Rentiva
                             </p>
-                        </div>
+                        </NavLink>
                     </div>
 
                     <div className="navbarContainerLeftContainerTwo">
