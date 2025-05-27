@@ -10,6 +10,7 @@ import CarDetailsTariff from "../../components/CarDetailsTariff/CarDetailsTariff
 import CarDetailsKilometers from "../../components/CarDetailsKilometers/CarDetailsKilometers";
 import CarDetailsPayment from "../../components/CarDetailsPayment/CarDetailsPayment";
 import CarDetailsContact from "../../components/CarDetailsContact/CarDetailsContact";
+import Fotter from "../../components/Fotter/Fotter";
 
 const CarDetails = () => {
   const { id } = useParams();
@@ -61,6 +62,8 @@ const CarDetails = () => {
         <CarDetailsPayment />
 
         <CarDetailsContact />
+
+        <Fotter />
     </div>
   );
 };
