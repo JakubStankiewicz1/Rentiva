@@ -124,3 +124,92 @@
     font-weight: 400;
     line-height: normal;
 }
+
+.carDetailsInfoContainerBottom {
+    margin-top: 120px;
+}
+
+.carDetailsInfoContainerBottomContainer {
+    display: flex;
+    flex-direction: row;
+    /* justify-content: space-between; */
+    /* gap: 20px; */
+    align-items: center;
+}
+
+.carDetailsInfoContainerBottomContainerButton {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    background-color: #C3845E;
+    width: 150px;
+    height: 50px;
+
+    cursor: pointer;
+
+    transition: all 0.3s ease-in-out;
+}
+
+.carDetailsInfoContainerBottomContainerButton:hover {
+    background-color: #E8A075;
+}
+
+.carDetailsInfoContainerBottomContainerButton:hover .carDetailsInfoContainerBottomContainerArrow {
+    border-top: 1px solid #E8A075;
+    border-right: 1px solid #E8A075;
+    border-bottom: 1px solid #E8A075;
+}
+
+
+.carDetailsInfoContainerBottomContainerButtonContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.carDetailsInfoContainerBottomContainerButtonContainerText {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    color: #FFFFFF;
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 16px;
+    text-transform: uppercase;
+}
+
+.carDetailsInfoContainerBottomContainerArrow {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    border-top: 1px solid #C3845E;
+    border-right: 1px solid #C3845E;
+    border-bottom: 1px solid #C3845E;
+    transition: all 0.3s ease-in-out;
+}
+
+.carDetailsInfoContainerBottomContainerArrowContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.carDetailsInfoContainerBottomContainerArrowContainerIcon {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    color: #FFFFFF;
+    width: 25px;
+    height: 25px;
+}
