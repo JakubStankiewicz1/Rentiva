@@ -1,9 +1,28 @@
-import React from 'react';
+import React, { useRef, useState } from 'react';
 import "./carDetailsContact.css";
 import { FiSmartphone } from "react-icons/fi";
 import { FaPhone } from "react-icons/fa6";
+import ReCAPTCHA from "react-google-recaptcha";
 
 const CarDetailsContact = () => {
+  const recaptchaRef = useRef();
+  const [recaptchaValue, setRecaptchaValue] = useState(null);
+
+  function onChange(value) {
+    console.log("Captcha value:", value);
+    setRecaptchaValue(value);
+  }
+
+  function onExpired() {
+    console.log("Captcha expired");
+    setRecaptchaValue(null);
+  }
+
+  function onErrored() {
+    console.log("Captcha error");
+    setRecaptchaValue(null);
+  }
+
   return (
     <div className='carDetailsContact'>
         <div className="carDetailsContactContainer">
@@ -141,18 +160,19 @@ const CarDetailsContact = () => {
                                 </div>
                             </div>
 
-
-
-
-
-
-
-
-
-
                             <div className="carDetailsContactContainerTopContainerRightContainerFive">
                                 <div className="carDetailsContactContainerTopContainerRightContainerFiveContainer">
-                                    
+                                    <div className="carDetailsContactRecaptchaWrapper">
+                                        <ReCAPTCHA
+                                            ref={recaptchaRef}
+                                            sitekey="6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI"
+                                            onChange={onChange}
+                                            onExpired={onExpired}
+                                            onErrored={onErrored}
+                                            theme="light"
+                                            size="normal"
+                                        />
+                                    </div>
                                 </div>
                             </div>
 
