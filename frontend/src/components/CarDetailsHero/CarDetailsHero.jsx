@@ -10,6 +10,7 @@ const CarDetailsHero = ({ car }) => {
   const [isTransitioning, setIsTransitioning] = useState(false);
   const [isAutoSliding, setIsAutoSliding] = useState(true);
   const [userInteracted, setUserInteracted] = useState(false);
+  const [fade, setFade] = useState(true);
   const autoSlideRef = useRef(null);
   const pauseTimeoutRef = useRef(null);
 
@@ -130,8 +131,14 @@ const CarDetailsHero = ({ car }) => {
     setUserInteracted(true);
   };
 
+  useEffect(() => {
+    setFade(false);
+    const timeout = setTimeout(() => setFade(true), 100);
+    return () => clearTimeout(timeout);
+  }, [currentImageIndex]);
+
   return (
-    <div className="carDetailsHero">
+    <div className={`carDetailsHero${fade ? " carDetailsHero--fadein" : ""}`}>
       <div className="carDetailsHeroContainer">
         <div 
           className="carDetailsHeroContainerImageContainer"

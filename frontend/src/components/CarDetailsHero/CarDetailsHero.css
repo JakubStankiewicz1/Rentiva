@@ -4,6 +4,12 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  opacity: 0;
+  transition: opacity 0.5s cubic-bezier(.4,0,.2,1);
+}
+
+.carDetailsHero--fadein {
+  opacity: 1;
 }
 
 .carDetailsHeroContainer {
@@ -41,7 +47,9 @@
   top: 0; left: 0;
   width: 100%; height: 100%;
   opacity: 0;
-  transition: opacity 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transition: 
+    opacity 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+    transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   z-index: 1;
 }
 .carDetailsHeroContainerImageContainerStackLayerActive {
@@ -63,7 +71,9 @@
   user-select: none;
   border-radius: 8px;
   filter: drop-shadow(0 15px 35px rgba(0, 0, 0, 0.4));
-  transition: transform 0.4s ease;
+  transition: 
+    transform 0.6s cubic-bezier(.4,1.6,.6,1),
+    filter 0.5s cubic-bezier(.4,1.6,.6,1);
 }
 
 .carDetailsHeroContainerImageContainerStackLayerOverlay {
@@ -102,8 +112,10 @@
   transition: 
     background 0.3s cubic-bezier(.4,0,.2,1),
     border-color 0.3s cubic-bezier(.4,0,.2,1),
-    transform 0.2s cubic-bezier(.4,0,.2,1),
-    box-shadow 0.3s cubic-bezier(.4,0,.2,1);
+    transform 0.3s cubic-bezier(.4,0,.2,1),
+    box-shadow 0.3s cubic-bezier(.4,0,.2,1),
+    opacity 0.3s cubic-bezier(.4,0,.2,1);
+  opacity: 0.7;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -115,11 +127,13 @@
   border-color: #C3845E;
   box-shadow: 0 0 0 4px rgba(195,132,94,0.13), 0 2px 8px 0 rgba(0,0,0,0.13);
   transform: scale(1.18);
+  opacity: 1;
 }
 .carDetailsHeroContainerImageContainerIndicatorsOne:not(.carDetailsHeroContainerImageContainerIndicatorsOneActive):hover {
   border-color: #E8A075;
   background: rgba(195,132,94,0.10);
   transform: scale(1.08);
+  opacity: 1;
 }
 
 .carDetailsHeroContainerImageContainerProgress {
@@ -154,7 +168,7 @@
 .carDetailsHeroContainerImageContainerDragBar {
   height: 100%;
   border-radius: 2px;
-  transition: all 0.1s ease;
+  transition: width 0.25s cubic-bezier(.4,0,.2,1), background 0.2s;
 }
 
 @media (max-width: 1400px) {
@@ -206,15 +220,26 @@
 }
 
 @keyframes carDetailsHeroAutoSlideProgress {
-  0% {
-    width: 0%;
-    opacity: 0.8;
-  }
-  90% {
-    opacity: 1;
-  }
+
+
+
+
+
+
+
+
+
+
+
+
+}  }    opacity: 0;    width: 100%;  100% {  }    opacity: 1;  90% {  }    opacity: 0.8;    width: 0%;  0% {  }
   100% {
     width: 100%;
     opacity: 0.6;
   }
+}
+
+/* Subtelny cień na aktywnym obrazku */
+.carDetailsHeroContainerImageContainerStackLayerActive .carDetailsHeroContainerImageContainerStackLayerImage {
+  box-shadow: 0 8px 40px 0 rgba(200, 131, 93, 0.13), 0 15px 35px rgba(0,0,0,0.4);
 }
