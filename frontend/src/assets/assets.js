@@ -23,6 +23,8 @@ import BugattiChironThree from "./BugattiChironThree.jpg";
 import BugattiChironFour from "./BugattiChironFour.jpg";
 import BugattiChironFive from "./BugattiChironFive.jpg";
 
+import CarDetailsPaymentImage from "./CarDetailsPaymentImage.png";
+
 
 
 export default {
@@ -42,5 +44,6 @@ export default {
     BugattiChironTwo,
     BugattiChironThree,
     BugattiChironFour,
-    BugattiChironFive
+    BugattiChironFive,
+    CarDetailsPaymentImage
 }

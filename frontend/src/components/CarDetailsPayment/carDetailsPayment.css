@@ -1,0 +1,27 @@
+.carDetailsPayment {
+    width: 100%;
+    height: 100%;
+    background-color: #202020;
+    padding-top: 100px;
+}
+
+.carDetailsPaymentContainer {
+    width: 87%;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 50px; 
+}
+
+.carDetailsPaymentContainerTopContainerText {
+    color: #FFFFFF;
+    font-size: 48px;
+    font-weight: 500;
+    line-height: 43px;
+}
+
+.carDetailsPaymentContainerBottomContainerImage {
+    transform: scale(0.95);
+}
