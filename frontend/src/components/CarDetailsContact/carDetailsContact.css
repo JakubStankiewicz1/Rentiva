@@ -415,33 +415,26 @@
     display: none;
 }
 
-@media (max-width: 900px) {
-    .carDetailsContactContainerTopContainerRightContainerOne,
-    .carDetailsContactContainerTopContainerRightContainerTwo {
-        gap: 10px;
-    }
-    .carDetailsContactContainerTopContainerRightContainer {
-        gap: 12px;
-    }
+.carDetailsContactContainerTopContainerRightContainerSixContainerButton {
+    background-color: #C3845E;
+    width: 180px;
+    height: 50px;
 }
 
-@media (max-width: 600px) {
-    .carDetailsContactContainerTopContainerRightContainerOneContainerOneInput,
-    .carDetailsContactContainerTopContainerRightContainerOneContainerTwoInput,
-    .carDetailsContactContainerTopContainerRightContainerTwoContainerOneInput,
-    .carDetailsContactContainerTopContainerRightContainerTwoContainerTwoInput {
-        font-size: 15px;
-        padding: 0 10px;
-        height: 40px;
-    }
-    .carDetailsContactContainerTopContainerRightContainerThreeContainerTextarea {
-        font-size: 14px;
-        padding: 10px 10px;
-        height: 90px;
-    }
-    .carDetailsContactContainerTopContainerRightContainerFourContainerOneContainerTwoText,
-    .carDetailsContactContainerTopContainerRightContainerFourContainerTwoContainerTwoText {
-        font-size: 11px;
-        line-height: 15px;
-    }
+.carDetailsContactContainerTopContainerRightContainerSixContainerButtonContainer {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.carDetailsContactContainerTopContainerRightContainerSixContainerButtonContainerText {
+    color: #FFFFFF;
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
 }
