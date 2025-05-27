@@ -7,6 +7,7 @@ import CarDetailsHero from "../../components/CarDetailsHero/CarDetailsHero";
 import CarDetailsSpecs from "../../components/CarDetailsSpecs/CarDetailsSpecs";
 import CarDetailsInfo from "../../components/CarDetailsInfo/CarDetailsInfo";
 import CarDetailsTariff from "../../components/CarDetailsTariff/CarDetailsTariff";
+import CarDetailsKilometers from "../../components/CarDetailsKilometers/CarDetailsKilometers";
 
 const CarDetails = () => {
   const { id } = useParams();
@@ -52,6 +53,8 @@ const CarDetails = () => {
         <CarDetailsInfo />
 
         <CarDetailsTariff />
+
+        <CarDetailsKilometers />
     </div>
   );
 };

@@ -1,0 +1,97 @@
+.carDetailsKilometers {
+  width: 100%;
+  background: #202020;
+  margin-top: 48px;
+}
+
+.carDetailsKilometersContainer {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 32px 32px 32px;
+  box-sizing: border-box;
+}
+
+.carDetailsKilometersTop {
+  width: 100%;
+  padding-top: 32px;
+  padding-bottom: 16px;
+}
+
+.carDetailsKilometersTopContainerText {
+  font-size: 32px;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: 1px;
+  margin: 0;
+}
+
+.carDetailsKilometersBottomContainer {
+  width: 100%;
+}
+
+.carDetailsKilometersTableWrapper {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.carDetailsKilometersTable {
+  width: 100%;
+  border-collapse: collapse;
+  background: #202020;
+  color: #fff;
+  font-family: "Bai Jamjuree", sans-serif;
+  font-size: 18px;
+  min-width: 700px;
+  margin-top: 8px;
+  box-shadow: 0 2px 24px 0 rgba(0,0,0,0.10);
+  border-right: 1px solid #393939;
+  border-left: 1px solid #393939;
+}
+
+.carDetailsKilometersTable th,
+.carDetailsKilometersTable td {
+  border: none;
+  border-bottom: 1px solid #393939;
+  border-right: 1px solid #393939;
+  padding: 18px 24px 12px 24px;
+  text-align: left;
+  vertical-align: middle;
+}
+
+.carDetailsKilometersTable th:last-child,
+.carDetailsKilometersTable td:last-child {
+  border-right: none;
+}
+
+.carDetailsKilometersTable th {
+  background: #202020;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  border-top: 1px solid #393939;
+}
+
+.carDetailsKilometersTable td {
+  background: #181818;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 500;
+  border-top: none;
+}
+
+.carDetailsKilometersTableText {
+    color: #FFFFFF;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 19px;
+}
+
+.carDetailsKilometersTableTextTwo{
+    color: #FFFFFF;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 19px;
+    text-transform: uppercase;
+}
