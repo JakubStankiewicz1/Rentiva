@@ -78,11 +78,11 @@ const Navbar = () => {
                     </div>
                     
                     <div className="navbarContainerRightContainerFour">
-                        <div className="navbarContainerRightContainerFourContainer">
+                        <NavLink to='/contact-us' className="navbarContainerRightContainerFourContainer">
                             <p className="navbarContainerRightContainerFourContainerText bai-jamjuree-regular">
                                 Contact Us
                             </p>
-                        </div>
+                        </NavLink>
                     </div>
 
                     <div className="navbarContainerRightContainerFive">

@@ -1,0 +1,119 @@
+.contactUsHero {
+    width: 100%;
+    height: 100%;
+}
+
+.contactUsHeroContainer {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.contactUsHeroContainerImage {
+    width: 100%;
+    height: 430px;
+    position: relative;
+    overflow: hidden;
+}
+
+.contactUsHeroContainerImageContainer {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: stretch;
+    justify-content: stretch;
+    position: relative;
+    /* Usuń wszelkie padding/margins jeśli są */
+}
+
+.contactUsHeroContainerImageContainerImage {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.contactUsHeroContainerImageOverlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(120deg, rgba(32, 32, 32, 5.68) 0%, rgba(195, 132, 94, 0.13) 100%);
+    pointer-events: none;
+    z-index: 2;
+    /* Możesz zmienić opacity/kolor wg gustu */
+}
+
+.contactUsHeroContainerInfo {
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    position: absolute;
+    z-index: 10;
+    transform: translateY(100%) translateX(5%);
+}
+
+.contactUsHeroContainerInfoContainer {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+
+.contactUsHeroContainerInfoContainerTopContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+}
+
+.contactUsHeroContainerInfoContainerTopContainerOneDiv {
+    width: 30px;
+    height: 1px;
+    background-color: #C3845E;
+}
+
+.contactUsHeroContainerInfoContainerTopContainerTwoContainerText {
+    color: #D2D0CD;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 26px;
+    text-transform: uppercase;
+}
+
+.contactUsHeroContainerInfoContainerMiddleContainerText {
+    color: #FFFFFF;
+    font-size: 66px;
+    font-weight: 600;
+    line-height: 64px;
+}
+
+.contactUsHeroContainerInfoContainerBottomContainerButton {
+    width: 50px;
+    height: 50px;
+    border: 1px solid #C3845E;
+    cursor: pointer;
+}
+
+.contactUsHeroContainerInfoContainerBottomContainerButtonContainer {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.contactUsHeroContainerInfoContainerBottomContainerButtonContainerIcon {
+    color: #FFFFFF;
+    width: 20px;
+    height: 20px;
+}
