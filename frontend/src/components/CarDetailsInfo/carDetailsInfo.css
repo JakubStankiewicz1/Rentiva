@@ -1,0 +1,126 @@
+.carDetailsInfo {
+    padding-top: 300px;
+    padding-bottom: 200px;
+}
+
+.carDetailsInfoContainer {
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.carDetailsInfoContainerTopContainerText {
+    color: #FFFFFF;
+    font-size: 32px;
+    font-weight: 600;
+    line-height: 31px;
+}
+
+
+
+.carDetailsInfoContainerMiddle {
+    width: 100%;
+    height: 100%;
+    padding-top: 100px;
+}
+
+.carDetailsInfoContainerMiddleContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+
+
+.carDetailsInfoContainerMiddleContainerLeft,
+.carDetailsInfoContainerMiddleContainerRight {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.carDetailsInfoContainerMiddleContainerLeftContiner,
+.carDetailsInfoContainerMiddleContainerRightContainer {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+
+.carDetailsInfoContainerMiddleContainerLeftContinerTop,
+.carDetailsInfoContainerMiddleContainerRightContainerTop {
+    width: 100%;
+    height: 500px;
+}
+
+.carDetailsInfoContainerMiddleContainerLeftContinerTop,
+.carDetailsInfoContainerMiddleContainerRightContainerTop {
+    /* background-color: #1A1A1A; */
+    /* border-radius: 10px; */
+    /* padding: 20px; */
+    display: flex;
+    flex-direction: column;
+    /* gap: 20px; */
+}
+
+.carDetailsInfoContainerMiddleContainerLeftContinerTopContainer,
+.carDetailsInfoContainerMiddleContainerRightContainerTopContainer {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    /* gap: 20px; */
+}
+
+.carDetailsInfoContainerMiddleContainerLeftContinerTopContainerImage,
+.carDetailsInfoContainerMiddleContainerRightContainerTopContainerImage {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    /* border-radius: 10px; */
+}
+
+
+
+
+.carDetailsInfoContainerMiddleContainerLeftContinerBottom,
+.carDetailsInfoContainerMiddleContainerRightContainerBottom {
+    margin-top: 40px;
+}
+
+.carDetailsInfoContainerMiddleContainerRightContainerBottom {
+    margin-left: 55px;
+}
+
+.carDetailsInfoContainerMiddleContainerLeftContinerBottomContainer,
+.carDetailsInfoContainerMiddleContainerRightContainerBottomContainer {
+    width: 100%;
+    /* height: 200px; */
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+
+.carDetailsInfoContainerMiddleContainerLeftContinerBottomContainerTextOne,
+.carDetailsInfoContainerMiddleContainerLeftContinerBottomContainerTextTwo,
+.carDetailsInfoContainerMiddleContainerLeftContinerBottomContainerTextThree {
+    color: #696969;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.carDetailsInfoContainerMiddleContainerRightContainerBottomContainerTextOne,
+.carDetailsInfoContainerMiddleContainerRightContainerBottomContainerTextTwo,
+.carDetailsInfoContainerMiddleContainerRightContainerBottomContainerTextThree {
+    color: #A2A2A2;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: normal;
+}

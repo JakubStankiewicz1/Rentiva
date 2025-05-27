@@ -5,6 +5,7 @@ import carsData from "../../assets/carsData.json";
 import Navbar from "../../components/Navbar/Navbar";
 import CarDetailsHero from "../../components/CarDetailsHero/CarDetailsHero";
 import CarDetailsSpecs from "../../components/CarDetailsSpecs/CarDetailsSpecs";
+import CarDetailsInfo from "../../components/CarDetailsInfo/CarDetailsInfo";
 
 const CarDetails = () => {
   const { id } = useParams();
@@ -46,6 +47,8 @@ const CarDetails = () => {
 
             </div>
         </div>
+
+        <CarDetailsInfo />
     </div>
   );
 };
