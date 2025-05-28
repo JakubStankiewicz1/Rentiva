@@ -29,6 +29,8 @@ import ContactUsBusinessOfferImage from "./ContactUsBusinessOfferImage.webp";
 
 import CooperationHeroImage from "./CooperationHeroImage.webp";
 
+import CooperationFormImage from "./CooperationFormImage.jpg";
+
 export default {
     HomeHeroImageOne,
     HomeHeroImageTwo,
@@ -49,5 +51,6 @@ export default {
     BugattiChironFive,
     CarDetailsPaymentImage,
     ContactUsBusinessOfferImage,
-    CooperationHeroImage
+    CooperationHeroImage,
+    CooperationFormImage
 }

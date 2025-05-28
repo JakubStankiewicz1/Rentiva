@@ -4,6 +4,7 @@ import Navbar from '../../components/Navbar/Navbar';
 import CooperationHero from '../../components/CooperationHero/CooperationHero';
 import CooperationWhyUs from '../../components/CooperationWhyUs/CooperationWhyUs';
 import CooperationHowToStart from '../../components/CooperationHowToStart/CooperationHowToStart';
+import CooperationForm from '../../components/CooperationForm/CooperationForm';
 
 const Cooperation = () => {
   return (
@@ -12,6 +13,7 @@ const Cooperation = () => {
         <CooperationHero />
         <CooperationWhyUs />
         <CooperationHowToStart />
+        <CooperationForm />
     </div>
   )
 }
