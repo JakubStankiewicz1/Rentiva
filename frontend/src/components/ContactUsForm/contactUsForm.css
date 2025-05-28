@@ -1,0 +1,373 @@
+.contactUsForm {
+  width: 100%;
+  background: #202020;
+  padding: 0;
+  margin: 0;
+}
+
+.contactUsFormContainer {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  min-height: 600px;
+  background: #202020;
+}
+
+.contactUsFormContainerLeft {
+  flex: 1.1;
+  padding: 64px 48px 64px 64px;
+  background: #202020;
+  display: flex;
+  align-items: flex-start;
+}
+
+.contactUsFormContainerLeftContainer {
+  width: 100%;
+  max-width: 480px;
+  display: flex;
+  flex-direction: column;
+  gap: 38px;
+}
+
+.contactUsFormHeaderTitle {
+  color: #fff;
+  font-size: 44px;
+  font-weight: 700;
+  margin-bottom: 18px;
+  letter-spacing: 0.5px;
+}
+
+.contactUsFormHeaderDesc {
+  color: #bdbdbd;
+  font-size: 17px;
+  font-weight: 400;
+  line-height: 1.7;
+  margin-bottom: 0;
+}
+
+.contactUsFormBox {
+  border: 1px solid #343434;
+  border-radius: 0;
+  padding: 32px 28px 18px 28px;
+  margin-bottom: 0;
+  background: transparent;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  position: relative;
+  margin-top: 32px;
+  min-height: 100px;
+  justify-content: center;
+  height: 100px;
+}
+
+.contactUsFormBoxHeaderBg {
+  position: absolute;
+  top: -22px;
+  left: 28px;
+  background: #202020;
+  padding: 0 22px;
+  display: flex;
+  align-items: center;
+  z-index: 2;
+}
+
+.contactUsFormBoxHeader {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  height: 44px;
+}
+
+.contactUsFormBoxIcon {
+  color: #e8a06a;
+  font-size: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.contactUsFormBoxLabel {
+  color: #e8a06a;
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: 0.7px;
+  text-transform: uppercase;
+  background: transparent;
+  display: flex;
+  align-items: center;
+  height: 44px;
+}
+
+.contactUsFormBoxContent {
+  margin-top: 0;
+  padding-left: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  min-height: 48px;
+  transform: translateX(-100px);
+}
+
+.contactUsFormBoxContentEmail {
+    margin-top: 0;
+  padding-left: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  min-height: 48px;
+  transform: translateX(-70px); 
+}
+
+.contactUsFormBoxContentText {
+  color: #6e6e6e;
+  font-size: 17px;
+  font-weight: 400;
+  letter-spacing: 0.2px;
+  text-align: center;
+}
+
+.contactUsFormCompanyBox {
+  border: 1px solid #343434;
+  border-radius: 0;
+  padding: 24px 28px 18px 28px;
+  background: transparent;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  margin-top: 12px;
+  height: 230px;
+}
+
+.contactUsFormCompanyBoxContainer {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  /* align-items: center; */
+  justify-content: center;
+}
+
+.contactUsFormCompanyBoxLine {
+  color: #bdbdbd;
+  font-size: 15px;
+  font-weight: 400;
+  letter-spacing: 0.2px;
+  line-height: 1.7;
+}
+
+.contactUsFormContainerRight {
+  flex: 1.1;
+  background: #181818;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 64px 64px 64px 48px;
+}
+
+.contactUsFormContainerRightContainer {
+  width: 100%;
+  max-width: 540px;
+  margin-left: auto;
+  margin-right: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.contactUsFormFormHeader {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-bottom: 32px;
+}
+
+.contactUsFormFormHeaderText {
+  color: #fff;
+  font-size: 22px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 8px;
+}
+
+.contactUsFormFormHeaderLine {
+  width: 60px;
+  height: 2px;
+  background: #c3845e;
+  margin-bottom: 0;
+  display: block;
+}
+
+.contactUsFormForm {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.contactUsFormFormInput {
+  width: 100%;
+  height: 48px;
+  background: transparent;
+  border: 1px solid #393939;
+  color: #fff;
+  font-size: 16px;
+  font-family: "Bai Jamjuree", sans-serif;
+  font-weight: 400;
+  padding: 0 18px;
+  outline: none;
+  border-radius: 0;
+  box-sizing: border-box;
+  transition: border-color 0.2s;
+}
+
+.contactUsFormFormInput:focus {
+  border-color: #c3845e;
+}
+
+.contactUsFormFormInput::placeholder {
+  color: #bdbdbd;
+  font-size: 16px;
+  font-family: "Bai Jamjuree", sans-serif;
+  font-weight: 400;
+  opacity: 1;
+}
+
+.contactUsFormFormTextarea {
+  width: 100%;
+  min-height: 110px;
+  background: transparent;
+  border: 1px solid #393939;
+  color: #fff;
+  font-size: 16px;
+  font-family: "Bai Jamjuree", sans-serif;
+  font-weight: 400;
+  padding: 16px 18px;
+  outline: none;
+  resize: none;
+  border-radius: 0;
+  box-sizing: border-box;
+  transition: border-color 0.2s;
+}
+
+.contactUsFormFormTextarea:focus {
+  border-color: #c3845e;
+}
+
+.contactUsFormFormTextarea::placeholder {
+  color: #bdbdbd;
+  font-size: 16px;
+  font-family: "Bai Jamjuree", sans-serif;
+  font-weight: 400;
+  opacity: 1;
+}
+
+.contactUsFormFormCheckboxGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 8px;
+}
+
+.contactUsFormFormCheckboxLabel {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  color: #929292;
+  font-size: 13px;
+  font-family: "Bai Jamjuree", sans-serif;
+  font-weight: 400;
+  cursor: pointer;
+  user-select: none;
+}
+
+.contactUsFormFormCheckboxLabel b {
+  color: #fff;
+  font-weight: 600;
+}
+
+.contactUsFormFormCheckbox {
+  width: 18px;
+  height: 18px;
+  accent-color: #c3845e;
+  border-radius: 2px;
+  border: 1.5px solid #393939;
+  background: transparent;
+  margin-top: 2px;
+  margin-right: 0;
+  transition: border-color 0.2s;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.contactUsFormFormRecaptcha {
+  margin-top: 12px;
+  margin-bottom: 12px;
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+
+  border-radius: none;
+}
+
+.contactUsFormFormButton {
+  width: 220px;
+  height: 48px;
+  background: #c3845e;
+  border: none;
+  color: #fff;
+  font-size: 15px;
+  font-family: "Bai Jamjuree", sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: background 0.2s;
+}
+
+.contactUsFormFormButton:hover {
+  background: #e8a075;
+}
+
+
+
+
+
+
+
+
+
+.contactUsFormCompanyBoxTextOne,
+.contactUsFormCompanyBoxTextTwo,
+.contactUsFormCompanyBoxTextThree,
+.contactUsFormCompanyBoxTextFour,
+.contactUsFormCompanyBoxTextFive,
+.contactUsFormCompanyBoxTextSix {
+  color: #A6A6A6;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 16px;
+}
+
+
+.contactUsFormCompanyBoxTextThree,
+.contactUsFormCompanyBoxTextFour,
+.contactUsFormCompanyBoxTextFive,
+.contactUsFormCompanyBoxTextSix {
+  line-height: 16px;
+}
+
+.contactUsFormCompanyBoxTextFive,
+.contactUsFormCompanyBoxTextThree,
+.contactUsFormCompanyBoxTextTwo {
+  margin-top: 18px;
+}
