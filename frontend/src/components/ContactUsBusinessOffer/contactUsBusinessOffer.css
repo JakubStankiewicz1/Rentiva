@@ -1,133 +1,104 @@
 .contactUsBusinessOffer {
-    width: 100%;
-    height: 100%;
+  width: 100%;
+  height: 100%;
 
-    background-color: #202020;
-    padding-top: 100px;
-    padding-bottom: 100px;
+  background-color: #202020;
+  padding-top: 100px;
+  padding-bottom: 100px;
 }
 
 .contactUsBusinessOfferContainer {
-    width: 90%;
-    margin-left: auto;
-    margin-right: auto;
-    display: flex;
-    flex-direction: row;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  flex-direction: row;
 
-    gap: 150px;
+  gap: 150px;
 }
 
 .contactUsBusinessOfferContainerLeft {
-    display: flex;
-    flex: 1;
-    height: 700px;
-    /* background-color: red; */
-    align-items: center;
-    justify-content: center;
+  display: flex;
+  flex: 1;
+  height: 700px;
+  align-items: center;
+  justify-content: center;
 }
 
 .contactUsBusinessOfferContainerLeftContainer {
-    width: 540px;
-    height: 700px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden; /* Dodane: ukrywa nadmiar obrazka */
-    /* border-radius: 14px; Dodane: zaokrąglenie rogów */
-    /* box-shadow: 0 4px 24px 0 rgba(0,0,0,0.18); Dodane: cień */
-    /* background: #181818; Dodane: subtelne tło */
+  width: 540px;
+  height: 700px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
 }
 
 .contactUsBusinessOfferContainerLeftContainerImage {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* Dodane: przycinanie i skalowanie */
-    /* border-radius: 14px; Dodane: zaokrąglenie rogów */
-    display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 
-
-
-
 .contactUsBusinessOfferContainerRight {
-    display: flex;
-    flex: 1.15;
-
-    /* background-color: blue; */
+  display: flex;
+  flex: 1.15;
 }
 
 .contactUsBusinessOfferContainerRightContainer {
-    width: 100%;
-    height: 100%;
+  width: 100%;
+  height: 100%;
 
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: center;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
 }
-
-
-
-
-
-
-
-
-
-
-
-
 
 .contactUsBusinessOfferContainerRightContainerTopContainerText {
-    color: #FFFFFF;
-    font-size: 32px;
-    font-weight: 600;
-    line-height: 31px;
+  color: #ffffff;
+  font-size: 32px;
+  font-weight: 600;
+  line-height: 31px;
 }
 
-
-
 .contactUsBusinessOfferContainerRightContainerBottom {
-    width: 100%;
-    height: 100%;
+  width: 100%;
+  height: 100%;
 
-    margin-top: 30px;
+  margin-top: 30px;
 }
 
 .contactUsBusinessOfferContainerRightContainerBottomContainer {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: row;
-    /* justify-content: center; */
-    gap: 35px;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  gap: 35px;
 }
-
-
-
 
 .contactUsBusinessOfferContainerRightContainerBottomContainerLeftContainerDiv {
-    width: 60px;
-    height: 2px;
-    background-color: #E8A075;
-    margin-top: 14px;
+  width: 60px;
+  height: 2px;
+  background-color: #e8a075;
+  margin-top: 14px;
 }
 
-
 .contactUsBusinessOfferContainerRightContainerBottomContainerRight {
-    width: 100%;
-    height: 100%;
+  width: 100%;
+  height: 100%;
 }
 
 .contactUsBusinessOfferContainerRightContainerBottomContainerRightContainer {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: center;
-    gap: 25px;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 25px;
 }
 
 .contactUsBusinessOfferContainerRightContainerBottomContainerRightContainerOneText,
@@ -136,9 +107,9 @@
 .contactUsBusinessOfferContainerRightContainerBottomContainerRightContainerFourText,
 .contactUsBusinessOfferContainerRightContainerBottomContainerRightContainerFiveText,
 .contactUsBusinessOfferContainerRightContainerBottomContainerRightContainerSixText {
-    color: #D2D2D2;
-    font-size: 16px;
-    font-weight: 400;
-    line-height: 26px;
-    letter-spacing: 0.2px;
+  color: #d2d2d2;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 26px;
+  letter-spacing: 0.2px;
 }
