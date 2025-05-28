@@ -1,5 +1,6 @@
 import React from 'react';
 import "./contactUsBusinessOffer.css";
+import assets from '../../assets/assets';
 
 const ContactUsBusinessOffer = () => {
   return (
@@ -8,7 +9,9 @@ const ContactUsBusinessOffer = () => {
 
             {/* Left Part */}
             <div className="contactUsBusinessOfferContainerLeft">
-                <div className="contactUsBusinessOfferContainerLeftContainer"></div>
+                <div className="contactUsBusinessOfferContainerLeftContainer">
+                    <img src={assets.ContactUsBusinessOfferImage} alt="" className='contactUsBusinessOfferContainerLeftContainerImage' />
+                </div>
             </div>
 
 
