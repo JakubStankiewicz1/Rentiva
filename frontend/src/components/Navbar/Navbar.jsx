@@ -70,11 +70,11 @@ const Navbar = () => {
                     </div>
 
                     <div className="navbarContainerRightContainerTwo">
-                        <div className="navbarContainerRightContainerTwoContainer">
+                        <NavLink to="/cooperation" className="navbarContainerRightContainerTwoContainer">
                             <p className="navbarContainerRightContainerTwoContainerText bai-jamjuree-regular">
                                 Współpraca
                             </p>
-                        </div>
+                        </NavLink>
                     </div>
                     
                     <div className="navbarContainerRightContainerFour">

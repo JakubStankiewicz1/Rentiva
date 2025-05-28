@@ -27,6 +27,8 @@ import CarDetailsPaymentImage from "./CarDetailsPaymentImage.png";
 
 import ContactUsBusinessOfferImage from "./ContactUsBusinessOfferImage.webp";
 
+import CooperationHeroImage from "./CooperationHeroImage.webp";
+
 export default {
     HomeHeroImageOne,
     HomeHeroImageTwo,
@@ -46,5 +48,6 @@ export default {
     BugattiChironFour,
     BugattiChironFive,
     CarDetailsPaymentImage,
-    ContactUsBusinessOfferImage
+    ContactUsBusinessOfferImage,
+    CooperationHeroImage
 }
