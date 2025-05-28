@@ -1,0 +1,88 @@
+.contactUsRent {
+  width: 100%;
+  height: 100%;
+
+  background-color: #202020;
+
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+
+.contactUsRentContainer {
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  height: 100%;
+}
+
+.contactUsRentContainerMain {
+  width: 100%;
+  height: 100%;
+
+  background-color: #181818;
+
+  height: 400px;
+}
+
+.contactUsRentContainerMainContainer {
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.contactUsRentContainerMainContainerTopContainerText {
+  color: #ffffff;
+  font-size: 32px;
+  font-weight: 600;
+  line-height: 31px;
+}
+
+.contactUsRentContainerMainContainerMiddle {
+  margin-top: 5px;
+}
+
+.contactUsRentContainerMainContainerMiddleContainerText {
+  color: #878787;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 26px;
+}
+
+.contactUsRentContainerMainContainerBottom {
+  margin-top: 30px;
+}
+
+.contactUsRentContainerMainContainerBottomContainerButton {
+  width: 290px;
+  height: 50px;
+
+  background-color: #c3845e;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.contactUsRentContainerMainContainerBottomContainerButton:hover {
+  background-color: #e8a075;
+}
+
+.contactUsRentContainerMainContainerBottomContainerButtonContainer {
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.contactUsRentContainerMainContainerBottomContainerButtonContainerText {
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 16px;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+}
