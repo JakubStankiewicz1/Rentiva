@@ -5,6 +5,7 @@ import Navbar from '../../components/Navbar/Navbar';
 import ContactUsForm from '../../components/ContactUsForm/ContactUsForm';
 import ContactUsBusinessOffer from '../../components/ContactUsBusinessOffer/ContactUsBusinessOffer';
 import ContactUsRent from '../../components/ContactUsRent/ContactUsRent';
+import Fotter from '../../components/Fotter/Fotter';
 
 const ContactUs = () => {
   return (
@@ -14,6 +15,7 @@ const ContactUs = () => {
         <ContactUsForm />
         <ContactUsBusinessOffer />
         <ContactUsRent />
+        <Fotter />
     </div>
   )
 }
