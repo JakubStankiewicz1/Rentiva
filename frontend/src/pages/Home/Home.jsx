@@ -6,7 +6,7 @@ import HomeHero from '../../components/HomeHero/HomeHero';
 const Home = () => {
   return (
     <div className='home'>
-        <Navbar />
+        {/* <Navbar /> */}
         <HomeHero />
     </div>
   )

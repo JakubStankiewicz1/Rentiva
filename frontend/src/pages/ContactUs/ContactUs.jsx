@@ -10,7 +10,7 @@ import Fotter from '../../components/Fotter/Fotter';
 const ContactUs = () => {
   return (
     <div className="contactUs">
-        <Navbar />
+        {/* <Navbar /> */}
         <ContactUsHero />
         <ContactUsForm />
         <ContactUsBusinessOffer />

@@ -7,11 +7,14 @@ import OurCollection from './pages/OurCollection/OurCollection';
 import CarDetails from './pages/CarDetails/CarDetails';
 import ContactUs from './pages/ContactUs/ContactUs';
 import Cooperation from './pages/Cooperation/Cooperation';
+import Navbar from './components/Navbar/Navbar.jsx';
 
 const App = () => {
   return (
     <RentivaProvider>
       <div className='app'>
+
+        <Navbar />
 
         <Routes>
           <Route path="/" element={<Home />} />
