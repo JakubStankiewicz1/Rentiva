@@ -81,7 +81,8 @@ const FAQ_DATA = [
   },
 ];
 
-const CarDetailsContact = () => {
+const CarDetailsContact = ({ car }) => {
+  // This component doesn't use car data but accepts the prop for consistency
   const recaptchaRef = useRef();
   const [recaptchaValue, setRecaptchaValue] = useState(null);
   const [openIndex, setOpenIndex] = useState(0);

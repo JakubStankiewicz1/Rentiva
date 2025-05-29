@@ -1,7 +1,13 @@
 import React from 'react';
 import './carDetailsKilometers.css';
 
-const CarDetailsKilometers = () => {
+const CarDetailsKilometers = ({ car }) => {
+  if (!car || !car.mileageInfo) {
+    return null;
+  }
+
+  const { mileageInfo } = car;
+
   return (
     <div className='carDetailsKilometers'>
         <div className="carDetailsKilometersContainer">
@@ -37,22 +43,21 @@ const CarDetailsKilometers = () => {
                                 </p>
                             </th>
                           </tr>
-                        </thead>
-                        <tbody>
+                        </thead>                        <tbody>
                           <tr>
                             <td>
                                 <p className="carDetailsKilometersTableTextTwo bai-jamjuree-regular">
-                                    50-90
+                                    {mileageInfo.dailyLimit} km
                                 </p>
                             </td>
                             <td>
                                 <p className="carDetailsKilometersTableTextTwo bai-jamjuree-regular">
-                                    1500
+                                    {Math.round(mileageInfo.dailyLimit * 30)} km
                                 </p>
                             </td>
                             <td>
                                 <p className="carDetailsKilometersTableTextTwo bai-jamjuree-regular">
-                                    550 PLN
+                                    {mileageInfo.excessFee} PLN
                                 </p>
                             </td>
                           </tr>

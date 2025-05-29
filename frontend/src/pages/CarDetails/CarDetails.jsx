@@ -1,7 +1,7 @@
 import React from "react";
 import { useParams } from "react-router-dom";
 import "./CarDetails.css";
-import carsData from "../../assets/carsData.json";
+import { useRentiva } from "../../Context/context.jsx";
 import Navbar from "../../components/Navbar/Navbar";
 import CarDetailsHero from "../../components/CarDetailsHero/CarDetailsHero";
 import CarDetailsSpecs from "../../components/CarDetailsSpecs/CarDetailsSpecs";
@@ -14,7 +14,36 @@ import Fotter from "../../components/Fotter/Fotter";
 
 const CarDetails = () => {
   const { id } = useParams();
-  const car = carsData.find(car => car.id === id);
+  const { getCarById, selectCar, loading, error } = useRentiva();
+  
+  const car = getCarById(id);
+  
+  // Select the car for context state
+  React.useEffect(() => {
+    if (car) {
+      selectCar(id);
+    }
+  }, [id, car, selectCar]);
+
+  if (loading) {
+    return (
+      <div className="carDetails">
+        <div className="carDetails__container">
+          <h1>Loading...</h1>
+        </div>
+      </div>
+    );
+  }
+
+  if (error) {
+    return (
+      <div className="carDetails">
+        <div className="carDetails__container">
+          <h1>Error: {error}</h1>
+        </div>
+      </div>
+    );
+  }
 
   if (!car) {
     return (
@@ -50,17 +79,15 @@ const CarDetails = () => {
                 </div>
 
             </div>
-        </div>
+        </div>        <CarDetailsInfo car={car} />
 
-        <CarDetailsInfo />
+        <CarDetailsTariff car={car} />
 
-        <CarDetailsTariff />
+        <CarDetailsKilometers car={car} />
 
-        <CarDetailsKilometers />
+        <CarDetailsPayment car={car} />
 
-        <CarDetailsPayment />
-
-        <CarDetailsContact />
+        <CarDetailsContact car={car} />
 
         <Fotter />
     </div>

@@ -1,37 +1,14 @@
 import React, { useState, useEffect, useRef } from 'react';
 import "./homeHero.css";
-import assets from '../../assets/assets';
+import { useRentiva } from '../../Context/context.jsx';
 import { GoArrowRight } from "react-icons/go";
 
 const HomeHero = () => {
+    const { heroCars } = useRentiva();
     const [currentCarIndex, setCurrentCarIndex] = useState(0);
     const progressRefs = useRef([]);
     const animationRef = useRef();
     const progressStartTime = useRef();
-
-    const cars = [
-        {
-            image: assets.HomeHeroImageOne,
-            brand: "Lamborghini",
-            model: "Huracan",
-            power: "610",
-            acceleration: "3.2",
-        },
-        {
-            image: assets.HomeHeroImageTwo,
-            brand: "McLaren",
-            model: "720S",
-            power: "720",
-            acceleration: "2.9",
-        },
-        {
-            image: assets.HomeHeroImageThree,
-            brand: "Porsche",
-            model: "911 turbo S",
-            power: "640",
-            acceleration: "2.5",
-        },
-    ];
 
     const svgRefs = useRef([]);
 
@@ -60,24 +37,23 @@ const HomeHero = () => {
         return () => {
             running = false;
             cancelAnimationFrame(animationRef.current);
-        };
-    }, [currentCarIndex, cars.length]);
+        };        }, [currentCarIndex, heroCars.length]);
 
     useEffect(() => {
         const interval = setInterval(() => {
             setCurrentCarIndex((prevIndex) => 
-                prevIndex === cars.length - 1 ? 0 : prevIndex + 1
+                prevIndex === heroCars.length - 1 ? 0 : prevIndex + 1
             );
         }, 5000);
 
         return () => clearInterval(interval);
-    }, [cars.length]);
+    }, [heroCars.length]);
 
     const handleDotClick = (index) => {
         setCurrentCarIndex(index);
     };
 
-    const currentCar = cars[currentCarIndex];
+    const currentCar = heroCars[currentCarIndex];
 
   return (
     <div className='homeHero'>
@@ -100,11 +76,9 @@ const HomeHero = () => {
             <div className="homeHeroContainerInfo">
                 <div className="homeHeroContainerInfoContainer">
                     {/* Left Part */}
-                    <div className="homeHeroContainerInfoContainerLeft">
-
-                        <div className="homeHeroContainerInfoContainerLeftDots">
+                    <div className="homeHeroContainerInfoContainerLeft">                        <div className="homeHeroContainerInfoContainerLeftDots">
                             <div className="homeHeroContainerInfoContainerLeftDotsContainer">
-                                {cars.map((_, index) => (
+                                {heroCars.map((_, index) => (
                                     <div 
                                         key={index}
                                         className={`homeHeroContainerInfoContainerLeftDotsContainerOne ${

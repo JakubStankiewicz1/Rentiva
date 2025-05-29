@@ -3,27 +3,108 @@
     "id": "bugatti-chiron-110",
     "images": ["BugattiChironOne", "BugattiChironTwo", "BugattiChironThree", "BugattiChironFour", "BugattiChironFive"],
     "title": "Bugatti Chiron 110 ANS",
+    "brand": "Bugatti",
+    "model": "Chiron 110 ANS",
     "engine": "8.0L",
-    "power": "1500KM",
-    "acceleration": "2.4s",
-    "grossPrice": "1566"
+    "power": "1500",
+    "acceleration": "2.4",
+    "maxSpeed": "420",
+    "fuelType": "Benzyna",
+    "transmission": "7-biegowa DSG",
+    "drivetrain": "AWD",
+    "grossPrice": "1566",
+    "description": {
+      "title": "Bugatti Chiron 110 Ans – Esencja francuskiej perfekcji i mocy",
+      "mainText": "tesdklfa",
+      "performance": "Pod maską Chirona 110 Ans pracuje 8.0-litrowy silnik W16 z poczwórnym turbodoładowaniem, generujący oszałamiające 1 500 KM mocy i 1 600 Nm momentu obrotowego. Napęd przekazywany jest na wszystkie cztery koła za pośrednictwem 7-biegowej dwusprzęgłowej przekładni DSG.",
+      "accelerationDetails": "Rezultat? Przyspieszenie od 0 do 100 kmh w zaledwie 2,4 sekundy, od 0 do 200 kmh w około 6,1 sekundy, a prędkość maksymalna została elektronicznie ograniczona do 420 kmh – choć potencjał techniczny pozwala na jeszcze więcej.",
+      "interior": "Kabina Bugatti Chiron 110 Ans to mistrzowskie połączenie sportowego minimalizmu z najwyższej jakości wykończeniem. Fotele pokryte skórą w kolorze Deep Blue Alcantara, detale z włókna węglowego oraz elementy inspirowane francuską flagą sprawiają, że wnętrze jest równie wyjątkowe jak nadwozie.",
+      "craftsmanship": "Każdy szczegół, od ręcznych szwów, po przyciski i wskaźniki, został wykonany z niespotykaną dbałością o detale. Mimo ultraluksusowego charakteru, kokpit pozostał maksymalnie zorientowany na kierowcę – bez zbędnych rozpraszaczy, za to z ergonomią godną hipersamochodu.",
+      "conclusion": "Bugatti Chiron 110 Ans to kwintesencja motoryzacyjnej perfekcji – hipersamochód stworzony z myślą o tych, którzy nie uznają kompromisów. To nie tylko wyjątkowa maszyna pod względem osiągów, ale też dzieło sztuki oddające ducha francuskiej marki."
+    },
+    "pricing": {
+      "daily": "1566",
+      "twoDays": "2900",
+      "threeDays": "4200",
+      "weekly": "9800",
+      "monthly": "35000"
+    },
+    "mileageInfo": {
+      "dailyLimit": "2100",
+      "excessFee": "1335",
+      "includedKm": "Unlimited fodsfr weekly rentals"
+    }
   },
   {
     "id": "bugatti-chiron-111",
     "images": ["BugattiDivo"],
-    "title": "Bugatti Chiron 110 ANS",
-    "engine": "8.0L",
-    "power": "1500KM",
-    "acceleration": "2.4s",
-        "grossPrice": "1566"
+    "title": "Bugatti Divo",
+    "brand": "Bugatti",
+    "model": "Divo",
+    "engine": "8.0L W16",
+    "power": "1500",
+    "acceleration": "2.4",
+    "maxSpeed": "380",
+    "fuelType": "Benzyna",
+    "transmission": "7-biegowa DSG",
+    "drivetrain": "AWD",
+    "grossPrice": "1800",
+    "description": {
+      "title": "Bugatti Divo – Perfekcja aerodynamiki i osiągów",
+      "mainText": "Bugatti Divo to hipersamochód stworzony z myślą o maksymalnych osiągach na torze. Ograniczona produkcja do zaledwie 40 egzemplarzy czyni go jednym z najbardziej ekskluzywnych samochodów świata.",
+      "performance": "Napędzany tym samym silnikiem W16 co Chiron, Divo oferuje niesamowite 1500 KM mocy. Dzięki zoptymalizowanej aerodynamice generuje 90 kg więcej docisków niż standardowy Chiron.",
+      "accelerationDetails": "Przyspieszenie od 0 do 100 kmh w 2,4 sekundy, ale prawdziwa magia dzieje się na torze, gdzie Divo jest o 8 sekund szybsze na Nardo niż Chiron.",
+      "interior": "Wnętrze Divo łączy luksus z funkcjonalnością torową. Sportowe fotele z Alcantary, elementy z włókna węglowego i minimalistyczny design tworzą idealne środowisko dla kierowcy.",
+      "craftsmanship": "Każdy element został zaprojektowany z myślą o redukcji masy i poprawie aerodynamiki, nie rezygnując przy tym z legendarnego luksusu marki Bugatti.",
+      "conclusion": "Bugatti Divo to dowód na to, że można połączyć niesamowite osiągi z absolutnym luksusem, tworząc hipersamochód marzeń każdego kolekcjonera."
+    },
+    "pricing": {
+      "daily": "1800",
+      "twoDays": "3400",
+      "threeDays": "4900",
+      "weekly": "11500",
+      "monthly": "42000"
+    },
+    "mileageInfo": {
+      "dailyLimit": "150",
+      "excessFee": "20",
+      "includedKm": "Unlimited for weekly rentals"
+    }
   },
   {
     "id": "bugatti-chiron-112",
-    "images": ["BugattiDivo"],
-    "title": "Bugatti Chiron 110 ANS",
-    "engine": "8.0L",
-    "power": "1500KM",
-    "acceleration": "2.4s",
-        "grossPrice": "1566"
+    "images": ["roma"],
+    "title": "Ferrari Roma",
+    "brand": "Ferrari",
+    "model": "Roma",
+    "engine": "3.9L V8",
+    "power": "620",
+    "acceleration": "3.4",
+    "maxSpeed": "320",
+    "fuelType": "Benzyna",
+    "transmission": "8-biegowa DCT",
+    "drivetrain": "RWD",
+    "grossPrice": "950",
+    "description": {
+      "title": "Ferrari Roma – Włoska elegancja w nowoczesnym wydaniu",
+      "mainText": "Ferrari Roma to hołd dla klasycznej elegancji lat 60. XX wieku, połączonej z najnowocześniejszą technologią Ferrari. To grand tourer, który łączy komfort z niesamowitymi osiągami.",
+      "performance": "Serce Roma stanowi 3.9-litrowy silnik V8 twin-turbo o mocy 620 KM, ten sam który zdobył nagrodę International Engine of the Year. Moment obrotowy wynosi 760 Nm.",
+      "accelerationDetails": "Przyspieszenie od 0 do 100 kmh w zaledwie 3,4 sekundy, od 0 do 200 kmh w 9,3 sekundy. Prędkość maksymalna to 320 kmh.",
+      "interior": "Kabina Roma to prawdziwe dzieło sztuki - minimalistyczny design, najwyższej jakości materiały i innowacyjny interfejs użytkownika tworzą wyjątkowe doświadczenie.",
+      "craftsmanship": "Każdy element wnętrza został starannie przemyślany, od skórzanych foteli po aluminiowe wykończenia, wszystko oddaje ducha włoskiej elegancji.",
+      "conclusion": "Ferrari Roma to idealne połączenie codziennej użyteczności z niesamowitymi osiągami, tworząc samochód marzeń dla prawdziwych koneserów."
+    },
+    "pricing": {
+      "daily": "950",
+      "twoDays": "1800",
+      "threeDays": "2600",
+      "weekly": "6200",
+      "monthly": "22000"
+    },
+    "mileageInfo": {
+      "dailyLimit": "250",
+      "excessFee": "8",
+      "includedKm": "Unlimited for weekly rentals"
+    }
   }
 ]

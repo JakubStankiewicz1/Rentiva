@@ -2,7 +2,8 @@ import React from 'react';
 import "./carDetailsPayment.css";
 import assets from '../../assets/assets';
 
-const CarDetailsPayment = () => {
+const CarDetailsPayment = ({ car }) => {
+  // This component doesn't use car data but accepts the prop for consistency
   return (
     <div className='carDetailsPayment'>
         <div className="carDetailsPaymentContainer">

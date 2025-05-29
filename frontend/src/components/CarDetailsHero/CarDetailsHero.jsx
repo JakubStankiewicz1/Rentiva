@@ -1,6 +1,5 @@
 import React, { useState, useRef, useEffect } from "react";
 import "./CarDetailsHero.css";
-import assets from "../../assets/assets";
 
 const CarDetailsHero = ({ car }) => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
@@ -13,10 +12,9 @@ const CarDetailsHero = ({ car }) => {
   const [fade, setFade] = useState(true);
   const autoSlideRef = useRef(null);
   const pauseTimeoutRef = useRef(null);
-
   // Auto-slide functionality
   useEffect(() => {
-    if (!car || car.images.length <= 1) return;
+    if (!car || !car.images || car.images.length <= 1) return;
 
     const startAutoSlide = () => {
       if (autoSlideRef.current) clearInterval(autoSlideRef.current);
@@ -149,10 +147,9 @@ const CarDetailsHero = ({ car }) => {
           onMouseEnter={handleMouseEnter}
           onTouchStart={handleTouchStart}
           onTouchMove={handleTouchMove}
-          onTouchEnd={handleTouchEnd}
-        >
+          onTouchEnd={handleTouchEnd}        >
           <div className="carDetailsHeroContainerImageContainerStack">
-            {car.images.map((imageName, index) => (
+            {car.images && car.images.map((imageUrl, index) => (
               <div 
                 key={index} 
                 className={`carDetailsHeroContainerImageContainerStackLayer ${
@@ -166,7 +163,7 @@ const CarDetailsHero = ({ car }) => {
                 }}
               >
                 <img 
-                  src={assets[imageName]} 
+                  src={imageUrl} 
                   alt={`${car.title} - Image ${index + 1}`} 
                   className="carDetailsHeroContainerImageContainerStackLayerImage"
                   draggable={false}
@@ -174,10 +171,9 @@ const CarDetailsHero = ({ car }) => {
                 <div className="carDetailsHeroContainerImageContainerStackLayerOverlay" />
               </div>
             ))}
-          </div>
-          
+          </div>          
           {/* Image Indicators */}
-          {car.images.length > 1 && (
+          {car.images && car.images.length > 1 && (
             <div className="carDetailsHeroContainerImageContainerIndicators">
               {car.images.map((_, index) => (
                 <div

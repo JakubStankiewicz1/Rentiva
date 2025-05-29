@@ -1,7 +1,13 @@
 import React from 'react';
 import "./carDetailsTariff.css";
 
-const CarDetailsTariff = () => {
+const CarDetailsTariff = ({ car }) => {
+  if (!car || !car.pricing) {
+    return null;
+  }
+
+  const { pricing } = car;
+
   return (
     <div className='carDetailsTariff'>
       <div className="carDetailsTariffContainer">
@@ -57,11 +63,10 @@ const CarDetailsTariff = () => {
                 </th>
               </tr>
             </thead>
-            <tbody>
-              <tr>
+            <tbody>              <tr>
                 <td>
                   <span className="carDetailsTariffTableValue">
-                    <p className="carDetailsTariffTableValueTextOne bai-jamjuree-regular">90000 PLN</p>
+                    <p className="carDetailsTariffTableValueTextOne bai-jamjuree-regular">{pricing.daily} PLN</p>
                   </span>
                   <span className="carDetailsTariffTableSub">
                     <p className="carDetailsTariffTableSubText bai-jamjuree-regular">
@@ -72,31 +77,31 @@ const CarDetailsTariff = () => {
                 <td>
                   <span className="carDetailsTariffTableValue">
                     <p className="carDetailsTariffTableValueText bai-jamjuree-regular">
-                      130000 PLN
+                      {pricing.twoDays} PLN
                     </p>
                   </span>
                   <span className="carDetailsTariffTableSub">
                     <p className="carDetailsTariffTableSubText bai-jamjuree-regular">
-                      gross / day
+                      gross / 2 days
                     </p>
                   </span>
                 </td>
                 <td>
                   <span className="carDetailsTariffTableValue">
                     <p className="carDetailsTariffTableValueText bai-jamjuree-regular">
-                      110000 PLN
+                      {pricing.threeDays} PLN
                     </p>
                   </span>
                   <span className="carDetailsTariffTableSub">
                     <p className="carDetailsTariffTableSubText bai-jamjuree-regular">
-                      gross / day
+                      gross / 3 days
                     </p>
                   </span>
                 </td>
                 <td>
                   <span className="carDetailsTariffTableValue">
                     <p className="carDetailsTariffTableValueTextTwo bai-jamjuree-regular">
-                      500000 PLN
+                      {pricing.weekly} PLN
                     </p>
                   </span>
                   <span className="carDetailsTariffTableSub">
@@ -108,7 +113,7 @@ const CarDetailsTariff = () => {
                 <td>
                   <span className="carDetailsTariffTableValue">
                     <p className="carDetailsTariffTableValueTextTwo bai-jamjuree-regular">
-                      800000 PLN
+                      {Math.round(pricing.weekly * 2 * 0.9)} PLN
                     </p>
                   </span>
                   <span className="carDetailsTariffTableSub">
@@ -120,7 +125,7 @@ const CarDetailsTariff = () => {
                 <td>
                   <span className="carDetailsTariffTableValue">
                     <p className="carDetailsTariffTableValueTextTwo bai-jamjuree-regular">
-                      1200000 PLN
+                      {pricing.monthly} PLN
                     </p>
                   </span>
                   <span className="carDetailsTariffTableSub">
@@ -132,7 +137,7 @@ const CarDetailsTariff = () => {
                 <td>
                   <span className="carDetailsTariffTableValue">
                     <p className="carDetailsTariffTableValueText bai-jamjuree-regular">
-                      1000000 PLN
+                      {Math.round(pricing.daily * 10)} PLN
                     </p>
                   </span>
                 </td>

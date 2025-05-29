@@ -6,9 +6,38 @@ import { IoMdSpeedometer } from "react-icons/io";
 import { MdOutlineTimer } from "react-icons/md";
 import { GoArrowRight } from "react-icons/go";
 import CarCard from "../Car/CarCard";
-import carsData from "../../assets/carsData.json";
+import { useRentiva } from "../../Context/context.jsx";
 
 const OurCollectionList = () => {
+  const { cars, loading, error } = useRentiva();
+
+  if (loading) {
+    return (
+      <div className="ourCollectionList">
+        <div className="ourCollectionListContainer">
+          <div className="ourCollectionListContainerBottom">
+            <div className="ourCollectionListContainerBottomContainer">
+              <p style={{ color: '#fff', textAlign: 'center', width: '100%' }}>Loading cars...</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  if (error) {
+    return (
+      <div className="ourCollectionList">
+        <div className="ourCollectionListContainer">
+          <div className="ourCollectionListContainerBottom">
+            <div className="ourCollectionListContainerBottomContainer">
+              <p style={{ color: '#fff', textAlign: 'center', width: '100%' }}>Error: {error}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+  }
   return (
     <div className="ourCollectionList">
       <div className="ourCollectionListContainer">
@@ -251,13 +280,11 @@ const OurCollectionList = () => {
 
         {/* Bottom Part */}
         <div className="ourCollectionListContainerBottom">
-          <div className="ourCollectionListContainerBottomContainer">
-
-            {carsData.map(car => (
+          <div className="ourCollectionListContainerBottomContainer">            {cars.map(car => (
               <CarCard
                 key={car.id}
                 id={car.id}
-                image={assets[car.images[0]]}
+                images={car.images}
                 title={car.title}
                 engine={car.engine}
                 power={car.power}
