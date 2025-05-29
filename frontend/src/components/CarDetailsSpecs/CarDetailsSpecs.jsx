@@ -6,67 +6,101 @@ import { RiTimerLine } from "react-icons/ri";
 import { CiDollar } from "react-icons/ci";
 
 const CarDetailsSpecs = ({ car }) => {
-  const specs = [
-    {
-      icon: IoMdSpeedometer,
-      value: car.engine,
-      label: "power"
-    },
-    {
-      icon: PiEngineBold,
-      value: car.power,
-      label: "engine"
-    },
-    {
-      icon: RiTimerLine,
-      value: car.acceleration,
-      label: "0-100km/h"
-    },
-    {
-      icon: CiDollar,
-      value: `${car.grossPrice}zł`,
-      label: "gross 7day"
-    }
-  ];
-
   return (
-    <div className="car-details-specs">
-      <div className="car-details-specs__container">
-        
-        <div className="car-details-specs__title">
-          <h1 className="car-details-specs__title-text bai-jamjuree-regular">
+    <div className="carDetailsSpecs">
+      <div className="carDetailsSpecsContainer">
+
+        {/* Top */}
+        <div className="carDetailsSpecsContainerTop">
+          <p className="carDetailsSpecsContainerTopText bai-jamjuree-regular">
             {car.title}
-          </h1>
+          </p>
         </div>
 
-        <div className="car-details-specs__list">
-          {specs.map((spec, index) => {
-            const IconComponent = spec.icon;
-            return (
-              <div key={index}>
-                <div className="car-details-specs__item">
-                  <div className="car-details-specs__item-icon">
-                    <IconComponent className="car-details-specs__icon" />
-                  </div>
-                  <div className="car-details-specs__item-value">
-                    <p className="car-details-specs__value-text bai-jamjuree-regular">
-                      {spec.value}
-                    </p>
-                  </div>
-                  <div className="car-details-specs__item-label">
-                    <p className="car-details-specs__label-text bai-jamjuree-regular">
-                      {spec.label}
-                    </p>
-                  </div>
-                </div>
-                {index < specs.length - 1 && (
-                  <div className="car-details-specs__divider">
-                    <div className="car-details-specs__divider-line" />
-                  </div>
-                )}
-              </div>
-            );
-          })}
+        {/* List */}
+        <div className="carDetailsSpecsContainerList">
+
+
+
+          {/* 1 */}
+          <div className="carDetailsSpecsContainerListItem">
+            <div className="carDetailsSpecsContainerListItemIcon">
+              <IoMdSpeedometer className="carDetailsSpecsContainerIcon" />
+            </div>
+            <div className="carDetailsSpecsContainerListItemValue">
+              <p className="carDetailsSpecsContainerListItemValueText bai-jamjuree-regular">
+                {car.engine}
+              </p>
+            </div>
+
+            <div className="carDetailsSpecsContainerListItemLabel">
+              <p className="carDetailsSpecsContainerListItemLabelText bai-jamjuree-regular">
+                power
+              </p>
+            </div>
+            
+          </div>
+
+
+          <div className="carDetailsSpecsContainerDivider">
+            <div className="carDetailsSpecsContainerDividerLine" />
+          </div>
+
+
+          {/* 2 */}
+          <div className="carDetailsSpecsContainerListItem">
+            <div className="carDetailsSpecsContainerListItemIcon">
+              <PiEngineBold className="carDetailsSpecsContainerIcon" />
+            </div>
+            <div className="carDetailsSpecsContainerListItemValue">
+              <p className="carDetailsSpecsContainerListItemValueText bai-jamjuree-regular">
+                {car.power}
+              </p>
+            </div>
+            <div className="carDetailsSpecsContainerListItemLabel">
+              <p className="carDetailsSpecsContainerListItemLabelText bai-jamjuree-regular">
+                engine
+              </p>
+            </div>
+          </div>
+          <div className="carDetailsSpecsContainerDivider">
+            <div className="carDetailsSpecsContainerDividerLine" />
+          </div>
+          {/* 3 */}
+          <div className="carDetailsSpecsContainerListItem">
+            <div className="carDetailsSpecsContainerListItemIcon">
+              <RiTimerLine className="carDetailsSpecsContainerIcon" />
+            </div>
+            <div className="carDetailsSpecsContainerListItemValue">
+              <p className="carDetailsSpecsContainerListItemValueText bai-jamjuree-regular">
+                {car.acceleration}
+              </p>
+            </div>
+            <div className="carDetailsSpecsContainerListItemLabel">
+              <p className="carDetailsSpecsContainerListItemLabelText bai-jamjuree-regular">
+                0-100km/h
+              </p>
+            </div>
+          </div>
+          <div className="carDetailsSpecsContainerDivider">
+            <div className="carDetailsSpecsContainerDividerLine" />
+          </div>
+          {/* 4 */}
+          <div className="carDetailsSpecsContainerListItem">
+            <div className="carDetailsSpecsContainerListItemIcon">
+              <CiDollar className="carDetailsSpecsContainerIcon" />
+            </div>
+            <div className="carDetailsSpecsContainerListItemValue">
+              <p className="carDetailsSpecsContainerListItemValueText bai-jamjuree-regular">
+                {car.grossPrice}zł
+              </p>
+            </div>
+            <div className="carDetailsSpecsContainerListItemLabel">
+              <p className="carDetailsSpecsContainerListItemLabelText bai-jamjuree-regular">
+                gross 7day
+              </p>
+            </div>
+          </div>
         </div>
 
       </div>
