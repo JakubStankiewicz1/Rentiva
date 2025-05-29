@@ -3,16 +3,17 @@
     height: 100%;
     background-color: #202020;
     padding-top: 100px;
+    padding-bottom: 20px;
 }
 
 .carDetailsPaymentContainer {
-    width: 87%;
+    width: 90%;
     margin-left: auto;
     margin-right: auto;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    gap: 50px; 
+    gap: 20px;
 }
 
 .carDetailsPaymentContainerTopContainerText {
