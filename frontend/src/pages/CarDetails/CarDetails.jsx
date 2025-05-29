@@ -31,18 +31,17 @@ const CarDetails = () => {
         <Navbar />
 
         <div className="carDetailsContainer">
+          
             <div className="carDetailsContainerContainerDiv">
 
                 {/* Top Part */}
                 <div className="carDetailsContainerContainerDivTop">
                     <div className="carDetailsContainerContainerDivTopContainer">
 
-                        {/* Left Part - Specifications */}
                         <div className="carDetailsContainerContainerDivTopContainerLeft">
                             <CarDetailsSpecs car={car} />
                         </div>
 
-                        {/* Right Part - Hero Section */}
                         <div className="carDetailsContainerContainerDivTopContainerRight">
                             <CarDetailsHero car={car} />
                         </div>

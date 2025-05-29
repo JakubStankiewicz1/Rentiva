@@ -1,16 +1,13 @@
 .carDetailsTariff {
   width: 100%;
-  /* background: #232221; */
   padding: 0;
   margin: 0;
-  margin-top: 48px;
+  margin-top: 65px;
 }
 
 .carDetailsTariffContainer {
-  width: 100%;
-  max-width: 1280px;
+  width: 90%;
   margin: 0 auto;
-  padding: 0 32px 32px 32px;
   box-sizing: border-box;
 }
 
@@ -60,7 +57,6 @@
 }
 
 .carDetailsTariffTable th {
-  /* background: #181818; */
   background-color: #202020;
   color: #fff;
   font-size: 20px;
@@ -68,7 +64,6 @@
   letter-spacing: 0.5px;
   border-bottom: 2px solid #393939;
   border-top: 1px solid #393939;
-  /* border-top: none; */
 }
 
 .carDetailsTariffTable td {
@@ -84,7 +79,7 @@
 .carDetailsTariffTableDaTwo,
 .carDetailsTariffTableDayThree,
 .carDetailsTariffTableDayDeposit {
-  color: #FFFFFF;
+  color: #ffffff;
   font-size: 16px;
   font-weight: 500;
   line-height: 19px;
@@ -94,7 +89,7 @@
 .carDetailsTariffTableDayWeek,
 .carDetailsTariffTableDayWeekTwo,
 .carDetailsTariffTableDayMonth {
-  color: #E8A06A;
+  color: #e8a06a;
   font-size: 16px;
   font-weight: 500;
   line-height: 19px;
@@ -132,11 +127,10 @@
 .carDetailsTariffContainerBottom {
   width: 100%;
   margin-top: 10px;
-  /* background-color: red; */
 }
 
 .carDetailsTariffContainerBottomContainerText {
-  color: #E8A06A;
+  color: #e8a06a;
   font-size: 18px;
   font-weight: 400;
   line-height: 26px;
@@ -144,22 +138,21 @@
 }
 
 .carDetailsTariffNote {
-  color: #E8A075;
+  color: #e8a075;
   font-weight: 600;
   letter-spacing: 0.5px;
 }
 
 .carDetailsTariffCustomer {
-  color: #E8A075;
+  color: #e8a075;
   font-weight: 600;
   letter-spacing: 0.5px;
 }
 
-
 .carDetailsTariffTableValueTextOne,
 .carDetailsTariffTableValueText,
 .carDetailsTariffTableValueTextTwo {
-  color: #FFFFFF;
+  color: #ffffff;
   font-size: 16px;
   font-weight: 500;
   line-height: 19px;
@@ -168,7 +161,7 @@
 .carDetailsTariffTableSubText,
 .carDetailsTariffTableSubText,
 .carDetailsTariffTableSubText {
-  color: #9F9F9F;
+  color: #9f9f9f;
   font-size: 14px;
   font-weight: 500;
   line-height: 19px;
@@ -182,41 +175,3 @@
   font-weight: 500;
   line-height: 19px;
 }
-
-
-
-
-
-
-
-
-/* 
-@media (max-width: 900px) {
-  .carDetailsTariffContainer {
-    padding: 0 8px 24px 8px;
-  }
-  .carDetailsTariffTable th,
-  .carDetailsTariffTable td {
-    padding: 12px 10px 8px 10px;
-    font-size: 15px;
-  }
-  .carDetailsTariffTableValue {
-    font-size: 16px;
-  }
-}
-
-@media (max-width: 600px) {
-  .carDetailsTariffContainerTopContainerText {
-    font-size: 26px;
-  }
-  .carDetailsTariffTable {
-    min-width: 600px;
-    font-size: 13px;
-  }
-  .carDetailsTariffTableValue {
-    font-size: 13px;
-  }
-  .carDetailsTariffContainerBottomContainerText {
-    font-size: 13px;
-  }
-} */
