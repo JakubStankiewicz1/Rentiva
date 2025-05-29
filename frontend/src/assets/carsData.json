@@ -12,6 +12,7 @@
     "fuelType": "Benzyna",
     "transmission": "7-biegowa DSG",
     "drivetrain": "AWD",
+    "type": "Sports",
     "grossPrice": "1566",
     "description": {
       "title": "Bugatti Chiron 110 Ans – Esencja francuskiej perfekcji i mocy",
@@ -37,8 +38,8 @@
   },
   {
     "id": "bugatti-chiron-111",
-    "images": ["BugattiDivo"],
-    "title": "Bugatti Divo",
+    "images": ["BugattiDivo", "BugattiChironOne", "BugattiChironTwo"],
+    "title": "Bugatti Divo f",
     "brand": "Bugatti",
     "model": "Divo",
     "engine": "8.0L W16",
@@ -48,6 +49,7 @@
     "fuelType": "Benzyna",
     "transmission": "7-biegowa DSG",
     "drivetrain": "AWD",
+    "type": "Sports",
     "grossPrice": "1800",
     "description": {
       "title": "Bugatti Divo – Perfekcja aerodynamiki i osiągów",
@@ -84,6 +86,7 @@
     "fuelType": "Benzyna",
     "transmission": "8-biegowa DCT",
     "drivetrain": "RWD",
+    "type": "Luxury",
     "grossPrice": "950",
     "description": {
       "title": "Ferrari Roma – Włoska elegancja w nowoczesnym wydaniu",

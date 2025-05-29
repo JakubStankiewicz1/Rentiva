@@ -7,7 +7,7 @@ import OurCollectionList from '../../components/OurCollectionList/OurCollectionL
 const OurCollection = () => {
   return (
     <div className='ourCollection'>
-        <Navbar />
+        {/* <Navbar /> */}
         <OurCollectionHero />
         <OurCollectionList />
     </div>

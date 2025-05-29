@@ -57,7 +57,7 @@ const CarDetails = () => {
 
   return (
     <div className="carDetails">
-        <Navbar />
+        {/* <Navbar /> */}
 
         <div className="carDetailsContainer">
           
@@ -79,7 +79,9 @@ const CarDetails = () => {
                 </div>
 
             </div>
-        </div>        <CarDetailsInfo car={car} />
+        </div>        
+        
+        <CarDetailsInfo car={car} />
 
         <CarDetailsTariff car={car} />
 
