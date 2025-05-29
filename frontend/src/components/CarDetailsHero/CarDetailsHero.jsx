@@ -44,7 +44,7 @@ const CarDetailsHero = ({ car }) => {
       if (pauseTimeoutRef.current) clearTimeout(pauseTimeoutRef.current);
       pauseTimeoutRef.current = setTimeout(() => {
         setUserInteracted(false);
-      }, 8000);
+      }, 50);
     }
     return () => {
       if (pauseTimeoutRef.current) clearTimeout(pauseTimeoutRef.current);
@@ -189,13 +189,6 @@ const CarDetailsHero = ({ car }) => {
                   style={{ pointerEvents: isTransitioning ? 'none' : 'auto' }}
                 />
               ))}
-            </div>
-          )}
-
-          {/* Auto-slide progress indicator */}
-          {!userInteracted && isAutoSliding && car.images.length > 1 && (
-            <div className="carDetailsHeroContainerImageContainerProgress">
-              <div className="carDetailsHeroContainerImageContainerProgressBar" />
             </div>
           )}
 
