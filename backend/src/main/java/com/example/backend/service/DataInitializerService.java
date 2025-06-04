@@ -19,16 +19,19 @@ public class DataInitializerService implements CommandLineRunner {
 
     private final CarRepository carRepository;
     private final ObjectMapper objectMapper;
+    private final AuthService authService;
 
     @Autowired
-    public DataInitializerService(CarRepository carRepository, ObjectMapper objectMapper) {
+    public DataInitializerService(CarRepository carRepository, ObjectMapper objectMapper, AuthService authService) {
         this.carRepository = carRepository;
         this.objectMapper = objectMapper;
-    }
-
-    @Override
+        this.authService = authService;
+    }    @Override
     public void run(String... args) throws Exception {
-        // Only initialize if database is empty
+        // Initialize default admin user
+        authService.initializeDefaultUser();
+        
+        // Only initialize cars if database is empty
         if (carRepository.count() == 0) {
             initializeCarsFromJson();
         }

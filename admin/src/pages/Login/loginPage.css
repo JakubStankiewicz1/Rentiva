@@ -1,0 +1,303 @@
+
+/* Rentiva Admin Login - spójny z głównym frontendem */
+.rentiva-admin-login {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #1a1a1a 0%, #202020 50%, #0d0d0d 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  font-family: "Bai Jamjuree", sans-serif;
+  position: relative;
+  overflow: hidden;
+}
+
+.rentiva-admin-login::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    radial-gradient(circle at 20% 50%, rgba(195, 132, 94, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(195, 132, 94, 0.08) 0%, transparent 50%),
+    radial-gradient(circle at 40% 80%, rgba(195, 132, 94, 0.06) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.rentiva-admin-login__container {
+  background: #181818;
+  border: 1px solid #393939;
+  width: 100%;
+  max-width: 480px;
+  padding: 48px 40px;
+  position: relative;
+  z-index: 1;
+  box-shadow: 
+    0 20px 40px rgba(0, 0, 0, 0.4),
+    0 0 0 1px rgba(195, 132, 94, 0.1);
+}
+
+.rentiva-admin-login__header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.rentiva-admin-login__title {
+  color: #ffffff;
+  font-size: 44px;
+  font-weight: 400;
+  line-height: 1.2;
+  margin: 0 0 8px 0;
+  letter-spacing: -0.5px;
+  font-family: "Bai Jamjuree", sans-serif;
+}
+
+.rentiva-admin-login__subtitle {
+  color: #ffffff;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 1.3;
+  margin: 0 0 16px 0;
+  font-family: "Bai Jamjuree", sans-serif;
+}
+
+.rentiva-admin-login__description {
+  color: #a6a6a6;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5;
+  margin: 0;
+  letter-spacing: 0.2px;
+}
+
+.rentiva-admin-login__accent-line {
+  width: 60px;
+  height: 2px;
+  background: linear-gradient(90deg, #C3845E, #E8A075);
+  margin: 20px auto 0;
+}
+
+.rentiva-admin-login__form {
+  margin-top: 32px;
+}
+
+.rentiva-admin-login__input-group {
+  margin-bottom: 24px;
+  position: relative;
+}
+
+.rentiva-admin-login__input {
+  width: 100%;
+  height: 48px;
+  background: transparent;
+  border: 1px solid #393939;
+  color: #fff;
+  font-size: 16px;
+  font-family: "Bai Jamjuree", sans-serif;
+  font-weight: 400;
+  padding: 0 18px;
+  outline: none;
+  border-radius: 0;
+  box-sizing: border-box;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.rentiva-admin-login__input:focus {
+  border-color: #C3845E;
+  box-shadow: 0 0 0 2px rgba(195, 132, 94, 0.1);
+}
+
+.rentiva-admin-login__input::placeholder {
+  color: #bdbdbd;
+  font-size: 16px;
+  font-family: "Bai Jamjuree", sans-serif;
+  font-weight: 400;
+  opacity: 1;
+}
+
+.rentiva-admin-login__input--error {
+  border-color: #ff4444;
+}
+
+.rentiva-admin-login__input--error:focus {
+  border-color: #ff4444;
+  box-shadow: 0 0 0 2px rgba(255, 68, 68, 0.1);
+}
+
+.rentiva-admin-login__error-text {
+  color: #ff6b6b;
+  font-size: 14px;
+  font-weight: 400;
+  margin-top: 6px;
+  font-family: "Bai Jamjuree", sans-serif;
+}
+
+.rentiva-admin-login__password-container {
+  position: relative;
+}
+
+.rentiva-admin-login__password-toggle {
+  position: absolute;
+  right: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: #a6a6a6;
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 2px;
+  transition: color 0.2s ease;
+}
+
+.rentiva-admin-login__password-toggle:hover {
+  color: #C3845E;
+}
+
+.rentiva-admin-login__button {
+  width: 100%;
+  height: 50px;
+  background: linear-gradient(135deg, #C3845E, #E8A075);
+  border: none;
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 600;
+  font-family: "Bai Jamjuree", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  cursor: pointer;
+  margin-top: 24px;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border-radius: 0;
+  box-shadow: 0 4px 12px rgba(195, 132, 94, 0.2);
+}
+
+.rentiva-admin-login__button:hover {
+  background: linear-gradient(135deg, #E8A075, #F2B088);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(195, 132, 94, 0.3);
+}
+
+.rentiva-admin-login__button:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 8px rgba(195, 132, 94, 0.2);
+}
+
+.rentiva-admin-login__button:disabled {
+  background: #454545;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+.rentiva-admin-login__button--loading {
+  opacity: 0.8;
+}
+
+.rentiva-admin-login__alert {
+  margin-bottom: 24px;
+  padding: 16px 18px;
+  background: rgba(255, 68, 68, 0.1);
+  border: 1px solid rgba(255, 68, 68, 0.3);
+  color: #ff6b6b;
+  font-size: 14px;
+  font-weight: 400;
+  font-family: "Bai Jamjuree", sans-serif;
+  line-height: 1.4;
+}
+
+.rentiva-admin-login__demo-info {
+  margin-top: 32px;
+  padding: 18px;
+  background: rgba(195, 132, 94, 0.1);
+  border: 1px solid rgba(195, 132, 94, 0.2);
+  text-align: center;
+  position: relative;
+}
+
+.rentiva-admin-login__demo-info::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40px;
+  height: 2px;
+  background: linear-gradient(90deg, #C3845E, #E8A075);
+}
+
+.rentiva-admin-login__demo-title {
+  color: #C3845E;
+  font-size: 14px;
+  font-weight: 600;
+  margin: 0 0 8px 0;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-family: "Bai Jamjuree", sans-serif;
+}
+
+.rentiva-admin-login__demo-text {
+  color: #a6a6a6;
+  font-size: 13px;
+  font-weight: 400;
+  margin: 0;
+  line-height: 1.4;
+  font-family: "Bai Jamjuree", sans-serif;
+}
+
+.rentiva-admin-login__demo-credentials {
+  color: #ffffff;
+  font-weight: 500;
+  margin-top: 4px;
+}
+
+/* Responsive design */
+@media (max-width: 600px) {
+  .rentiva-admin-login {
+    padding: 16px;
+  }
+  
+  .rentiva-admin-login__container {
+    padding: 32px 24px;
+  }
+  
+  .rentiva-admin-login__title {
+    font-size: 36px;
+  }
+  
+  .rentiva-admin-login__subtitle {
+    font-size: 18px;
+  }
+}
+
+/* Animacje */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.rentiva-admin-login__container {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+.rentiva-admin-login__input-group {
+  animation: fadeInUp 0.6s ease-out;
+  animation-fill-mode: backwards;
+}
+
+.rentiva-admin-login__input-group:nth-child(1) { animation-delay: 0.1s; }
+.rentiva-admin-login__input-group:nth-child(2) { animation-delay: 0.2s; }
+.rentiva-admin-login__button { animation: fadeInUp 0.6s ease-out 0.3s backwards; }
+.rentiva-admin-login__demo-info { animation: fadeInUp 0.6s ease-out 0.4s backwards; }

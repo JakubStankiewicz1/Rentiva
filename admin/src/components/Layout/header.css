@@ -1,0 +1,221 @@
+/* Rentiva Admin Header - spójny z głównym frontendem */
+.rentivaAdminHeader {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 240px;
+  height: 64px;
+  background: #181818;
+  border-bottom: 1px solid #393939;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 24px;
+  font-family: "Bai Jamjuree", sans-serif;
+  z-index: 1200;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.rentivaAdminHeader--mobile {
+  left: 0;
+}
+
+.rentivaAdminHeader__left {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.rentivaAdminHeader__menuButton {
+  display: none;
+  background: none;
+  border: none;
+  color: #a6a6a6;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 4px;
+  transition: color 0.2s ease;
+}
+
+.rentivaAdminHeader__menuButton:hover {
+  color: #C3845E;
+  background: rgba(195, 132, 94, 0.1);
+}
+
+.rentivaAdminHeader__menuButton--mobile {
+  display: block;
+}
+
+.rentivaAdminHeader__title {
+  color: #ffffff;
+  font-size: 20px;
+  font-weight: 500;
+  margin: 0;
+  font-family: "Bai Jamjuree", sans-serif;
+  letter-spacing: 0.5px;
+}
+
+.rentivaAdminHeader__right {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.rentivaAdminHeader__notifications {
+  position: relative;
+  background: none;
+  border: none;
+  color: #a6a6a6;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 4px;
+  transition: color 0.2s ease;
+}
+
+.rentivaAdminHeader__notifications:hover {
+  color: #C3845E;
+  background: rgba(195, 132, 94, 0.1);
+}
+
+.rentivaAdminHeader__notificationsBadge {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  background: #ff4444;
+  color: #ffffff;
+  font-size: 10px;
+  font-weight: 600;
+  padding: 2px 6px;
+  border-radius: 10px;
+  min-width: 16px;
+  text-align: center;
+}
+
+.rentivaAdminHeader__userSection {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  position: relative;
+}
+
+.rentivaAdminHeader__userButton {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: none;
+  border: none;
+  color: #ffffff;
+  cursor: pointer;
+  padding: 8px 12px;
+  border-radius: 4px;
+  transition: background 0.2s ease;
+}
+
+.rentivaAdminHeader__userButton:hover {
+  background: rgba(195, 132, 94, 0.1);
+}
+
+.rentivaAdminHeader__avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #C3845E, #E8A075);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.rentivaAdminHeader__userName {
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 500;
+  font-family: "Bai Jamjuree", sans-serif;
+}
+
+.rentivaAdminHeader__userName--mobile {
+  display: none;
+}
+
+.rentivaAdminHeader__userMenu {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background: #181818;
+  border: 1px solid #393939;
+  border-radius: 4px;
+  min-width: 160px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+  overflow: hidden;
+}
+
+.rentivaAdminHeader__userMenu--hidden {
+  display: none;
+}
+
+.rentivaAdminHeader__menuItem {
+  display: block;
+  width: 100%;
+  padding: 12px 16px;
+  background: none;
+  border: none;
+  color: #a6a6a6;
+  text-align: left;
+  cursor: pointer;
+  font-size: 14px;
+  font-family: "Bai Jamjuree", sans-serif;
+  transition: all 0.2s ease;
+  border-bottom: 1px solid #2a2a2a;
+}
+
+.rentivaAdminHeader__menuItem:last-child {
+  border-bottom: none;
+}
+
+.rentivaAdminHeader__menuItem:hover {
+  background: rgba(195, 132, 94, 0.1);
+  color: #C3845E;
+}
+
+.rentivaAdminHeader__menuItem--logout {
+  color: #ff4444;
+}
+
+.rentivaAdminHeader__menuItem--logout:hover {
+  background: rgba(255, 68, 68, 0.1);
+  color: #ff6b6b;
+}
+
+/* Responsive Design */
+@media (max-width: 900px) {
+  .rentivaAdminHeader {
+    left: 0;
+  }
+  
+  .rentivaAdminHeader__menuButton {
+    display: block;
+  }
+  
+  .rentivaAdminHeader__userName {
+    display: none;
+  }
+}
+
+/* Animations */
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.rentivaAdminHeader__userMenu {
+  animation: slideDown 0.2s ease-out;
+}

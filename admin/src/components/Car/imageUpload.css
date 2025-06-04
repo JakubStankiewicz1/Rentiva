@@ -1,0 +1,307 @@
+.rentivaAdminImageUpload {
+  background: #181818;
+  border: 1px solid #393939;
+  padding: 24px;
+  font-family: "Bai Jamjuree", sans-serif;
+  position: relative;
+}
+
+.rentivaAdminImageUpload__header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.rentivaAdminImageUpload__title {
+  color: #ffffff;
+  font-size: 18px;
+  font-weight: 500;
+  margin: 0;
+  font-family: "Bai Jamjuree", sans-serif;
+}
+
+.rentivaAdminImageUpload__icon {
+  color: #C3845E;
+  width: 20px;
+  height: 20px;
+}
+
+.rentivaAdminImageUpload__dropzone {
+  border: 2px dashed #393939;
+  padding: 40px 20px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background: transparent;
+  position: relative;
+  overflow: hidden;
+}
+
+.rentivaAdminImageUpload__dropzone:hover {
+  border-color: #C3845E;
+  background: rgba(195, 132, 94, 0.05);
+}
+
+.rentivaAdminImageUpload__dropzone--dragActive {
+  border-color: #C3845E;
+  background: rgba(195, 132, 94, 0.1);
+  transform: scale(1.02);
+}
+
+.rentivaAdminImageUpload__dropzoneContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.rentivaAdminImageUpload__uploadIcon {
+  width: 48px;
+  height: 48px;
+  color: #a6a6a6;
+  transition: color 0.3s ease;
+}
+
+.rentivaAdminImageUpload__dropzone:hover .rentivaAdminImageUpload__uploadIcon {
+  color: #C3845E;
+}
+
+.rentivaAdminImageUpload__uploadText {
+  color: #a6a6a6;
+  font-size: 16px;
+  font-weight: 400;
+  margin: 0;
+  font-family: "Bai Jamjuree", sans-serif;
+}
+
+.rentivaAdminImageUpload__uploadSubtext {
+  color: #666666;
+  font-size: 14px;
+  font-weight: 400;
+  margin: 0;
+  font-family: "Bai Jamjuree", sans-serif;
+}
+
+.rentivaAdminImageUpload__browseButton {
+  background: linear-gradient(135deg, #C3845E, #E8A075);
+  border: none;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 500;
+  font-family: "Bai Jamjuree", sans-serif;
+  padding: 10px 20px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 8px;
+}
+
+.rentivaAdminImageUpload__browseButton:hover {
+  background: linear-gradient(135deg, #E8A075, #F2B088);
+  transform: translateY(-2px);
+}
+
+.rentivaAdminImageUpload__hiddenInput {
+  display: none;
+}
+
+.rentivaAdminImageUpload__preview {
+  margin-top: 24px;
+}
+
+.rentivaAdminImageUpload__previewTitle {
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 500;
+  margin: 0 0 16px 0;
+  font-family: "Bai Jamjuree", sans-serif;
+}
+
+.rentivaAdminImageUpload__previewGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  gap: 12px;
+}
+
+.rentivaAdminImageUpload__previewItem {
+  position: relative;
+  aspect-ratio: 1;
+  border: 1px solid #393939;
+  overflow: hidden;
+  transition: transform 0.2s ease;
+}
+
+.rentivaAdminImageUpload__previewItem:hover {
+  transform: scale(1.05);
+}
+
+.rentivaAdminImageUpload__previewImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.rentivaAdminImageUpload__removeButton {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  background: rgba(255, 68, 68, 0.9);
+  border: none;
+  color: #ffffff;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: bold;
+  transition: background 0.2s ease;
+  opacity: 0;
+  transform: scale(0.8);
+}
+
+.rentivaAdminImageUpload__previewItem:hover .rentivaAdminImageUpload__removeButton {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.rentivaAdminImageUpload__removeButton:hover {
+  background: rgba(255, 68, 68, 1);
+}
+
+.rentivaAdminImageUpload__error {
+  background: rgba(255, 68, 68, 0.1);
+  border: 1px solid rgba(255, 68, 68, 0.3);
+  color: #ff6b6b;
+  padding: 12px 16px;
+  margin-top: 16px;
+  font-size: 14px;
+  font-weight: 400;
+  font-family: "Bai Jamjuree", sans-serif;
+  line-height: 1.4;
+}
+
+.rentivaAdminImageUpload__progress {
+  margin-top: 16px;
+}
+
+.rentivaAdminImageUpload__progressBar {
+  width: 100%;
+  height: 4px;
+  background: #393939;
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.rentivaAdminImageUpload__progressFill {
+  height: 100%;
+  background: linear-gradient(90deg, #C3845E, #E8A075);
+  transition: width 0.3s ease;
+}
+
+.rentivaAdminImageUpload__progressText {
+  color: #a6a6a6;
+  font-size: 12px;
+  font-weight: 400;
+  margin: 8px 0 0 0;
+  font-family: "Bai Jamjuree", sans-serif;
+  text-align: center;
+}
+
+.rentivaAdminImageUpload__info {
+  background: rgba(195, 132, 94, 0.1);
+  border: 1px solid rgba(195, 132, 94, 0.3);
+  color: #C3845E;
+  padding: 12px 16px;
+  margin-top: 16px;
+  font-size: 13px;
+  font-weight: 400;
+  font-family: "Bai Jamjuree", sans-serif;
+  line-height: 1.4;
+}
+
+/* Loading state */
+.rentivaAdminImageUpload--loading .rentivaAdminImageUpload__dropzone {
+  pointer-events: none;
+  opacity: 0.6;
+}
+
+.rentivaAdminImageUpload__loading {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #C3845E;
+}
+
+.rentivaAdminImageUpload__loadingSpinner {
+  width: 24px;
+  height: 24px;
+  border: 2px solid #393939;
+  border-top: 2px solid #C3845E;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .rentivaAdminImageUpload {
+    padding: 16px;
+  }
+  
+  .rentivaAdminImageUpload__dropzone {
+    padding: 30px 16px;
+  }
+  
+  .rentivaAdminImageUpload__previewGrid {
+    grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+    gap: 8px;
+  }
+  
+  .rentivaAdminImageUpload__uploadIcon {
+    width: 32px;
+    height: 32px;
+  }
+  
+  .rentivaAdminImageUpload__uploadText {
+    font-size: 14px;
+  }
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.rentivaAdminImageUpload__previewItem {
+  animation: fadeInUp 0.3s ease-out;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.rentivaAdminImageUpload--loading {
+  animation: pulse 2s infinite;
+}

@@ -1,0 +1,355 @@
+/* Rentiva Dashboard - spójny z głównym frontendem */
+.rentivaDashboard {
+  /* min-height: calc(100vh - 64px); */
+  width: calc(100vw - 240px);
+  margin-left: 240px;
+  background: transparent;
+  font-family: "Bai Jamjuree", sans-serif;
+  color: #ffffff;
+  /* padding: 24px; */
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* .rentivaDashboard::before {
+  display: none;
+} */
+
+.rentivaDashboard__container {
+  width: 100%;
+  /* background-color: red; */
+  margin: 0 auto;
+  position: relative;
+  /* max-width: 1100px; */
+
+  width: 96%;
+  margin-left: auto;
+}
+
+/* Header Section */
+.rentivaDashboard__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 32px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #393939;
+}
+
+.rentivaDashboard__title {
+  color: #ffffff;
+  font-size: 48px;
+  font-weight: 400;
+  margin: 0;
+  letter-spacing: -0.5px;
+  font-family: "Bai Jamjuree", sans-serif;
+}
+
+.rentivaDashboard__addButton {
+  background: linear-gradient(135deg, #C3845E, #E8A075);
+  border: none;
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 600;
+  font-family: "Bai Jamjuree", sans-serif;
+  padding: 12px 24px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 4px 12px rgba(195, 132, 94, 0.2);
+}
+
+.rentivaDashboard__addButton:hover {
+  background: linear-gradient(135deg, #E8A075, #F2B088);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(195, 132, 94, 0.3);
+}
+
+/* Stats Grid */
+.rentivaDashboard__statsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+  margin-bottom: 40px;
+}
+
+.rentivaDashboard__statCard {
+  background: #181818;
+  border: 1px solid #393939;
+  padding: 24px;
+  height: 140px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.rentivaDashboard__statCard:hover {
+  border-color: #C3845E;
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+}
+
+.rentivaDashboard__statCard--primary {
+  background: linear-gradient(135deg, rgba(195, 132, 94, 0.1), rgba(195, 132, 94, 0.05));
+}
+
+.rentivaDashboard__statCard--sports {
+  background: linear-gradient(135deg, rgba(255, 68, 68, 0.1), rgba(255, 68, 68, 0.05));
+}
+
+.rentivaDashboard__statCard--luxury {
+  background: linear-gradient(135deg, rgba(76, 175, 80, 0.1), rgba(76, 175, 80, 0.05));
+}
+
+.rentivaDashboard__statCard--power {
+  background: linear-gradient(135deg, rgba(255, 152, 0, 0.1), rgba(255, 152, 0, 0.05));
+}
+
+.rentivaDashboard__statHeader {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.rentivaDashboard__statIcon {
+  width: 24px;
+  height: 24px;
+  color: #C3845E;
+}
+
+.rentivaDashboard__statIcon--sports {
+  color: #ff4444;
+}
+
+.rentivaDashboard__statIcon--luxury {
+  color: #4caf50;
+}
+
+.rentivaDashboard__statIcon--power {
+  color: #ff9800;
+}
+
+.rentivaDashboard__statLabel {
+  color: #a6a6a6;
+  font-size: 16px;
+  font-weight: 500;
+  margin: 0;
+  font-family: "Bai Jamjuree", sans-serif;
+}
+
+.rentivaDashboard__statValue {
+  color: #ffffff;
+  font-size: 36px;
+  font-weight: 600;
+  margin: 0;
+  font-family: "Bai Jamjuree", sans-serif;
+  line-height: 1;
+}
+
+/* Recent Cars Section */
+.rentivaDashboard__recentSection {
+  margin-bottom: 40px;
+}
+
+.rentivaDashboard__sectionTitle {
+  color: #ffffff;
+  font-size: 32px;
+  font-weight: 400;
+  margin: 0 0 8px 0;
+  font-family: "Bai Jamjuree", sans-serif;
+}
+
+.rentivaDashboard__sectionDivider {
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(90deg, #C3845E, #E8A075, transparent);
+  margin-bottom: 24px;
+}
+
+.rentivaDashboard__carsGrid {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.rentivaDashboard__carCard {
+  background: #181818;
+  border: 1px solid #393939;
+  padding: 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.rentivaDashboard__carCard:hover {
+  border-color: #C3845E;
+  background: rgba(195, 132, 94, 0.05);
+}
+
+.rentivaDashboard__carInfo {
+  flex: 1;
+}
+
+.rentivaDashboard__carTitle {
+  color: #ffffff;
+  font-size: 24px;
+  font-weight: 600;
+  margin: 0 0 8px 0;
+  font-family: "Bai Jamjuree", sans-serif;
+}
+
+.rentivaDashboard__carDetails {
+  color: #a6a6a6;
+  font-size: 16px;
+  font-weight: 400;
+  margin: 0;
+  font-family: "Bai Jamjuree", sans-serif;
+}
+
+.rentivaDashboard__carActions {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 12px;
+}
+
+.rentivaDashboard__carPrice {
+  color: #C3845E;
+  font-size: 20px;
+  font-weight: 600;
+  margin: 0;
+  font-family: "Bai Jamjuree", sans-serif;
+}
+
+.rentivaDashboard__carButton {
+  background: transparent;
+  border: 1px solid #C3845E;
+  color: #C3845E;
+  font-size: 14px;
+  font-weight: 500;
+  font-family: "Bai Jamjuree", sans-serif;
+  padding: 8px 16px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.rentivaDashboard__carButton:hover {
+  background: #C3845E;
+  color: #ffffff;
+}
+
+.rentivaDashboard__emptyCars {
+  text-align: center;
+  padding: 60px 20px;
+  color: #a6a6a6;
+  font-size: 18px;
+  font-family: "Bai Jamjuree", sans-serif;
+}
+
+.rentivaDashboard__loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 70vh;
+}
+
+.rentivaDashboard__loadingSpinner {
+  width: 40px;
+  height: 40px;
+  border: 3px solid #393939;
+  border-top: 3px solid #C3845E;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Responsive Design */
+@media (max-width: 900px) {
+  .rentivaDashboard {
+    width: 100vw;
+    margin-left: 0;
+    padding: 16px;
+  }
+  
+  .rentivaDashboard__header {
+    flex-direction: column;
+    gap: 16px;
+    align-items: stretch;
+  }
+  
+  .rentivaDashboard__title {
+    font-size: 36px;
+    text-align: center;
+  }
+  
+  .rentivaDashboard__statsGrid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  
+  .rentivaDashboard__carCard {
+    flex-direction: column;
+    gap: 16px;
+    align-items: stretch;
+  }
+  
+  .rentivaDashboard__carActions {
+    align-items: stretch;
+  }
+  
+  .rentivaDashboard__carButton {
+    text-align: center;
+  }
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.rentivaDashboard__statCard {
+  animation: fadeInUp 0.6s ease-out;
+  animation-fill-mode: backwards;
+}
+
+.rentivaDashboard__statCard:nth-child(1) { animation-delay: 0.1s; }
+.rentivaDashboard__statCard:nth-child(2) { animation-delay: 0.2s; }
+.rentivaDashboard__statCard:nth-child(3) { animation-delay: 0.3s; }
+.rentivaDashboard__statCard:nth-child(4) { animation-delay: 0.4s; }
+
+.rentivaDashboard__carCard {
+  animation: fadeInUp 0.6s ease-out;
+  animation-fill-mode: backwards;
+}
+
+.rentivaDashboard__carCard:nth-child(1) { animation-delay: 0.1s; }
+.rentivaDashboard__carCard:nth-child(2) { animation-delay: 0.2s; }
+.rentivaDashboard__carCard:nth-child(3) { animation-delay: 0.3s; }
+.rentivaDashboard__carCard:nth-child(4) { animation-delay: 0.4s; }
+.rentivaDashboard__carCard:nth-child(5) { animation-delay: 0.5s; }

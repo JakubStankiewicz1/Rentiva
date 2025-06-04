@@ -1,0 +1,320 @@
+/* Rentiva Admin Cars Filter - spójny z głównym frontendem */
+.rentivaAdminCarsFilter {
+  background: #181818;
+  border: 1px solid #393939;
+  padding: 24px;
+  margin-bottom: 24px;
+  font-family: "Bai Jamjuree", sans-serif;
+  position: relative;
+}
+
+.rentivaAdminCarsFilter::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, #C3845E, #E8A075, transparent);
+}
+
+.rentivaAdminCarsFilter__header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.rentivaAdminCarsFilter__title {
+  color: #ffffff;
+  font-size: 20px;
+  font-weight: 500;
+  margin: 0;
+  font-family: "Bai Jamjuree", sans-serif;
+}
+
+.rentivaAdminCarsFilter__icon {
+  color: #C3845E;
+  width: 20px;
+  height: 20px;
+}
+
+.rentivaAdminCarsFilter__searchSection {
+  margin-bottom: 24px;
+}
+
+.rentivaAdminCarsFilter__searchContainer {
+  position: relative;
+  max-width: 400px;
+}
+
+.rentivaAdminCarsFilter__searchInput {
+  width: 100%;
+  height: 48px;
+  background: transparent;
+  border: 1px solid #393939;
+  color: #fff;
+  font-size: 16px;
+  font-family: "Bai Jamjuree", sans-serif;
+  font-weight: 400;
+  padding: 0 48px 0 18px;
+  outline: none;
+  border-radius: 0;
+  box-sizing: border-box;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.rentivaAdminCarsFilter__searchInput:focus {
+  border-color: #C3845E;
+  box-shadow: 0 0 0 2px rgba(195, 132, 94, 0.1);
+}
+
+.rentivaAdminCarsFilter__searchInput::placeholder {
+  color: #bdbdbd;
+  font-size: 16px;
+  font-family: "Bai Jamjuree", sans-serif;
+  font-weight: 400;
+  opacity: 1;
+}
+
+.rentivaAdminCarsFilter__searchIcon {
+  position: absolute;
+  right: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #a6a6a6;
+  width: 20px;
+  height: 20px;
+}
+
+.rentivaAdminCarsFilter__searchButton {
+  background: linear-gradient(135deg, #C3845E, #E8A075);
+  border: none;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 500;
+  font-family: "Bai Jamjuree", sans-serif;
+  padding: 12px 20px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  margin-left: 12px;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.rentivaAdminCarsFilter__searchButton:hover {
+  background: linear-gradient(135deg, #E8A075, #F2B088);
+  transform: translateY(-2px);
+}
+
+.rentivaAdminCarsFilter__filtersGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.rentivaAdminCarsFilter__inputGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.rentivaAdminCarsFilter__label {
+  color: #a6a6a6;
+  font-size: 14px;
+  font-weight: 500;
+  margin: 0;
+  font-family: "Bai Jamjuree", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.rentivaAdminCarsFilter__select {
+  height: 48px;
+  background: transparent;
+  border: 1px solid #393939;
+  color: #fff;
+  font-size: 16px;
+  font-family: "Bai Jamjuree", sans-serif;
+  font-weight: 400;
+  padding: 0 18px;
+  outline: none;
+  border-radius: 0;
+  box-sizing: border-box;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.rentivaAdminCarsFilter__select:focus {
+  border-color: #C3845E;
+  box-shadow: 0 0 0 2px rgba(195, 132, 94, 0.1);
+}
+
+.rentivaAdminCarsFilter__select option {
+  background: #181818;
+  color: #ffffff;
+  padding: 8px;
+}
+
+.rentivaAdminCarsFilter__numberInput {
+  height: 48px;
+  background: transparent;
+  border: 1px solid #393939;
+  color: #fff;
+  font-size: 16px;
+  font-family: "Bai Jamjuree", sans-serif;
+  font-weight: 400;
+  padding: 0 18px;
+  outline: none;
+  border-radius: 0;
+  box-sizing: border-box;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.rentivaAdminCarsFilter__numberInput:focus {
+  border-color: #C3845E;
+  box-shadow: 0 0 0 2px rgba(195, 132, 94, 0.1);
+}
+
+.rentivaAdminCarsFilter__numberInput::placeholder {
+  color: #bdbdbd;
+  font-size: 16px;
+  font-family: "Bai Jamjuree", sans-serif;
+  font-weight: 400;
+  opacity: 1;
+}
+
+.rentivaAdminCarsFilter__priceRange {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  gap: 12px;
+  align-items: center;
+}
+
+.rentivaAdminCarsFilter__priceSeparator {
+  color: #a6a6a6;
+  font-size: 16px;
+  font-weight: 500;
+  text-align: center;
+}
+
+.rentivaAdminCarsFilter__actions {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.rentivaAdminCarsFilter__applyButton {
+  background: linear-gradient(135deg, #C3845E, #E8A075);
+  border: none;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 500;
+  font-family: "Bai Jamjuree", sans-serif;
+  padding: 12px 24px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.rentivaAdminCarsFilter__applyButton:hover {
+  background: linear-gradient(135deg, #E8A075, #F2B088);
+  transform: translateY(-2px);
+}
+
+.rentivaAdminCarsFilter__clearButton {
+  background: transparent;
+  border: 1px solid #ff4444;
+  color: #ff4444;
+  font-size: 14px;
+  font-weight: 500;
+  font-family: "Bai Jamjuree", sans-serif;
+  padding: 12px 24px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.rentivaAdminCarsFilter__clearButton:hover {
+  background: rgba(255, 68, 68, 0.1);
+  color: #ff6b6b;
+}
+
+.rentivaAdminCarsFilter__clearButton:active {
+  transform: translateY(1px);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .rentivaAdminCarsFilter {
+    padding: 16px;
+  }
+  
+  .rentivaAdminCarsFilter__filtersGrid {
+    grid-template-columns: 1fr;
+  }
+  
+  .rentivaAdminCarsFilter__searchContainer {
+    max-width: 100%;
+  }
+  
+  .rentivaAdminCarsFilter__priceRange {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+  
+  .rentivaAdminCarsFilter__priceSeparator {
+    display: none;
+  }
+  
+  .rentivaAdminCarsFilter__actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .rentivaAdminCarsFilter__applyButton,
+  .rentivaAdminCarsFilter__clearButton {
+    justify-content: center;
+  }
+}
+
+/* Animations */
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.rentivaAdminCarsFilter {
+  animation: slideDown 0.4s ease-out;
+}
+
+.rentivaAdminCarsFilter__inputGroup {
+  animation: slideDown 0.4s ease-out;
+  animation-fill-mode: backwards;
+}
+
+.rentivaAdminCarsFilter__inputGroup:nth-child(1) { animation-delay: 0.1s; }
+.rentivaAdminCarsFilter__inputGroup:nth-child(2) { animation-delay: 0.2s; }
+.rentivaAdminCarsFilter__inputGroup:nth-child(3) { animation-delay: 0.3s; }
+.rentivaAdminCarsFilter__inputGroup:nth-child(4) { animation-delay: 0.4s; }
+.rentivaAdminCarsFilter__inputGroup:nth-child(5) { animation-delay: 0.5s; }
+.rentivaAdminCarsFilter__inputGroup:nth-child(6) { animation-delay: 0.6s; }
