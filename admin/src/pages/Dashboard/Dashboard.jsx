@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import CarService from '../../services/car.service';
 import { toast } from 'react-toastify';
 
@@ -67,19 +67,19 @@ const Dashboard = () => {
       <div className="rentivaDashboard__container">
         <div className="rentivaDashboard__header">
           <p className="rentivaDashboard__title">Dashboard</p>
-          <Link 
+          <NavLink 
             to="/cars/new"
             className="rentivaDashboard__addButton"
           >
-            <span>+</span> Dodaj Samochód
-          </Link>
+            Dodaj samochód
+          </NavLink>
         </div>
 
         {/* Statystyki */}
         <div className="rentivaDashboard__statsGrid">
           <div className="rentivaDashboard__statCard rentivaDashboard__statCard--primary">
             <div className="rentivaDashboard__statHeader">
-              <div className="rentivaDashboard__statIcon">🚗</div>
+              {/* <div className="rentivaDashboard__statIcon">🚗</div> */}
               <p className="rentivaDashboard__statLabel">Wszystkie Samochody</p>
             </div>
             <p className="rentivaDashboard__statValue">{stats.totalCars}</p>
@@ -87,7 +87,7 @@ const Dashboard = () => {
           
           <div className="rentivaDashboard__statCard rentivaDashboard__statCard--sports">
             <div className="rentivaDashboard__statHeader">
-              <div className="rentivaDashboard__statIcon rentivaDashboard__statIcon--sports">🏎️</div>
+              {/* <div className="rentivaDashboard__statIcon rentivaDashboard__statIcon--sports">🏎️</div> */}
               <p className="rentivaDashboard__statLabel">Samochody Sportowe</p>
             </div>
             <p className="rentivaDashboard__statValue">{stats.sportsCars}</p>
@@ -95,7 +95,7 @@ const Dashboard = () => {
           
           <div className="rentivaDashboard__statCard rentivaDashboard__statCard--luxury">
             <div className="rentivaDashboard__statHeader">
-              <div className="rentivaDashboard__statIcon rentivaDashboard__statIcon--luxury">💎</div>
+              {/* <div className="rentivaDashboard__statIcon rentivaDashboard__statIcon--luxury">💎</div> */}
               <p className="rentivaDashboard__statLabel">Samochody Luksusowe</p>
             </div>
             <p className="rentivaDashboard__statValue">{stats.luxuryCars}</p>
@@ -103,7 +103,7 @@ const Dashboard = () => {
           
           <div className="rentivaDashboard__statCard rentivaDashboard__statCard--power">
             <div className="rentivaDashboard__statHeader">
-              <div className="rentivaDashboard__statIcon rentivaDashboard__statIcon--power">⚡</div>
+              {/* <div className="rentivaDashboard__statIcon rentivaDashboard__statIcon--power">⚡</div> */}
               <p className="rentivaDashboard__statLabel">Duża moc (&gt;500 KM)</p>
             </div>
             <p className="rentivaDashboard__statValue">{stats.highPowerCars}</p>

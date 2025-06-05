@@ -66,8 +66,8 @@
 
 .rentivaDashboard__addButton:hover {
   background: linear-gradient(135deg, #E8A075, #F2B088);
-  transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(195, 132, 94, 0.3);
+  /* transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(195, 132, 94, 0.3); */
 }
 
 /* Stats Grid */
@@ -93,8 +93,8 @@
 
 .rentivaDashboard__statCard:hover {
   border-color: #C3845E;
-  transform: translateY(-4px);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+  /* transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3); */
 }
 
 .rentivaDashboard__statCard--primary {

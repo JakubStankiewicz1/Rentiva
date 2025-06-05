@@ -43,21 +43,21 @@ const Sidebar = ({ mobileOpen, handleDrawerToggle }) => {
                   }`}
                   onClick={mobileOpen ? handleDrawerToggle : undefined}
                 >
-                  <span className="rentivaAdminSidebar__menuIcon">{item.icon}</span>
+                  {/* <span className="rentivaAdminSidebar__menuIcon">{item.icon}</span> */}
                   <p className="rentivaAdminSidebar__menuText">{item.text}</p>
                 </Link>
               </li>
             ))}
           </ul>
           
-          <div className="rentivaAdminSidebar__divider"></div>
+          {/* <div className="rentivaAdminSidebar__divider"></div> */}
           
           <div className="rentivaAdminSidebar__logoutSection">
             <button 
               className="rentivaAdminSidebar__logoutButton"
               onClick={handleLogout}
             >
-              <span className="rentivaAdminSidebar__logoutIcon">🚪</span>
+              {/* <span className="rentivaAdminSidebar__logoutIcon">🚪</span> */}
               <p className="rentivaAdminSidebar__menuText">Wyloguj</p>
             </button>
           </div>

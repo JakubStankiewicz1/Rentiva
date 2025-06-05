@@ -2,10 +2,14 @@ import React from 'react';
 import './carCard.css';
 import { Link } from 'react-router-dom';
 
-const CarCard = ({ car, onDelete }) => {
-  // Funkcja do ekstrakcji pierwszego obrazu z listy
+const CarCard = ({ car, onDelete }) => {  // Funkcja do ekstrakcji pierwszego obrazu z listy
   const getFirstImage = () => {
-    if (car.images && car.images.length > 0) {
+    if (car.images && car.images.length > 0 && car.images[0]) {
+      // Sprawdź czy to jest już pełny URL
+      if (car.images[0].startsWith('http://') || car.images[0].startsWith('https://')) {
+        return car.images[0];
+      }
+      // Fallback dla starych danych - dodaj /images/ prefix
       return `/images/${car.images[0]}.jpg`;
     }
     return '/images/car-placeholder.jpg'; // Domyślne zdjęcie

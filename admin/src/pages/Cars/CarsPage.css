@@ -5,7 +5,6 @@
   font-family: 'Bai Jamjuree', sans-serif;
   background: linear-gradient(135deg, #0f0f0f 0%, #1a1a1a 100%);
   min-height: 100vh;
-  padding: 40px;
   width: calc(100vw - 240px);
   margin-left: 240px;
   position: relative;
@@ -14,14 +13,14 @@
 .cars-page-header {
   background: linear-gradient(135deg, #181818 0%, #242424 100%);
   border: 1px solid #393939;
-  border-radius: 20px;
+  /* border-radius: 20px; */
   padding: 32px 40px;
-  margin-bottom: 32px;
+  /* margin-bottom: 32px; */
   position: relative;
   overflow: hidden;
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
 }
-
+/* 
 .cars-page-header::before {
   content: '';
   position: absolute;
@@ -30,7 +29,7 @@
   right: 0;
   height: 4px;
   background: linear-gradient(90deg, #C3845E 0%, #E8A075 100%);
-}
+} */
 
 .cars-page-title {
   color: #ffffff !important;
@@ -50,7 +49,7 @@
   background: linear-gradient(135deg, #C3845E 0%, #E8A075 100%) !important;
   border: none !important;
   color: #ffffff !important;
-  border-radius: 16px !important;
+  /* border-radius: 16px !important; */
   padding: 14px 32px !important;
   text-transform: none !important;
   font-weight: 600 !important;
@@ -268,7 +267,7 @@
 .cars-page-form-header {
   background: linear-gradient(135deg, #181818 0%, #242424 100%);
   border: 1px solid #393939;
-  border-radius: 20px;
+  /* border-radius: 20px; */
   padding: 40px;
   margin-bottom: 32px;
   position: relative;
@@ -315,7 +314,7 @@
   background: linear-gradient(135deg, #393939 0%, #4a4a4a 100%) !important;
   border: 1px solid #555555 !important;
   color: #ffffff !important;
-  border-radius: 12px !important;
+  /* border-radius: 12px !important; */
   padding: 12px 24px !important;
   text-transform: none !important;
   font-weight: 500 !important;

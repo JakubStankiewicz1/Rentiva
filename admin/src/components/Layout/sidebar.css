@@ -90,7 +90,7 @@
 .rentivaAdminSidebar__menuLink--active {
   background: linear-gradient(135deg, rgba(195, 132, 94, 0.2), rgba(195, 132, 94, 0.1));
   color: #C3845E;
-  border-left: 3px solid #C3845E;
+  /* border-left: 3px solid #C3845E; */
   padding-left: 13px;
 }
 

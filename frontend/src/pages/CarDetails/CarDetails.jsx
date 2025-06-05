@@ -16,16 +16,36 @@ const CarDetails = () => {
   const { id } = useParams();
   const { getCarById, selectCar, loading, error } = useRentiva();
   
-  const car = getCarById(id);
+  const [car, setCar] = React.useState(null);
+  const [carLoading, setCarLoading] = React.useState(true);
+  const [carError, setCarError] = React.useState(null);
   
-  // Select the car for context state
+  // Fetch car data on component mount
   React.useEffect(() => {
-    if (car) {
-      selectCar(id);
-    }
-  }, [id, car, selectCar]);
+    const fetchCar = async () => {
+      try {
+        setCarLoading(true);
+        setCarError(null);
+        const carData = await getCarById(id);
+        setCar(carData);
+        
+        if (carData) {
+          selectCar(id);
+        }
+      } catch (err) {
+        console.error('Error fetching car details:', err);
+        setCarError('Nie udało się załadować szczegółów samochodu');
+      } finally {
+        setCarLoading(false);
+      }
+    };
 
-  if (loading) {
+    if (id) {
+      fetchCar();
+    }
+  }, [id, getCarById, selectCar]);
+
+  if (loading || carLoading) {
     return (
       <div className="carDetails">
         <div className="carDetails__container">
@@ -34,22 +54,20 @@ const CarDetails = () => {
       </div>
     );
   }
-
-  if (error) {
+  if (error || carError) {
     return (
       <div className="carDetails">
         <div className="carDetails__container">
-          <h1>Error: {error}</h1>
+          <h1>Błąd: {error || carError}</h1>
         </div>
       </div>
     );
   }
-
   if (!car) {
     return (
       <div className="carDetails">
         <div className="carDetails__container">
-          <h1>Car not found</h1>
+          <h1>Samochód nie został znaleziony</h1>
         </div>
       </div>
     );

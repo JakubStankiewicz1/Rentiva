@@ -1,17 +1,6 @@
 import React, { useState } from 'react';
-import { 
-  Box, 
-  TextField, 
-  InputAdornment, 
-  FormControl, 
-  InputLabel, 
-  MenuItem, 
-  Select,
-  Button,
-  Grid,
-  Typography
-} from '@mui/material';
 import { Search as SearchIcon, FilterList as FilterIcon, Clear as ClearIcon } from '@mui/icons-material';
+import './carsFilter.css';
 
 const CarsFilter = ({ onFilter, onSearch, onClear, brands, types }) => {
   const [filters, setFilters] = useState({
@@ -24,6 +13,7 @@ const CarsFilter = ({ onFilter, onSearch, onClear, brands, types }) => {
   });
   
   const [searchQuery, setSearchQuery] = useState('');
+  const [isFiltering, setIsFiltering] = useState(false);
   
   const handleFilterChange = (e) => {
     const { name, value } = e.target;
@@ -35,14 +25,27 @@ const CarsFilter = ({ onFilter, onSearch, onClear, brands, types }) => {
   
   const handleSearchChange = (e) => {
     setSearchQuery(e.target.value);
+    // Real-time search with debounce could be added here
   };
   
-  const applyFilters = () => {
-    onFilter(filters);
+  const applyFilters = async () => {
+    setIsFiltering(true);
+    try {
+      await onFilter(filters);
+    } finally {
+      setIsFiltering(false);
+    }
   };
   
-  const applySearch = () => {
-    onSearch(searchQuery);
+  const applySearch = async () => {
+    if (searchQuery.trim()) {
+      setIsFiltering(true);
+      try {
+        await onSearch(searchQuery);
+      } finally {
+        setIsFiltering(false);
+      }
+    }
   };
   
   const clearFilters = () => {
@@ -55,157 +58,163 @@ const CarsFilter = ({ onFilter, onSearch, onClear, brands, types }) => {
       sortBy: ''
     });
     setSearchQuery('');
+    setIsFiltering(false);
     onClear();
   };
 
-  return (
-    <Box sx={{ mb: 4 }}>
-      <Typography variant="h6" sx={{ mb: 2 }}>Filtrowanie i wyszukiwanie</Typography>
+  // Check if any filters are active
+  const hasActiveFilters = Object.values(filters).some(value => value !== '') || searchQuery !== '';  return (
+    <div className={`rentivaAdminCarsFilter ${isFiltering ? 'rentivaAdminCarsFilter--loading' : ''}`}>
+      <div className="rentivaAdminCarsFilter__header">
+        <FilterIcon className="rentivaAdminCarsFilter__icon" />
+        <h2 className="rentivaAdminCarsFilter__title">Filtrowanie i wyszukiwanie</h2>
+        {hasActiveFilters && (
+          <span style={{ 
+            color: '#C3845E', 
+            fontSize: '12px', 
+            fontWeight: '500',
+            background: 'rgba(195, 132, 94, 0.1)',
+            padding: '4px 8px',
+            borderRadius: '4px',
+            marginLeft: 'auto'
+          }}>
+            Aktywne filtry
+          </span>
+        )}
+      </div>
       
-      <Grid container spacing={2} alignItems="center">
-        {/* Wyszukiwanie */}
-        <Grid item xs={12} sm={6} md={4}>
-          <TextField
-            fullWidth
-            label="Szukaj samochodu"
-            variant="outlined"
+      {/* Search Section */}
+      <div className="rentivaAdminCarsFilter__searchSection">
+        <div className="rentivaAdminCarsFilter__searchContainer">
+          <input
+            type="text"
+            className="rentivaAdminCarsFilter__searchInput"
+            placeholder="Szukaj samochodu po nazwie lub marce..."
             value={searchQuery}
             onChange={handleSearchChange}
-            InputProps={{
-              endAdornment: (
-                <InputAdornment position="end">
-                  <SearchIcon sx={{ cursor: 'pointer' }} onClick={applySearch} />
-                </InputAdornment>
-              ),
-            }}
             onKeyPress={(e) => {
               if (e.key === 'Enter') {
                 applySearch();
               }
             }}
           />
-        </Grid>
+          <SearchIcon 
+            className="rentivaAdminCarsFilter__searchIcon" 
+            onClick={applySearch}
+            style={{ cursor: 'pointer' }}
+          />
+        </div>
+      </div>
+      
+      {/* Filters Grid */}
+      <div className="rentivaAdminCarsFilter__filtersGrid">
+        <div className="rentivaAdminCarsFilter__inputGroup">
+          <label className="rentivaAdminCarsFilter__label">Marka</label>
+          <select
+            name="brand"
+            value={filters.brand}
+            onChange={handleFilterChange}
+            className="rentivaAdminCarsFilter__select"
+          >
+            <option value="">Wszystkie marki</option>
+            {brands.map((brand) => (
+              <option key={brand} value={brand}>{brand}</option>
+            ))}
+          </select>
+        </div>
         
-        {/* Filtry */}
-        <Grid item xs={12} sm={6} md={2}>
-          <FormControl fullWidth>
-            <InputLabel>Marka</InputLabel>
-            <Select
-              name="brand"
-              value={filters.brand}
-              label="Marka"
-              onChange={handleFilterChange}
-            >
-              <MenuItem value="">Wszystkie</MenuItem>
-              {brands.map((brand) => (
-                <MenuItem key={brand} value={brand}>{brand}</MenuItem>
-              ))}
-            </Select>
-          </FormControl>
-        </Grid>
+        <div className="rentivaAdminCarsFilter__inputGroup">
+          <label className="rentivaAdminCarsFilter__label">Typ</label>
+          <select
+            name="type"
+            value={filters.type}
+            onChange={handleFilterChange}
+            className="rentivaAdminCarsFilter__select"
+          >
+            <option value="">Wszystkie typy</option>
+            {types.map((type) => (
+              <option key={type} value={type}>{type}</option>
+            ))}
+          </select>
+        </div>
         
-        <Grid item xs={12} sm={6} md={2}>
-          <FormControl fullWidth>
-            <InputLabel>Typ</InputLabel>
-            <Select
-              name="type"
-              value={filters.type}
-              label="Typ"
-              onChange={handleFilterChange}
-            >
-              <MenuItem value="">Wszystkie</MenuItem>
-              {types.map((type) => (
-                <MenuItem key={type} value={type}>{type}</MenuItem>
-              ))}
-            </Select>
-          </FormControl>
-        </Grid>
-        
-        <Grid item xs={12} sm={6} md={2}>
-          <TextField
-            fullWidth
-            label="Min. moc (KM)"
-            variant="outlined"
+        <div className="rentivaAdminCarsFilter__inputGroup">
+          <label className="rentivaAdminCarsFilter__label">Min. moc (KM)</label>
+          <input
             type="number"
             name="minPower"
             value={filters.minPower}
             onChange={handleFilterChange}
-            InputProps={{
-              inputProps: { min: 0 }
-            }}
-          />
-        </Grid>
+            placeholder="np. 150"
+            min="0"
+            className="rentivaAdminCarsFilter__numberInput"
+          />        </div>
         
-        <Grid item xs={12} sm={6} md={2}>
-          <TextField
-            fullWidth
-            label="Min. cena (PLN)"
-            variant="outlined"
-            type="number"
-            name="minPrice"
-            value={filters.minPrice}
+        <div className="rentivaAdminCarsFilter__inputGroup">
+          <label className="rentivaAdminCarsFilter__label">Sortowanie</label>
+          <select
+            name="sortBy"
+            value={filters.sortBy}
             onChange={handleFilterChange}
-            InputProps={{
-              inputProps: { min: 0 }
-            }}
-          />
-        </Grid>
-        
-        <Grid item xs={12} sm={6} md={2}>
-          <TextField
-            fullWidth
-            label="Max. cena (PLN)"
-            variant="outlined"
-            type="number"
-            name="maxPrice"
-            value={filters.maxPrice}
-            onChange={handleFilterChange}
-            InputProps={{
-              inputProps: { min: 0 }
-            }}
-          />
-        </Grid>
-        
-        <Grid item xs={12} sm={6} md={2}>
-          <FormControl fullWidth>
-            <InputLabel>Sortowanie</InputLabel>
-            <Select
-              name="sortBy"
-              value={filters.sortBy}
-              label="Sortowanie"
+            className="rentivaAdminCarsFilter__select"
+          >
+            <option value="">Domyślne</option>
+            <option value="price-asc">Cena: rosnąco</option>
+            <option value="price-desc">Cena: malejąco</option>
+            <option value="power">Moc: malejąco</option>
+            <option value="name">Alfabetycznie</option>
+          </select>
+        </div>
+      </div>
+      
+      {/* Price Range Section */}
+      <div className="rentivaAdminCarsFilter__priceSection">
+        <div className="rentivaAdminCarsFilter__inputGroup">
+          <label className="rentivaAdminCarsFilter__label">Zakres cenowy (PLN/dzień)</label>
+          <div className="rentivaAdminCarsFilter__priceRange">
+            <input
+              type="number"
+              name="minPrice"
+              value={filters.minPrice}
               onChange={handleFilterChange}
-            >
-              <MenuItem value="">Domyślne</MenuItem>
-              <MenuItem value="price-asc">Cena: rosnąco</MenuItem>
-              <MenuItem value="price-desc">Cena: malejąco</MenuItem>
-              <MenuItem value="power">Moc: malejąco</MenuItem>
-            </Select>
-          </FormControl>
-        </Grid>
+              placeholder="Min. cena"
+              min="0"
+              className="rentivaAdminCarsFilter__numberInput"
+            />
+            <span className="rentivaAdminCarsFilter__priceSeparator">-</span>
+            <input
+              type="number"
+              name="maxPrice"
+              value={filters.maxPrice}
+              onChange={handleFilterChange}
+              placeholder="Max. cena"
+              min="0"
+              className="rentivaAdminCarsFilter__numberInput"
+            />
+          </div>
+        </div>
+      </div>
+        {/* Action Buttons */}
+      <div className="rentivaAdminCarsFilter__actions">
+        <button
+          className="rentivaAdminCarsFilter__applyButton"
+          onClick={applyFilters}
+          disabled={isFiltering}
+        >
+          <FilterIcon style={{ width: '16px', height: '16px' }} />
+          {isFiltering ? 'Filtrowanie...' : 'Zastosuj filtry'}
+        </button>
         
-        <Grid item xs={12} sm={6} md={2}>
-          <Button
-            variant="contained"
-            startIcon={<FilterIcon />}
-            onClick={applyFilters}
-            fullWidth
-          >
-            Filtruj
-          </Button>
-        </Grid>
-        
-        <Grid item xs={12} sm={6} md={2}>
-          <Button
-            variant="outlined"
-            startIcon={<ClearIcon />}
-            onClick={clearFilters}
-            fullWidth
-          >
-            Wyczyść
-          </Button>
-        </Grid>
-      </Grid>
-    </Box>
+        <button
+          className="rentivaAdminCarsFilter__clearButton"
+          onClick={clearFilters}
+          disabled={isFiltering}
+        >
+          <ClearIcon style={{ width: '16px', height: '16px' }} />
+          Wyczyść filtry
+        </button>
+      </div>
+    </div>
   );
 };
 

@@ -96,19 +96,22 @@
   align-items: center;
   gap: 12px;
   position: relative;
+  height: 100%;
 }
 
 .rentivaAdminHeader__userButton {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 12px;
   background: none;
   border: none;
   color: #ffffff;
   cursor: pointer;
-  padding: 8px 12px;
-  border-radius: 4px;
+  padding: 8px 16px;
+  border-radius: 8px;
   transition: background 0.2s ease;
+  height: 48px;
+  min-height: 48px;
 }
 
 .rentivaAdminHeader__userButton:hover {
@@ -126,6 +129,7 @@
   justify-content: center;
   font-weight: 600;
   font-size: 14px;
+  flex-shrink: 0;
 }
 
 .rentivaAdminHeader__userName {
@@ -133,6 +137,11 @@
   font-size: 14px;
   font-weight: 500;
   font-family: "Bai Jamjuree", sans-serif;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 12px;
 }
 
 .rentivaAdminHeader__userName--mobile {

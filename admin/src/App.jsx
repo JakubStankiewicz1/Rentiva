@@ -69,13 +69,12 @@ function App() {
             <Route element={<Layout />}>
               {/* Dashboard route */}
               <Route index element={<Dashboard />} />
-              
-              {/* Cars routes */}
+                {/* Cars routes */}
               <Route path="cars">
                 <Route index element={<CarsPage />} />
                 <Route path="new" element={<CarForm />} />
                 <Route path=":id" element={<CarDetails />} />
-                <Route path=":id/edit" element={<CarForm />} />
+                <Route path="edit/:id" element={<CarForm />} />
               </Route>
             </Route>
           </Route>

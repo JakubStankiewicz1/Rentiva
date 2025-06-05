@@ -1,7 +1,8 @@
 
 import React, { createContext, useContext, useState, useEffect } from 'react';
 import assets from '../assets/assets';
-import carsData from '../assets/carsData.json';
+import CarService from '../services/car.service';
+import ImageService from '../services/image.service';
 
 // Tworzymy kontekst
 const RentivaContext = createContext();
@@ -49,25 +50,85 @@ export const RentivaProvider = ({ children }) => {
       acceleration: "2.5",
     },
   ];
-
-  // Inicjalizacja danych samochodów
+  // Inicjalizacja danych samochodów z backendu
   useEffect(() => {
     const initializeCars = async () => {
       try {
         setLoading(true);
+        setError(null);
         
-        // Mapujemy dane z JSON na pełne obiekty z obrazami z assets
-        const processedCars = carsData.map(car => ({
-          ...car,
-          images: car.images.map(imageName => assets[imageName]).filter(Boolean),
-          mainImage: assets[car.images[0]] || null,
-        }));
+        // Pobierz dane samochodów z backendu
+        const carsData = await CarService.getAllCars();
+          // Przetwórz dane - dodaj obrazy
+        const processedCars = await Promise.all(
+          carsData.map(async (car) => {
+            try {
+              // Najpierw spróbuj użyć obrazów z danych samochodu (z backendu)
+              let finalImages = [];
+              
+              if (car.images && car.images.length > 0) {
+                // Przejdź przez obrazy z backendu
+                finalImages = car.images.map(imagePath => {
+                  // Jeśli to URL, użyj go bezpośrednio
+                  if (imagePath.startsWith('http://') || imagePath.startsWith('https://')) {
+                    return imagePath;
+                  }
+                  // Jeśli to nazwa z assets, znajdź w assets
+                  if (assets[imagePath]) {
+                    return assets[imagePath];
+                  }
+                  // W przeciwnym razie spróbuj jako ścieżka do pliku
+                  return ImageService.getImageUrl(imagePath);
+                }).filter(Boolean);
+              }
+              
+              // Jeśli nadal nie ma obrazów, spróbuj pobrać z endpointu files
+              if (finalImages.length === 0) {
+                try {
+                  const carImages = await ImageService.getCarImages(car.id);
+                  finalImages = carImages.map(img => 
+                    ImageService.getImageUrl(img.url || img.path)
+                  ).filter(Boolean);
+                } catch (imgError) {
+                  console.warn(`Nie udało się pobrać obrazów z endpointu files dla ${car.id}`);
+                }
+              }
+              
+              return {
+                ...car,
+                images: finalImages,
+                mainImage: finalImages[0] || null,
+                // Zachowaj oryginalne obrazy dla debugowania
+                originalImages: car.images || []
+              };
+            } catch (imageError) {
+              console.warn(`Błąd podczas przetwarzania obrazów dla samochodu ${car.id}:`, imageError);
+              
+              return {
+                ...car,
+                images: [],
+                mainImage: null,
+                originalImages: car.images || []
+              };
+            }
+          })
+        );
         
         setCars(processedCars);
-        setError(null);
+        console.log('Pomyślnie załadowano samochody z backendu:', processedCars);
+        
       } catch (err) {
-        console.error('Error loading cars data:', err);
-        setError('Failed to load cars data');
+        console.error('Błąd podczas ładowania danych samochodów z backendu:', err);
+        setError('Nie udało się załadować danych samochodów z serwera');
+        
+        // Fallback - możemy spróbować załadować dane z JSON jako backup
+        try {
+          console.log('Próba fallback - ładowanie z lokalnych danych...');
+          // Tu można dodać fallback do lokalnych danych jeśli potrzebne
+          setError('Połączenie z serwerem niedostępne. Pracujesz w trybie offline.');
+        } catch (fallbackError) {
+          console.error('Fallback również nie udany:', fallbackError);
+        }
       } finally {
         setLoading(false);
       }
@@ -75,45 +136,169 @@ export const RentivaProvider = ({ children }) => {
 
     initializeCars();
   }, []);
-
-  // Funkcja do pobierania samochodu po ID
-  const getCarById = (id) => {
-    return cars.find(car => car.id === id) || null;
+  // Funkcja do pobierania samochodu po ID - z backendu lub cache
+  const getCarById = async (id) => {
+    // Najpierw sprawdź w cache (lokalny stan)
+    const cachedCar = cars.find(car => car.id === id);
+    if (cachedCar) {
+      return cachedCar;
+    }
+    
+    // Jeśli nie ma w cache, pobierz z backendu
+    try {
+      const carData = await CarService.getCarById(id);
+      
+      // Pobierz obrazy
+      const carImages = await ImageService.getCarImages(id);
+      const imageUrls = carImages.map(img => 
+        ImageService.getImageUrl(img.url || img.path)
+      ).filter(Boolean);
+      
+      const processedCar = {
+        ...carData,
+        images: imageUrls,
+        mainImage: imageUrls[0] || null,
+        originalImages: carData.images || []
+      };
+      
+      // Dodaj do cache
+      setCars(prevCars => {
+        const existingIndex = prevCars.findIndex(car => car.id === id);
+        if (existingIndex >= 0) {
+          // Zaktualizuj istniejący
+          const newCars = [...prevCars];
+          newCars[existingIndex] = processedCar;
+          return newCars;
+        } else {
+          // Dodaj nowy
+          return [...prevCars, processedCar];
+        }
+      });
+      
+      return processedCar;
+    } catch (error) {
+      console.error(`Błąd podczas pobierania samochodu ${id}:`, error);
+      return null;
+    }
   };
 
   // Funkcja do pobierania samochodów po typie/kategorii
-  const getCarsByType = (type) => {
-    // Można rozszerzyć w przyszłości o filtrowanie po typie
-    return cars.filter(car => car.type === type);
+  const getCarsByType = async (type) => {
+    try {
+      const carsData = await CarService.getCarsByType(type);
+      
+      // Przetwórz dane podobnie jak w initializeCars
+      const processedCars = await Promise.all(
+        carsData.map(async (car) => {
+          const carImages = await ImageService.getCarImages(car.id);
+          const imageUrls = carImages.map(img => 
+            ImageService.getImageUrl(img.url || img.path)
+          ).filter(Boolean);
+          
+          return {
+            ...car,
+            images: imageUrls,
+            mainImage: imageUrls[0] || null,
+            originalImages: car.images || []
+          };
+        })
+      );
+      
+      return processedCars;
+    } catch (error) {
+      console.error(`Błąd podczas pobierania samochodów typu ${type}:`, error);
+      // Fallback - filtruj z lokalnego cache
+      return cars.filter(car => car.type === type);
+    }
   };
 
   // Funkcja do wyszukiwania samochodów
-  const searchCars = (query) => {
-    if (!query) return cars;
+  const searchCars = async (query) => {
+    if (!query || query.trim() === '') {
+      return cars; // Zwróć wszystkie samochody jeśli brak query
+    }
     
-    const lowercaseQuery = query.toLowerCase();
-    return cars.filter(car => 
-      car.title.toLowerCase().includes(lowercaseQuery) ||
-      car.engine.toLowerCase().includes(lowercaseQuery) ||
-      car.power.toLowerCase().includes(lowercaseQuery)
-    );
+    try {
+      const searchResults = await CarService.searchCars(query);
+      
+      // Przetwórz wyniki
+      const processedResults = await Promise.all(
+        searchResults.map(async (car) => {
+          const carImages = await ImageService.getCarImages(car.id);
+          const imageUrls = carImages.map(img => 
+            ImageService.getImageUrl(img.url || img.path)
+          ).filter(Boolean);
+          
+          return {
+            ...car,
+            images: imageUrls,
+            mainImage: imageUrls[0] || null,
+            originalImages: car.images || []
+          };
+        })
+      );
+      
+      return processedResults;
+    } catch (error) {
+      console.error('Błąd podczas wyszukiwania:', error);
+      
+      // Fallback - wyszukaj lokalnie
+      const lowercaseQuery = query.toLowerCase();
+      return cars.filter(car => 
+        car.title?.toLowerCase().includes(lowercaseQuery) ||
+        car.brand?.toLowerCase().includes(lowercaseQuery) ||
+        car.model?.toLowerCase().includes(lowercaseQuery) ||
+        car.engine?.toLowerCase().includes(lowercaseQuery)
+      );
+    }
   };
-
   // Funkcja do pobierania dostępnych brandów
-  const getAvailableBrands = () => {
-    const brands = cars.map(car => {
-      // Wyciągamy brand z tytułu (np. "Bugatti Chiron 110 ANS" -> "Bugatti")
-      return car.title.split(' ')[0];
-    });
-    
-    return [...new Set(brands)]; // Usuwamy duplikaty
+  const getAvailableBrands = async () => {
+    try {
+      // Spróbuj pobrać z backendu
+      const brands = await CarService.getAvailableBrands();
+      return brands;
+    } catch (error) {
+      console.error('Błąd podczas pobierania marek z backendu:', error);
+      
+      // Fallback - wyciągnij z lokalnych danych
+      const brands = cars.map(car => car.brand || car.title?.split(' ')[0]).filter(Boolean);
+      return [...new Set(brands)]; // Usuń duplikaty
+    }
   };
 
   // Funkcja do filtrowania po brandzie
-  const getCarsByBrand = (brand) => {
-    return cars.filter(car => 
-      car.title.toLowerCase().includes(brand.toLowerCase())
-    );
+  const getCarsByBrand = async (brand) => {
+    try {
+      const carsData = await CarService.getCarsByBrand(brand);
+      
+      // Przetwórz dane
+      const processedCars = await Promise.all(
+        carsData.map(async (car) => {
+          const carImages = await ImageService.getCarImages(car.id);
+          const imageUrls = carImages.map(img => 
+            ImageService.getImageUrl(img.url || img.path)
+          ).filter(Boolean);
+          
+          return {
+            ...car,
+            images: imageUrls,
+            mainImage: imageUrls[0] || null,
+            originalImages: car.images || []
+          };
+        })
+      );
+      
+      return processedCars;
+    } catch (error) {
+      console.error(`Błąd podczas pobierania samochodów marki ${brand}:`, error);
+      
+      // Fallback - filtruj lokalnie
+      return cars.filter(car => 
+        car.brand?.toLowerCase() === brand.toLowerCase() ||
+        car.title?.toLowerCase().includes(brand.toLowerCase())
+      );
+    }
   };
 
   // Stan dla wybranego samochodu (przydatne dla CarDetails)
@@ -122,19 +307,57 @@ export const RentivaProvider = ({ children }) => {
     setSelectedCar(car);
     return car;
   };
-
   // Funkcja do pobierania obrazów samochodu
   const getCarImages = (car) => {
-    if (!car || !car.images) return [];
-    return car.images;
+    if (!car) return [];
+    
+    // Zwróć obrazy z backendu jeśli są dostępne
+    if (car.images && car.images.length > 0) {
+      return car.images;
+    }
+    
+    // Fallback - spróbuj zmapować oryginalne nazwy
+    if (car.originalImages && car.originalImages.length > 0) {
+      return car.originalImages.map(imageName => assets[imageName]).filter(Boolean);
+    }
+    
+    return [];
   };
 
   // Funkcja do pobierania głównego obrazu samochodu
   const getCarMainImage = (car) => {
-    if (!car || !car.images || car.images.length === 0) return null;
-    return car.images[0];
+    if (!car) return null;
+    
+    // Zwróć główny obraz z backendu
+    if (car.mainImage) {
+      return car.mainImage;
+    }
+    
+    // Fallback - pierwszy obraz z listy
+    const images = getCarImages(car);
+    return images.length > 0 ? images[0] : null;
   };
 
+  // Dodatkowa funkcja do odświeżania danych samochodu
+  const refreshCarData = async (carId) => {
+    try {
+      const updatedCar = await getCarById(carId);
+      return updatedCar;
+    } catch (error) {
+      console.error(`Błąd podczas odświeżania danych samochodu ${carId}:`, error);
+      return null;
+    }
+  };
+
+  // Funkcja do sprawdzania dostępności samochodu
+  const checkCarAvailability = async (carId, startDate, endDate) => {
+    try {
+      return await CarService.checkCarAvailability(carId, startDate, endDate);
+    } catch (error) {
+      console.error(`Błąd podczas sprawdzania dostępności samochodu ${carId}:`, error);
+      throw error;
+    }
+  };
   // Dane kontekstu
   const contextValue = {
     // Stan
@@ -144,17 +367,25 @@ export const RentivaProvider = ({ children }) => {
     error,
     selectedCar,
     
-    // Funkcje
+    // Funkcje async (z backendu)
     getCarById,
     getCarsByType,
     getCarsByBrand,
     searchCars,
     getAvailableBrands,
+    refreshCarData,
+    checkCarAvailability,
+    
+    // Funkcje sync (pomocnicze)
     selectCar,
     getCarImages,
     getCarMainImage,
     
-    // Assets helper
+    // Services (dostęp bezpośredni jeśli potrzebny)
+    CarService,
+    ImageService,
+    
+    // Assets helper (fallback)
     assets,
   };
 

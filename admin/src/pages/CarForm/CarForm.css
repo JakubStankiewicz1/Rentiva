@@ -1,11 +1,9 @@
-/* CarForm - Premium Admin Styling */
 @import url('https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@300;400;500;600;700&display=swap');
 
 .car-form-container {
   font-family: 'Bai Jamjuree', sans-serif;
   background: linear-gradient(135deg, #0f0f0f 0%, #1a1a1a 100%) !important;
   min-height: 100vh !important;
-  padding: 40px !important;
   width: calc(100vw - 240px) !important;
   margin-left: 240px !important;
   position: relative;
@@ -15,22 +13,10 @@
 .car-form-header {
   background: linear-gradient(135deg, #181818 0%, #242424 100%) !important;
   border: 1px solid #393939 !important;
-  border-radius: 20px !important;
   padding: 40px !important;
-  margin-bottom: 40px !important;
   position: relative;
   overflow: hidden;
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3) !important;
-}
-
-.car-form-header::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 4px;
-  background: linear-gradient(90deg, #C3845E 0%, #E8A075 100%);
 }
 
 .car-form-title {
@@ -75,7 +61,7 @@
 .car-form-main-paper {
   background: linear-gradient(135deg, #181818 0%, #242424 100%) !important;
   border: 1px solid #393939 !important;
-  border-radius: 24px !important;
+  /* border-radius: 24px !important; */
   padding: 48px !important;
   box-shadow: 0 16px 48px rgba(0, 0, 0, 0.4) !important;
   position: relative;
