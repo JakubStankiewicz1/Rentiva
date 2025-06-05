@@ -43,7 +43,8 @@ const CarDetailsKilometers = ({ car }) => {
                                 </p>
                             </th>
                           </tr>
-                        </thead>                        <tbody>
+                        </thead>
+                        <tbody>
                           <tr>
                             <td>
                                 <p className="carDetailsKilometersTableTextTwo bai-jamjuree-regular">

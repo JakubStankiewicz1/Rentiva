@@ -19,8 +19,7 @@ const CarDetails = () => {
   const [car, setCar] = React.useState(null);
   const [carLoading, setCarLoading] = React.useState(true);
   const [carError, setCarError] = React.useState(null);
-  
-  // Fetch car data on component mount
+    // Fetch car data on component mount
   React.useEffect(() => {
     const fetchCar = async () => {
       try {
@@ -43,7 +42,7 @@ const CarDetails = () => {
     if (id) {
       fetchCar();
     }
-  }, [id, getCarById, selectCar]);
+  }, [id]); // Remove getCarById and selectCar from dependencies to prevent infinite loop
 
   if (loading || carLoading) {
     return (

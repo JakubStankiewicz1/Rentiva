@@ -4,6 +4,10 @@ import { IoMdSpeedometer } from "react-icons/io";
 import { PiEngineBold } from "react-icons/pi";
 import { RiTimerLine } from "react-icons/ri";
 import { CiDollar } from "react-icons/ci";
+import { BsFuelPump } from "react-icons/bs";
+import { TbManualGearbox } from "react-icons/tb";
+import { GiCarWheel } from "react-icons/gi";
+import { MdSpeed } from "react-icons/md";
 
 const CarDetailsSpecs = ({ car }) => {
   return (
@@ -18,14 +22,10 @@ const CarDetailsSpecs = ({ car }) => {
         </div>
 
         {/* List */}
-        <div className="carDetailsSpecsContainerList">
-
-
-
-          {/* 1 */}
+        <div className="carDetailsSpecsContainerList">          {/* 1 */}
           <div className="carDetailsSpecsContainerListItem">
             <div className="carDetailsSpecsContainerListItemIcon">
-              <IoMdSpeedometer className="carDetailsSpecsContainerIcon" />
+              <PiEngineBold className="carDetailsSpecsContainerIcon" />
             </div>
             <div className="carDetailsSpecsContainerListItemValue">
               <p className="carDetailsSpecsContainerListItemValueText bai-jamjuree-regular">
@@ -35,7 +35,7 @@ const CarDetailsSpecs = ({ car }) => {
 
             <div className="carDetailsSpecsContainerListItemLabel">
               <p className="carDetailsSpecsContainerListItemLabelText bai-jamjuree-regular">
-                power
+                engine
               </p>
             </div>
             
@@ -50,16 +50,16 @@ const CarDetailsSpecs = ({ car }) => {
           {/* 2 */}
           <div className="carDetailsSpecsContainerListItem">
             <div className="carDetailsSpecsContainerListItemIcon">
-              <PiEngineBold className="carDetailsSpecsContainerIcon" />
+              <IoMdSpeedometer className="carDetailsSpecsContainerIcon" />
             </div>
             <div className="carDetailsSpecsContainerListItemValue">
               <p className="carDetailsSpecsContainerListItemValueText bai-jamjuree-regular">
-                {car.power}
+                {car.power} HP
               </p>
             </div>
             <div className="carDetailsSpecsContainerListItemLabel">
               <p className="carDetailsSpecsContainerListItemLabelText bai-jamjuree-regular">
-                engine
+                power
               </p>
             </div>
           </div>
@@ -70,10 +70,9 @@ const CarDetailsSpecs = ({ car }) => {
           <div className="carDetailsSpecsContainerListItem">
             <div className="carDetailsSpecsContainerListItemIcon">
               <RiTimerLine className="carDetailsSpecsContainerIcon" />
-            </div>
-            <div className="carDetailsSpecsContainerListItemValue">
+            </div>            <div className="carDetailsSpecsContainerListItemValue">
               <p className="carDetailsSpecsContainerListItemValueText bai-jamjuree-regular">
-                {car.acceleration}
+                {car.acceleration}s
               </p>
             </div>
             <div className="carDetailsSpecsContainerListItemLabel">
@@ -94,10 +93,89 @@ const CarDetailsSpecs = ({ car }) => {
               <p className="carDetailsSpecsContainerListItemValueText bai-jamjuree-regular">
                 {car.grossPrice}zł
               </p>
+            </div>            <div className="carDetailsSpecsContainerListItemLabel">
+              <p className="carDetailsSpecsContainerListItemLabelText bai-jamjuree-regular">
+                gross 7day
+              </p>
+            </div>
+          </div>
+          <div className="carDetailsSpecsContainerDivider">
+            <div className="carDetailsSpecsContainerDividerLine" />
+          </div>
+          
+          {/* 5 - Max Speed */}
+          <div className="carDetailsSpecsContainerListItem">
+            <div className="carDetailsSpecsContainerListItemIcon">
+              <MdSpeed className="carDetailsSpecsContainerIcon" />
+            </div>
+            <div className="carDetailsSpecsContainerListItemValue">
+              <p className="carDetailsSpecsContainerListItemValueText bai-jamjuree-regular">
+                {car.maxSpeed} km/h
+              </p>
             </div>
             <div className="carDetailsSpecsContainerListItemLabel">
               <p className="carDetailsSpecsContainerListItemLabelText bai-jamjuree-regular">
-                gross 7day
+                max speed
+              </p>
+            </div>
+          </div>
+          <div className="carDetailsSpecsContainerDivider">
+            <div className="carDetailsSpecsContainerDividerLine" />
+          </div>
+
+          {/* 6 - Fuel Type */}
+          <div className="carDetailsSpecsContainerListItem">
+            <div className="carDetailsSpecsContainerListItemIcon">
+              <BsFuelPump className="carDetailsSpecsContainerIcon" />
+            </div>
+            <div className="carDetailsSpecsContainerListItemValue">
+              <p className="carDetailsSpecsContainerListItemValueText bai-jamjuree-regular">
+                {car.fuelType}
+              </p>
+            </div>
+            <div className="carDetailsSpecsContainerListItemLabel">
+              <p className="carDetailsSpecsContainerListItemLabelText bai-jamjuree-regular">
+                fuel type
+              </p>
+            </div>
+          </div>
+          <div className="carDetailsSpecsContainerDivider">
+            <div className="carDetailsSpecsContainerDividerLine" />
+          </div>
+
+          {/* 7 - Transmission */}
+          <div className="carDetailsSpecsContainerListItem">
+            <div className="carDetailsSpecsContainerListItemIcon">
+              <TbManualGearbox className="carDetailsSpecsContainerIcon" />
+            </div>
+            <div className="carDetailsSpecsContainerListItemValue">
+              <p className="carDetailsSpecsContainerListItemValueText bai-jamjuree-regular">
+                {car.transmission}
+              </p>
+            </div>
+            <div className="carDetailsSpecsContainerListItemLabel">
+              <p className="carDetailsSpecsContainerListItemLabelText bai-jamjuree-regular">
+                transmission
+              </p>
+            </div>
+          </div>
+          <div className="carDetailsSpecsContainerDivider">
+            <div className="carDetailsSpecsContainerDividerLine" />
+          </div>
+
+          {/* 8 - Drivetrain */}
+          <div className="carDetailsSpecsContainerListItem">
+            <div className="carDetailsSpecsContainerListItemIcon">
+              <GiCarWheel className="carDetailsSpecsContainerIcon" />
+            </div>
+            <div className="carDetailsSpecsContainerListItemValue">
+              <p className="carDetailsSpecsContainerListItemValueText bai-jamjuree-regular">
+                {car.drivetrain}
+              </p>
+            </div>
+            <div className="carDetailsSpecsContainerListItemLabel">
+              <p className="carDetailsSpecsContainerListItemLabelText bai-jamjuree-regular">
+                drivetrain
               </p>
             </div>
           </div>

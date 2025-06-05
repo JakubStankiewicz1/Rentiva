@@ -63,7 +63,8 @@ const CarDetailsTariff = ({ car }) => {
                 </th>
               </tr>
             </thead>
-            <tbody>              <tr>
+            <tbody>
+              <tr>
                 <td>
                   <span className="carDetailsTariffTableValue">
                     <p className="carDetailsTariffTableValueTextOne bai-jamjuree-regular">{pricing.daily} PLN</p>
