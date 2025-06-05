@@ -297,280 +297,279 @@ const CarForm = () => {
             <form onSubmit={formik.handleSubmit}>
               <Grid container spacing={4} className="car-form-grid-container">
                 
-                {/* Basic Information Section */}
-                <Grid item xs={12}>
-                  <Box>
+                {/* Basic Information Section */}                <Grid item xs={12}>
+                  <div className="car-form-section">
                     <Typography variant="h5" component="h2" className="car-form-section-title">
                       <CarIcon className="car-form-section-icon" />
                       Podstawowe informacje
                     </Typography>
-                    <Divider className="car-form-divider" />
-                  </Box>
-                </Grid>
+                    
+                    <div className="car-form-field-group">
+                      <div className="car-form-basic-info">
+                        {isEditMode && (
+                          <TextField
+                            fullWidth
+                            id="id"
+                            name="id"
+                            label="ID (niemodyfikowalne)"
+                            value={formik.values.id}
+                            disabled
+                            className="car-form-text-field"
+                          />
+                        )}
 
-                {isEditMode && (
-                  <Grid item xs={12} sm={6}>
-                    <TextField
-                      fullWidth
-                      id="id"
-                      name="id"
-                      label="ID (niemodyfikowalne)"
-                      value={formik.values.id}
-                      disabled
-                      className="car-form-text-field"
-                    />
-                  </Grid>
-                )}
+                        <TextField
+                          fullWidth
+                          id="title"
+                          name="title"
+                          label="Tytuł *"
+                          value={formik.values.title}
+                          onChange={formik.handleChange}
+                          onBlur={formik.handleBlur}
+                          error={formik.touched.title && Boolean(formik.errors.title)}
+                          helperText={formik.touched.title && formik.errors.title}
+                          required
+                          className="car-form-text-field"
+                          placeholder="np. Lamborghini Huracán Performante"
+                        />
 
-                <Grid item xs={12} sm={6}>
-                  <TextField
-                    fullWidth
-                    id="title"
-                    name="title"
-                    label="Tytuł *"
-                    value={formik.values.title}
-                    onChange={formik.handleChange}
-                    onBlur={formik.handleBlur}
-                    error={formik.touched.title && Boolean(formik.errors.title)}
-                    helperText={formik.touched.title && formik.errors.title}
-                    required
-                    className="car-form-text-field"
-                    placeholder="np. Lamborghini Huracán Performante"
-                  />
-                </Grid>
+                        <TextField
+                          fullWidth
+                          id="brand"
+                          name="brand"
+                          label="Marka *"
+                          value={formik.values.brand}
+                          onChange={formik.handleChange}
+                          onBlur={formik.handleBlur}
+                          error={formik.touched.brand && Boolean(formik.errors.brand)}
+                          helperText={formik.touched.brand && formik.errors.brand}
+                          required
+                          className="car-form-text-field"
+                          placeholder="np. Lamborghini"
+                        />
 
-                <Grid item xs={12} sm={6}>
-                  <TextField
-                    fullWidth
-                    id="brand"
-                    name="brand"
-                    label="Marka *"
-                    value={formik.values.brand}
-                    onChange={formik.handleChange}
-                    onBlur={formik.handleBlur}
-                    error={formik.touched.brand && Boolean(formik.errors.brand)}
-                    helperText={formik.touched.brand && formik.errors.brand}
-                    required
-                    className="car-form-text-field"
-                    placeholder="np. Lamborghini"
-                  />
-                </Grid>
+                        <TextField
+                          fullWidth
+                          id="model"
+                          name="model"
+                          label="Model *"
+                          value={formik.values.model}
+                          onChange={formik.handleChange}
+                          onBlur={formik.handleBlur}
+                          error={formik.touched.model && Boolean(formik.errors.model)}
+                          helperText={formik.touched.model && formik.errors.model}
+                          required
+                          className="car-form-text-field"
+                          placeholder="np. Huracán Performante"
+                        />
 
-                <Grid item xs={12} sm={6}>
-                  <TextField
-                    fullWidth
-                    id="model"
-                    name="model"
-                    label="Model *"
-                    value={formik.values.model}
-                    onChange={formik.handleChange}
-                    onBlur={formik.handleBlur}
-                    error={formik.touched.model && Boolean(formik.errors.model)}
-                    helperText={formik.touched.model && formik.errors.model}
-                    required
-                    className="car-form-text-field"
-                    placeholder="np. Huracán Performante"
-                  />
-                </Grid>
-
-                <Grid item xs={12} sm={6}>
-                  <TextField
-                    fullWidth
-                    id="engine"
-                    name="engine"
-                    label="Silnik *"
-                    value={formik.values.engine}
-                    onChange={formik.handleChange}
-                    onBlur={formik.handleBlur}
-                    error={formik.touched.engine && Boolean(formik.errors.engine)}
-                    helperText={formik.touched.engine && formik.errors.engine}
-                    required
-                    className="car-form-text-field"
-                    placeholder="np. 5.2L V10 Naturally Aspirated"
-                  />
-                </Grid>
-
-                {/* Performance Section */}
+                        <TextField
+                          fullWidth
+                          id="engine"
+                          name="engine"
+                          label="Silnik *"
+                          value={formik.values.engine}
+                          onChange={formik.handleChange}
+                          onBlur={formik.handleBlur}
+                          error={formik.touched.engine && Boolean(formik.errors.engine)}
+                          helperText={formik.touched.engine && formik.errors.engine}
+                          required
+                          className="car-form-text-field"
+                          placeholder="np. 5.2L V10 Naturally Aspirated"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </Grid>                {/* Performance Section */}
                 <Grid item xs={12}>
-                  <Box sx={{ mt: 4 }}>
+                  <div className="car-form-section">
+                    <div className="car-form-section-separator"></div>
                     <Typography variant="h5" component="h2" className="car-form-section-title">
                       <SpeedIcon className="car-form-section-icon" />
                       Osiągi
                     </Typography>
-                    <Divider className="car-form-divider" />
-                  </Box>
-                </Grid>
+                    
+                    <div className="car-form-field-group">
+                      <div className="car-form-performance-specs">
+                        <TextField
+                          fullWidth
+                          id="power"
+                          name="power"
+                          label="Moc (KM) *"
+                          type="number"
+                          value={formik.values.power}
+                          onChange={formik.handleChange}
+                          onBlur={formik.handleBlur}
+                          error={formik.touched.power && Boolean(formik.errors.power)}
+                          helperText={formik.touched.power && formik.errors.power}
+                          required
+                          className="car-form-text-field"
+                          inputProps={{ min: 0 }}
+                        />
 
-                <Grid item xs={12} sm={6} md={4}>
-                  <TextField
-                    fullWidth
-                    id="power"
-                    name="power"
-                    label="Moc (KM) *"
-                    type="number"
-                    value={formik.values.power}
-                    onChange={formik.handleChange}
-                    onBlur={formik.handleBlur}
-                    error={formik.touched.power && Boolean(formik.errors.power)}
-                    helperText={formik.touched.power && formik.errors.power}
-                    required
-                    className="car-form-text-field"
-                    inputProps={{ min: 0 }}
-                  />
-                </Grid>
+                        <TextField
+                          fullWidth
+                          id="acceleration"
+                          name="acceleration"
+                          label="0-100 km/h (s) *"
+                          type="number"
+                          value={formik.values.acceleration}
+                          onChange={formik.handleChange}
+                          onBlur={formik.handleBlur}
+                          error={formik.touched.acceleration && Boolean(formik.errors.acceleration)}
+                          helperText={formik.touched.acceleration && formik.errors.acceleration}
+                          required
+                          className="car-form-text-field"
+                          inputProps={{ min: 0, step: 0.1 }}
+                        />
 
-                <Grid item xs={12} sm={6} md={4}>
-                  <TextField
-                    fullWidth
-                    id="acceleration"
-                    name="acceleration"
-                    label="0-100 km/h (s) *"
-                    type="number"
-                    value={formik.values.acceleration}
-                    onChange={formik.handleChange}
-                    onBlur={formik.handleBlur}
-                    error={formik.touched.acceleration && Boolean(formik.errors.acceleration)}
-                    helperText={formik.touched.acceleration && formik.errors.acceleration}
-                    required
-                    className="car-form-text-field"
-                    inputProps={{ min: 0, step: 0.1 }}
-                  />
-                </Grid>
-
-                <Grid item xs={12} sm={6} md={4}>
-                  <TextField
-                    fullWidth
-                    id="maxSpeed"
-                    name="maxSpeed"
-                    label="V-max (km/h) *"
-                    type="number"
-                    value={formik.values.maxSpeed}
-                    onChange={formik.handleChange}
-                    onBlur={formik.handleBlur}
-                    error={formik.touched.maxSpeed && Boolean(formik.errors.maxSpeed)}
-                    helperText={formik.touched.maxSpeed && formik.errors.maxSpeed}
-                    required
-                    className="car-form-text-field"
-                    inputProps={{ min: 0 }}
-                  />
-                </Grid>
-
-                {/* Technical Specifications */}
+                        <TextField
+                          fullWidth
+                          id="maxSpeed"
+                          name="maxSpeed"
+                          label="V-max (km/h) *"
+                          type="number"
+                          value={formik.values.maxSpeed}
+                          onChange={formik.handleChange}
+                          onBlur={formik.handleBlur}
+                          error={formik.touched.maxSpeed && Boolean(formik.errors.maxSpeed)}
+                          helperText={formik.touched.maxSpeed && formik.errors.maxSpeed}
+                          required
+                          className="car-form-text-field"
+                          inputProps={{ min: 0 }}
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </Grid>                {/* Technical Specifications */}
                 <Grid item xs={12}>
-                  <Box sx={{ mt: 4 }}>
+                  <div className="car-form-section">
+                    <div className="car-form-section-separator"></div>
                     <Typography variant="h5" component="h2" className="car-form-section-title">
                       <SettingsIcon className="car-form-section-icon" />
                       Specyfikacja techniczna
                     </Typography>
-                    <Divider className="car-form-divider" />
-                  </Box>
+                    <div className="car-form-field-group">
+                      <div className="car-form-fuel-transmission">
+                        <TextField
+                          fullWidth
+                          id="fuelType"
+                          name="fuelType"
+                          label="Rodzaj paliwa *"
+                          value={formik.values.fuelType}
+                          onChange={formik.handleChange}
+                          onBlur={formik.handleBlur}
+                          error={formik.touched.fuelType && Boolean(formik.errors.fuelType)}
+                          helperText={formik.touched.fuelType && formik.errors.fuelType}
+                          required
+                          select
+                          className="car-form-text-field"
+                        >
+                          <MenuItem value="Benzyna">Benzyna</MenuItem>
+                          <MenuItem value="Diesel">Diesel</MenuItem>
+                          <MenuItem value="Elektryczny">Elektryczny</MenuItem>
+                          <MenuItem value="Hybryda">Hybryda</MenuItem>
+                          <MenuItem value="Plug-in Hybrid">Plug-in Hybrid</MenuItem>
+                        </TextField>
+
+                        <TextField
+                          fullWidth
+                          id="transmission"
+                          name="transmission"
+                          label="Skrzynia biegów *"
+                          value={formik.values.transmission}
+                          onChange={formik.handleChange}
+                          onBlur={formik.handleBlur}
+                          error={formik.touched.transmission && Boolean(formik.errors.transmission)}
+                          helperText={formik.touched.transmission && formik.errors.transmission}
+                          required
+                          select
+                          className="car-form-text-field"
+                        >
+                          <MenuItem value="Manual">Manualna</MenuItem>
+                          <MenuItem value="Automatic">Automatyczna</MenuItem>
+                          <MenuItem value="Semi-Automatic">Półautomatyczna</MenuItem>
+                          <MenuItem value="CVT">CVT</MenuItem>
+                          <MenuItem value="Dual-Clutch">Dual-Clutch</MenuItem>
+                        </TextField>
+
+                        <TextField
+                          fullWidth
+                          id="drivetrain"
+                          name="drivetrain"
+                          label="Napęd *"
+                          value={formik.values.drivetrain}
+                          onChange={formik.handleChange}
+                          onBlur={formik.handleBlur}
+                          error={formik.touched.drivetrain && Boolean(formik.errors.drivetrain)}
+                          helperText={formik.touched.drivetrain && formik.errors.drivetrain}
+                          required
+                          select
+                          className="car-form-text-field"
+                        >
+                          <MenuItem value="FWD">FWD (przód)</MenuItem>
+                          <MenuItem value="RWD">RWD (tył)</MenuItem>
+                          <MenuItem value="AWD">AWD (wszystkie koła)</MenuItem>
+                          <MenuItem value="4WD">4WD (4x4)</MenuItem>
+                        </TextField>
+
+                        <TextField
+                          fullWidth
+                          id="type"
+                          name="type"
+                          label="Typ *"
+                          value={formik.values.type}
+                          onChange={formik.handleChange}
+                          onBlur={formik.handleBlur}
+                          error={formik.touched.type && Boolean(formik.errors.type)}
+                          helperText={formik.touched.type && formik.errors.type}
+                          required
+                          select
+                          className="car-form-text-field"
+                        >
+                          <MenuItem value="Sports">Sportowy</MenuItem>
+                          <MenuItem value="Luxury">Luksusowy</MenuItem>
+                          <MenuItem value="SUV">SUV</MenuItem>
+                          <MenuItem value="Sedan">Sedan</MenuItem>
+                          <MenuItem value="Coupe">Coupe</MenuItem>
+                          <MenuItem value="Convertible">Kabriolet</MenuItem>
+                          <MenuItem value="Supercar">Supercar</MenuItem>
+                          <MenuItem value="Hypercar">Hypercar</MenuItem>
+                        </TextField>
+                      </div>
+                    </div>
+                  </div>
                 </Grid>
 
-                <Grid item xs={12} sm={6}>
-                  <TextField
-                    fullWidth
-                    id="fuelType"
-                    name="fuelType"
-                    label="Rodzaj paliwa *"
-                    value={formik.values.fuelType}
-                    onChange={formik.handleChange}
-                    onBlur={formik.handleBlur}
-                    error={formik.touched.fuelType && Boolean(formik.errors.fuelType)}
-                    helperText={formik.touched.fuelType && formik.errors.fuelType}
-                    required
-                    select
-                    className="car-form-text-field"
-                  >
-                    <MenuItem value="Benzyna">Benzyna</MenuItem>
-                    <MenuItem value="Diesel">Diesel</MenuItem>
-                    <MenuItem value="Elektryczny">Elektryczny</MenuItem>
-                    <MenuItem value="Hybryda">Hybryda</MenuItem>
-                    <MenuItem value="Plug-in Hybrid">Plug-in Hybrid</MenuItem>
-                  </TextField>
+                {/* Price Section na pełną szerokość */}
+                <Grid item xs={12}>
+                  <div className="car-form-section">
+                    <div className="car-form-section-separator"></div>
+                    <div className="car-form-field-group">
+                      <Typography variant="h5" component="h2" className="car-form-section-title">
+                        <PriceIcon className="car-form-section-icon" />
+                        Cennik podstawowy
+                      </Typography>
+                      <TextField
+                        fullWidth
+                        id="grossPrice"
+                        name="grossPrice"
+                        label="Cena podstawowa (PLN/dzień) *"
+                        type="number"
+                        value={formik.values.grossPrice}
+                        onChange={formik.handleChange}
+                        onBlur={formik.handleBlur}
+                        error={formik.touched.grossPrice && Boolean(formik.errors.grossPrice)}
+                        helperText={formik.touched.grossPrice && formik.errors.grossPrice}
+                        required
+                        className="car-form-text-field"
+                        inputProps={{ min: 0 }}
+                      />
+                    </div>
+                  </div>
                 </Grid>
 
-                <Grid item xs={12} sm={6}>
-                  <TextField
-                    fullWidth
-                    id="transmission"
-                    name="transmission"
-                    label="Skrzynia biegów *"
-                    value={formik.values.transmission}
-                    onChange={formik.handleChange}
-                    onBlur={formik.handleBlur}
-                    error={formik.touched.transmission && Boolean(formik.errors.transmission)}
-                    helperText={formik.touched.transmission && formik.errors.transmission}
-                    required
-                    className="car-form-text-field"
-                    placeholder="np. 7-biegowa DSG"
-                  />
-                </Grid>
-
-                <Grid item xs={12} sm={6}>
-                  <TextField
-                    fullWidth
-                    id="drivetrain"
-                    name="drivetrain"
-                    label="Napęd *"
-                    value={formik.values.drivetrain}
-                    onChange={formik.handleChange}
-                    onBlur={formik.handleBlur}
-                    error={formik.touched.drivetrain && Boolean(formik.errors.drivetrain)}
-                    helperText={formik.touched.drivetrain && formik.errors.drivetrain}
-                    required
-                    select
-                    className="car-form-text-field"
-                  >
-                    <MenuItem value="FWD">FWD (przód)</MenuItem>
-                    <MenuItem value="RWD">RWD (tył)</MenuItem>
-                    <MenuItem value="AWD">AWD (wszystkie koła)</MenuItem>
-                    <MenuItem value="4WD">4WD (4x4)</MenuItem>
-                  </TextField>
-                </Grid>
-
-                <Grid item xs={12} sm={6}>
-                  <TextField
-                    fullWidth
-                    id="type"
-                    name="type"
-                    label="Typ *"
-                    value={formik.values.type}
-                    onChange={formik.handleChange}
-                    onBlur={formik.handleBlur}
-                    error={formik.touched.type && Boolean(formik.errors.type)}
-                    helperText={formik.touched.type && formik.errors.type}
-                    required
-                    select
-                    className="car-form-text-field"
-                  >
-                    <MenuItem value="Sports">Sportowy</MenuItem>
-                    <MenuItem value="Luxury">Luksusowy</MenuItem>
-                    <MenuItem value="SUV">SUV</MenuItem>
-                    <MenuItem value="Sedan">Sedan</MenuItem>
-                    <MenuItem value="Coupe">Coupe</MenuItem>
-                    <MenuItem value="Convertible">Kabriolet</MenuItem>
-                    <MenuItem value="Supercar">Supercar</MenuItem>
-                    <MenuItem value="Hypercar">Hypercar</MenuItem>
-                  </TextField>
-                </Grid>
-
-                <Grid item xs={12} sm={6}>
-                  <TextField
-                    fullWidth
-                    id="grossPrice"
-                    name="grossPrice"
-                    label="Cena podstawowa (PLN/dzień) *"
-                    type="number"
-                    value={formik.values.grossPrice}
-                    onChange={formik.handleChange}
-                    onBlur={formik.handleBlur}
-                    error={formik.touched.grossPrice && Boolean(formik.errors.grossPrice)}
-                    helperText={formik.touched.grossPrice && formik.errors.grossPrice}
-                    required
-                    className="car-form-text-field"
-                    inputProps={{ min: 0 }}
-                  />
-                </Grid>                {/* Images Section */}
+                {/* Images Section na pełną szerokość */}
                 <Grid item xs={12}>
                   <Accordion className="car-form-accordion">
                     <AccordionSummary

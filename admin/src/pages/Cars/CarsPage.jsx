@@ -19,6 +19,7 @@ import CarService from '../../services/car.service';
 import CarCard from '../../components/Car/CarCard';
 import CarsFilter from '../../components/Car/CarsFilter';
 import { toast } from 'react-toastify';
+import './CarsPage.css';
 
 const CarsPage = () => {
   const [loading, setLoading] = useState(true);
@@ -153,23 +154,27 @@ const CarsPage = () => {
       </Box>
     );
   }
-
   return (
-    <Box>
-      <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', mb: 4 }}>
-        <Typography variant="h4" component="h1">
-          Zarządzanie Samochodami
-        </Typography>
-        <Button 
-          variant="contained" 
-          color="primary" 
-          startIcon={<AddIcon />}
-          component={Link}
-          to="/cars/new"
-        >
-          Dodaj Samochód
-        </Button>
-      </Box>
+    <div className="cars-page-container">
+      <div className="cars-page-header">
+        <div className="cars-page-header-actions">
+          <Typography variant="h4" component="h1" className="cars-page-title">
+            Zarządzanie Samochodami
+          </Typography>
+          <Button 
+            variant="contained" 
+            color="primary" 
+            startIcon={<AddIcon />}
+            component={Link}
+            to="/cars/new"
+            className="cars-page-add-button"
+          >
+            Dodaj Samochód
+          </Button>
+        </div>
+      </div>
+
+      <div className="cars-page-content">
 
       {error && (
         <Alert severity="error" sx={{ mb: 4 }}>
@@ -218,10 +223,10 @@ const CarsPage = () => {
           </Button>
           <Button onClick={handleDeleteConfirm} color="error" autoFocus>
             Usuń
-          </Button>
-        </DialogActions>
+          </Button>        </DialogActions>
       </Dialog>
-    </Box>
+      </div>
+    </div>
   );
 };
 

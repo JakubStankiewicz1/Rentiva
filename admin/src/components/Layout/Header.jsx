@@ -35,10 +35,10 @@ const Header = ({ handleDrawerToggle }) => {
       </div>
       
       <div className="rentivaAdminHeader__right">
-        <button className="rentivaAdminHeader__notifications" aria-label="Notifications">
+        {/* <button className="rentivaAdminHeader__notifications" aria-label="Notifications">
           🔔
           <span className="rentivaAdminHeader__notificationsBadge">4</span>
-        </button>
+        </button> */}
         
         <div className="rentivaAdminHeader__userSection">
           <button
