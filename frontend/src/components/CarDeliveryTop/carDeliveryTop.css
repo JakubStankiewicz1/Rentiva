@@ -1,0 +1,212 @@
+.carDeliveryTop {
+    width: 100%;
+    height: 100%;
+
+    background-color: #202020;
+
+    padding-top: 220px;
+    padding-bottom: 100px;
+}
+
+.carDeliveryTopContainer {
+    width: 100%;
+    height: 100%;
+}
+
+.carDeliveryTopContainerDiv {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* First Part - Car Delivery Title */
+.carDeliveryTopContainerDivFirst {
+    margin-bottom: 40px;
+}
+
+.carDeliveryTopContainerDivFirstContainer {
+    text-align: center;
+}
+
+.carDeliveryTopContainerDivFirstContainerText {
+    font-size: 44px;
+    font-weight: 500;
+    line-height: 55px;
+    color: #ffffff;
+}
+
+/* Second Part - Description */
+.carDeliveryTopContainerDivSecond {
+    /* margin-bottom: 60px; */
+    /* max-width: 800px; */
+}
+
+.carDeliveryTopContainerDivSecondContainer {
+    text-align: center;
+}
+
+.carDeliveryTopContainerDivSecondContainerText {
+    color: #8B8B8B;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 22px;
+}
+
+/* Third Part - Pricing Section */
+.carDeliveryTopContainerDivThird {
+    /* margin-bottom: 40px; */
+    width: 88%;
+    /* max-width: 1000px; */
+
+    margin-left: auto;
+    margin-right: auto;
+    height: 100%;
+    margin-top: 25px;
+}
+
+.carDeliveryTopContainerDivThirdContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.carDeliveryTopContainerDivThirdContainerOne {
+    /* margin-bottom: 30px; */
+    width: 100%;
+    display: flex;
+}
+
+.carDeliveryTopContainerDivThirdContainerOneText {
+    font-size: 20px;
+    font-weight: 600;
+    color: #ffffff;
+    margin: 0;
+    text-align: center;
+}
+
+.carDeliveryTopContainerDivThirdContainerTwo {
+    width: 100%;
+    margin-top: 20px;
+}
+
+.carDeliveryTopContainerDivThirdContainerTwoContainer {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+/* Pricing Table */
+.pricingTable {
+    background-color: #202020;
+    overflow: hidden;
+    width: 100%;
+    border-right: 1px solid #404040;
+    border-top: 1px solid #404040;
+}
+
+.pricingTableRow {
+    display: flex;
+    width: 100%;
+}
+
+.pricingTableHeader {
+    background-color: #202020;
+}
+
+.pricingTableData {
+    background-color: #181818;
+}
+
+.pricingTableCell {
+    flex: 1;
+    text-align: left;
+    /* color: #FFFFFF;
+    font-size: 16px;
+    font-weight: 500; */
+    border-left: 1px solid #404040;
+    border-bottom: 1px solid #404040;
+    /* padding: 0; */
+    display: flex;
+    align-items: center;
+    height: 43px;
+}
+
+.pricingTableCellText {
+    margin: 0;
+    /* padding: 20px 10px; */
+    width: 100%;
+    /* font-size: 16px;
+    line-height: 1.2; */
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 19px;
+
+    padding-left: 15px;
+}
+
+.pricingTableCell:last-child {
+    border-right: none;
+}
+
+.pricingTableHeader .pricingTableCell {
+    font-weight: 600;
+    font-size: 18px;
+    background-color: #202020;
+}
+
+.pricingTableHeader .pricingTableCellText {
+    font-weight: 600;
+    font-size: 18px;
+    color: #FFFFFF;
+}
+
+.pricingTableData .pricingTableCell {
+    background-color: #181818;
+}
+
+.pricingTableData .pricingTableCellText {
+    color: #E8A075;
+    font-weight: 600;
+    font-size: 16px;
+}
+
+/* Fourth Part - Contact Info */
+.carDeliveryTopContainerDivFourth {
+    margin-top: 16px;
+    width: 88%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.carDeliveryTopContainerDivFourthContainer {
+    /* text-align: center; */
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+}
+
+.carDeliveryTopContainerDivFourthContainerText {
+    color: #E8A06A;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 26px;
+    letter-spacing: -0.3px;
+}
+
+.carDeliveryTopContainerDivFourthContainerTextTwo {
+        color: #E8A06A;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 26px;
+    text-decoration: underline;
+    text-decoration-color: #E8A06A;
+        letter-spacing: -0.3px;
+
+}

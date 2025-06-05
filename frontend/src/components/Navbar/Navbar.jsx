@@ -57,9 +57,9 @@ const Navbar = () => {
                             <div className="navbarContainerRightContainerOneDropdownItem">
                                 <p className="navbarContainerRightContainerOneDropdownItemText bai-jamjuree-regular">Ubezpieczenie</p>
                             </div>
-                            <div className="navbarContainerRightContainerOneDropdownItem">
+                            <NavLink className="navbarContainerRightContainerOneDropdownItem">
                                 <p className="navbarContainerRightContainerOneDropdownItemText bai-jamjuree-regular">Dowóz samochodów</p>
-                            </div>
+                            </NavLink>
                             <div className="navbarContainerRightContainerOneDropdownItem">
                                 <p className="navbarContainerRightContainerOneDropdownItemText bai-jamjuree-regular">Dodatkowy kierowca</p>
                             </div>

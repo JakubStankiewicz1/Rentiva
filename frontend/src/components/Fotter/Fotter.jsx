@@ -208,7 +208,7 @@ const Fotter = () => {
                     <div className="fotterContainerBottomContainerRight">
                         <div className="fotterContainerBottomContainerRightContaine">
                             <p className="fotterContainerBottomContainerRightContaineText">
-                                © 2023 Car Rental. All rights reserved. | Made with ❤️ by Your Name
+                                © 2025 Car Rental. All rights reserved. | Build by Jakub Stankiewicz
                             </p>
                         </div>
                     </div>

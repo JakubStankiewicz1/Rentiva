@@ -8,6 +8,7 @@ import CarDetails from './pages/CarDetails/CarDetails';
 import ContactUs from './pages/ContactUs/ContactUs';
 import Cooperation from './pages/Cooperation/Cooperation';
 import Navbar from './components/Navbar/Navbar.jsx';
+import CarDelivery from './pages/CarDelivery/CarDelivery.jsx';
 
 const App = () => {
   return (
@@ -22,6 +23,7 @@ const App = () => {
           <Route path="/cooperation" element={<Cooperation />} />
           <Route path="/contact-us" element={<ContactUs />} />
           <Route path="/car/:id" element={<CarDetails />} />
+          <Route path="/dowoz-samochodow" element={<CarDelivery />} />
           {/* <Route path="/car/:id/edit" element={<CarDetails />} /> */}
         </Routes>
         
