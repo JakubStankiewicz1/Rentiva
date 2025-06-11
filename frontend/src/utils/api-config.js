@@ -1,5 +1,7 @@
 // Konfiguracja API dla frontendu
-const API_BASE_URL = import.meta.env.DEV ? '/api' : 'http://localhost:8081/api';
+const API_BASE_URL = import.meta.env.PROD 
+  ? import.meta.env.VITE_API_URL || 'https://rentiva-backend.onrender.com/api'
+  : 'http://localhost:8081/api';
 
 // Helper funkcja do wykonywania requestów
 const apiRequest = async (endpoint, options = {}) => {
