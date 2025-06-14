@@ -14,7 +14,7 @@
 
 .rentivaAdminCarCard:hover {
   border-color: #C3845E;
-  transform: translateY(-4px);
+  /* transform: translateY(-4px); */
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
 }
 
@@ -25,9 +25,9 @@
   transition: transform 0.3s ease;
 }
 
-.rentivaAdminCarCard:hover .rentivaAdminCarCard__image {
+/* .rentivaAdminCarCard:hover .rentivaAdminCarCard__image {
   transform: scale(1.05);
-}
+} */
 
 .rentivaAdminCarCard__content {
   padding: 20px;
@@ -144,6 +144,7 @@
 .rentivaAdminCarCard__detailsButton:hover {
   background: #C3845E;
   color: #ffffff;
+  text-decoration: none;
 }
 
 .rentivaAdminCarCard__actionButtons {
@@ -171,7 +172,9 @@
 
 .rentivaAdminCarCard__editButton:hover {
   background: linear-gradient(135deg, #66bb6a, #81c784);
-  transform: translateY(-1px);
+  /* transform: translateY(-1px); */
+  color: #ffffff;
+  text-decoration: none;
 }
 
 .rentivaAdminCarCard__deleteButton {
@@ -193,26 +196,10 @@
 
 .rentivaAdminCarCard__deleteButton:hover {
   background: linear-gradient(135deg, #ff6b6b, #ff8a80);
-  transform: translateY(-1px);
+  /* transform: translateY(-1px); */
+  text-decoration: none;
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-  .rentivaAdminCarCard__actions {
-    flex-direction: column;
-    gap: 12px;
-  }
-  
-  .rentivaAdminCarCard__detailsButton {
-    width: 100%;
-    justify-content: center;
-  }
-  
-  .rentivaAdminCarCard__actionButtons {
-    width: 100%;
-    justify-content: center;
-  }
-}
 
 /* Animations */
 @keyframes fadeInUp {

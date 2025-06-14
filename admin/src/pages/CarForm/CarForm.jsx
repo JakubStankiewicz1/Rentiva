@@ -2,57 +2,26 @@ import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
-import {
-  Box,
-  Typography,
-  Grid,
-  TextField,
-  Button,
-  Paper,
-  Divider,
-  MenuItem,
-  CircularProgress,
-  Alert,
-  Accordion,
-  AccordionSummary,
-  AccordionDetails,
-  IconButton,
-  Fade,
-  Zoom
-} from '@mui/material';
-import {
-  Save as SaveIcon,
-  ArrowBack as ArrowBackIcon,
-  ExpandMore as ExpandMoreIcon,
-  Add as AddIcon,
-  Delete as DeleteIcon,
-  DirectionsCar as CarIcon,
-  Image as ImageIcon,
-  Description as DescriptionIcon,
-  AttachMoney as PriceIcon,
-  Speed as SpeedIcon,
-  Settings as SettingsIcon
-} from '@mui/icons-material';
 import CarService from '../../services/car.service';
 import FileService from '../../services/file.service';
 import ImageUpload from '../../components/Car/ImageUpload';
 import { toast } from 'react-toastify';
 import './CarForm.css';
 
-// Walidacja formularza
+// Validation schema for the car form
 const carValidationSchema = Yup.object({
-  title: Yup.string().required('Tytuł jest wymagany'),
-  brand: Yup.string().required('Marka jest wymagana'),
-  model: Yup.string().required('Model jest wymagany'),
-  engine: Yup.string().required('Silnik jest wymagany'),
-  power: Yup.number().required('Moc jest wymagana').positive('Moc musi być dodatnia'),
-  acceleration: Yup.number().required('Przyspieszenie jest wymagane').positive('Przyspieszenie musi być dodatnie'),
-  maxSpeed: Yup.number().required('Prędkość maksymalna jest wymagana').positive('Prędkość musi być dodatnia'),
-  fuelType: Yup.string().required('Rodzaj paliwa jest wymagany'),
-  transmission: Yup.string().required('Skrzynia biegów jest wymagana'),
-  drivetrain: Yup.string().required('Napęd jest wymagany'),
-  type: Yup.string().required('Typ jest wymagany'),
-  grossPrice: Yup.number().required('Cena jest wymagana').positive('Cena musi być dodatnia'),
+  title: Yup.string().required('Title is required'),
+  brand: Yup.string().required('Brand is required'),
+  model: Yup.string().required('Model is required'),
+  engine: Yup.string().required('Engine is required'),
+  power: Yup.number().required('Power is required').positive('Power must be positive'),
+  acceleration: Yup.number().required('Acceleration is required').positive('Acceleration must be positive'),
+  maxSpeed: Yup.number().required('Max speed is required').positive('Max speed must be positive'),
+  fuelType: Yup.string().required('Fuel type is required'),
+  transmission: Yup.string().required('Transmission is required'),
+  drivetrain: Yup.string().required('Drivetrain is required'),
+  type: Yup.string().required('Type is required'),
+  grossPrice: Yup.number().required('Price is required').positive('Price must be positive'),
 });
 
 const CarForm = () => {
@@ -65,6 +34,7 @@ const CarForm = () => {
   const [carImages, setCarImages] = useState([]);
   const [loadingImages, setLoadingImages] = useState(isEditMode);
 
+  // Formik setup for form handling
   const formik = useFormik({
     initialValues: {
       id: '',
@@ -109,7 +79,7 @@ const CarForm = () => {
         setSubmitLoading(true);
         setError(null);
 
-        // Konwersja wartości liczbowych
+        // Convert string values to numbers for specific fields
         const formattedValues = {
           ...values,
           power: Number(values.power),
@@ -130,36 +100,37 @@ const CarForm = () => {
           }
         };
 
-        // Usuń puste obrazy
+        // Remove empty image fields
         formattedValues.images = formattedValues.images.filter(img => img.trim() !== '');
         
-        // Jeśli nie ma obrazów, dodaj domyślny
+        // Add default image if no images are provided
         if (formattedValues.images.length === 0) {
           formattedValues.images = ['car-placeholder'];
         }
 
         if (isEditMode) {
           await CarService.updateCar(id, formattedValues);
-          toast.success('Samochód został zaktualizowany pomyślnie!');
+          toast.success('Car updated successfully!');
         } else {
-          // Generowanie ID, jeśli nie podano
+          // Generate ID if not provided
           if (!formattedValues.id || formattedValues.id.trim() === '') {
             formattedValues.id = `${formattedValues.brand.toLowerCase()}-${formattedValues.model.toLowerCase()}-${Date.now().toString().slice(-4)}`;
           }
           
           await CarService.createCar(formattedValues);
-          toast.success('Samochód został dodany pomyślnie!');
+          toast.success('Car added successfully!');
         }
 
         navigate('/cars');
       } catch (error) {
-        console.error('Błąd podczas zapisywania samochodu:', error);
-        setError(error.response?.data?.message || 'Wystąpił błąd podczas zapisywania. Spróbuj ponownie.');
+        console.error('Error saving car:', error);
+        setError(error.response?.data?.message || 'An error occurred while saving. Please try again.');
         setSubmitLoading(false);
       }
     },
   });
-  // Pobierz dane samochodu do edycji
+
+  // Fetch car data for editing
   useEffect(() => {
     const fetchCarData = async () => {
       if (isEditMode) {
@@ -169,10 +140,10 @@ const CarForm = () => {
           
           const carData = await CarService.getCarById(id);
           
-          // Wypełnij formularz danymi samochodu
+          // Populate form with car data
           formik.setValues({
             ...carData,
-            // Upewnij się, że wszystkie potrzebne obiekty istnieją
+            // Ensure all necessary objects exist
             description: carData.description || {
               title: '',
               mainText: '',
@@ -194,38 +165,39 @@ const CarForm = () => {
               excessFee: '',
               includedKm: ''
             },
-            // Zapewnij, że images to zawsze tablica
+            // Ensure images is always an array
             images: Array.isArray(carData.images) ? carData.images : ['']
           });
           
-          // Pobierz obrazy samochodu
+          // Fetch car images
           setLoadingImages(true);
           try {
             const carImages = await FileService.getCarImages(id);
             setCarImages(carImages);
           } catch (imgError) {
-            console.error('Błąd podczas pobierania obrazów samochodu:', imgError);
-            // Nie blokujemy całego formularza, jeśli obrazy nie zostały pobrane
+            console.error('Error fetching car images:', imgError);
+            // Don't block the form if images fail to load
           } finally {
             setLoadingImages(false);
           }
           
           setLoading(false);
         } catch (error) {
-          console.error('Błąd podczas pobierania danych samochodu:', error);
-          setError('Nie udało się pobrać danych samochodu. Spróbuj ponownie później.');
+          console.error('Error fetching car data:', error);
+          setError('Failed to fetch car data. Please try again later.');
           setLoading(false);
         }
       }
     };
 
-    fetchCarData();  }, [id, isEditMode]);
+    fetchCarData();
+  }, [id, isEditMode]);
 
-  // Handler dla aktualizacji obrazów
+  // Handler for updating images
   const handleImagesUpdate = (updatedImages) => {
     setCarImages(updatedImages);
     
-    // Jeśli jest główny obraz, ustawiamy jego URL jako pierwszy obraz w formularzu
+    // Set the main image URL as the first image in the form if it exists
     const mainImage = updatedImages.find(img => img.isMain);
     if (mainImage) {
       const imageUrls = updatedImages.map(img => img.url);
@@ -233,741 +205,494 @@ const CarForm = () => {
     }
   };
 
-  // Dodaj nowe pole obrazu
+  // Add a new image field
   const handleAddImage = () => {
     formik.setFieldValue('images', [...formik.values.images, '']);
   };
 
-  // Usuń pole obrazu
+  // Remove an image field
   const handleRemoveImage = (index) => {
     const updatedImages = [...formik.values.images];
     updatedImages.splice(index, 1);
     formik.setFieldValue('images', updatedImages);
   };
+
+  // Show a loading spinner while data is being fetched
   if (loading) {
     return (
       <div className="car-form-loading-container">
-        <Fade in={loading}>
-          <CircularProgress size={60} className="car-form-loading-spinner" />
-        </Fade>
+        <div className="car-form-loading-spinner" />
       </div>
     );
   }
 
   return (
     <div className="car-form-container">
-      <Fade in={true} timeout={600}>
-        <div>
-          {/* Header Section */}
-          <Paper className="car-form-header" elevation={0}>
-            <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-              <Box>
-                <Typography variant="h3" component="h1" className="car-form-title">
-                  {isEditMode ? 'Edytuj Samochód' : 'Dodaj Nowy Samochód'}
-                </Typography>
-                <Typography variant="subtitle1" className="car-form-subtitle">
-                  {isEditMode 
-                    ? 'Zaktualizuj informacje o samochodzie w systemie' 
-                    : 'Wprowadź wszystkie szczegóły nowego pojazdu'
-                  }
-                </Typography>
-              </Box>
-              <Button
-                variant="outlined"
-                startIcon={<ArrowBackIcon />}
-                onClick={() => navigate('/cars')}
-                className="car-form-back-button"
-              >
-                Powrót
-              </Button>
-            </Box>
-          </Paper>
-
-          {/* Error Alert */}
-          {error && (
-            <Zoom in={!!error}>
-              <Alert severity="error" className="car-form-error-alert">
-                {error}
-              </Alert>
-            </Zoom>
-          )}
-
-          {/* Main Form */}
-          <Paper className="car-form-main-paper" elevation={0}>
-            <form onSubmit={formik.handleSubmit}>
-              <Grid container spacing={4} className="car-form-grid-container">
-                
-                {/* Basic Information Section */}                <Grid item xs={12}>
-                  <div className="car-form-section">
-                    <Typography variant="h5" component="h2" className="car-form-section-title">
-                      <CarIcon className="car-form-section-icon" />
-                      Podstawowe informacje
-                    </Typography>
-                    
-                    <div className="car-form-field-group">
-                      <div className="car-form-basic-info">
-                        {isEditMode && (
-                          <TextField
-                            fullWidth
-                            id="id"
-                            name="id"
-                            label="ID (niemodyfikowalne)"
-                            value={formik.values.id}
-                            disabled
-                            className="car-form-text-field"
-                          />
-                        )}
-
-                        <TextField
-                          fullWidth
-                          id="title"
-                          name="title"
-                          label="Tytuł *"
-                          value={formik.values.title}
-                          onChange={formik.handleChange}
-                          onBlur={formik.handleBlur}
-                          error={formik.touched.title && Boolean(formik.errors.title)}
-                          helperText={formik.touched.title && formik.errors.title}
-                          required
-                          className="car-form-text-field"
-                          placeholder="np. Lamborghini Huracán Performante"
-                        />
-
-                        <TextField
-                          fullWidth
-                          id="brand"
-                          name="brand"
-                          label="Marka *"
-                          value={formik.values.brand}
-                          onChange={formik.handleChange}
-                          onBlur={formik.handleBlur}
-                          error={formik.touched.brand && Boolean(formik.errors.brand)}
-                          helperText={formik.touched.brand && formik.errors.brand}
-                          required
-                          className="car-form-text-field"
-                          placeholder="np. Lamborghini"
-                        />
-
-                        <TextField
-                          fullWidth
-                          id="model"
-                          name="model"
-                          label="Model *"
-                          value={formik.values.model}
-                          onChange={formik.handleChange}
-                          onBlur={formik.handleBlur}
-                          error={formik.touched.model && Boolean(formik.errors.model)}
-                          helperText={formik.touched.model && formik.errors.model}
-                          required
-                          className="car-form-text-field"
-                          placeholder="np. Huracán Performante"
-                        />
-
-                        <TextField
-                          fullWidth
-                          id="engine"
-                          name="engine"
-                          label="Silnik *"
-                          value={formik.values.engine}
-                          onChange={formik.handleChange}
-                          onBlur={formik.handleBlur}
-                          error={formik.touched.engine && Boolean(formik.errors.engine)}
-                          helperText={formik.touched.engine && formik.errors.engine}
-                          required
-                          className="car-form-text-field"
-                          placeholder="np. 5.2L V10 Naturally Aspirated"
-                        />
-                      </div>
-                    </div>
-                  </div>
-                </Grid>                {/* Performance Section */}
-                <Grid item xs={12}>
-                  <div className="car-form-section">
-                    <div className="car-form-section-separator"></div>
-                    <Typography variant="h5" component="h2" className="car-form-section-title">
-                      <SpeedIcon className="car-form-section-icon" />
-                      Osiągi
-                    </Typography>
-                    
-                    <div className="car-form-field-group">
-                      <div className="car-form-performance-specs">
-                        <TextField
-                          fullWidth
-                          id="power"
-                          name="power"
-                          label="Moc (KM) *"
-                          type="number"
-                          value={formik.values.power}
-                          onChange={formik.handleChange}
-                          onBlur={formik.handleBlur}
-                          error={formik.touched.power && Boolean(formik.errors.power)}
-                          helperText={formik.touched.power && formik.errors.power}
-                          required
-                          className="car-form-text-field"
-                          inputProps={{ min: 0 }}
-                        />
-
-                        <TextField
-                          fullWidth
-                          id="acceleration"
-                          name="acceleration"
-                          label="0-100 km/h (s) *"
-                          type="number"
-                          value={formik.values.acceleration}
-                          onChange={formik.handleChange}
-                          onBlur={formik.handleBlur}
-                          error={formik.touched.acceleration && Boolean(formik.errors.acceleration)}
-                          helperText={formik.touched.acceleration && formik.errors.acceleration}
-                          required
-                          className="car-form-text-field"
-                          inputProps={{ min: 0, step: 0.1 }}
-                        />
-
-                        <TextField
-                          fullWidth
-                          id="maxSpeed"
-                          name="maxSpeed"
-                          label="V-max (km/h) *"
-                          type="number"
-                          value={formik.values.maxSpeed}
-                          onChange={formik.handleChange}
-                          onBlur={formik.handleBlur}
-                          error={formik.touched.maxSpeed && Boolean(formik.errors.maxSpeed)}
-                          helperText={formik.touched.maxSpeed && formik.errors.maxSpeed}
-                          required
-                          className="car-form-text-field"
-                          inputProps={{ min: 0 }}
-                        />
-                      </div>
-                    </div>
-                  </div>
-                </Grid>                {/* Technical Specifications */}
-                <Grid item xs={12}>
-                  <div className="car-form-section">
-                    <div className="car-form-section-separator"></div>
-                    <Typography variant="h5" component="h2" className="car-form-section-title">
-                      <SettingsIcon className="car-form-section-icon" />
-                      Specyfikacja techniczna
-                    </Typography>
-                    <div className="car-form-field-group">
-                      <div className="car-form-fuel-transmission">
-                        <TextField
-                          fullWidth
-                          id="fuelType"
-                          name="fuelType"
-                          label="Rodzaj paliwa *"
-                          value={formik.values.fuelType}
-                          onChange={formik.handleChange}
-                          onBlur={formik.handleBlur}
-                          error={formik.touched.fuelType && Boolean(formik.errors.fuelType)}
-                          helperText={formik.touched.fuelType && formik.errors.fuelType}
-                          required
-                          select
-                          className="car-form-text-field"
-                        >
-                          <MenuItem value="Benzyna">Benzyna</MenuItem>
-                          <MenuItem value="Diesel">Diesel</MenuItem>
-                          <MenuItem value="Elektryczny">Elektryczny</MenuItem>
-                          <MenuItem value="Hybryda">Hybryda</MenuItem>
-                          <MenuItem value="Plug-in Hybrid">Plug-in Hybrid</MenuItem>
-                        </TextField>
-
-                        <TextField
-                          fullWidth
-                          id="transmission"
-                          name="transmission"
-                          label="Skrzynia biegów *"
-                          value={formik.values.transmission}
-                          onChange={formik.handleChange}
-                          onBlur={formik.handleBlur}
-                          error={formik.touched.transmission && Boolean(formik.errors.transmission)}
-                          helperText={formik.touched.transmission && formik.errors.transmission}
-                          required
-                          select
-                          className="car-form-text-field"
-                        >
-                          <MenuItem value="Manual">Manualna</MenuItem>
-                          <MenuItem value="Automatic">Automatyczna</MenuItem>
-                          <MenuItem value="Semi-Automatic">Półautomatyczna</MenuItem>
-                          <MenuItem value="CVT">CVT</MenuItem>
-                          <MenuItem value="Dual-Clutch">Dual-Clutch</MenuItem>
-                        </TextField>
-
-                        <TextField
-                          fullWidth
-                          id="drivetrain"
-                          name="drivetrain"
-                          label="Napęd *"
-                          value={formik.values.drivetrain}
-                          onChange={formik.handleChange}
-                          onBlur={formik.handleBlur}
-                          error={formik.touched.drivetrain && Boolean(formik.errors.drivetrain)}
-                          helperText={formik.touched.drivetrain && formik.errors.drivetrain}
-                          required
-                          select
-                          className="car-form-text-field"
-                        >
-                          <MenuItem value="FWD">FWD (przód)</MenuItem>
-                          <MenuItem value="RWD">RWD (tył)</MenuItem>
-                          <MenuItem value="AWD">AWD (wszystkie koła)</MenuItem>
-                          <MenuItem value="4WD">4WD (4x4)</MenuItem>
-                        </TextField>
-
-                        <TextField
-                          fullWidth
-                          id="type"
-                          name="type"
-                          label="Typ *"
-                          value={formik.values.type}
-                          onChange={formik.handleChange}
-                          onBlur={formik.handleBlur}
-                          error={formik.touched.type && Boolean(formik.errors.type)}
-                          helperText={formik.touched.type && formik.errors.type}
-                          required
-                          select
-                          className="car-form-text-field"
-                        >
-                          <MenuItem value="Sports">Sportowy</MenuItem>
-                          <MenuItem value="Luxury">Luksusowy</MenuItem>
-                          <MenuItem value="SUV">SUV</MenuItem>
-                          <MenuItem value="Sedan">Sedan</MenuItem>
-                          <MenuItem value="Coupe">Coupe</MenuItem>
-                          <MenuItem value="Convertible">Kabriolet</MenuItem>
-                          <MenuItem value="Supercar">Supercar</MenuItem>
-                          <MenuItem value="Hypercar">Hypercar</MenuItem>
-                        </TextField>
-                      </div>
-                    </div>
-                  </div>
-                </Grid>
-
-                {/* Price Section na pełną szerokość */}
-                <Grid item xs={12}>
-                  <div className="car-form-section">
-                    <div className="car-form-section-separator"></div>
-                    <div className="car-form-field-group">
-                      <Typography variant="h5" component="h2" className="car-form-section-title">
-                        <PriceIcon className="car-form-section-icon" />
-                        Cennik podstawowy
-                      </Typography>
-                      <TextField
-                        fullWidth
-                        id="grossPrice"
-                        name="grossPrice"
-                        label="Cena podstawowa (PLN/dzień) *"
-                        type="number"
-                        value={formik.values.grossPrice}
-                        onChange={formik.handleChange}
-                        onBlur={formik.handleBlur}
-                        error={formik.touched.grossPrice && Boolean(formik.errors.grossPrice)}
-                        helperText={formik.touched.grossPrice && formik.errors.grossPrice}
-                        required
-                        className="car-form-text-field"
-                        inputProps={{ min: 0 }}
-                      />
-                    </div>
-                  </div>
-                </Grid>
-
-                {/* Images Section na pełną szerokość */}
-                <Grid item xs={12}>
-                  <Accordion className="car-form-accordion">
-                    <AccordionSummary
-                      expandIcon={<ExpandMoreIcon className="car-form-accordion-icon" />}
-                      aria-controls="images-content"
-                      id="images-header"
-                      className="car-form-accordion-summary"
-                    >
-                      <Typography variant="h6" className="car-form-accordion-title">
-                        <ImageIcon className="car-form-section-icon" />
-                        Obrazy
-                      </Typography>
-                    </AccordionSummary>
-                    <AccordionDetails className="car-form-accordion-details">
-                      {/* Image Upload Component */}
-                      {isEditMode && (
-                        <Box sx={{ mb: 4 }}>
-                          {loadingImages ? (
-                            <Box sx={{ display: 'flex', justifyContent: 'center', py: 3 }}>
-                              <CircularProgress size={30} className="car-form-loading-spinner" />
-                            </Box>
-                          ) : (
-                            <ImageUpload 
-                              carId={id} 
-                              initialImages={carImages} 
-                              onImagesUpdate={handleImagesUpdate} 
-                            />
-                          )}
-                          <Divider className="car-form-divider" sx={{ my: 3 }} />
-                          <Typography variant="subtitle1" gutterBottom sx={{ color: '#a6a6a6' }}>
-                            Alternatywne linki do obrazów (opcjonalnie):
-                          </Typography>
-                        </Box>
-                      )}
-                      
-                      {!isEditMode && (
-                        <Box className="car-form-image-section">
-                          <ImageIcon sx={{ fontSize: 48, color: '#C3845E', mb: 2 }} />
-                          <Typography variant="h6" sx={{ color: '#ffffff', mb: 1 }}>
-                            Zarządzanie obrazami
-                          </Typography>
-                          <Typography variant="body2" sx={{ color: '#a6a6a6', mb: 2 }}>
-                            Obrazy można dodać po utworzeniu samochodu w systemie
-                          </Typography>
-                        </Box>
-                      )}
-
-                      {/* URL-based images */}
-                      {formik.values.images.map((image, index) => (
-                        <Box key={index} sx={{ display: 'flex', mb: 2, alignItems: 'center' }}>
-                          <TextField
-                            fullWidth
-                            label={`Obraz ${index + 1}`}
-                            value={image}
-                            onChange={(e) => {
-                              const updatedImages = [...formik.values.images];
-                              updatedImages[index] = e.target.value;
-                              formik.setFieldValue('images', updatedImages);
-                            }}
-                            placeholder="Nazwa pliku obrazu"
-                            className="car-form-text-field"
-                          />
-                          <IconButton 
-                            onClick={() => handleRemoveImage(index)}
-                            disabled={formik.values.images.length <= 1}
-                            className="car-form-delete-image-button"
-                            sx={{ ml: 1 }}
-                          >
-                            <DeleteIcon />
-                          </IconButton>
-                        </Box>
-                      ))}
-                      <Button
-                        startIcon={<AddIcon />}
-                        onClick={handleAddImage}
-                        variant="outlined"
-                        size="small"
-                        className="car-form-add-image-button"
-                        sx={{ mt: 1 }}
-                      >
-                        Dodaj obraz
-                      </Button>
-                    </AccordionDetails>
-                  </Accordion>
-                </Grid>
-
-                {/* Description Section */}
-                <Grid item xs={12}>
-                  <Accordion className="car-form-accordion">
-                    <AccordionSummary
-                      expandIcon={<ExpandMoreIcon className="car-form-accordion-icon" />}
-                      aria-controls="description-content"
-                      id="description-header"
-                      className="car-form-accordion-summary"
-                    >
-                      <Typography variant="h6" className="car-form-accordion-title">
-                        <DescriptionIcon className="car-form-section-icon" />
-                        Opis szczegółowy
-                      </Typography>
-                    </AccordionSummary>
-                    <AccordionDetails className="car-form-accordion-details">
-                      <Grid container spacing={3}>
-                        <Grid item xs={12}>
-                          <TextField
-                            fullWidth
-                            id="description.title"
-                            name="description.title"
-                            label="Tytuł opisu"
-                            value={formik.values.description.title}
-                            onChange={formik.handleChange}
-                            className="car-form-text-field"
-                            placeholder="np. Najszybszy drogowy Lamborghini"
-                          />
-                        </Grid>
-                        <Grid item xs={12}>
-                          <TextField
-                            fullWidth
-                            id="description.mainText"
-                            name="description.mainText"
-                            label="Główny tekst"
-                            value={formik.values.description.mainText}
-                            onChange={formik.handleChange}
-                            multiline
-                            rows={4}
-                            className="car-form-text-field"
-                            placeholder="Wprowadź główny opis samochodu..."
-                          />
-                        </Grid>
-                        <Grid item xs={12} sm={6}>
-                          <TextField
-                            fullWidth
-                            id="description.performance"
-                            name="description.performance"
-                            label="Osiągi"
-                            value={formik.values.description.performance}
-                            onChange={formik.handleChange}
-                            multiline
-                            rows={3}
-                            className="car-form-text-field"
-                            placeholder="Opis osiągów..."
-                          />
-                        </Grid>
-                        <Grid item xs={12} sm={6}>
-                          <TextField
-                            fullWidth
-                            id="description.accelerationDetails"
-                            name="description.accelerationDetails"
-                            label="Szczegóły przyspieszenia"
-                            value={formik.values.description.accelerationDetails}
-                            onChange={formik.handleChange}
-                            multiline
-                            rows={3}
-                            className="car-form-text-field"
-                            placeholder="Szczegóły przyspieszenia..."
-                          />
-                        </Grid>
-                        <Grid item xs={12} sm={6}>
-                          <TextField
-                            fullWidth
-                            id="description.interior"
-                            name="description.interior"
-                            label="Wnętrze"
-                            value={formik.values.description.interior}
-                            onChange={formik.handleChange}
-                            multiline
-                            rows={3}
-                            className="car-form-text-field"
-                            placeholder="Opis wnętrza..."
-                          />
-                        </Grid>
-                        <Grid item xs={12} sm={6}>
-                          <TextField
-                            fullWidth
-                            id="description.craftsmanship"
-                            name="description.craftsmanship"
-                            label="Wykonanie i jakość"
-                            value={formik.values.description.craftsmanship}
-                            onChange={formik.handleChange}
-                            multiline
-                            rows={3}
-                            className="car-form-text-field"
-                            placeholder="Opis wykonania..."
-                          />
-                        </Grid>
-                        <Grid item xs={12}>
-                          <TextField
-                            fullWidth
-                            id="description.conclusion"
-                            name="description.conclusion"
-                            label="Podsumowanie"
-                            value={formik.values.description.conclusion}
-                            onChange={formik.handleChange}
-                            multiline
-                            rows={3}
-                            className="car-form-text-field"
-                            placeholder="Podsumowanie i wnioski..."
-                          />
-                        </Grid>
-                      </Grid>
-                    </AccordionDetails>
-                  </Accordion>
-                </Grid>
-
-                {/* Pricing Section */}
-                <Grid item xs={12}>
-                  <Accordion className="car-form-accordion">
-                    <AccordionSummary
-                      expandIcon={<ExpandMoreIcon className="car-form-accordion-icon" />}
-                      aria-controls="pricing-content"
-                      id="pricing-header"
-                      className="car-form-accordion-summary"
-                    >
-                      <Typography variant="h6" className="car-form-accordion-title">
-                        <PriceIcon className="car-form-section-icon" />
-                        Cennik i opcje wypożyczenia
-                      </Typography>
-                    </AccordionSummary>
-                    <AccordionDetails className="car-form-accordion-details">
-                      <Grid container spacing={3}>
-                        <Grid item xs={12}>
-                          <Typography variant="body1" sx={{ color: '#a6a6a6', mb: 2 }}>
-                            Ustaw różne ceny dla różnych okresów wypożyczenia. Jeśli pole zostanie puste, 
-                            zostanie użyta cena podstawowa.
-                          </Typography>
-                        </Grid>
-                        <Grid item xs={12} sm={6} md={4}>
-                          <TextField
-                            fullWidth
-                            id="pricing.daily"
-                            name="pricing.daily"
-                            label="Cena za dzień (PLN)"
-                            type="number"
-                            value={formik.values.pricing.daily}
-                            onChange={formik.handleChange}
-                            placeholder="Domyślnie cena podstawowa"
-                            inputProps={{ min: 0 }}
-                            className="car-form-text-field"
-                          />
-                        </Grid>
-                        <Grid item xs={12} sm={6} md={4}>
-                          <TextField
-                            fullWidth
-                            id="pricing.twoDays"
-                            name="pricing.twoDays"
-                            label="Cena za 2 dni (PLN)"
-                            type="number"
-                            value={formik.values.pricing.twoDays}
-                            onChange={formik.handleChange}
-                            inputProps={{ min: 0 }}
-                            className="car-form-text-field"
-                          />
-                        </Grid>
-                        <Grid item xs={12} sm={6} md={4}>
-                          <TextField
-                            fullWidth
-                            id="pricing.threeDays"
-                            name="pricing.threeDays"
-                            label="Cena za 3 dni (PLN)"
-                            type="number"
-                            value={formik.values.pricing.threeDays}
-                            onChange={formik.handleChange}
-                            inputProps={{ min: 0 }}
-                            className="car-form-text-field"
-                          />
-                        </Grid>
-                        <Grid item xs={12} sm={6} md={4}>
-                          <TextField
-                            fullWidth
-                            id="pricing.weekly"
-                            name="pricing.weekly"
-                            label="Cena tygodniowa (PLN)"
-                            type="number"
-                            value={formik.values.pricing.weekly}
-                            onChange={formik.handleChange}
-                            inputProps={{ min: 0 }}
-                            className="car-form-text-field"
-                          />
-                        </Grid>
-                        <Grid item xs={12} sm={6} md={4}>
-                          <TextField
-                            fullWidth
-                            id="pricing.monthly"
-                            name="pricing.monthly"
-                            label="Cena miesięczna (PLN)"
-                            type="number"
-                            value={formik.values.pricing.monthly}
-                            onChange={formik.handleChange}
-                            inputProps={{ min: 0 }}
-                            className="car-form-text-field"
-                          />
-                        </Grid>
-                      </Grid>
-                    </AccordionDetails>
-                  </Accordion>
-                </Grid>
-
-                {/* Mileage Information Section */}
-                <Grid item xs={12}>
-                  <Accordion className="car-form-accordion">
-                    <AccordionSummary
-                      expandIcon={<ExpandMoreIcon className="car-form-accordion-icon" />}
-                      aria-controls="mileage-content"
-                      id="mileage-header"
-                      className="car-form-accordion-summary"
-                    >
-                      <Typography variant="h6" className="car-form-accordion-title">
-                        <SpeedIcon className="car-form-section-icon" />
-                        Informacje o przebiegu
-                      </Typography>
-                    </AccordionSummary>
-                    <AccordionDetails className="car-form-accordion-details">
-                      <Grid container spacing={3}>
-                        <Grid item xs={12}>
-                          <Typography variant="body1" sx={{ color: '#a6a6a6', mb: 2 }}>
-                            Określ limity kilometrów i opłaty za przekroczenie.
-                          </Typography>
-                        </Grid>
-                        <Grid item xs={12} sm={6} md={4}>
-                          <TextField
-                            fullWidth
-                            id="mileageInfo.dailyLimit"
-                            name="mileageInfo.dailyLimit"
-                            label="Dzienny limit km"
-                            type="number"
-                            value={formik.values.mileageInfo.dailyLimit}
-                            onChange={formik.handleChange}
-                            inputProps={{ min: 0 }}
-                            className="car-form-text-field"
-                            placeholder="np. 200"
-                          />
-                        </Grid>
-                        <Grid item xs={12} sm={6} md={4}>
-                          <TextField
-                            fullWidth
-                            id="mileageInfo.excessFee"
-                            name="mileageInfo.excessFee"
-                            label="Opłata za przekroczenie (PLN/km)"
-                            type="number"
-                            value={formik.values.mileageInfo.excessFee}
-                            onChange={formik.handleChange}
-                            inputProps={{ min: 0, step: 0.1 }}
-                            className="car-form-text-field"
-                            placeholder="np. 2.5"
-                          />
-                        </Grid>
-                        <Grid item xs={12} md={8}>
-                          <TextField
-                            fullWidth
-                            id="mileageInfo.includedKm"
-                            name="mileageInfo.includedKm"
-                            label="Informacje o włączonych km"
-                            value={formik.values.mileageInfo.includedKm}
-                            onChange={formik.handleChange}
-                            placeholder="np. Unlimited for weekly rentals"
-                            className="car-form-text-field"
-                          />
-                        </Grid>
-                      </Grid>
-                    </AccordionDetails>
-                  </Accordion>
-                </Grid>
-              </Grid>
-            </form>
-          </Paper>
-
-          {/* Submit Section */}
-          <Paper className="car-form-submit-section" elevation={0}>
-            <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', gap: 2 }}>
-              <Button
-                variant="outlined"
-                onClick={() => navigate('/cars')}
-                className="car-form-cancel-button"
-                size="large"
-              >
-                Anuluj
-              </Button>
-              <Button
-                type="submit"
-                variant="contained"
-                startIcon={<SaveIcon />}
-                disabled={submitLoading}
-                className="car-form-submit-button"
-                size="large"
-                onClick={formik.handleSubmit}
-              >
-                {submitLoading ? (
-                  <>
-                    <CircularProgress size={20} sx={{ mr: 1, color: 'inherit' }} />
-                    Zapisywanie...
-                  </>
-                ) : (
-                  isEditMode ? 'Zapisz zmiany' : 'Dodaj samochód'
-                )}
-              </Button>
-            </Box>
-          </Paper>
+      <div className="car-form-header">
+        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+          <div>
+            <h1 className="car-form-title">{isEditMode ? 'Edit Car' : 'Add New Car'}</h1>
+            <div className="car-form-subtitle">
+              {isEditMode ? 'Update car information in the system' : 'Enter all details for the new vehicle'}
+            </div>
+          </div>
+          <button type="button" className="car-form-back-button" onClick={() => navigate('/cars')}>
+            Back
+          </button>
         </div>
-      </Fade>
+      </div>
+      {error && <div className="car-form-error-alert">{error}</div>}
+      <div className="car-form-main-paper">
+        <form onSubmit={formik.handleSubmit} autoComplete="off">
+          {/* Basic Info */}
+          <div className="car-form-section">
+            <h2 className="car-form-section-title">Basic Information</h2>
+            <div className="car-form-field-group">
+              {isEditMode && (
+                <input
+                  type="text"
+                  id="id"
+                  name="id"
+                  value={formik.values.id}
+                  disabled
+                  className="car-form-text-field"
+                  placeholder="ID (uneditable)"
+                />
+              )}
+              <input
+                type="text"
+                id="title"
+                name="title"
+                value={formik.values.title}
+                onChange={formik.handleChange}
+                onBlur={formik.handleBlur}
+                className="car-form-text-field"
+                placeholder="e.g. Lamborghini Huracán Performante"
+                required
+              />
+              {formik.touched.title && formik.errors.title && <div className="car-form-error-alert">{formik.errors.title}</div>}
+              <input
+                type="text"
+                id="brand"
+                name="brand"
+                value={formik.values.brand}
+                onChange={formik.handleChange}
+                onBlur={formik.handleBlur}
+                className="car-form-text-field"
+                placeholder="e.g. Lamborghini"
+                required
+              />
+              {formik.touched.brand && formik.errors.brand && <div className="car-form-error-alert">{formik.errors.brand}</div>}
+              <input
+                type="text"
+                id="model"
+                name="model"
+                value={formik.values.model}
+                onChange={formik.handleChange}
+                onBlur={formik.handleBlur}
+                className="car-form-text-field"
+                placeholder="e.g. Huracán Performante"
+                required
+              />
+              {formik.touched.model && formik.errors.model && <div className="car-form-error-alert">{formik.errors.model}</div>}
+              <input
+                type="text"
+                id="engine"
+                name="engine"
+                value={formik.values.engine}
+                onChange={formik.handleChange}
+                onBlur={formik.handleBlur}
+                className="car-form-text-field"
+                placeholder="e.g. 5.2L V10 Naturally Aspirated"
+                required
+              />
+              {formik.touched.engine && formik.errors.engine && <div className="car-form-error-alert">{formik.errors.engine}</div>}
+            </div>
+          </div>
+          {/* Performance */}
+          <div className="car-form-section">
+            <h2 className="car-form-section-title">Performance</h2>
+            <div className="car-form-field-group">
+              <input
+                type="number"
+                id="power"
+                name="power"
+                value={formik.values.power}
+                onChange={formik.handleChange}
+                onBlur={formik.handleBlur}
+                className="car-form-text-field"
+                placeholder="Power (HP)"
+                min="0"
+                required
+              />
+              {formik.touched.power && formik.errors.power && <div className="car-form-error-alert">{formik.errors.power}</div>}
+              <input
+                type="number"
+                id="acceleration"
+                name="acceleration"
+                value={formik.values.acceleration}
+                onChange={formik.handleChange}
+                onBlur={formik.handleBlur}
+                className="car-form-text-field"
+                placeholder="0-100 km/h (s)"
+                min="0"
+                step="0.1"
+                required
+              />
+              {formik.touched.acceleration && formik.errors.acceleration && <div className="car-form-error-alert">{formik.errors.acceleration}</div>}
+              <input
+                type="number"
+                id="maxSpeed"
+                name="maxSpeed"
+                value={formik.values.maxSpeed}
+                onChange={formik.handleChange}
+                onBlur={formik.handleBlur}
+                className="car-form-text-field"
+                placeholder="V-max (km/h)"
+                min="0"
+                required
+              />
+              {formik.touched.maxSpeed && formik.errors.maxSpeed && <div className="car-form-error-alert">{formik.errors.maxSpeed}</div>}
+            </div>
+          </div>
+          {/* Technical Specifications */}
+          <div className="car-form-section">
+            <h2 className="car-form-section-title">Technical Specifications</h2>
+            <div className="car-form-field-group">
+              <select
+                id="fuelType"
+                name="fuelType"
+                value={formik.values.fuelType}
+                onChange={formik.handleChange}
+                onBlur={formik.handleBlur}
+                className="car-form-text-field"
+                required
+              >
+                <option value="">Select fuel type</option>
+                <option value="Petrol">Petrol</option>
+                <option value="Diesel">Diesel</option>
+                <option value="Electric">Electric</option>
+                <option value="Hybrid">Hybrid</option>
+                <option value="Plug-in Hybrid">Plug-in Hybrid</option>
+              </select>
+              {formik.touched.fuelType && formik.errors.fuelType && <div className="car-form-error-alert">{formik.errors.fuelType}</div>}
+              <select
+                id="transmission"
+                name="transmission"
+                value={formik.values.transmission}
+                onChange={formik.handleChange}
+                onBlur={formik.handleBlur}
+                className="car-form-text-field"
+                required
+              >
+                <option value="">Select transmission</option>
+                <option value="Manual">Manual</option>
+                <option value="Automatic">Automatic</option>
+                <option value="Semi-Automatic">Semi-Automatic</option>
+                <option value="CVT">CVT</option>
+                <option value="Dual-Clutch">Dual-Clutch</option>
+              </select>
+              {formik.touched.transmission && formik.errors.transmission && <div className="car-form-error-alert">{formik.errors.transmission}</div>}
+              <select
+                id="drivetrain"
+                name="drivetrain"
+                value={formik.values.drivetrain}
+                onChange={formik.handleChange}
+                onBlur={formik.handleBlur}
+                className="car-form-text-field"
+                required
+              >
+                <option value="">Select drivetrain</option>
+                <option value="FWD">FWD (front)</option>
+                <option value="RWD">RWD (rear)</option>
+                <option value="AWD">AWD (all wheels)</option>
+                <option value="4WD">4WD (4x4)</option>
+              </select>
+              {formik.touched.drivetrain && formik.errors.drivetrain && <div className="car-form-error-alert">{formik.errors.drivetrain}</div>}
+              <select
+                id="type"
+                name="type"
+                value={formik.values.type}
+                onChange={formik.handleChange}
+                onBlur={formik.handleBlur}
+                className="car-form-text-field"
+                required
+              >
+                <option value="">Select type</option>
+                <option value="Sports">Sports</option>
+                <option value="Luxury">Luxury</option>
+                <option value="SUV">SUV</option>
+                <option value="Sedan">Sedan</option>
+                <option value="Coupe">Coupe</option>
+                <option value="Convertible">Convertible</option>
+                <option value="Supercar">Supercar</option>
+                <option value="Hypercar">Hypercar</option>
+              </select>
+              {formik.touched.type && formik.errors.type && <div className="car-form-error-alert">{formik.errors.type}</div>}
+            </div>
+          </div>
+          {/* Price Section */}
+          <div className="car-form-section">
+            <h2 className="car-form-section-title">Base Price</h2>
+            <div className="car-form-field-group">
+              <input
+                type="number"
+                id="grossPrice"
+                name="grossPrice"
+                value={formik.values.grossPrice}
+                onChange={formik.handleChange}
+                onBlur={formik.handleBlur}
+                className="car-form-text-field"
+                placeholder="Base price (PLN/day)"
+                min="0"
+                required
+              />
+              {formik.touched.grossPrice && formik.errors.grossPrice && <div className="car-form-error-alert">{formik.errors.grossPrice}</div>}
+            </div>
+          </div>
+          {/* Images Section */}
+          <div className="car-form-section">
+            <h2 className="car-form-section-title">Images</h2>
+            {isEditMode && (
+              <div style={{ marginBottom: 24 }}>
+                {loadingImages ? (
+                  <div style={{ display: 'flex', justifyContent: 'center', padding: 24 }}>
+                    <div className="car-form-loading-spinner" style={{ width: 30, height: 30 }} />
+                  </div>
+                ) : (
+                  <ImageUpload carId={id} initialImages={carImages} onImagesUpdate={handleImagesUpdate} />
+                )}
+                <div className="car-form-divider" style={{ margin: '24px 0' }} />
+                <div style={{ color: '#a6a6a6', marginBottom: 8 }}>Alternative image links (optional):</div>
+              </div>
+            )}
+            {!isEditMode && (
+              <div className="car-form-image-section">
+                <div style={{ fontSize: 32, color: '#C3845E', marginBottom: 8 }}>🖼️</div>
+                <div style={{ color: '#fff', fontWeight: 600, marginBottom: 4 }}>Image Management</div>
+                <div style={{ color: '#a6a6a6', marginBottom: 8 }}>You can add images after creating the car in the system</div>
+              </div>
+            )}
+            {formik.values.images.map((image, index) => (
+              <div key={index} style={{ display: 'flex', alignItems: 'center', marginBottom: 8 }}>
+                <input
+                  type="text"
+                  value={image}
+                  onChange={e => {
+                    const updatedImages = [...formik.values.images];
+                    updatedImages[index] = e.target.value;
+                    formik.setFieldValue('images', updatedImages);
+                  }}
+                  placeholder={`Image ${index + 1}`}
+                  className="car-form-text-field"
+                />
+                <button
+                  type="button"
+                  onClick={() => handleRemoveImage(index)}
+                  disabled={formik.values.images.length <= 1}
+                  className="car-form-delete-image-button"
+                  style={{ marginLeft: 8 }}
+                >
+                  Delete
+                </button>
+              </div>
+            ))}
+            <button
+              type="button"
+              onClick={handleAddImage}
+              className="car-form-add-image-button"
+              style={{ marginTop: 8 }}
+            >
+              Add image
+            </button>
+          </div>
+          {/* Description Section */}
+          <div className="car-form-section">
+            <h2 className="car-form-section-title">Detailed Description</h2>
+            <div className="car-form-field-group">
+              <input
+                type="text"
+                id="description.title"
+                name="description.title"
+                value={formik.values.description.title}
+                onChange={formik.handleChange}
+                className="car-form-text-field"
+                placeholder="e.g. The fastest road Lamborghini"
+              />
+              <textarea
+                id="description.mainText"
+                name="description.mainText"
+                value={formik.values.description.mainText}
+                onChange={formik.handleChange}
+                className="car-form-text-field"
+                placeholder="Enter the main car description..."
+                rows={4}
+              />
+              <textarea
+                id="description.performance"
+                name="description.performance"
+                value={formik.values.description.performance}
+                onChange={formik.handleChange}
+                className="car-form-text-field"
+                placeholder="Performance description..."
+                rows={3}
+              />
+              <textarea
+                id="description.accelerationDetails"
+                name="description.accelerationDetails"
+                value={formik.values.description.accelerationDetails}
+                onChange={formik.handleChange}
+                className="car-form-text-field"
+                placeholder="Acceleration details..."
+                rows={3}
+              />
+              <textarea
+                id="description.interior"
+                name="description.interior"
+                value={formik.values.description.interior}
+                onChange={formik.handleChange}
+                className="car-form-text-field"
+                placeholder="Interior description..."
+                rows={3}
+              />
+              <textarea
+                id="description.craftsmanship"
+                name="description.craftsmanship"
+                value={formik.values.description.craftsmanship}
+                onChange={formik.handleChange}
+                className="car-form-text-field"
+                placeholder="Craftsmanship description..."
+                rows={3}
+              />
+              <textarea
+                id="description.conclusion"
+                name="description.conclusion"
+                value={formik.values.description.conclusion}
+                onChange={formik.handleChange}
+                className="car-form-text-field"
+                placeholder="Summary and conclusions..."
+                rows={3}
+              />
+            </div>
+          </div>
+          {/* Pricing Section */}
+          <div className="car-form-section">
+            <h2 className="car-form-section-title">Pricing & Rental Options</h2>
+            <div className="car-form-field-group">
+              <div style={{ color: '#a6a6a6', marginBottom: 8 }}>
+                Set different prices for different rental periods. If left blank, the base price will be used.
+              </div>
+              <input
+                type="number"
+                id="pricing.daily"
+                name="pricing.daily"
+                value={formik.values.pricing.daily}
+                onChange={formik.handleChange}
+                className="car-form-text-field"
+                placeholder="Price per day (PLN)"
+                min="0"
+              />
+              <input
+                type="number"
+                id="pricing.twoDays"
+                name="pricing.twoDays"
+                value={formik.values.pricing.twoDays}
+                onChange={formik.handleChange}
+                className="car-form-text-field"
+                placeholder="Price for 2 days (PLN)"
+                min="0"
+              />
+              <input
+                type="number"
+                id="pricing.threeDays"
+                name="pricing.threeDays"
+                value={formik.values.pricing.threeDays}
+                onChange={formik.handleChange}
+                className="car-form-text-field"
+                placeholder="Price for 3 days (PLN)"
+                min="0"
+              />
+              <input
+                type="number"
+                id="pricing.weekly"
+                name="pricing.weekly"
+                value={formik.values.pricing.weekly}
+                onChange={formik.handleChange}
+                className="car-form-text-field"
+                placeholder="Weekly price (PLN)"
+                min="0"
+              />
+              <input
+                type="number"
+                id="pricing.monthly"
+                name="pricing.monthly"
+                value={formik.values.pricing.monthly}
+                onChange={formik.handleChange}
+                className="car-form-text-field"
+                placeholder="Monthly price (PLN)"
+                min="0"
+              />
+            </div>
+          </div>
+          {/* Mileage Info Section */}
+          <div className="car-form-section">
+            <h2 className="car-form-section-title">Mileage Information</h2>
+            <div className="car-form-field-group">
+              <div style={{ color: '#a6a6a6', marginBottom: 8 }}>
+                Specify mileage limits and excess fees.
+              </div>
+              <input
+                type="number"
+                id="mileageInfo.dailyLimit"
+                name="mileageInfo.dailyLimit"
+                value={formik.values.mileageInfo.dailyLimit}
+                onChange={formik.handleChange}
+                className="car-form-text-field"
+                placeholder="e.g. 200"
+                min="0"
+              />
+              <input
+                type="number"
+                id="mileageInfo.excessFee"
+                name="mileageInfo.excessFee"
+                value={formik.values.mileageInfo.excessFee}
+                onChange={formik.handleChange}
+                className="car-form-text-field"
+                placeholder="Excess fee (PLN/km)"
+                min="0"
+                step="0.1"
+              />
+              <input
+                type="text"
+                id="mileageInfo.includedKm"
+                name="mileageInfo.includedKm"
+                value={formik.values.mileageInfo.includedKm}
+                onChange={formik.handleChange}
+                className="car-form-text-field"
+                placeholder="e.g. Unlimited for weekly rentals"
+              />
+            </div>
+          </div>
+          {/* Submit Section */}
+          <div className="car-form-submit-section">
+            <button
+              type="button"
+              className="car-form-cancel-button"
+              onClick={() => navigate('/cars')}
+              disabled={submitLoading}
+            >
+              Cancel
+            </button>
+            <button
+              type="submit"
+              className="car-form-submit-button"
+              disabled={submitLoading}
+            >
+              {submitLoading ? 'Saving...' : isEditMode ? 'Save changes' : 'Add car'}
+            </button>
+          </div>
+        </form>
+      </div>
     </div>
   );
 };

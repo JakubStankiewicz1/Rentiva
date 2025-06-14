@@ -3,22 +3,27 @@
 
 .cars-page-container {
   font-family: 'Bai Jamjuree', sans-serif;
-  background: linear-gradient(135deg, #0f0f0f 0%, #1a1a1a 100%);
+  /* background: linear-gradient(135deg, #0f0f0f 0%, #1a1a1a 100%); */
   min-height: 100vh;
   width: calc(100vw - 240px);
   margin-left: 240px;
   position: relative;
+  padding-bottom: 60px;
+  
 }
 
 .cars-page-header {
-  background: linear-gradient(135deg, #181818 0%, #242424 100%);
-  border: 1px solid #393939;
+  /* background: linear-gradient(135deg, #181818 0%, #242424 100%); */
+  background-color: #181818 !important;
+  /* border: 1px solid #393939; */
   /* border-radius: 20px; */
-  padding: 32px 40px;
+  /* padding: 32px 40px; */
+  height: 118px;
   /* margin-bottom: 32px; */
   position: relative;
   overflow: hidden;
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  width: 100%;
 }
 /* 
 .cars-page-header::before {
@@ -42,11 +47,12 @@
   background-clip: text;
   -webkit-text-fill-color: transparent;
   filter: brightness(1.1);
+  font-family: 'Bai Jamjuree', sans-serif !important;
 }
 
 /* Premium Add Car Button Styling */
 .cars-page-add-button {
-  background: linear-gradient(135deg, #C3845E 0%, #E8A075 100%) !important;
+  /* background: linear-gradient(135deg, #C3845E 0%, #E8A075 100%) !important; */
   border: none !important;
   color: #ffffff !important;
   /* border-radius: 16px !important; */
@@ -57,16 +63,16 @@
   font-family: 'Bai Jamjuree', sans-serif !important;
   letter-spacing: 0.5px !important;
   transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) !important;
-  box-shadow: 
+  /* box-shadow: 
     0 8px 24px rgba(195, 132, 94, 0.3),
     0 4px 12px rgba(0, 0, 0, 0.2),
-    inset 0 1px 0 rgba(255, 255, 255, 0.1) !important;
+    inset 0 1px 0 rgba(255, 255, 255, 0.1) !important; */
   position: relative;
   overflow: hidden;
   min-width: 180px;
 }
 
-.cars-page-add-button::before {
+/* .cars-page-add-button::before {
   content: '';
   position: absolute;
   top: 0;
@@ -76,13 +82,13 @@
   background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.25), transparent);
   transition: left 0.6s ease;
   z-index: 1;
-}
+} */
 
-.cars-page-add-button:hover::before {
+/* .cars-page-add-button:hover::before {
   left: 100%;
-}
+} */
 
-.cars-page-add-button:hover {
+/* .cars-page-add-button:hover {
   background: linear-gradient(135deg, #E8A075 0%, #F4B088 100%) !important;
   transform: translateY(-3px) scale(1.02) !important;
   box-shadow: 
@@ -91,9 +97,9 @@
     inset 0 1px 0 rgba(255, 255, 255, 0.15),
     0 0 25px rgba(232, 160, 117, 0.2) !important;
   animation: button-glow 2s ease-in-out infinite alternate;
-}
+} */
 
-.cars-page-add-button:active {
+/* .cars-page-add-button:active {
   transform: translateY(-1px) scale(1.01) !important;
   transition: transform 0.1s ease !important;
 }
@@ -102,10 +108,10 @@
   margin-right: 10px !important;
   font-size: 1.2rem !important;
   filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
-}
+} */
 
 /* Button glow animation */
-@keyframes button-glow {
+/* @keyframes button-glow {
   0% {
     box-shadow: 
       0 12px 32px rgba(195, 132, 94, 0.4),
@@ -120,7 +126,7 @@
       inset 0 1px 0 rgba(255, 255, 255, 0.15),
       0 0 35px rgba(232, 160, 117, 0.35);
   }
-}
+} */
 
 /* Disabled state */
 .cars-page-add-button:disabled {
@@ -153,225 +159,271 @@
   justify-content: space-between;
   align-items: center;
   width: 100%;
+
+  /* background-color: red; */
+  height: 100%;
+
+  width: 95%;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-/* Responsive design */
-@media (max-width: 768px) {
-  .cars-page-container {
-    padding: 20px;
-    width: 100vw;
-    margin-left: 0;
-  }
-  
-  .cars-page-header {
-    padding: 24px;
-  }
-  
-  .cars-page-title {
-    font-size: 2rem !important;
-  }
-  
-  .cars-page-add-button {
-    padding: 12px 24px !important;
-    font-size: 1rem !important;
-    min-width: 160px;
-  }
-  
-  .cars-page-header-actions {
-    flex-direction: column;
-    gap: 16px;
-    align-items: stretch;
-  }
+/* Loading spinner styles */
+.cars-page-loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 70vh;
+  background: linear-gradient(135deg, #0f0f0f 0%, #1a1a1a 100%);
 }
 
-@media (max-width: 480px) {
-  .cars-page-title {
-    font-size: 1.8rem !important;
-  }
-  
-  .cars-page-add-button {
-    width: 100%;
-    justify-content: center;
-  }
+.cars-page-spinner {
+  width: 40px;
+  height: 40px;
+  /* border: 4px solid #393939; */
+  border-top: 4px solid #C3845E;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
 }
 
-/* Enhanced visual hierarchy */
-.cars-page-header .cars-page-header-actions {
-  position: relative;
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
 }
 
-/* Subtle animation for page load */
-.cars-page-container {
-  animation: fadeInUp 0.6s ease-out;
+/* Add icon styling */
+.cars-page-add-icon {
+  margin-right: 10px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
 }
 
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+/* Error message styles */
+.cars-page-error {
+  background: linear-gradient(135deg, #ff416c 0%, #ff4757 100%);
+  color: white;
+  padding: 16px 20px;
+  /* border-radius: 12px; */
+  margin-bottom: 24px;
+  border: none;
+  box-shadow: 0 4px 16px rgba(255, 65, 108, 0.3);
 }
 
-/* Enhanced button text styling */
-.cars-page-add-button .MuiButton-label {
-  position: relative;
-  z-index: 2;
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+.cars-page-error-title {
+  font-weight: 700;
+  font-size: 1.1rem;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
 
-/* Additional premium effects */
-.cars-page-add-button:hover .MuiButton-startIcon {
-  animation: iconBounce 0.6s ease-in-out;
+/* Info message styles */
+.cars-page-info {
+  background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+  color: white;
+  padding: 16px 20px;
+  /* border-radius: 12px; */
+  /* margin-top: 24px; */
+  text-align: center;
+  font-size: 1rem;
+  font-weight: 500;
+  box-shadow: 0 4px 16px rgba(52, 152, 219, 0.3);
 }
 
-@keyframes iconBounce {
-  0%, 100% { transform: translateX(0); }
-  50% { transform: translateX(2px); }
+/* Grid layout styles */
+.cars-page-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 24px;
+  /* margin-top: 24px; */
+
+  /* background-color: red; */
+
+  /* width: 98%; */
+  margin-left: auto;
+  margin-right: auto;
+  margin-right: 18px;
+  margin-left: 10px;
 }
 
-/* Enhanced dark theme integration */
-.cars-page-content {
-  background: transparent;
-  color: #ffffff;
-}
-
-/* Better integration with existing components */
-.cars-page-header + * {
-  margin-top: 0;
-}
-
-/* Enhanced subtitle styling for "Wprowadź wszystkie szczegóły nowego pojazdu" */
-.cars-page-subtitle {
-  color: #a6a6a6 !important;
-  font-size: 1.1rem !important;
-  margin-top: 8px !important;
-  margin-bottom: 0 !important;
-  font-weight: 400 !important;
-  font-family: 'Bai Jamjuree', sans-serif !important;
-  letter-spacing: 0.3px;
-  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
-}
-
-/* Enhanced header section with better spacing */
-.cars-page-header-content {
+.cars-page-grid-item {
   display: flex;
   flex-direction: column;
-  gap: 8px;
 }
 
-/* Additional styling for form header when adding car */
-.cars-page-form-header {
-  background: linear-gradient(135deg, #181818 0%, #242424 100%);
-  border: 1px solid #393939;
-  /* border-radius: 20px; */
-  padding: 40px;
-  margin-bottom: 32px;
-  position: relative;
-  overflow: hidden;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
-}
-
-.cars-page-form-header::before {
-  content: '';
-  position: absolute;
+/* Dialog styles */
+.cars-page-dialog-overlay {
+  position: fixed;
   top: 0;
   left: 0;
   right: 0;
-  height: 4px;
-  background: linear-gradient(90deg, #C3845E 0%, #E8A075 100%);
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+  animation: dialogOverlayFadeIn 0.3s ease;
 }
 
-.cars-page-form-title {
+@keyframes dialogOverlayFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.cars-page-dialog {
+  background: linear-gradient(135deg, #181818 0%, #242424 100%);
+  /* border-radius: 16px; */
+  border: 1px solid #393939;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+  min-width: 400px;
+  max-width: 500px;
+  animation: dialogSlideIn 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow: hidden;
+}
+
+@keyframes dialogSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.cars-page-dialog-header {
+  padding: 24px 24px 16px 24px;
+  border-bottom: 1px solid #393939;
+}
+
+.cars-page-dialog-header h3 {
+  color: #ffffff;
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin: 0;
+  font-family: 'Bai Jamjuree', sans-serif;
+  letter-spacing: 0.5px;
+}
+
+.cars-page-dialog-content {
+  padding: 20px 24px;
+}
+
+.cars-page-dialog-content p {
+  color: #e0e0e0;
+  font-size: 1rem;
+  line-height: 1.6;
+  margin: 0;
+  font-family: 'Bai Jamjuree', sans-serif;
+}
+
+.cars-page-dialog-actions {
+  padding: 16px 24px 24px 24px;
+  display: flex;
+  gap: 12px;
+  justify-content: flex-end;
+}
+
+.cars-page-dialog-cancel {
+  background: linear-gradient(135deg, #555555 0%, #666666 100%);
+  color: #ffffff;
+  border: none;
+  /* border-radius: 12px; */
+  padding: 12px 24px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  font-family: 'Bai Jamjuree', sans-serif;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  letter-spacing: 0.3px;
+}
+
+/* .cars-page-dialog-cancel:hover {
+  background: linear-gradient(135deg, #666666 0%, #777777 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+} */
+
+.cars-page-dialog-confirm {
+  background: linear-gradient(135deg, #ff416c 0%, #ff4757 100%);
+  color: #ffffff;
+  border: none;
+  /* border-radius: 12px; */
+  padding: 12px 24px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  font-family: 'Bai Jamjuree', sans-serif;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  letter-spacing: 0.3px;
+}
+
+.cars-page-dialog-confirm:hover {
+  background: linear-gradient(135deg, #ff4757 0%, #ff5e6d 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(255, 65, 108, 0.4);
+}
+
+
+/* Enhanced title styling */
+.cars-page-title {
   color: #ffffff !important;
   font-weight: 700 !important;
-  font-size: 2.8rem !important;
+  font-size: 2.4rem !important;
   margin: 0 !important;
-  text-shadow: 0 4px 16px rgba(0, 0, 0, 0.5), 0 2px 8px rgba(195, 132, 94, 0.3);
-  background: linear-gradient(135deg, #ffffff 0%, #f5f5f5 100%);
+  /* text-shadow: 0 4px 16px rgba(0, 0, 0, 0.5), 0 2px 8px rgba(195, 132, 94, 0.3); */
+  /* background: linear-gradient(135deg, #ffffff 0%, #f5f5f5 100%); */
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
-  filter: brightness(1.1);
+  /* filter: brightness(1.1); */
   font-family: 'Bai Jamjuree', sans-serif !important;
 }
 
-.cars-page-form-subtitle {
-  color: #a6a6a6 !important;
-  font-size: 1.1rem !important;
-  margin-top: 8px !important;
-  font-weight: 400 !important;
-  font-family: 'Bai Jamjuree', sans-serif !important;
-  letter-spacing: 0.3px;
-  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
-}
-
-/* Enhanced back button styling */
-.cars-page-back-button {
-  background: linear-gradient(135deg, #393939 0%, #4a4a4a 100%) !important;
-  border: 1px solid #555555 !important;
+/* Link button styling for add button */
+.cars-page-add-button {
+  background: linear-gradient(135deg, #C3845E 0%, #E8A075 100%) !important;
+  border: none !important;
   color: #ffffff !important;
-  /* border-radius: 12px !important; */
-  padding: 12px 24px !important;
-  text-transform: none !important;
-  font-weight: 500 !important;
+  /* border-radius: 16px !important; */
+  padding: 14px 32px !important;
+  /* text-transform: none !important; */
+  font-weight: 600 !important;
+  font-size: 1.05rem !important;
   font-family: 'Bai Jamjuree', sans-serif !important;
-  transition: all 0.3s ease !important;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2) !important;
-  margin-bottom: 24px !important;
-}
-
-.cars-page-back-button:hover {
-  background: linear-gradient(135deg, #4a4a4a 0%, #555555 100%) !important;
-  transform: translateY(-2px) !important;
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3) !important;
-  animation: back-button-glow 1.5s ease-in-out infinite alternate;
-}
-
-@keyframes back-button-glow {
-  0% {
-    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
-  }
-  100% {
-    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3), 0 0 15px rgba(255, 255, 255, 0.1);
-  }
-}
-
-/* Responsive adjustments for form header */
-@media (max-width: 768px) {
-  .cars-page-form-header {
-    padding: 24px;
-  }
-  
-  .cars-page-form-title {
-    font-size: 2.2rem !important;
-  }
-  
-  .cars-page-form-subtitle {
-    font-size: 1rem !important;
-  }
-}
-
-@media (max-width: 480px) {
-  .cars-page-form-title {
-    font-size: 2rem !important;
-  }
-  
-  .cars-page-form-subtitle {
-    font-size: 0.95rem !important;
-  }
-}
-
-/* Additional styling for consistent dark theme */
-.cars-page-form-container {
-  background: linear-gradient(135deg, #0f0f0f 0%, #1a1a1a 100%);
-  min-height: 100vh;
-  padding: 40px;
-  width: calc(100vw - 240px);
-  margin-left: 240px;
+  letter-spacing: 0.5px !important;
+  /* transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) !important; */
+  /* box-shadow: 
+    0 8px 24px rgba(195, 132, 94, 0.3),
+    0 4px 12px rgba(0, 0, 0, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1) !important; */
   position: relative;
-  font-family: 'Bai Jamjuree', sans-serif;
+  overflow: hidden;
+  min-width: 180px;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none !important;
 }
+
+/* .cars-page-add-button:hover {
+  background: linear-gradient(135deg, #E8A075 0%, #F4B088 100%) !important;
+  transform: translateY(-3px) scale(1.02) !important;
+  box-shadow: 
+    0 12px 32px rgba(195, 132, 94, 0.4),
+    0 6px 16px rgba(0, 0, 0, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.15),
+    0 0 25px rgba(232, 160, 117, 0.2) !important;
+  text-decoration: none;
+  color: #ffffff !important;
+} */

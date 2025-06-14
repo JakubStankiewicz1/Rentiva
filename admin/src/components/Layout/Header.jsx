@@ -22,20 +22,16 @@ const Header = ({ handleDrawerToggle }) => {
     navigate('/login');
   };
 
-  // Zamykanie dropdown-a przy kliknięciu poza nim
+  // Close dropdown on outside click
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (userMenuRef.current && !userMenuRef.current.contains(event.target)) {
         setAnchorEl(null);
       }
     };
-
-    // Dodajemy event listener tylko gdy dropdown jest otwarty
     if (anchorEl) {
       document.addEventListener('mousedown', handleClickOutside);
     }
-
-    // Cleanup function - usuwamy event listener
     return () => {
       document.removeEventListener('mousedown', handleClickOutside);
     };
@@ -51,7 +47,7 @@ const Header = ({ handleDrawerToggle }) => {
         >
           ☰
         </button> */}
-        <p className="rentivaAdminHeader__title">Panel Administracyjny</p>
+        <p className="rentivaAdminHeader__title">Admin Panel</p>
       </div>
       
       <div className="rentivaAdminHeader__right">
@@ -75,17 +71,17 @@ const Header = ({ handleDrawerToggle }) => {
           
           <div className={`rentivaAdminHeader__userMenu ${!anchorEl ? 'rentivaAdminHeader__userMenu--hidden' : ''}`}>
             <button className="rentivaAdminHeader__menuItem" onClick={handleClose}>
-              Profil
+              Profile
             </button>
             <button className="rentivaAdminHeader__menuItem" onClick={handleClose}>
-              Ustawienia
+              Settings
             </button>
-            <button 
+            <div 
               className="rentivaAdminHeader__menuItem rentivaAdminHeader__menuItem--logout" 
               onClick={handleLogout}
             >
-              Wyloguj
-            </button>
+              Logout
+            </div>
           </div>
         </div>
       </div>

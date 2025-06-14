@@ -20,10 +20,10 @@ const LoginPage = () => {
   // Validation schema
   const validationSchema = Yup.object({
     email: Yup.string()
-      .email('Wprowadź poprawny adres email')
-      .required('Email jest wymagany'),
+      .email('Enter a valid email address')
+      .required('Email is required'),
     password: Yup.string()
-      .required('Hasło jest wymagane')
+      .required('Password is required')
   });
 
   // Formik form handling
@@ -46,7 +46,7 @@ const LoginPage = () => {
           setError(result.error);
         }
       } catch (err) {
-        setError('Wystąpił błąd podczas logowania. Spróbuj ponownie.');
+        setError('An error occurred during login. Please try again.');
         console.error('Login error:', err);
       } finally {
         setIsLoading(false);
@@ -57,7 +57,7 @@ const LoginPage = () => {
       <div className="rentiva-admin-login__container">
         <div className="rentiva-admin-login__header">
           <p className="rentiva-admin-login__title">Rentiva</p>
-          <p className="rentiva-admin-login__subtitle">Panel Administracyjny</p>
+          <p className="rentiva-admin-login__subtitle">Admin Panel</p>
           <div className="rentiva-admin-login__accent-line"></div>
         </div>
 
@@ -73,7 +73,7 @@ const LoginPage = () => {
               type="email"
               id="email"
               name="email"
-              placeholder="Adres email"
+              placeholder="Email address"
               className={`rentiva-admin-login__input ${
                 formik.touched.email && formik.errors.email ? 'rentiva-admin-login__input--error' : ''
               }`}
@@ -92,7 +92,7 @@ const LoginPage = () => {
                 type={showPassword ? 'text' : 'password'}
                 id="password"
                 name="password"
-                placeholder="Hasło"
+                placeholder="Password"
                 className={`rentiva-admin-login__input ${
                   formik.touched.password && formik.errors.password ? 'rentiva-admin-login__input--error' : ''
                 }`}
@@ -119,14 +119,14 @@ const LoginPage = () => {
             className={`rentiva-admin-login__button ${isLoading ? 'rentiva-admin-login__button--loading' : ''}`}
             disabled={isLoading}
           >
-            {isLoading ? 'Logowanie...' : 'Zaloguj się'}
+            {isLoading ? 'Logging in...' : 'Log in'}
           </button>
         </form>
 
         <div className="rentiva-admin-login__demo-info">
-          <div className="rentiva-admin-login__demo-title">Dane demonstracyjne</div>
+          <div className="rentiva-admin-login__demo-title">Demo credentials</div>
           <div className="rentiva-admin-login__demo-text">
-            Używa prawdziwej bazy danych
+            Uses a real database
           </div>
           <div className="rentiva-admin-login__demo-credentials">
             admin@rentiva.com / admin123

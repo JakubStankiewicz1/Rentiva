@@ -1,6 +1,68 @@
 import React, { useState } from 'react';
+import Select from 'react-select';
 import { Search as SearchIcon, FilterList as FilterIcon, Clear as ClearIcon } from '@mui/icons-material';
 import './carsFilter.css';
+
+const customSelectStyles = {
+  control: (provided, state) => ({
+    ...provided,
+    background: 'rgba(24, 24, 24, 0.6)',
+    border: '2px solid #393939',
+    color: '#fff',
+    minHeight: 52,
+    boxShadow: '0 2px 10px rgba(0,0,0,0.1)',
+    borderRadius: 0,
+    fontFamily: 'Bai Jamjuree, sans-serif',
+    fontSize: 16,
+    fontWeight: 400,
+    paddingLeft: 0,
+    '&:hover': {
+      borderColor: 'rgba(195, 132, 94, 0.6)'
+    }
+  }),
+  menu: (provided) => ({
+    ...provided,
+    background: '#181818',
+    color: '#fff',
+    borderRadius: 0,
+    marginTop: 2,
+    boxShadow: '0 8px 25px rgba(0,0,0,0.3)'
+  }),
+  option: (provided, state) => ({
+    ...provided,
+    backgroundColor: state.isSelected
+      ? 'rgba(195, 132, 94, 0.2)'
+      : state.isFocused
+      ? 'rgba(195, 132, 94, 0.1)'
+      : '#181818',
+    color: '#fff',
+    borderRadius: 0,
+    fontFamily: 'Bai Jamjuree, sans-serif',
+    fontSize: 16,
+    fontWeight: 400,
+    cursor: 'pointer',
+  }),
+  singleValue: (provided) => ({
+    ...provided,
+    color: '#fff',
+    fontFamily: 'Bai Jamjuree, sans-serif',
+    fontSize: 16,
+    fontWeight: 400,
+  }),
+  input: (provided) => ({
+    ...provided,
+    color: '#fff',
+    fontFamily: 'Bai Jamjuree, sans-serif',
+    fontSize: 16,
+    fontWeight: 400,
+  }),
+  dropdownIndicator: (provided) => ({
+    ...provided,
+    color: '#C3845E',
+    padding: 6,
+  }),
+  indicatorSeparator: () => ({ display: 'none' }),
+};
 
 const CarsFilter = ({ onFilter, onSearch, onClear, brands, types }) => {
   const [filters, setFilters] = useState({
@@ -63,11 +125,27 @@ const CarsFilter = ({ onFilter, onSearch, onClear, brands, types }) => {
   };
 
   // Check if any filters are active
-  const hasActiveFilters = Object.values(filters).some(value => value !== '') || searchQuery !== '';  return (
+  const hasActiveFilters = Object.values(filters).some(value => value !== '') || searchQuery !== '';
+  const brandOptions = [
+    { value: '', label: 'All brands' },
+    ...brands.map((brand) => ({ value: brand, label: brand }))
+  ];
+  const typeOptions = [
+    { value: '', label: 'All types' },
+    ...types.map((type) => ({ value: type, label: type }))
+  ];
+  const sortByOptions = [
+    { value: '', label: 'Default' },
+    { value: 'price-asc', label: 'Price: ascending' },
+    { value: 'price-desc', label: 'Price: descending' },
+    { value: 'power', label: 'Power: descending' },
+    { value: 'name', label: 'Alphabetically' },
+  ];
+  return (
     <div className={`rentivaAdminCarsFilter ${isFiltering ? 'rentivaAdminCarsFilter--loading' : ''}`}>
       <div className="rentivaAdminCarsFilter__header">
         <FilterIcon className="rentivaAdminCarsFilter__icon" />
-        <h2 className="rentivaAdminCarsFilter__title">Filtrowanie i wyszukiwanie</h2>
+        <h2 className="rentivaAdminCarsFilter__title">Filter & Search</h2>
         {hasActiveFilters && (
           <span style={{ 
             color: '#C3845E', 
@@ -78,7 +156,7 @@ const CarsFilter = ({ onFilter, onSearch, onClear, brands, types }) => {
             borderRadius: '4px',
             marginLeft: 'auto'
           }}>
-            Aktywne filtry
+            Active filters
           </span>
         )}
       </div>
@@ -89,7 +167,7 @@ const CarsFilter = ({ onFilter, onSearch, onClear, brands, types }) => {
           <input
             type="text"
             className="rentivaAdminCarsFilter__searchInput"
-            placeholder="Szukaj samochodu po nazwie lub marce..."
+            placeholder="Search car by name or brand..."
             value={searchQuery}
             onChange={handleSearchChange}
             onKeyPress={(e) => {
@@ -109,75 +187,65 @@ const CarsFilter = ({ onFilter, onSearch, onClear, brands, types }) => {
       {/* Filters Grid */}
       <div className="rentivaAdminCarsFilter__filtersGrid">
         <div className="rentivaAdminCarsFilter__inputGroup">
-          <label className="rentivaAdminCarsFilter__label">Marka</label>
-          <select
-            name="brand"
-            value={filters.brand}
-            onChange={handleFilterChange}
-            className="rentivaAdminCarsFilter__select"
-          >
-            <option value="">Wszystkie marki</option>
-            {brands.map((brand) => (
-              <option key={brand} value={brand}>{brand}</option>
-            ))}
-          </select>
+          <label className="rentivaAdminCarsFilter__label">Brand</label>
+          <Select
+            classNamePrefix="rentivaAdminCarsFilter__select"
+            options={brandOptions}
+            value={brandOptions.find(opt => opt.value === filters.brand)}
+            onChange={option => setFilters(prev => ({ ...prev, brand: option.value }))}
+            styles={customSelectStyles}
+            isSearchable={false}
+          />
         </div>
         
         <div className="rentivaAdminCarsFilter__inputGroup">
-          <label className="rentivaAdminCarsFilter__label">Typ</label>
-          <select
-            name="type"
-            value={filters.type}
-            onChange={handleFilterChange}
-            className="rentivaAdminCarsFilter__select"
-          >
-            <option value="">Wszystkie typy</option>
-            {types.map((type) => (
-              <option key={type} value={type}>{type}</option>
-            ))}
-          </select>
+          <label className="rentivaAdminCarsFilter__label">Type</label>
+          <Select
+            classNamePrefix="rentivaAdminCarsFilter__select"
+            options={typeOptions}
+            value={typeOptions.find(opt => opt.value === filters.type)}
+            onChange={option => setFilters(prev => ({ ...prev, type: option.value }))}
+            styles={customSelectStyles}
+            isSearchable={false}
+          />
         </div>
         
         <div className="rentivaAdminCarsFilter__inputGroup">
-          <label className="rentivaAdminCarsFilter__label">Min. moc (KM)</label>
+          <label className="rentivaAdminCarsFilter__label">Min. power (HP)</label>
           <input
             type="number"
             name="minPower"
             value={filters.minPower}
             onChange={handleFilterChange}
-            placeholder="np. 150"
+            placeholder="e.g. 150"
             min="0"
             className="rentivaAdminCarsFilter__numberInput"
           />        </div>
         
         <div className="rentivaAdminCarsFilter__inputGroup">
-          <label className="rentivaAdminCarsFilter__label">Sortowanie</label>
-          <select
-            name="sortBy"
-            value={filters.sortBy}
-            onChange={handleFilterChange}
-            className="rentivaAdminCarsFilter__select"
-          >
-            <option value="">Domyślne</option>
-            <option value="price-asc">Cena: rosnąco</option>
-            <option value="price-desc">Cena: malejąco</option>
-            <option value="power">Moc: malejąco</option>
-            <option value="name">Alfabetycznie</option>
-          </select>
+          <label className="rentivaAdminCarsFilter__label">Sort by</label>
+          <Select
+            classNamePrefix="rentivaAdminCarsFilter__select"
+            options={sortByOptions}
+            value={sortByOptions.find(opt => opt.value === filters.sortBy)}
+            onChange={option => setFilters(prev => ({ ...prev, sortBy: option.value }))}
+            styles={customSelectStyles}
+            isSearchable={false}
+          />
         </div>
       </div>
       
       {/* Price Range Section */}
       <div className="rentivaAdminCarsFilter__priceSection">
         <div className="rentivaAdminCarsFilter__inputGroup">
-          <label className="rentivaAdminCarsFilter__label">Zakres cenowy (PLN/dzień)</label>
+          <label className="rentivaAdminCarsFilter__label">Price range (PLN/day)</label>
           <div className="rentivaAdminCarsFilter__priceRange">
             <input
               type="number"
               name="minPrice"
               value={filters.minPrice}
               onChange={handleFilterChange}
-              placeholder="Min. cena"
+              placeholder="Min. price"
               min="0"
               className="rentivaAdminCarsFilter__numberInput"
             />
@@ -187,7 +255,7 @@ const CarsFilter = ({ onFilter, onSearch, onClear, brands, types }) => {
               name="maxPrice"
               value={filters.maxPrice}
               onChange={handleFilterChange}
-              placeholder="Max. cena"
+              placeholder="Max. price"
               min="0"
               className="rentivaAdminCarsFilter__numberInput"
             />
@@ -196,23 +264,23 @@ const CarsFilter = ({ onFilter, onSearch, onClear, brands, types }) => {
       </div>
         {/* Action Buttons */}
       <div className="rentivaAdminCarsFilter__actions">
-        <button
+        <div
           className="rentivaAdminCarsFilter__applyButton"
           onClick={applyFilters}
           disabled={isFiltering}
         >
           <FilterIcon style={{ width: '16px', height: '16px' }} />
-          {isFiltering ? 'Filtrowanie...' : 'Zastosuj filtry'}
-        </button>
+          {isFiltering ? 'Filtering...' : 'Apply filters'}
+        </div>
         
-        <button
+        <div
           className="rentivaAdminCarsFilter__clearButton"
           onClick={clearFilters}
           disabled={isFiltering}
         >
           <ClearIcon style={{ width: '16px', height: '16px' }} />
-          Wyczyść filtry
-        </button>
+          Clear filters
+        </div>
       </div>
     </div>
   );

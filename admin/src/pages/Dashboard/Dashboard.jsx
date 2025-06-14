@@ -20,21 +20,21 @@ const Dashboard = () => {
       try {
         setLoading(true);
         
-        // Pobierz liczbę wszystkich samochodów
+        // Get total number of cars
         const totalCars = await CarService.getCarCount();
         
-        // Pobierz samochody typu "Sports"
+        // Get cars of type "Sports"
         const sportsCars = await CarService.getCarsByType('Sports');
         
-        // Pobierz samochody typu "Luxury"
+        // Get cars of type "Luxury"
         const luxuryCars = await CarService.getCarsByType('Luxury');
         
-        // Pobierz samochody o dużej mocy (> 500 KM)
+        // Get cars with high power (> 500 HP)
         const highPowerCars = await CarService.getCarsByMinimumPower(500);
         
-        // Pobierz wszystkie samochody (używane do pokazania najnowszych)
+        // Get all cars (used to show the most recent)
         const allCars = await CarService.getAllCars();
-        // Posortuj po ID (zakładając, że nowsze mają większe ID) i pobierz 5 najnowszych
+        // Sort by ID (assuming newer have higher ID) and get 5 most recent
         const recent = allCars.slice(0, 5);
 
         setStats({
@@ -47,8 +47,8 @@ const Dashboard = () => {
         setRecentCars(recent);
         setLoading(false);
       } catch (error) {
-        console.error('Błąd podczas pobierania danych dla dashboard:', error);
-        toast.error('Wystąpił błąd podczas ładowania danych');
+        console.error('Error fetching dashboard data:', error);
+        toast.error('An error occurred while loading data');
         setLoading(false);
       }
     };
@@ -71,16 +71,16 @@ const Dashboard = () => {
             to="/cars/new"
             className="rentivaDashboard__addButton"
           >
-            Dodaj samochód
+            Add new car
           </NavLink>
         </div>
 
-        {/* Statystyki */}
+        {/* Statistics */}
         <div className="rentivaDashboard__statsGrid">
           <div className="rentivaDashboard__statCard rentivaDashboard__statCard--primary">
             <div className="rentivaDashboard__statHeader">
               {/* <div className="rentivaDashboard__statIcon">🚗</div> */}
-              <p className="rentivaDashboard__statLabel">Wszystkie Samochody</p>
+              <p className="rentivaDashboard__statLabel">All Cars</p>
             </div>
             <p className="rentivaDashboard__statValue">{stats.totalCars}</p>
           </div>
@@ -88,7 +88,7 @@ const Dashboard = () => {
           <div className="rentivaDashboard__statCard rentivaDashboard__statCard--sports">
             <div className="rentivaDashboard__statHeader">
               {/* <div className="rentivaDashboard__statIcon rentivaDashboard__statIcon--sports">🏎️</div> */}
-              <p className="rentivaDashboard__statLabel">Samochody Sportowe</p>
+              <p className="rentivaDashboard__statLabel">Sports Cars</p>
             </div>
             <p className="rentivaDashboard__statValue">{stats.sportsCars}</p>
           </div>
@@ -96,7 +96,7 @@ const Dashboard = () => {
           <div className="rentivaDashboard__statCard rentivaDashboard__statCard--luxury">
             <div className="rentivaDashboard__statHeader">
               {/* <div className="rentivaDashboard__statIcon rentivaDashboard__statIcon--luxury">💎</div> */}
-              <p className="rentivaDashboard__statLabel">Samochody Luksusowe</p>
+              <p className="rentivaDashboard__statLabel">Luxury Cars</p>
             </div>
             <p className="rentivaDashboard__statValue">{stats.luxuryCars}</p>
           </div>
@@ -104,15 +104,15 @@ const Dashboard = () => {
           <div className="rentivaDashboard__statCard rentivaDashboard__statCard--power">
             <div className="rentivaDashboard__statHeader">
               {/* <div className="rentivaDashboard__statIcon rentivaDashboard__statIcon--power">⚡</div> */}
-              <p className="rentivaDashboard__statLabel">Duża moc (&gt;500 KM)</p>
+              <p className="rentivaDashboard__statLabel">High Power (&gt;500 HP)</p>
             </div>
             <p className="rentivaDashboard__statValue">{stats.highPowerCars}</p>
           </div>
         </div>
 
-        {/* Ostatnio dodane samochody */}
+        {/* Recently added cars */}
         <div className="rentivaDashboard__recentSection">
-          <p className="rentivaDashboard__sectionTitle">Ostatnio Dodane Samochody</p>
+          <p className="rentivaDashboard__sectionTitle">Recently Added Cars</p>
           <div className="rentivaDashboard__sectionDivider"></div>
           
           <div className="rentivaDashboard__carsGrid">
@@ -122,23 +122,23 @@ const Dashboard = () => {
                   <div className="rentivaDashboard__carInfo">
                     <p className="rentivaDashboard__carTitle">{car.title}</p>
                     <p className="rentivaDashboard__carDetails">
-                      {car.brand} • {car.model} • {car.engine} • {car.power} KM
+                      {car.brand} • {car.model} • {car.engine} • {car.power} HP
                     </p>
                   </div>
                   <div className="rentivaDashboard__carActions">
-                    <p className="rentivaDashboard__carPrice">{car.grossPrice} PLN/dzień</p>
+                    <p className="rentivaDashboard__carPrice">{car.grossPrice} PLN/day</p>
                     <Link 
                       to={`/cars/${car.id}`}
                       className="rentivaDashboard__carButton"
                     >
-                      Szczegóły
+                      Details
                     </Link>
                   </div>
                 </div>
               ))
             ) : (
               <div className="rentivaDashboard__emptyCars">
-                Brak dostępnych samochodów
+                No cars available
               </div>
             )}
           </div>

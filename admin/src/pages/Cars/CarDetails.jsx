@@ -1,49 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import {
-  Box,
-  Typography,
-  Button,
-  Paper,
-  Grid,
-  Divider,
-  Chip,
-  CircularProgress,
-  Alert,
-  Table,
-  TableBody,
-  TableCell,
-  TableContainer,
-  TableRow,
-  Card,
-  CardMedia,
-  List,
-  ListItem,
-  ListItemText,
-  ImageList,
-  ImageListItem,
-  IconButton,
-  Dialog,
-  DialogTitle,
-  DialogContent,
-  DialogActions,
-  TextField
-} from '@mui/material';
-import {
-  DirectionsCar as CarIcon,
-  Speed as SpeedIcon,
-  Settings as SettingsIcon,
-  LocalGasStation as GasIcon,
-  Build as BuildIcon,
-  Edit as EditIcon,
-  Delete as DeleteIcon,
-  ArrowBack as ArrowBackIcon,
-  Image as ImageIcon,
-  Add as AddIcon,
-  Close as CloseIcon,
-  PhotoCamera as PhotoCameraIcon,
-  DeleteOutline as DeleteOutlineIcon
-} from '@mui/icons-material';
 import CarService from '../../services/car.service';
 import FileService from '../../services/file.service';
 import { toast } from 'react-toastify';
@@ -136,146 +92,97 @@ const CarDetails = () => {
     }
     
     toast.success('Zdjęcie zostało usunięte');
-  };
-  if (loading) {
+  };  if (loading) {
     return (
-      <Box className="car-details-loading">
-        <CircularProgress className="car-details-loading-spinner" size={60} />
-      </Box>
+      <div className="car-details-loading">
+        <div className="car-details-loading-spinner"></div>
+      </div>
     );
   }
 
   if (error) {
     return (
-      <Box className="car-details-container">
-        <Alert severity="error" className="car-details-error">
-          {error}
-        </Alert>
-        <Button
-          variant="outlined"
-          startIcon={<ArrowBackIcon />}
-          onClick={() => navigate('/cars')}
-          className="car-details-btn-back"
-        >
-          Powrót do listy samochodów
-        </Button>
-      </Box>
+      <div className="car-details-container">
+        <div className="car-details-error">{error}</div>
+        <button onClick={() => navigate('/cars')} className="car-details-btn-back">
+          <span className="car-details-btn-icon">←</span>
+          Back to car list
+        </button>
+      </div>
     );
   }
 
   if (!car) {
     return (
-      <Box className="car-details-container">
-        <Alert severity="warning" className="car-details-warning">
-          Nie znaleziono samochodu o ID: {id}
-        </Alert>
-        <Button
-          variant="outlined"
-          startIcon={<ArrowBackIcon />}
-          onClick={() => navigate('/cars')}
-          className="car-details-btn-back"
-        >
-          Powrót do listy samochodów
-        </Button>
-      </Box>
+      <div className="car-details-container">
+        <div className="car-details-warning">
+          Car with ID: {id} not found
+        </div>
+        <button onClick={() => navigate('/cars')} className="car-details-btn-back">
+          <span className="car-details-btn-icon">←</span>
+          Back to car list
+        </button>
+      </div>
     );
   }
+
   return (
-    <Box className="car-details-container car-details-fade-in">
-      <Box className="car-details-header">
-        <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', flexWrap: 'wrap', gap: 2 }}>
-          <Box>
-            <Typography variant="h4" component="h1" className="car-details-title">
+    <div className="car-details-container car-details-fade-in">
+      <div className="car-details-header">
+        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', flexWrap: 'wrap', gap: 16 }}>
+          <div>
+            <h1 className="car-details-title">
               {car.title}
-            </Typography>
-            <Box className="car-details-chips">
-              <Chip 
-                label={car.brand} 
-                size="small"
-                className="car-details-chip-brand"
-              />
-              <Chip 
-                label={car.type} 
-                size="small"
-                className="car-details-chip-type"
-              />
-            </Box>
-          </Box>
-          <Box className="car-details-actions">
-            <Button
-              variant="contained"
-              startIcon={<ArrowBackIcon />}
-              onClick={() => navigate('/cars')}
-              className="car-details-btn-back"
-            >
-              Powrót
-            </Button>            <Button
-              variant="contained"
-              startIcon={<EditIcon />}
-              onClick={() => {
-                console.log('Navigating to:', `/cars/edit/${id}`);
-                navigate(`/cars/edit/${id}`);
-              }}
-              className="car-details-btn-edit"
-            >
-              Edytuj
-            </Button>
-            <Button
-              variant="contained"
-              startIcon={<DeleteIcon />}
-              onClick={handleDelete}
-              className="car-details-btn-delete"
-            >
-              Usuń
-            </Button>
-          </Box>
-        </Box>
-      </Box>      <Grid container spacing={4}>        {/* Image Gallery and Basic Info */}
-        <Grid item xs={12} md={5}>
-          {/* Main Image Gallery */}
-          <Paper className="car-details-gallery-card car-details-hover-effect" sx={{ mb: 3 }}>
-            <Box className="car-details-gallery-header">
-              <Typography variant="h6" className="car-details-gallery-title">
-                <PhotoCameraIcon sx={{ mr: 1 }} />
-                Galeria zdjęć
-              </Typography>
-              <Button
-                variant="outlined"
-                size="small"
-                startIcon={<AddIcon />}
-                onClick={() => setAddImageDialogOpen(true)}
-                className="car-details-gallery-add-btn"
-              >
-                Dodaj
-              </Button>
-            </Box>
-            
-            {/* Main Image Display */}
-            <Box className="car-details-gallery-main">
-              <Card className="car-details-gallery-main-card">
-                <CardMedia
-                  component="img"
-                  image={getCurrentImage()}
+            </h1>
+            <div className="car-details-chips">
+              <span className="car-details-chip-brand">{car.brand}</span>
+              <span className="car-details-chip-type">{car.type}</span>
+            </div>
+          </div>
+          <div className="car-details-actions">
+            <button className="car-details-btn-back" onClick={() => navigate('/cars')}>
+              <span className="car-details-btn-icon">←</span> Back
+            </button>
+            <button className="car-details-btn-edit" onClick={() => navigate(`/cars/edit/${id}`)}>
+              ✏️ Edit
+            </button>
+            <button className="car-details-btn-delete" onClick={handleDelete}>
+              🗑 Delete
+            </button>
+          </div>
+        </div>
+      </div>
+      <div style={{ display: 'flex', flexWrap: 'wrap', gap: '32px' }}>
+        {/* Left column: Gallery and Info */}
+        <div style={{ flex: '1 1 350px', minWidth: 0, maxWidth: 500 }}>
+          {/* Gallery */}
+          <div className="car-details-gallery-card car-details-hover-effect" style={{ marginBottom: 24 }}>
+            <div className="car-details-gallery-header">
+              <span className="car-details-gallery-title">📷 Image Gallery</span>
+              <button className="car-details-gallery-add-btn" onClick={() => setAddImageDialogOpen(true)}>
+                ➕ Add
+              </button>
+            </div>
+            <div className="car-details-gallery-main">
+              <div className="car-details-gallery-main-card">
+                <img
+                  src={getCurrentImage()}
                   alt={`${car.title} - Image ${selectedImageIndex + 1}`}
                   className="car-details-gallery-main-image"
                 />
                 {car.images && car.images.length > 1 && (
-                  <Box className="car-details-gallery-counter">
+                  <div className="car-details-gallery-counter">
                     {selectedImageIndex + 1} / {car.images.length}
-                  </Box>
+                  </div>
                 )}
-              </Card>
-            </Box>
-
-            {/* Thumbnail Gallery */}
+              </div>
+            </div>
             {car.images && car.images.length > 1 && (
-              <Box className="car-details-gallery-thumbnails">
+              <div className="car-details-gallery-thumbnails">
                 {getCarImages().map((image, index) => (
-                  <Box
+                  <div
                     key={index}
-                    className={`car-details-gallery-thumbnail ${
-                      selectedImageIndex === index ? 'active' : ''
-                    }`}
+                    className={`car-details-gallery-thumbnail ${selectedImageIndex === index ? 'active' : ''}`}
                     onClick={() => handleThumbnailClick(index)}
                   >
                     <img
@@ -284,331 +191,256 @@ const CarDetails = () => {
                       className="car-details-gallery-thumbnail-image"
                     />
                     {car.images.length > 1 && (
-                      <IconButton
-                        size="small"
+                      <button
+                        type="button"
                         className="car-details-gallery-remove-btn"
-                        onClick={(e) => {
+                        onClick={e => {
                           e.stopPropagation();
                           handleRemoveImage(index);
                         }}
+                        aria-label="Remove image"
                       >
-                        <DeleteOutlineIcon fontSize="small" />
-                      </IconButton>
+                        ❌
+                      </button>
                     )}
-                  </Box>
+                  </div>
                 ))}
-              </Box>
+              </div>
             )}
-          </Paper>
+          </div>
 
-          <Paper className="car-details-info-card car-details-hover-effect" sx={{ p: 3, mb: 3 }}>
-            <Typography variant="h6" gutterBottom className="car-details-section-title">
-              <Box className="car-details-section-icon">
-                <CarIcon />
-              </Box>
-              Podstawowe informacje
-            </Typography>
-            <Divider className="car-details-divider" />
-            
-            <TableContainer className="car-details-table">
-              <Table>
-                <TableBody>
-                  <TableRow>
-                    <TableCell component="th" scope="row" className="car-details-table-cell-label">ID</TableCell>
-                    <TableCell className="car-details-table-cell">{car.id}</TableCell>
-                  </TableRow>
-                  <TableRow>
-                    <TableCell component="th" scope="row" className="car-details-table-cell-label">Marka</TableCell>
-                    <TableCell className="car-details-table-cell">{car.brand}</TableCell>
-                  </TableRow>
-                  <TableRow>
-                    <TableCell component="th" scope="row" className="car-details-table-cell-label">Model</TableCell>
-                    <TableCell className="car-details-table-cell">{car.model}</TableCell>
-                  </TableRow>
-                  <TableRow>
-                    <TableCell component="th" scope="row" className="car-details-table-cell-label">Typ</TableCell>
-                    <TableCell className="car-details-table-cell">{car.type}</TableCell>
-                  </TableRow>
-                  <TableRow>
-                    <TableCell component="th" scope="row" className="car-details-table-cell-label">Cena (dzień)</TableCell>
-                    <TableCell className="car-details-table-cell">
-                      <Typography className="car-details-price">{car.grossPrice} PLN</Typography>
-                    </TableCell>
-                  </TableRow>
-                </TableBody>
-              </Table>
-            </TableContainer>
-          </Paper>
+          {/* Basic Info */}
+          <div className="car-details-info-card car-details-hover-effect" style={{ marginBottom: 24, padding: 24 }}>
+            <div className="car-details-section-title">
+              <span className="car-details-section-icon">🚗</span> Basic Information
+            </div>
+            <div className="car-details-divider" />
+            <table className="car-details-table">
+              <tbody>
+                <tr>
+                  <th className="car-details-table-cell-label">ID</th>
+                  <td className="car-details-table-cell">{car.id}</td>
+                </tr>
+                <tr>
+                  <th className="car-details-table-cell-label">Brand</th>
+                  <td className="car-details-table-cell">{car.brand}</td>
+                </tr>
+                <tr>
+                  <th className="car-details-table-cell-label">Model</th>
+                  <td className="car-details-table-cell">{car.model}</td>
+                </tr>
+                <tr>
+                  <th className="car-details-table-cell-label">Type</th>
+                  <td className="car-details-table-cell">{car.type}</td>
+                </tr>
+                <tr>
+                  <th className="car-details-table-cell-label">Price (per day)</th>
+                  <td className="car-details-table-cell">
+                    <span className="car-details-price">{car.grossPrice} PLN</span>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
 
-          <Paper className="car-details-info-card car-details-hover-effect" sx={{ p: 3 }}>
-            <Typography variant="h6" gutterBottom className="car-details-section-title">
-              <Box className="car-details-section-icon">
-                <SettingsIcon />
-              </Box>
-              Specyfikacja
-            </Typography>
-            <Divider className="car-details-divider" />
-            
-            <TableContainer className="car-details-table">
-              <Table>
-                <TableBody>
-                  <TableRow>
-                    <TableCell component="th" scope="row" className="car-details-table-cell-label">Silnik</TableCell>
-                    <TableCell className="car-details-table-cell">{car.engine}</TableCell>
-                  </TableRow>
-                  <TableRow>
-                    <TableCell component="th" scope="row" className="car-details-table-cell-label">Moc</TableCell>
-                    <TableCell className="car-details-table-cell">{car.power} KM</TableCell>
-                  </TableRow>
-                  <TableRow>
-                    <TableCell component="th" scope="row" className="car-details-table-cell-label">0-100 km/h</TableCell>
-                    <TableCell className="car-details-table-cell">{car.acceleration} s</TableCell>
-                  </TableRow>
-                  <TableRow>
-                    <TableCell component="th" scope="row" className="car-details-table-cell-label">Prędkość max.</TableCell>
-                    <TableCell className="car-details-table-cell">{car.maxSpeed} km/h</TableCell>
-                  </TableRow>
-                  <TableRow>
-                    <TableCell component="th" scope="row" className="car-details-table-cell-label">Paliwo</TableCell>
-                    <TableCell className="car-details-table-cell">{car.fuelType}</TableCell>
-                  </TableRow>
-                  <TableRow>
-                    <TableCell component="th" scope="row" className="car-details-table-cell-label">Skrzynia biegów</TableCell>
-                    <TableCell className="car-details-table-cell">{car.transmission}</TableCell>
-                  </TableRow>
-                  <TableRow>
-                    <TableCell component="th" scope="row" className="car-details-table-cell-label">Napęd</TableCell>
-                    <TableCell className="car-details-table-cell">{car.drivetrain}</TableCell>
-                  </TableRow>
-                </TableBody>
-              </Table>
-            </TableContainer>
-          </Paper>
-        </Grid>        {/* Opis, cennik i limity przebiegu */}
-        <Grid item xs={12} md={7}>
-          <Paper className="car-details-description-card car-details-hover-effect" sx={{ mb: 3 }}>
-            <Typography variant="h6" gutterBottom className="car-details-description-title">
-              Opis
-            </Typography>
-            <Divider className="car-details-divider" />
+          {/* Specification */}
+          <div className="car-details-info-card car-details-hover-effect" style={{ padding: 24 }}>
+            <div className="car-details-section-title">
+              <span className="car-details-section-icon">⚙️</span> Specification
+            </div>
+            <div className="car-details-divider" />
+            <table className="car-details-table">
+              <tbody>
+                <tr>
+                  <th className="car-details-table-cell-label">Engine</th>
+                  <td className="car-details-table-cell">{car.engine}</td>
+                </tr>
+                <tr>
+                  <th className="car-details-table-cell-label">Power</th>
+                  <td className="car-details-table-cell">{car.power} HP</td>
+                </tr>
+                <tr>
+                  <th className="car-details-table-cell-label">0-100 km/h</th>
+                  <td className="car-details-table-cell">{car.acceleration} s</td>
+                </tr>
+                <tr>
+                  <th className="car-details-table-cell-label">Max speed</th>
+                  <td className="car-details-table-cell">{car.maxSpeed} km/h</td>
+                </tr>
+                <tr>
+                  <th className="car-details-table-cell-label">Fuel</th>
+                  <td className="car-details-table-cell">{car.fuelType}</td>
+                </tr>
+                <tr>
+                  <th className="car-details-table-cell-label">Transmission</th>
+                  <td className="car-details-table-cell">{car.transmission}</td>
+                </tr>
+                <tr>
+                  <th className="car-details-table-cell-label">Drivetrain</th>
+                  <td className="car-details-table-cell">{car.drivetrain}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        {/* Right column: Description, Pricing, Mileage */}
+        <div style={{ flex: '2 1 500px', minWidth: 0 }}>
+          <div className="car-details-description-card car-details-hover-effect" style={{ marginBottom: 24 }}>
+            <div className="car-details-description-title">
+              Description
+            </div>
+            <div className="car-details-divider" />
             
             {car.description ? (
-              <Box>
-                <Typography variant="subtitle1" className="car-details-description-label" gutterBottom>
-                  {car.description.title}
-                </Typography>
-                
-                <Typography variant="body1" paragraph className="car-details-description-text">
-                  {car.description.mainText}
-                </Typography>
-                
+              <div>
+                {car.description.title && (
+                  <div className="car-details-description-label" style={{ marginBottom: 8 }}>{car.description.title}</div>
+                )}
+                {car.description.mainText && (
+                  <div className="car-details-description-text">{car.description.mainText}</div>
+                )}
                 {car.description.performance && (
-                  <Typography variant="body2" paragraph className="car-details-description-text">
-                    <Typography component="span" className="car-details-description-label">Osiągi: </Typography>
-                    {car.description.performance}
-                  </Typography>
+                  <div className="car-details-description-text">
+                    <span className="car-details-description-label">Performance: </span>{car.description.performance}
+                  </div>
                 )}
-                
                 {car.description.accelerationDetails && (
-                  <Typography variant="body2" paragraph className="car-details-description-text">
-                    <Typography component="span" className="car-details-description-label">Szczegóły przyspieszenia: </Typography>
-                    {car.description.accelerationDetails}
-                  </Typography>
+                  <div className="car-details-description-text">
+                    <span className="car-details-description-label">Acceleration details: </span>{car.description.accelerationDetails}
+                  </div>
                 )}
-                
                 {car.description.interior && (
-                  <Typography variant="body2" paragraph className="car-details-description-text">
-                    <Typography component="span" className="car-details-description-label">Wnętrze: </Typography>
-                    {car.description.interior}
-                  </Typography>
+                  <div className="car-details-description-text">
+                    <span className="car-details-description-label">Interior: </span>{car.description.interior}
+                  </div>
                 )}
-                
                 {car.description.craftsmanship && (
-                  <Typography variant="body2" paragraph className="car-details-description-text">
-                    <Typography component="span" className="car-details-description-label">Wykonanie: </Typography>
-                    {car.description.craftsmanship}
-                  </Typography>
+                  <div className="car-details-description-text">
+                    <span className="car-details-description-label">Craftsmanship: </span>{car.description.craftsmanship}
+                  </div>
                 )}
-                
                 {car.description.conclusion && (
-                  <Typography variant="body2" paragraph className="car-details-description-text">
-                    <Typography component="span" className="car-details-description-label">Podsumowanie: </Typography>
-                    {car.description.conclusion}
-                  </Typography>
+                  <div className="car-details-description-text">
+                    <span className="car-details-description-label">Summary: </span>{car.description.conclusion}
+                  </div>
                 )}
-              </Box>
+              </div>
             ) : (
-              <Typography variant="body2" className="car-details-no-data">
-                Brak opisu dla tego samochodu.
-              </Typography>
+              <div className="car-details-no-data">
+                No description for this car.
+              </div>
             )}
-          </Paper>          <Grid container spacing={3}>
-            <Grid item xs={12} md={6}>
-              <Paper className="car-details-pricing-card car-details-hover-effect" sx={{ p: 3, height: '100%' }}>
-                <Typography variant="h6" gutterBottom className="car-details-section-title">
-                  <Box className="car-details-section-icon">
-                    <SpeedIcon />
-                  </Box>
-                  Cennik
-                </Typography>
-                <Divider className="car-details-divider" />
-                
-                {car.pricing ? (
-                  <List dense>
-                    <ListItem className="car-details-list-item">
-                      <ListItemText 
-                        primary="1 dzień" 
-                        secondary={`${car.pricing.daily || car.grossPrice} PLN`}
-                        primaryTypographyProps={{ className: 'car-details-list-primary' }}
-                        secondaryTypographyProps={{ className: 'car-details-list-secondary' }}
-                      />
-                    </ListItem>
-                    {car.pricing.twoDays && (
-                      <ListItem className="car-details-list-item">
-                        <ListItemText 
-                          primary="2 dni" 
-                          secondary={`${car.pricing.twoDays} PLN`}
-                          primaryTypographyProps={{ className: 'car-details-list-primary' }}
-                          secondaryTypographyProps={{ className: 'car-details-list-secondary' }}
-                        />
-                      </ListItem>
-                    )}
-                    {car.pricing.threeDays && (
-                      <ListItem className="car-details-list-item">
-                        <ListItemText 
-                          primary="3 dni" 
-                          secondary={`${car.pricing.threeDays} PLN`}
-                          primaryTypographyProps={{ className: 'car-details-list-primary' }}
-                          secondaryTypographyProps={{ className: 'car-details-list-secondary' }}
-                        />
-                      </ListItem>
-                    )}
-                    {car.pricing.weekly && (
-                      <ListItem className="car-details-list-item">
-                        <ListItemText 
-                          primary="Tydzień" 
-                          secondary={`${car.pricing.weekly} PLN`}
-                          primaryTypographyProps={{ className: 'car-details-list-primary' }}
-                          secondaryTypographyProps={{ className: 'car-details-list-secondary' }}
-                        />
-                      </ListItem>
-                    )}
-                    {car.pricing.monthly && (
-                      <ListItem className="car-details-list-item">
-                        <ListItemText 
-                          primary="Miesiąc" 
-                          secondary={`${car.pricing.monthly} PLN`}
-                          primaryTypographyProps={{ className: 'car-details-list-primary' }}
-                          secondaryTypographyProps={{ className: 'car-details-list-secondary' }}
-                        />
-                      </ListItem>
-                    )}
-                  </List>
-                ) : (
-                  <Typography variant="body2" className="car-details-no-data">
-                    Brak danych cennika.
-                  </Typography>
-                )}
-              </Paper>
-            </Grid>
+          </div>
+          <div style={{ display: 'flex', flexWrap: 'wrap', gap: 24 }}>
+            {/* Pricing */}
+            <div className="car-details-pricing-card car-details-hover-effect" style={{ flex: '1 1 250px', padding: 24 }}>
+              <div className="car-details-section-title">
+                <span className="car-details-section-icon">🏁</span> Pricing
+              </div>
+              <div className="car-details-divider" />
+              
+              {car.pricing ? (
+                <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
+                  <li className="car-details-list-item">
+                    <span className="car-details-list-primary">1 day</span>
+                    <span className="car-details-list-secondary">{car.pricing.daily || car.grossPrice} PLN</span>
+                  </li>
+                  {car.pricing.twoDays && (
+                    <li className="car-details-list-item">
+                      <span className="car-details-list-primary">2 days</span>
+                      <span className="car-details-list-secondary">{car.pricing.twoDays} PLN</span>
+                    </li>
+                  )}
+                  {car.pricing.threeDays && (
+                    <li className="car-details-list-item">
+                      <span className="car-details-list-primary">3 days</span>
+                      <span className="car-details-list-secondary">{car.pricing.threeDays} PLN</span>
+                    </li>
+                  )}
+                  {car.pricing.weekly && (
+                    <li className="car-details-list-item">
+                      <span className="car-details-list-primary">Week</span>
+                      <span className="car-details-list-secondary">{car.pricing.weekly} PLN</span>
+                    </li>
+                  )}
+                  {car.pricing.monthly && (
+                    <li className="car-details-list-item">
+                      <span className="car-details-list-primary">Month</span>
+                      <span className="car-details-list-secondary">{car.pricing.monthly} PLN</span>
+                    </li>
+                  )}
+                </ul>
+              ) : (
+                <div className="car-details-no-data">
+                  No pricing data.
+                </div>
+              )}
+            </div>
             
-            <Grid item xs={12} md={6}>
-              <Paper className="car-details-pricing-card car-details-hover-effect" sx={{ p: 3, height: '100%' }}>
-                <Typography variant="h6" gutterBottom className="car-details-section-title">
-                  <Box className="car-details-section-icon">
-                    <BuildIcon />
-                  </Box>
-                  Limity przebiegu
-                </Typography>
-                <Divider className="car-details-divider" />
-                
-                {car.mileageInfo ? (
-                  <List dense>
-                    {car.mileageInfo.dailyLimit && (
-                      <ListItem className="car-details-list-item">
-                        <ListItemText 
-                          primary="Dzienny limit" 
-                          secondary={`${car.mileageInfo.dailyLimit} km`}
-                          primaryTypographyProps={{ className: 'car-details-list-primary' }}
-                          secondaryTypographyProps={{ className: 'car-details-list-secondary' }}
-                        />
-                      </ListItem>
-                    )}
-                    {car.mileageInfo.excessFee && (
-                      <ListItem className="car-details-list-item">
-                        <ListItemText 
-                          primary="Opłata za przekroczenie" 
-                          secondary={`${car.mileageInfo.excessFee} PLN/km`}
-                          primaryTypographyProps={{ className: 'car-details-list-primary' }}
-                          secondaryTypographyProps={{ className: 'car-details-list-secondary' }}
-                        />
-                      </ListItem>
-                    )}
-                    {car.mileageInfo.includedKm && (
-                      <ListItem className="car-details-list-item">
-                        <ListItemText 
-                          primary="Dodatkowe informacje" 
-                          secondary={car.mileageInfo.includedKm}
-                          primaryTypographyProps={{ className: 'car-details-list-primary' }}
-                          secondaryTypographyProps={{ className: 'car-details-list-secondary' }}
-                        />
-                      </ListItem>
-                    )}
-                  </List>
-                ) : (
-                  <Typography variant="body2" className="car-details-no-data">
-                    Brak danych o limitach przebiegu.
-                  </Typography>
-                )}
-              </Paper>            </Grid>
-          </Grid>
-        </Grid>
-      </Grid>
+            {/* Mileage */}
+            <div className="car-details-pricing-card car-details-hover-effect" style={{ flex: '1 1 250px', padding: 24 }}>
+              <div className="car-details-section-title">
+                <span className="car-details-section-icon">🛠️</span> Mileage limits
+              </div>
+              <div className="car-details-divider" />
+              
+              {car.mileageInfo ? (
+                <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
+                  {car.mileageInfo.dailyLimit && (
+                    <li className="car-details-list-item">
+                      <span className="car-details-list-primary">Daily limit</span>
+                      <span className="car-details-list-secondary">{car.mileageInfo.dailyLimit} km</span>
+                    </li>
+                  )}
+                  {car.mileageInfo.excessFee && (
+                    <li className="car-details-list-item">
+                      <span className="car-details-list-primary">Excess fee</span>
+                      <span className="car-details-list-secondary">{car.mileageInfo.excessFee} PLN/km</span>
+                    </li>
+                  )}
+                  {car.mileageInfo.includedKm && (
+                    <li className="car-details-list-item">
+                      <span className="car-details-list-primary">Additional info</span>
+                      <span className="car-details-list-secondary">{car.mileageInfo.includedKm}</span>
+                    </li>
+                  )}
+                </ul>
+              ) : (
+                <div className="car-details-no-data">
+                  No mileage limit data.
+                </div>
+              )}
+            </div>
+          </div>
+        </div>
+      </div>
 
       {/* Add Image Dialog */}
-      <Dialog
-        open={addImageDialogOpen}
-        onClose={() => setAddImageDialogOpen(false)}
-        maxWidth="sm"
-        fullWidth
-        className="car-details-add-image-dialog"
-      >
-        <DialogTitle className="car-details-dialog-title">
-          <PhotoCameraIcon sx={{ mr: 1 }} />
-          Dodaj nowe zdjęcie
-        </DialogTitle>
-        <DialogContent>
-          <TextField
-            autoFocus
-            margin="dense"
-            label="URL zdjęcia"
-            type="url"
-            fullWidth
-            variant="outlined"
-            value={newImageUrl}
-            onChange={(e) => setNewImageUrl(e.target.value)}
-            placeholder="https://example.com/image.jpg"
-            className="car-details-dialog-input"
-          />
-        </DialogContent>
-        <DialogActions className="car-details-dialog-actions">
-          <Button
-            onClick={() => setAddImageDialogOpen(false)}
-            className="car-details-dialog-cancel"
-          >
-            Anuluj
-          </Button>
-          <Button
-            onClick={handleAddImage}
-            variant="contained"
-            disabled={!newImageUrl.trim()}
-            className="car-details-dialog-add"
-          >
-            Dodaj zdjęcie
-          </Button>
-        </DialogActions>
-      </Dialog>
-    </Box>
+      {addImageDialogOpen && (
+        <div className="car-details-add-image-dialog" style={{ position: 'fixed', top: 0, left: 0, right: 0, bottom: 0, zIndex: 1000, background: 'rgba(0,0,0,0.7)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+          <div style={{ background: '#181818', borderRadius: 16, minWidth: 320, maxWidth: 400, width: '100%', boxShadow: '0 8px 32px rgba(0,0,0,0.3)', padding: 24, border: '1px solid #C3845E' }}>
+            <div className="car-details-dialog-title" style={{ marginBottom: 16 }}>
+              <span style={{ marginRight: 8 }}>📷</span> Add new image
+            </div>
+            <input
+              autoFocus
+              type="url"
+              value={newImageUrl}
+              onChange={e => setNewImageUrl(e.target.value)}
+              placeholder="https://example.com/image.jpg"
+              className="car-details-dialog-input"
+              style={{ width: '100%', padding: 10, borderRadius: 8, border: '1px solid #C3845E', marginBottom: 16, background: 'rgba(195,132,94,0.05)', color: '#fff' }}
+            />
+            <div className="car-details-dialog-actions" style={{ display: 'flex', justifyContent: 'flex-end', gap: 12 }}>
+              <button onClick={() => setAddImageDialogOpen(false)} className="car-details-dialog-cancel">Cancel</button>
+              <button onClick={handleAddImage} className="car-details-dialog-add" disabled={!newImageUrl.trim()}>
+                Add image
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+    </div>
   );
 };
 

@@ -10,7 +10,7 @@ const Sidebar = ({ mobileOpen, handleDrawerToggle }) => {
   
   const menuItems = [
     { text: 'Dashboard', icon: '📊', path: '/' },
-    { text: 'Samochody', icon: '🚗', path: '/cars' },
+    { text: 'Cars', icon: '🚗', path: '/cars' },
   ];
   
   const handleLogout = () => {
@@ -58,7 +58,7 @@ const Sidebar = ({ mobileOpen, handleDrawerToggle }) => {
               onClick={handleLogout}
             >
               {/* <span className="rentivaAdminSidebar__logoutIcon">🚪</span> */}
-              <p className="rentivaAdminSidebar__menuText">Wyloguj</p>
+              <p className="rentivaAdminSidebar__menuText">Logout</p>
             </button>
           </div>
         </div>

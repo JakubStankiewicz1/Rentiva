@@ -2,17 +2,17 @@ import React from 'react';
 import './carCard.css';
 import { Link } from 'react-router-dom';
 
-const CarCard = ({ car, onDelete }) => {  // Funkcja do ekstrakcji pierwszego obrazu z listy
+const CarCard = ({ car, onDelete }) => {  // Function to extract the first image from the list
   const getFirstImage = () => {
     if (car.images && car.images.length > 0 && car.images[0]) {
-      // Sprawdź czy to jest już pełny URL
+      // Check if it's already a full URL
       if (car.images[0].startsWith('http://') || car.images[0].startsWith('https://')) {
         return car.images[0];
       }
-      // Fallback dla starych danych - dodaj /images/ prefix
+      // Fallback for old data - add /images/ prefix
       return `/images/${car.images[0]}.jpg`;
     }
-    return '/images/car-placeholder.jpg'; // Domyślne zdjęcie
+    return '/images/car-placeholder.jpg'; // Default image
   };
   return (
     <div className="rentivaAdminCarCard">
@@ -36,12 +36,12 @@ const CarCard = ({ car, onDelete }) => {  // Funkcja do ekstrakcji pierwszego ob
         
         <div className="rentivaAdminCarCard__specs">
           <div className="rentivaAdminCarCard__specRow">
-            <p className="rentivaAdminCarCard__specLabel">Silnik:</p>
+            <p className="rentivaAdminCarCard__specLabel">Engine:</p>
             <p className="rentivaAdminCarCard__specValue">{car.engine}</p>
           </div>
           <div className="rentivaAdminCarCard__specRow">
-            <p className="rentivaAdminCarCard__specLabel">Moc:</p>
-            <p className="rentivaAdminCarCard__specValue">{car.power} KM</p>
+            <p className="rentivaAdminCarCard__specLabel">Power:</p>
+            <p className="rentivaAdminCarCard__specValue">{car.power} HP</p>
           </div>
           <div className="rentivaAdminCarCard__specRow">
             <p className="rentivaAdminCarCard__specLabel">0-100:</p>
@@ -54,7 +54,7 @@ const CarCard = ({ car, onDelete }) => {  // Funkcja do ekstrakcji pierwszego ob
         </div>
         
         <p className="rentivaAdminCarCard__price">
-          {car.grossPrice} PLN / dzień
+          {car.grossPrice} PLN / day
         </p>
       </div>
       
@@ -64,7 +64,7 @@ const CarCard = ({ car, onDelete }) => {  // Funkcja do ekstrakcji pierwszego ob
           className="rentivaAdminCarCard__detailsButton"
         >
           <span className="rentivaAdminCarCard__icon">ℹ️</span>
-          Szczegóły
+          Details
         </Link>
         
         <div className="rentivaAdminCarCard__actionButtons">
@@ -73,7 +73,7 @@ const CarCard = ({ car, onDelete }) => {  // Funkcja do ekstrakcji pierwszego ob
             className="rentivaAdminCarCard__editButton"
           >
             <span className="rentivaAdminCarCard__icon">✏️</span>
-            Edytuj
+            Edit
           </Link>
           
           <button 
@@ -81,7 +81,7 @@ const CarCard = ({ car, onDelete }) => {  // Funkcja do ekstrakcji pierwszego ob
             onClick={() => onDelete(car.id)}
           >
             <span className="rentivaAdminCarCard__icon">🗑️</span>
-            Usuń
+            Delete
           </button>
         </div>
       </div>
