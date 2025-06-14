@@ -10,7 +10,7 @@ import Fotter from '../../components/Fotter/Fotter';
 const Cooperation = () => {
   return (
     <div className='cooperation'>
-        {/* <Navbar /> */}
+        <Navbar />
         <CooperationHero />
         <CooperationWhyUs />
         <CooperationHowToStart />

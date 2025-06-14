@@ -128,7 +128,8 @@
 
 
 .ourCollectionListContainerTopContainerBottomContainerElement:hover .ourCollectionListContainerTopContainerBottomContainerElementContainerText {
-    color: #EFAF33;
+    /* color: #EFAF33; */
+    color: #FFFFFF;
 }
 
 

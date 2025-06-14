@@ -9,12 +9,10 @@ const CooperationHero = () => {
 
             {/* Top Part */}
             <div className="cooperationHeroContainerTop">
-                <div className="cooperationHeroContainerTopContainer">
-
-                    <div className="cooperationHeroContainerTopContainerOne">
+                <div className="cooperationHeroContainerTopContainer">                    <div className="cooperationHeroContainerTopContainerOne">
                         <div className="cooperationHeroContainerTopContainerOneContainer">
                             <p className="cooperationHeroContainerTopContainerOneContainerText bai-jamjuree-regular">
-                                Zostań partnerem JustCars Premium
+                                Partnership with Rentiva
                             </p>
                         </div>
                     </div>
@@ -22,7 +20,7 @@ const CooperationHero = () => {
                     <div className="cooperationHeroContainerTopContainerTwo">
                         <div className="cooperationHeroContainerTopContainerTwoContainer">
                             <p className="cooperationHeroContainerTopContainerTwoContainerText bai-jamjuree-regular">
-                                Zostań partnerem JustCars Premium
+                                Join the Rentiva Partner Network
                             </p>
                         </div>
                     </div>
@@ -30,7 +28,7 @@ const CooperationHero = () => {
                     <div className="cooperationHeroContainerTopContainerThree">
                         <div className="cooperationHeroContainerTopContainerThreeContainer">
                             <p className="cooperationHeroContainerTopContainerThreeContainerText bai-jamjuree-regular">
-                                Osiągnij dochód pasywny dzięki swojemu samochodowi premium!
+                                Transform your vehicle into a steady income source!
                             </p>
                         </div>
                     </div>
@@ -38,7 +36,7 @@ const CooperationHero = () => {
                     <div className="cooperationHeroContainerTopContainerFour">
                         <div className="cooperationHeroContainerTopContainerFourContainer">
                             <p className="cooperationHeroContainerTopContainerFourContainerText bai-jamjuree-regular">
-                                Wstaw Twój samochód do naszej wypożyczalni i uwolnij moc pasywnego przychodu!
+                                Share your car on our platform and start earning today!
                             </p>
                         </div>
                     </div>
@@ -46,7 +44,7 @@ const CooperationHero = () => {
                     <div className="cooperationHeroContainerTopContainerFive">
                         <div className="cooperationHeroContainerTopContainerFiveContainer">
                             <p className="cooperationHeroContainerTopContainerFiveContainerText bai-jamjuree-regular">
-                                Masz luksusowe auto, które może zarabiać? W JustCars Premium dajemy Ci możliwość maksymalizacji potencjału Twojego auta, jednocześnie gwarantując pełne bezpieczeństwo i profesjonalną obsługę.
+                                Do you own an exceptional vehicle that can generate profits? Rentiva offers you the opportunity to monetize your car while maintaining the highest safety standards and comprehensive customer service.
                             </p>
                         </div>
                     </div>

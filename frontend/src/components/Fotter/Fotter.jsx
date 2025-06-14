@@ -196,11 +196,11 @@ const Fotter = () => {
                                 </p>
                             </div>
 
-                            <div className="fotterContainerBottomContainerLeftContainerThree">
+                            {/* <div className="fotterContainerBottomContainerLeftContainerThree">
                                 <p className="fotterContainerBottomContainerLeftContainerThreeText bai-jamjuree-regular">
                                     Topczarter.pl
                                 </p>
-                            </div>
+                            </div> */}
                         </div>
                     </div>
 

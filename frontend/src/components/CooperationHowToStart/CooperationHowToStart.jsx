@@ -8,9 +8,8 @@ const CooperationHowToStart = () => {
 
             {/* Top Part */}
             <div className="cooperationHowToStartContainerTop">
-                <div className="cooperationHowToStartContainerTopCotainer">
-                    <p className="cooperationHowToStartContainerTopCotainerText bai-jamjuree-regular">
-                        Jak zacząć współpracę?
+                <div className="cooperationHowToStartContainerTopCotainer">                    <p className="cooperationHowToStartContainerTopCotainerText bai-jamjuree-regular">
+                        How to start cooperation?
                     </p>
                 </div>
             </div>
@@ -26,11 +25,9 @@ const CooperationHowToStart = () => {
                                 <p className="cooperationHowToStartContainerBottomContainerElementContainerOneText bai-jamjuree-regular">
                                     1.
                                 </p>
-                            </p>
-
-                            <p className="cooperationHowToStartContainerBottomContainerElementContainerTwo">
+                            </p>                            <p className="cooperationHowToStartContainerBottomContainerElementContainerTwo">
                                 <p className="cooperationHowToStartContainerBottomContainerElementContainerTwoText bai-jamjuree-regular">
-                                    Skontaktuj się z nami telefonicznie lub przez formularz kontaktowy – darmowa konsultacja i omówienie szczegółów.
+                                    Contact us by phone or fill out our online form – we offer free consultation and detailed discussion of cooperation terms.
                                 </p>
                             </p>
                         </div>
@@ -43,11 +40,9 @@ const CooperationHowToStart = () => {
                                 <p className="cooperationHowToStartContainerBottomContainerElementContainerOneText bai-jamjuree-regular">
                                     2.
                                 </p>
-                            </p>
-
-                            <p className="cooperationHowToStartContainerBottomContainerElementContainerTwo">
+                            </p>                            <p className="cooperationHowToStartContainerBottomContainerElementContainerTwo">
                                 <p className="cooperationHowToStartContainerBottomContainerElementContainerTwoText bai-jamjuree-regular">
-                                    Podpisz umowę – dopasujemy warunki współpracy do Twoich oczekiwań.
+                                    We finalize the partnership agreement – individually tailoring cooperation terms to your vehicle and preferences.
                                 </p>
                             </p>
                         </div>
@@ -60,11 +55,9 @@ const CooperationHowToStart = () => {
                                 <p className="cooperationHowToStartContainerBottomContainerElementContainerOneText bai-jamjuree-regular">
                                     3.
                                 </p>
-                            </p>
-
-                            <p className="cooperationHowToStartContainerBottomContainerElementContainerTwo">
+                            </p>                            <p className="cooperationHowToStartContainerBottomContainerElementContainerTwo">
                                 <p className="cooperationHowToStartContainerBottomContainerElementContainerTwoText bai-jamjuree-regular">
-                                    Oddaj auto najszybciej rozwijającej się wypożyczalni aut luksusowych JustCars Premium – zabezpieczamy Twój pojazd i wprowadzamy go do floty.
+                                    Hand over your vehicle to the Rentiva platform – we perform full technical service, documentation and introduce your car to our premium fleet.
                                 </p>
                             </p>
                         </div>
@@ -77,11 +70,9 @@ const CooperationHowToStart = () => {
                                 <p className="cooperationHowToStartContainerBottomContainerElementContainerOneText bai-jamjuree-regular">
                                     4.
                                 </p>
-                            </p>
-
-                            <p className="cooperationHowToStartContainerBottomContainerElementContainerTwo">
+                            </p>                            <p className="cooperationHowToStartContainerBottomContainerElementContainerTwo">
                                 <p className="cooperationHowToStartContainerBottomContainerElementContainerTwoText bai-jamjuree-regular">
-                                    Ciesz się regularnymi dochodami – otrzymuj rozliczenia w elastycznych modelach wypłat.
+                                    Receive steady income – get transparent settlements at your chosen payout schedule and track profits in real time.
                                 </p>
                             </p>
                         </div>

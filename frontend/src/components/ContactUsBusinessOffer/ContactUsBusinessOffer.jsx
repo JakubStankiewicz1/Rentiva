@@ -20,8 +20,7 @@ const ContactUsBusinessOffer = () => {
                 <div className="contactUsBusinessOfferContainerRightContainer">
                     {/* Top Part */}
                     <div className="contactUsBusinessOfferContainerRightContainerTop">
-                        <div className="contactUsBusinessOfferContainerRightContainerTopContainer">
-                            <p className="contactUsBusinessOfferContainerRightContainerTopContainerText bai-jamjuree-regular">
+                        <div className="contactUsBusinessOfferContainerRightContainerTopContainer">                            <p className="contactUsBusinessOfferContainerRightContainerTopContainerText bai-jamjuree-regular">
                                 Business Offer
                             </p>
                         </div>
@@ -40,40 +39,39 @@ const ContactUsBusinessOffer = () => {
 
                             {/* Right Part */}
                             <div className="contactUsBusinessOfferContainerRightContainerBottomContainerRight">
-                                <div className="contactUsBusinessOfferContainerRightContainerBottomContainerRightContainer">
-                                    <div className="contactUsBusinessOfferContainerRightContainerBottomContainerRightContainerOne">
+                                <div className="contactUsBusinessOfferContainerRightContainerBottomContainerRightContainer">                                    <div className="contactUsBusinessOfferContainerRightContainerBottomContainerRightContainerOne">
                                         <p className="contactUsBusinessOfferContainerRightContainerBottomContainerRightContainerOneText bai-jamjuree-regular">
-                                            At JustCars Premium, we believe that the right car emphasizes the business status, and that style and comfort should be a work standard.
+                                            At Rentiva, we believe that the right vehicle emphasizes business prestige, and that style and comfort should be the standard in professional work.
                                         </p>
                                     </div>
 
                                     <div className="contactUsBusinessOfferContainerRightContainerBottomContainerRightContainerTwo">
                                         <p className="contactUsBusinessOfferContainerRightContainerBottomContainerRightContainerTwoText bai-jamjuree-regular">
-                                            Our fleet of luxury cars will provide you with a comfortable and efficient journey, regardless of the destination and distance.
+                                            Our fleet of luxury vehicles will provide you with a comfortable and efficient journey, regardless of destination and distance.
                                         </p>
                                     </div>
 
                                     <div className="contactUsBusinessOfferContainerRightContainerBottomContainerRightContainerThree">
                                         <p className="contactUsBusinessOfferContainerRightContainerBottomContainerRightContainerThreeText bai-jamjuree-regular">
-                                            In our offer you will find a wide selection of premium cars, including models such as Bentley Continental GT, Lamborghini Urus, Lexus LS500 and many other luxury cars for rent.
+                                            In our portfolio you will find an extensive selection of premium automobiles, including models such as Bentley Continental GT, Lamborghini Urus, Lexus LS500 and many other luxury cars for rental.
                                         </p>
                                     </div>
 
                                     <div className="contactUsBusinessOfferContainerRightContainerBottomContainerRightContainerFour">
                                         <p className="contactUsBusinessOfferContainerRightContainerBottomContainerRightContainerFourText bai-jamjuree-regular">
-                                            Our offer is tailored individually to the needs and requirements of our business clients.
+                                            Our services are individually tailored to meet the specific needs and requirements of our corporate clients.
                                         </p>
                                     </div>
 
                                     <div className="contactUsBusinessOfferContainerRightContainerBottomContainerRightContainerFive">
                                         <p className="contactUsBusinessOfferContainerRightContainerBottomContainerRightContainerFiveText bai-jamjuree-regular">
-                                            We offer flexible rental modes that allow for short and long-term rental as well as for special occasions such as the airport/trainstation picking ups.
+                                            We provide flexible rental solutions that accommodate both short-term and long-term arrangements, as well as specialized services for executive transfers including airport and railway station pickups.
                                         </p>
                                     </div>
 
                                     <div className="contactUsBusinessOfferContainerRightContainerBottomContainerRightContainerSix">
                                         <p className="contactUsBusinessOfferContainerRightContainerBottomContainerRightContainerSixText bai-jamjuree-regular">
-                                            Feel free to contact our team for more information about our corporate offer.
+                                            Please feel free to contact our professional team for detailed information about our corporate solutions.
                                         </p>
                                     </div>
                                 </div>
