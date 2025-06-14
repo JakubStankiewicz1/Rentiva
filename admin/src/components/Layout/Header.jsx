@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import './header.css';
 import { useAuth } from '../../context/AuthContext';
 import { useNavigate } from 'react-router-dom';
@@ -7,6 +7,7 @@ const Header = ({ handleDrawerToggle }) => {
   const { currentUser, logout } = useAuth();
   const navigate = useNavigate();
   const [anchorEl, setAnchorEl] = React.useState(null);
+  const userMenuRef = useRef(null);
   
   const handleMenu = (event) => {
     setAnchorEl(event.currentTarget);
@@ -15,22 +16,41 @@ const Header = ({ handleDrawerToggle }) => {
   const handleClose = () => {
     setAnchorEl(null);
   };
-
   const handleLogout = () => {
     handleClose();
     logout();
     navigate('/login');
   };
+
+  // Zamykanie dropdown-a przy kliknięciu poza nim
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (userMenuRef.current && !userMenuRef.current.contains(event.target)) {
+        setAnchorEl(null);
+      }
+    };
+
+    // Dodajemy event listener tylko gdy dropdown jest otwarty
+    if (anchorEl) {
+      document.addEventListener('mousedown', handleClickOutside);
+    }
+
+    // Cleanup function - usuwamy event listener
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [anchorEl]);
+
   return (
     <header className={`rentivaAdminHeader ${!handleDrawerToggle ? 'rentivaAdminHeader--mobile' : ''}`}>
       <div className="rentivaAdminHeader__left">
-        <button
+        {/* <button
           className={`rentivaAdminHeader__menuButton ${handleDrawerToggle ? 'rentivaAdminHeader__menuButton--mobile' : ''}`}
           onClick={handleDrawerToggle}
           aria-label="Open navigation menu"
         >
           ☰
-        </button>
+        </button> */}
         <p className="rentivaAdminHeader__title">Panel Administracyjny</p>
       </div>
       
@@ -39,8 +59,7 @@ const Header = ({ handleDrawerToggle }) => {
           🔔
           <span className="rentivaAdminHeader__notificationsBadge">4</span>
         </button> */}
-        
-        <div className="rentivaAdminHeader__userSection">
+          <div className="rentivaAdminHeader__userSection" ref={userMenuRef}>
           <button
             className="rentivaAdminHeader__userButton"
             onClick={handleMenu}
