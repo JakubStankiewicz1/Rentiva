@@ -1,8 +1,14 @@
-import React from 'react';
+import React, { useState } from 'react';
 import "./carDetailsInfo.css";
 import { IoIosArrowRoundDown } from "react-icons/io";
+import ReservationModal from '../ReservationModal/ReservationModal';
+import SuccessNotification from '../SuccessNotification/SuccessNotification';
 
 const CarDetailsInfo = ({ car }) => {
+  const [isReservationModalOpen, setIsReservationModalOpen] = useState(false);
+  const [showSuccessNotification, setShowSuccessNotification] = useState(false);
+  const [reservationData, setReservationData] = useState(null);
+
   if (!car || !car.description) {
     return null;
   }
@@ -10,6 +16,16 @@ const CarDetailsInfo = ({ car }) => {
   const { description, images } = car;
   const leftImage = images && images.length > 2 ? images[2] : images[0];
   const rightImage = images && images.length > 3 ? images[3] : images[0];
+
+  const handleBookCar = () => {
+    setIsReservationModalOpen(true);
+  };
+  const handleReservationSubmit = (reservation) => {
+    // Handle successful reservation
+    setReservationData(reservation);
+    setShowSuccessNotification(true);
+    console.log('Reservation created:', reservation);
+  };
 
   return (
     <div className='carDetailsInfo'>
@@ -79,15 +95,10 @@ const CarDetailsInfo = ({ car }) => {
                     </div>
 
                 </div>
-            </div>
-
-
-
-
-            {/* Bottom Part */}
+            </div>            {/* Bottom Part */}
             <div className="carDetailsInfoContainerBottom">
                 <div className="carDetailsInfoContainerBottomContainer">
-                    <div className="carDetailsInfoContainerBottomContainerButton">
+                    <div className="carDetailsInfoContainerBottomContainerButton" onClick={handleBookCar}>
                         <div className="carDetailsInfoContainerBottomContainerButtonContainer">
                             <p className="carDetailsInfoContainerBottomContainerButtonContainerText bai-jamjuree-regular">
                                 Book this car
@@ -95,7 +106,7 @@ const CarDetailsInfo = ({ car }) => {
                         </div>
                     </div>
 
-                    <div className="carDetailsInfoContainerBottomContainerArrow">
+                    <div className="carDetailsInfoContainerBottomContainerArrow" onClick={handleBookCar}>
                         <div className="carDetailsInfoContainerBottomContainerArrowContainer">
                             <IoIosArrowRoundDown className='carDetailsInfoContainerBottomContainerArrowContainerIcon' />
                         </div>
@@ -103,7 +114,21 @@ const CarDetailsInfo = ({ car }) => {
                 </div>
             </div>
 
-        </div>
+        </div>        {/* Reservation Modal */}
+        <ReservationModal
+          car={car}
+          isOpen={isReservationModalOpen}
+          onClose={() => setIsReservationModalOpen(false)}
+          onSubmit={handleReservationSubmit}
+        />
+
+        {/* Success Notification */}
+        <SuccessNotification
+          isVisible={showSuccessNotification}
+          onClose={() => setShowSuccessNotification(false)}
+          reservationId={reservationData?.id}
+          carName={car.title}
+        />
     </div>
   )
 }

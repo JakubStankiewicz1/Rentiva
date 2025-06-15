@@ -193,3 +193,21 @@
   width: 25px;
   height: 25px;
 }
+
+/* Make button and arrow clickable */
+.carDetailsInfoContainerBottomContainerButton,
+.carDetailsInfoContainerBottomContainerArrow {
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.carDetailsInfoContainerBottomContainerButton:hover,
+.carDetailsInfoContainerBottomContainerArrow:hover {
+  transform: translateY(-2px);
+  opacity: 0.9;
+}
+
+.carDetailsInfoContainerBottomContainerButton:active,
+.carDetailsInfoContainerBottomContainerArrow:active {
+  transform: translateY(0);
+}
