@@ -6,6 +6,8 @@ import { toast } from 'react-toastify';
 import './carDetails.css';
 import './addImageDialog.css';
 import { IoIosClose } from "react-icons/io";
+import { FiArrowLeft, FiCamera, FiX, FiSettings, FiDollarSign, FiAlertTriangle } from 'react-icons/fi';
+import { FaCar, FaTachometerAlt } from 'react-icons/fa';
 
 const CarDetails = () => {
   const { id } = useParams();
@@ -204,11 +206,10 @@ const CarDetails = () => {
   }
 
   if (error) {
-    return (
-      <div className="car-details-container">
+    return (      <div className="car-details-container">
         <div className="car-details-error">{error}</div>
         <button onClick={() => navigate('/cars')} className="car-details-btn-back">
-          <span className="car-details-btn-icon">←</span>
+          <FiArrowLeft className="car-details-btn-icon" />
           Back to car list
         </button>
       </div>
@@ -220,9 +221,8 @@ const CarDetails = () => {
       <div className="car-details-container">
         <div className="car-details-warning">
           Car with ID: {id} not found
-        </div>
-        <button onClick={() => navigate('/cars')} className="car-details-btn-back">
-          <span className="car-details-btn-icon">←</span>
+        </div>        <button onClick={() => navigate('/cars')} className="car-details-btn-back">
+          <FiArrowLeft className="car-details-btn-icon" />
           Back to car list
         </button>
       </div>
@@ -241,9 +241,8 @@ const CarDetails = () => {
               <span className="car-details-chip-brand">{car.brand}</span>
               <span className="car-details-chip-type">{car.type}</span>
             </div>
-          </div>          <div className="car-details-actions">
-            <button className="car-details-btn-back" onClick={() => navigate('/cars')}>
-              <span className="car-details-btn-icon">←</span> Back
+          </div>          <div className="car-details-actions">            <button className="car-details-btn-back" onClick={() => navigate('/cars')}>
+              <FiArrowLeft className="car-details-btn-icon" /> Back
             </button>
             <button className="car-details-btn-edit" onClick={openEditDialog}>
               Edit
@@ -258,7 +257,7 @@ const CarDetails = () => {
       {/* Gallery - Full width */}
       <div className="car-details-gallery-card car-details-hover-effect">
         <div className="car-details-gallery-header">
-          <span className="car-details-gallery-title">📷 Image Gallery</span>          <button className="car-details-gallery-add-btn" onClick={openAddImageDialog}>
+          <span className="car-details-gallery-title"><FiCamera /> Image Gallery</span>          <button className="car-details-gallery-add-btn" onClick={openAddImageDialog}>
             + Add
           </button>
         </div>
@@ -299,7 +298,7 @@ const CarDetails = () => {
                     }}
                     aria-label="Remove image"
                   >
-                    ❌
+                    <FiX />
                   </button>
                 )}
               </div>
@@ -361,7 +360,7 @@ const CarDetails = () => {
         {/* Basic Info */}
         <div className="car-details-info-card car-details-hover-effect">
           <div className="car-details-section-title">
-            <span className="car-details-section-icon">🚗</span> Basic Information
+            <span className="car-details-section-icon"><FaCar /></span> Basic Information
           </div>
           <div className="car-details-divider" />
           <table className="car-details-table">
@@ -395,7 +394,7 @@ const CarDetails = () => {
         {/* Specification */}
         <div className="car-details-info-card car-details-hover-effect">
           <div className="car-details-section-title">
-            <span className="car-details-section-icon">⚙️</span> Specification
+            <span className="car-details-section-icon"><FiSettings /></span> Specification
           </div>
           <div className="car-details-divider" />
           <table className="car-details-table">
@@ -438,7 +437,7 @@ const CarDetails = () => {
         {/* Pricing */}
         <div className="car-details-pricing-card car-details-hover-effect">
           <div className="car-details-section-title">
-            <span className="car-details-section-icon">🏁</span> Pricing
+            <span className="car-details-section-icon"><FiDollarSign /></span> Pricing
           </div>
           <div className="car-details-divider" />
           
@@ -483,7 +482,7 @@ const CarDetails = () => {
         {/* Mileage */}
         <div className="car-details-pricing-card car-details-hover-effect">
           <div className="car-details-section-title">
-            <span className="car-details-section-icon">🛠️</span> Mileage limits
+            <span className="car-details-section-icon"><FaTachometerAlt /></span> Mileage limits
           </div>
           <div className="car-details-divider" />
           
@@ -551,7 +550,7 @@ const CarDetails = () => {
                         )}
                         {isPreviewError && (
                           <div className="preview-error">
-                            <span className="preview-error-icon">⚠️</span>
+                            <span className="preview-error-icon"><FiAlertTriangle /></span>
                             <span>Unable to load image from URL</span>
                           </div>
                         )}
@@ -631,7 +630,7 @@ const CarDetails = () => {
 
 
             {/* <div className="car-details-dialog-title" style={{ marginBottom: 16 }}>
-              <span style={{ marginRight: 8 }}>❌</span> Confirm Delete Image
+              <span style={{ marginRight: 8 }}><FiX /></span> Confirm Delete Image
             </div>
             <div className="car-details-dialog-content" style={{ marginBottom: 24 }}>
               Are you sure you want to delete this image?

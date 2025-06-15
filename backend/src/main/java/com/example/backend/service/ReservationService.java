@@ -326,6 +326,28 @@ public class ReservationService {
     }
     
     /**
+     * Update reservation status
+     */
+    public ReservationDTO updateReservationStatus(Long id, ReservationStatus newStatus) {
+        logger.info("Updating reservation {} status to {}", id, newStatus);
+        
+        Reservation reservation = reservationRepository.findById(id)
+                .orElseThrow(() -> new ReservationNotFoundException("Reservation not found with id: " + id));
+        
+        ReservationStatus oldStatus = reservation.getStatus();
+        reservation.setStatus(newStatus);
+        
+        // Update modification time
+        reservation.setUpdatedAt(LocalDateTime.now());
+        
+        Reservation savedReservation = reservationRepository.save(reservation);
+        
+        logger.info("Reservation {} status updated from {} to {}", id, oldStatus, newStatus);
+        
+        return reservationMapper.toDTO(savedReservation);
+    }
+
+    /**
      * Validate reservation dates
      */
     private void validateReservationDates(LocalDate startDate, LocalDate endDate) {

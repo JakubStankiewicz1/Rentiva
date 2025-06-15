@@ -266,7 +266,7 @@ const CarDetailsContact = ({ car }) => {
                                   <div className="carDetailsContactContainerTopContainerRightContainerSixContainerButton">
                                       <div className="carDetailsContactContainerTopContainerRightContainerSixContainerButtonContainer">
                                           <p className="carDetailsContactContainerTopContainerRightContainerSixContainerButtonContainerText bai-jamjuree-regular">
-                                              Book this car
+                                              Send message
                                           </p>
                                       </div>
                                   </div>

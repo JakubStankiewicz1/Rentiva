@@ -240,4 +240,30 @@ public class ReservationController {
             "timestamp", java.time.LocalDateTime.now().toString()
         ));
     }
+    
+    /**
+     * Update reservation status
+     */
+    @PatchMapping("/{id}/status")
+    public ResponseEntity<ReservationDTO> updateReservationStatus(
+            @PathVariable Long id, 
+            @RequestBody Map<String, String> requestBody) {
+        
+        String statusString = requestBody.get("status");
+        if (statusString == null) {
+            throw new IllegalArgumentException("Status is required");
+        }
+        
+        ReservationStatus newStatus;
+        try {
+            newStatus = ReservationStatus.valueOf(statusString);
+        } catch (IllegalArgumentException e) {
+            throw new IllegalArgumentException("Invalid status: " + statusString);
+        }
+        
+        logger.info("Updating reservation {} status to {}", id, newStatus);
+        
+        ReservationDTO reservation = reservationService.updateReservationStatus(id, newStatus);
+        return ResponseEntity.ok(reservation);
+    }
 }

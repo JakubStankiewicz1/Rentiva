@@ -283,12 +283,7 @@ const OurCollectionList = () => {
           <div className="ourCollectionListContainerBottomContainer">            {cars.map(car => (
               <CarCard
                 key={car.id}
-                id={car.id}
-                images={car.images}
-                title={car.title}
-                engine={car.engine}
-                power={car.power}
-                acceleration={car.acceleration}
+                car={car}
               />
             ))}
 

@@ -167,16 +167,10 @@ const CarDeliveryMain = () => {
         {/* Cars Grid */}
         <div className="carDeliveryMainCars">
           <div className="carDeliveryMainCarsContainer">
-            {filteredCars.length > 0 ? (
-              filteredCars.map((car) => (
+            {filteredCars.length > 0 ? (              filteredCars.map((car) => (
                 <CarCard
                   key={car.id}
-                  id={car.id}
-                  images={car.images}
-                  title={car.title}
-                  engine={car.engine}
-                  power={car.power}
-                  acceleration={car.acceleration}
+                  car={car}
                 />
               ))
             ) : (

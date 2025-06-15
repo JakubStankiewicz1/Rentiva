@@ -7,10 +7,10 @@ const Sidebar = ({ mobileOpen, handleDrawerToggle }) => {
   const location = useLocation();
   const navigate = useNavigate();
   const { logout, currentUser } = useAuth();
-  
-  const menuItems = [
+    const menuItems = [
     { text: 'Dashboard', icon: '📊', path: '/' },
     { text: 'Cars', icon: '🚗', path: '/cars' },
+    { text: 'Reservations', icon: '📋', path: '/reservations' },
   ];
   
   const handleLogout = () => {
@@ -50,13 +50,13 @@ const Sidebar = ({ mobileOpen, handleDrawerToggle }) => {
             ))}
           </ul>
           
-          {/* <div className="rentivaAdminSidebar__divider"></div> */}
           
           <div className="rentivaAdminSidebar__logoutSection">
             <button 
               className="rentivaAdminSidebar__logoutButton"
               onClick={handleLogout}
             >
+              
               {/* <span className="rentivaAdminSidebar__logoutIcon">🚪</span> */}
               <p className="rentivaAdminSidebar__menuText">Logout</p>
             </button>

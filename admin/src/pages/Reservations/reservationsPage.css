@@ -1,0 +1,751 @@
+@import url('https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@300;400;500;600;700&display=swap');
+
+/* Reservations Page Styles - Dark Theme */
+.reservations-page {
+  font-family: 'Bai Jamjuree', sans-serif;
+  background: linear-gradient(135deg, #181818 0%, #232323 100%);
+  min-height: 100vh;
+  width: calc(100vw - 240px);
+  margin-left: 240px;
+  position: relative;
+  padding-bottom: 60px;
+}
+
+.reservations-container {
+  /* width: 96%; */
+  margin-left: auto;
+  position: relative;
+  /* background-color: red ; */
+}
+
+/* Page Header */
+.page-header {
+  background: #181818;
+  height: 100px;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* padding: 0 20px; */
+  padding-left: 25px;
+  padding-right: 25px;
+  /* margin-bottom: 40px; */
+}
+
+.page-title {
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 2.4rem;
+  margin: 0;
+  /* text-shadow: 0 4px 16px rgba(0, 0, 0, 0.5), 0 2px 8px rgba(195, 132, 94, 0.3); */
+  /* background: linear-gradient(135deg, #ffffff 0%, #f5f5f5 100%); */
+  /* -webkit-background-clip: text; */
+  /* background-clip: text; */
+  /* -webkit-text-fill-color: transparent; */
+  /* filter: brightness(1.1); */
+  font-family: 'Bai Jamjuree', sans-serif;
+}
+
+.refresh-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: linear-gradient(135deg, #C3845E 0%, #E8A075 100%);
+  color: white;
+  border: none;
+  padding: 14px 32px;
+  font-size: 1.05rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  text-transform: none;
+  font-family: 'Bai Jamjuree', sans-serif;
+  letter-spacing: 0.5px;
+  min-width: 160px;
+}
+
+/* .refresh-btn:hover {
+  background: linear-gradient(135deg, #E8A075 0%, #F4B088 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(195, 132, 94, 0.4);
+} */
+
+.refresh-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.refresh-btn:disabled .btn-icon {
+  animation: spin 1s linear infinite;
+}
+
+.btn-icon {
+  font-size: 16px;
+  margin-right: 8px;
+}
+
+/* Filters Card */
+.filters-card {
+  background: #1a1a1a;
+  border: 1px solid #393939;
+  padding: 32px;
+  /* margin: 0 0 40px 0; */
+  position: relative;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* .filters-card:hover {
+  border-color: #C3845E;
+} */
+
+.filters-content {
+  display: grid;
+  grid-template-columns: 2fr 1fr auto;
+  gap: 24px;
+  align-items: end;
+}
+
+.filter-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.search-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.search-icon {
+  position: absolute;
+  left: 16px;
+  font-size: 16px;
+  color: #666;
+  z-index: 1;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.search-input {
+  width: 100%;
+  padding: 14px 16px 14px 48px;
+  border: 2px solid #393939;
+  background: #242424;
+  color: #ffffff;
+  font-size: 14px;
+  font-family: 'Bai Jamjuree', sans-serif;
+  transition: all 0.3s ease;
+}
+
+.search-input:focus {
+  outline: none;
+  border-color: #C3845E;
+  box-shadow: 0 0 0 3px rgba(195, 132, 94, 0.1);
+}
+
+.search-input::placeholder {
+  color: #666;
+}
+
+.filter-label {
+  font-size: 14px;
+  font-weight: 600;
+  color: #ffffff;
+  margin-bottom: 4px;
+  font-family: 'Bai Jamjuree', sans-serif;
+}
+
+.status-select {
+  padding: 14px 16px;
+  border: 2px solid #393939;
+  background: #242424;
+  color: #ffffff;
+  font-size: 14px;
+  font-family: 'Bai Jamjuree', sans-serif;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.status-select:focus {
+  outline: none;
+  border-color: #C3845E;
+  box-shadow: 0 0 0 3px rgba(195, 132, 94, 0.1);
+}
+
+.status-select option {
+  background: #242424;
+  color: #ffffff;
+  font-family: 'Bai Jamjuree', sans-serif;
+}
+
+.results-count {
+  font-size: 14px;
+  color: #C3845E;
+  font-weight: 600;
+  background: #242424;
+  padding: 12px 20px;
+  font-family: 'Bai Jamjuree', sans-serif;
+  border: 1px solid #393939;
+}
+
+/* Error Alert */
+.error-alert {
+  background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);
+  color: white;
+  padding: 16px 20px;
+  margin: 0 0 24px 0;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  box-shadow: 0 4px 15px rgba(220, 38, 38, 0.3);
+  border: 1px solid #dc2626;
+}
+
+.error-icon {
+  font-size: 20px;
+  color: inherit;
+}
+
+/* Table Card */
+.table-card {
+  background: #1a1a1a;
+  border: 1px solid #393939;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  margin: 0;
+  transition: all 0.3s ease;
+}
+/* 
+.table-card:hover {
+  border-color: #C3845E;
+} */
+
+.table-content {
+  padding: 0;
+}
+
+.loading-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 60px;
+  gap: 16px;
+  color: #ffffff;
+}
+
+.loading-container h3 {
+  font-family: 'Bai Jamjuree', sans-serif;
+  font-weight: 600;
+}
+
+.spinner {
+  width: 40px;
+  height: 40px;
+  border: 4px solid #393939;
+  border-left: 4px solid #C3845E;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.table-container {
+  overflow-x: auto;
+}
+
+.reservations-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #1a1a1a;
+}
+
+.reservations-table th {
+  background: #242424;
+  padding: 20px 16px;
+  text-align: left;
+  font-weight: 700;
+  color: #ffffff;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border-bottom: 2px solid #393939;
+  font-family: 'Bai Jamjuree', sans-serif;
+}
+
+.reservations-table td {
+  padding: 20px 16px;
+  border-bottom: 1px solid #393939;
+  font-size: 14px;
+  color: #ffffff;
+  background: #1a1a1a;
+  font-family: 'Bai Jamjuree', sans-serif;
+}
+
+.table-row {
+  transition: all 0.3s ease;
+}
+
+.table-row:hover {
+  background: #242424 !important;
+}
+
+.table-row:hover td {
+  background: #242424 !important;
+}
+
+.client-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.client-name {
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.client-email {
+  font-size: 12px;
+  color: #888;
+}
+
+.car-title {
+  font-weight: 500;
+  color: #ffffff;
+}
+
+.date-range {
+  font-size: 13px;
+  color: #ffffff;
+}
+
+.price {
+  font-weight: 700;
+  color: #C3845E;
+  font-size: 15px;
+}
+
+/* Status Chips */
+.status-chip {
+  display: inline-block;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.status-pending {
+  background-color: #fed7aa;
+  color: #9a3412;
+}
+
+.status-confirmed {
+  background-color: #34d399;
+  color: #065f46;
+}
+
+.status-cancelled {
+  background-color: #f87171;
+  color: #991b1b;
+}
+
+.status-completed {
+  background-color: #60a5fa;
+  color: #1e40af;
+}
+
+.status-in_progress {
+  background-color: #a78bfa;
+  color: #5b21b6;
+}
+
+/* Actions */
+.actions {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+}
+
+.action-btn {
+  background: none;
+  border: 2px solid transparent;
+  padding: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 6px;
+}
+
+.action-btn svg {
+  width: 16px;
+  height: 16px;
+}
+
+.view-btn {
+  background: #C3845E;
+  color: white;
+}
+
+.view-btn:hover {
+  background: #E8A075;
+  /* transform: scale(1.1); */
+}
+
+.delete-btn {
+  background: #dc2626;
+  color: white;
+}
+
+.delete-btn:hover {
+  background: #b91c1c;
+  /* transform: scale(1.1); */
+}
+
+.no-data {
+  text-align: center;
+  padding: 60px;
+}
+
+.no-data-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  color: #888;
+}
+
+.no-data-content h3 {
+  color: #ffffff;
+  font-family: 'Bai Jamjuree', sans-serif;
+  font-weight: 600;
+}
+
+.no-data-content p {
+  color: #888;
+  font-family: 'Bai Jamjuree', sans-serif;
+}
+
+.no-data-icon {
+  font-size: 48px;
+  opacity: 0.5;
+  color: #888;
+}
+
+/* Modal Styles */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  -webkit-backdrop-filter: blur(4px);
+  backdrop-filter: blur(4px);
+  transform: translateX(130px) translateY(60px);
+  /* padding-bottom: 100px; */
+}
+
+.modal {
+  background: #1a1a1a;
+  border: 1px solid #393939;
+  /* max-width: 800px; */
+  width: 70%;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
+  animation: modalSlideIn 0.3s ease-out;
+    margin-bottom: 50px;
+
+}
+
+.modal-small {
+  max-width: 500px;
+}
+
+@keyframes modalSlideIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9) translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+.modal-header {
+  background: linear-gradient(135deg, #C3845E 0%, #E8A075 100%);
+  color: white;
+  padding: 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.modal-header h2 {
+  margin: 0;
+  font-size: 24px;
+  font-weight: 700;
+  font-family: 'Bai Jamjuree', sans-serif;
+}
+
+.close-btn {
+  /* background: rgba(255, 255, 255, 0.2); */
+  border: none;
+  /* color: white; */
+  font-size: 24px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.close-btn:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: scale(1.1);
+}
+
+.close-btn-icon {
+  color: white;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  border-radius: 50%;
+  padding: 4px;
+}
+
+.close-btn-icon:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: scale(1.1);
+}
+
+.modal-content {
+  padding: 32px;
+  background: #1a1a1a;
+  color: #ffffff;
+}
+
+.reservation-details {
+  display: grid;
+  gap: 32px;
+}
+
+.details-section {
+  background: #242424;
+  padding: 24px;
+  border: 1px solid #393939;
+  border-left: 4px solid #C3845E;
+}
+
+.details-section h3 {
+  margin: 0 0 16px 0;
+  color: #ffffff;
+  font-size: 18px;
+  font-weight: 700;
+  font-family: 'Bai Jamjuree', sans-serif;
+}
+
+.detail-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 0;
+  border-bottom: 1px solid #393939;
+}
+
+.detail-item:last-child {
+  border-bottom: none;
+}
+
+.detail-item strong {
+  color: #ffffff;
+  font-weight: 600;
+  font-family: 'Bai Jamjuree', sans-serif;
+}
+
+.detail-item span {
+  color: #ffffff;
+  font-family: 'Bai Jamjuree', sans-serif;
+}
+
+.notes {
+  background: #242424;
+  padding: 16px;
+  border: 1px solid #393939;
+  font-style: italic;
+  color: #ffffff;
+  font-family: 'Bai Jamjuree', sans-serif;
+}
+
+.modal-footer {
+  padding: 24px 32px;
+  background: #1a1a1a;
+  border-top: 1px solid #393939;
+  display: flex;
+  justify-content: flex-end;
+  gap: 16px;
+}
+
+/* Button Styles */
+.btn {
+  padding: 12px 24px;
+  border: none;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: none;
+  font-family: 'Bai Jamjuree', sans-serif;
+}
+
+.btn-secondary {
+  background: #393939;
+  color: #ffffff;
+  border: 1px solid #555;
+}
+
+.btn-secondary:hover {
+  background: #555;
+  /* transform: translateY(-1px); */
+}
+
+.btn-danger {
+  background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);
+  color: white;
+  box-shadow: 0 4px 15px rgba(220, 38, 38, 0.3);
+}
+
+.btn-danger:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(220, 38, 38, 0.4);
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #C3845E 0%, #E8A075 100%);
+  color: white;
+  box-shadow: 0 4px 15px rgba(195, 132, 94, 0.3);
+}
+
+.btn-primary:hover {
+  background: linear-gradient(135deg, #E8A075 0%, #F4B088 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(195, 132, 94, 0.4);
+}
+
+/* Prevent body scroll when modal is open */
+body.modal-open {
+  overflow: hidden !important;
+  position: fixed;
+  width: 100%;
+}
+
+/* Custom styling for the reservation status in table */
+.table-row .status-chip {
+  white-space: nowrap;
+}
+
+/* Better hover effects for actions */
+.actions .action-btn {
+  opacity: 0.8;
+}
+
+.table-row:hover .actions .action-btn {
+  opacity: 1;
+}
+
+/* Custom scrollbar for modals */
+.modal::-webkit-scrollbar {
+  width: 8px;
+}
+
+.modal::-webkit-scrollbar-track {
+  background: #1a1a1a;
+}
+
+.modal::-webkit-scrollbar-thumb {
+  background-color: #393939;
+  border-radius: 4px;
+}
+
+.modal::-webkit-scrollbar-thumb:hover {
+  background-color: #C3845E;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .reservations-page {
+    width: calc(100vw - 200px);
+    margin-left: 200px;
+  }
+}
+
+@media (max-width: 768px) {
+  .reservations-page {
+    width: 100vw;
+    margin-left: 0;
+    padding: 16px;
+  }
+  
+  .page-header {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 16px;
+  }
+  
+  .page-title {
+    font-size: 2rem;
+    text-align: center;
+  }
+  
+  .filters-content {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  
+  .reservations-table {
+    font-size: 12px;
+  }
+  
+  .reservations-table th,
+  .reservations-table td {
+    padding: 12px 8px;
+  }
+  
+  .modal {
+    width: 95%;
+    margin: 20px;
+  }
+  
+  .modal-content {
+    padding: 20px;
+  }
+}

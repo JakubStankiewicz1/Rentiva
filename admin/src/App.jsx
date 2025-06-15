@@ -4,6 +4,7 @@ import Dashboard from './pages/Dashboard/Dashboard'
 import CarsPage from './pages/Cars/CarsPage'
 import CarDetails from './pages/Cars/CarDetails'
 import CarForm from './pages/CarForm/CarForm'
+import ReservationsPage from './pages/Reservations/ReservationsPage'
 import LoginPage from './pages/Login/LoginPage'
 import ProtectedRoute from './components/Auth/ProtectedRoute'
 import { AuthProvider } from './context/AuthContext'
@@ -62,8 +63,7 @@ function App() {
         <Routes>
           {/* Public Routes */}
           <Route path="/login" element={<LoginPage />} />
-          
-          {/* Protected Routes */}
+            {/* Protected Routes */}
           <Route element={<ProtectedRoute />}>
             {/* Main application layout with nested routes */}
             <Route element={<Layout />}>
@@ -75,6 +75,10 @@ function App() {
                 <Route path="new" element={<CarForm />} />
                 <Route path=":id" element={<CarDetails />} />
                 <Route path="edit/:id" element={<CarForm />} />
+              </Route>
+              {/* Reservations routes */}
+              <Route path="reservations">
+                <Route index element={<ReservationsPage />} />
               </Route>
             </Route>
           </Route>
