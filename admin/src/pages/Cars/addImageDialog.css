@@ -1,0 +1,216 @@
+/* Add Image Dialog - additional styles */
+.car-details-add-image-dialog {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1000;  background: rgba(0, 0, 0, 0.7);
+  -webkit-backdrop-filter: blur(5px);
+  backdrop-filter: blur(5px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.car-details-add-image-dialog-ele {
+  background-color: #111111;
+  width: 450px;
+  max-width: 90vw;
+  border-radius: 12px;
+  border: 1px solid #C3845E;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+  animation: fadeInDialog 0.3s ease-out;
+  overflow: hidden;
+}
+
+.car-details-add-image-dialog-ele-top {
+  background-color: #181818;
+  padding: 16px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid rgba(195, 132, 94, 0.3);
+}
+
+.car-details-add-image-dialog-ele-top-icon {
+  color: #C3845E;
+  font-weight: 600;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+}
+
+.car-details-add-image-dialog-ele-top-icon span {
+  margin-right: 10px;
+}
+
+.car-details-add-image-dialog-ele-top-close {
+  cursor: pointer;
+}
+
+.car-details-dialog-close-icon {
+  color: #ffffff;
+  width: 28px;
+  height: 28px;
+  opacity: 0.7;
+  transition: all 0.2s ease;
+}
+
+.car-details-dialog-close-icon:hover {
+  opacity: 1;
+  color: #C3845E;
+  transform: scale(1.1);
+}
+
+.car-details-add-image-dialog-ele-middle {
+  padding: 24px 20px;
+}
+
+.car-details-add-image-dialog-ele-middle-label {
+  display: block;
+  color: #E8A075;
+  font-weight: 500;
+  margin-bottom: 8px;
+  font-size: 14px;
+}
+
+.car-details-add-image-dialog-ele-middle-input {
+  width: 100%;
+  padding: 12px 16px;
+  border-radius: 8px;
+  border: 1px solid #C3845E;
+  background: rgba(195, 132, 94, 0.05);
+  color: #fff;
+  font-size: 16px;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.car-details-add-image-dialog-ele-middle-input:focus {
+  border-color: #E8A075;
+  box-shadow: 0 0 0 2px rgba(195, 132, 94, 0.2);
+}
+
+.car-details-add-image-dialog-ele-middle-input::placeholder {
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.car-details-add-image-dialog-ele-middle-hint {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 12px;
+  margin-top: 8px;
+  font-style: italic;
+}
+
+.car-details-add-image-dialog-ele-middle-preview-container {
+  margin-top: 20px;
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px dashed rgba(195, 132, 94, 0.5);
+}
+
+.car-details-add-image-dialog-ele-middle-preview {
+  position: relative;
+  height: 180px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.car-details-add-image-dialog-ele-middle-preview.loaded {
+  background-color: #000;
+}
+
+.car-details-add-image-dialog-ele-middle-preview.error {
+  background-color: rgba(255, 50, 50, 0.1);
+  border-color: rgba(255, 50, 50, 0.3);
+}
+
+.car-details-add-image-dialog-ele-middle-preview img {
+  max-width: 100%;
+  max-height: 180px;
+  object-fit: contain;
+  transition: opacity 0.3s ease;
+}
+
+.car-details-add-image-dialog-ele-middle-preview img.hidden {
+  opacity: 0;
+  position: absolute;
+}
+
+.car-details-add-image-dialog-ele-middle-preview img.visible {
+  opacity: 1;
+  position: relative;
+}
+
+.preview-loading {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 14px;
+}
+
+.preview-error {
+  color: rgba(255, 100, 100, 0.9);
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  padding: 20px;
+}
+
+.preview-error-icon {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.car-details-add-image-dialog-ele-bottom {
+  padding: 0 20px 20px;
+}
+
+.car-details-add-image-dialog-ele-bottom-buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+}
+
+.car-details-add-image-dialog-ele-bottom-cancel {
+  background-color: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: rgba(255, 255, 255, 0.8);
+  font-weight: 500;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.car-details-add-image-dialog-ele-bottom-cancel:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.5);
+}
+
+.car-details-add-image-dialog-ele-bottom-add {
+  background-color: #C3845E;
+  border: none;
+  color: white;
+  font-weight: 600;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.car-details-add-image-dialog-ele-bottom-add:hover {
+  background-color: #E8A075;
+  transform: translateY(-2px);
+}
+
+.car-details-add-image-dialog-ele-bottom-add:disabled {
+  background-color: rgba(195, 132, 94, 0.3);
+  color: rgba(255, 255, 255, 0.5);
+  cursor: not-allowed;
+  transform: none;
+}

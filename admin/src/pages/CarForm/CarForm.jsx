@@ -229,7 +229,7 @@ const CarForm = () => {
   return (
     <div className="car-form-container">
       <div className="car-form-header">
-        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+        <div className="car-form-header-content">
           <div>
             <h1 className="car-form-title">{isEditMode ? 'Edit Car' : 'Add New Car'}</h1>
             <div className="car-form-subtitle">
@@ -468,9 +468,9 @@ const CarForm = () => {
             )}
             {!isEditMode && (
               <div className="car-form-image-section">
-                <div style={{ fontSize: 32, color: '#C3845E', marginBottom: 8 }}>🖼️</div>
-                <div style={{ color: '#fff', fontWeight: 600, marginBottom: 4 }}>Image Management</div>
-                <div style={{ color: '#a6a6a6', marginBottom: 8 }}>You can add images after creating the car in the system</div>
+                <div>🖼️</div>
+                <div>Image Management</div>
+                <div>You can add images after creating the car in the system</div>
               </div>
             )}
             {formik.values.images.map((image, index) => (
