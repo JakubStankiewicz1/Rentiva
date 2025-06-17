@@ -9,8 +9,7 @@ services:
       ./mvnw clean package -DskipTests
     startCommand: |
       cd backend
-      java -jar target/backend-0.0.1-SNAPSHOT.jar --spring.profiles.active=prod
-    env:
+      java -jar target/backend-0.0.1-SNAPSHOT.jar --spring.profiles.active=prod    env:
       - key: SPRING_PROFILES_ACTIVE
         value: prod
       - key: PORT
@@ -21,16 +20,36 @@ services:
         fromDatabase:
           name: rentiva-db
           property: connectionString
+      # Additional database environment variables for fallback
+      - key: RENDER_DATABASE_HOST
+        fromDatabase:
+          name: rentiva-db
+          property: host
+      - key: RENDER_DATABASE_PORT
+        fromDatabase:
+          name: rentiva-db
+          property: port
+      - key: RENDER_DATABASE_NAME
+        fromDatabase:
+          name: rentiva-db
+          property: database
+      - key: RENDER_DATABASE_USER
+        fromDatabase:
+          name: rentiva-db
+          property: user
+      - key: RENDER_DATABASE_PASSWORD
+        fromDatabase:
+          name: rentiva-db
+          property: password
     healthCheckPath: /actuator/health
 
   # Frontend Static Site
   - type: web
     name: rentiva-frontend
     env: static
-    plan: free
-    buildCommand: |
+    plan: free    buildCommand: |
       cd frontend
-      npm install
+      npm install --include=dev
       npm run build
     staticPublishPath: frontend/dist
     env:
@@ -43,10 +62,9 @@ services:
   - type: web
     name: rentiva-admin
     env: static
-    plan: free
-    buildCommand: |
+    plan: free    buildCommand: |
       cd admin
-      npm install
+      npm install --include=dev
       npm run build
     staticPublishPath: admin/dist
     env:

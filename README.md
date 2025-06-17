@@ -6,6 +6,24 @@
 
 **Rentiva** to profesjonalna platforma do wynajmu samochodów premium z pełnym systemem zarządzania flotą, rezerwacjami i płatnościami.
 
+## 🆕 Najnowsze Poprawki (Jun 2025)
+
+### ✅ **Naprawiono Problem z Bazą Danych**
+- **Problem**: Backend próbował łączyć się z `localhost:5432` zamiast z bazą Render PostgreSQL
+- **Rozwiązanie**: Wyłączono Spring Boot DataSource AutoConfiguration
+- **Rezultat**: Wymuszone użycie custom DatabaseConfig z automatycznym parsowaniem DATABASE_URL
+
+### 🔧 **Poprawki Techniczne**
+- ✅ Usunięto konflikt MySQL/PostgreSQL dependency  
+- ✅ Enhanced database connection debugging
+- ✅ Forced PostgreSQL dialect usage
+- ✅ Improved error handling for missing DATABASE_URL
+
+### 📋 **Szybkie Sprawdzenia**
+- 🔗 **Health Check**: `https://your-backend.onrender.com/actuator/health`
+- 🔗 **API Test**: `https://your-backend.onrender.com/api/cars`
+- 📁 **Quick Fix**: Zobacz `DATABASE_CONNECTION_FIX.md`
+
 ---
 
 ## 🏗️ Architektura Systemu

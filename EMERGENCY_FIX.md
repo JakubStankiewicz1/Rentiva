@@ -1,36 +1,56 @@
 # 🚨 PILNE POPRAWKI dla Deploymentu
 
-## ✅ ROZWIĄZANIE: Problem z formatem DATABASE_URL
+## ✅ NAJNOWSZE ROZWIĄZANIE: localhost:5432 + MySQL Dialect Problem
 
-### 🔍 **Problem zidentyfikowany:**
+### 🔍 **Problem zidentyfikowany w logach:**
 ```
-Driver org.postgresql.Driver claims to not accept jdbcUrl, 
-postgresql://rentiva_user:YA0jva3xprFxe109sit1oX83MWgdfdMd@dpg-d18j2codl3ps738er37g-a/rentiva
+HHH000342: Could not obtain connection to query metadata
+java.net.ConnectException: Connection refused: no further information: localhost/127.0.0.1:5432
+```
+```
+HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
 ```
 
-**Przyczyna**: Render podaje URL w formacie `postgresql://`, ale Spring Boot oczekuje `jdbc:postgresql://`
+**Przyczyna**: 
+1. Spring Boot ignoruje nasz custom DatabaseConfig
+2. Próbuje łączyć się z localhost:5432 zamiast Render PostgreSQL
+3. Używa MySQL dialect zamiast PostgreSQL
 
-### 🛠️ **ROZWIĄZANIE - Automatyczna konwersja URL:**
+### 🛠️ **ROZWIĄZANIE - Wyłączenie AutoConfiguration:**
 
-1. **Stworzono klasę `DatabaseConfig.java`** - automatycznie konwertuje URL
-2. **Zaktualizowano `application-prod.properties`** - lepsze fallback values
+✅ **Wyłączono Spring Boot DataSource AutoConfiguration**
+✅ **Custom DatabaseConfig zawsze aktywny (usunięto @Profile)**  
+✅ **Ulepszony error handling i debugging**
+✅ **Wymuszone użycie PostgreSQL dialect**
 
 ### 🚀 **KROK PO KROKU - Napraw teraz:**
 
-#### 1. **Push kod na GitHub:**
+#### 1. **Push nowy kod na GitHub:**
 ```bash
 git add .
-git commit -m "Fix DATABASE_URL format for Render PostgreSQL"
+git commit -m "Fix: Disable DataSource AutoConfig, force PostgreSQL, enhance debugging"
 git push origin main
 ```
 
 #### 2. **Render automatycznie zrobi redeploy** (3-5 minut)
 
-#### 3. **Sprawdź logi:**
-- Render Dashboard → rentiva-backend → Logs
-- Poszukaj: `✅ Started BackendApplication`
+#### 3. **Sprawdź logi - poszukaj tych komunikatów:**
+```
+✅ CUSTOM DATABASE CONFIG STARTING
+✅ DATABASE_URL found, parsing...
+✅ Successfully parsed PostgreSQL DATABASE_URL
+✅ PostgreSQL DataSource created successfully!
+DataSource AutoConfiguration is DISABLED
+```
 
-#### 4. **Test Health Check:**
+#### 4. **Jeśli dalej błąd - sprawdź DATABASE_URL w Render:**
+- Render Dashboard → Backend Service → Settings → Environment
+- DATABASE_URL musi być ustawiony i mieć format:
+  ```
+  postgresql://username:password@host:port/database
+  ```
+
+#### 5. **Test Health Check:**
 - URL: https://rentiva-backend.onrender.com/actuator/health
 - Oczekiwany rezultat: `{"status":"UP"}`
 
@@ -38,14 +58,23 @@ git push origin main
 
 ## ⚡ **Co zostało naprawione:**
 
+### 📝 **BackendApplication.java**
+```java
+@SpringBootApplication(exclude = {DataSourceAutoConfiguration.class})
+```
+- Wyłącza Spring Boot autokonfigurację
+- Wymusza użycie naszego custom DatabaseConfig
+
 ### 📝 **DatabaseConfig.java**
-- Automatycznie parsuje `postgresql://` → `jdbc:postgresql://`
-- Wyciąga username/password z URL
-- Fallback na zmienne środowiskowe
+- Usunięto `@Profile("prod")` - działa zawsze
+- Dodano szczegółowe logi debugowania
+- Rzuca RuntimeException jeśli brak DATABASE_URL
+- Wyświetla wszystkie zmienne środowiskowe związane z bazą
 
 ### 📝 **application-prod.properties**  
-- Lepsze domyślne wartości
-- Zmieniono `ddl-auto` z `create-drop` na `update` (bezpieczniejsze)
+- Usunięto puste ustawienia datasource
+- Wymuszone użycie PostgreSQL dialect
+- Czyste ustawienia bez konfliktów
 
 ---
 
