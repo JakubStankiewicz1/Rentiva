@@ -47,6 +47,12 @@ public class DatabaseConfig {    @Bean
                         database = database.substring(1);
                     }
                     
+                    // Check if host is null or empty
+                    if (host == null || host.trim().isEmpty()) {
+                        System.err.println("❌ Host is null or empty in DATABASE_URL");
+                        throw new IllegalArgumentException("Host is missing from DATABASE_URL");
+                    }
+                    
                     // Fallback port to 5432 if not specified
                     if (dbPort == -1) {
                         dbPort = 5432;
@@ -90,10 +96,19 @@ public class DatabaseConfig {    @Bean
                 } catch (Exception e) {
                     System.err.println("❌ ERROR parsing DATABASE_URL: " + e.getMessage());
                     e.printStackTrace();
-                    throw new RuntimeException("Failed to parse DATABASE_URL", e);
+                    
+                    // Try fallback approach for malformed URLs
+                    System.out.println("🔄 Attempting fallback URL parsing...");
+                    return createFallbackDataSource(databaseUrl);
                 }
             } else if (databaseUrl.startsWith("jdbc:postgresql://")) {
                 System.out.println("✅ Using JDBC PostgreSQL URL directly: " + databaseUrl);
+                
+                // Validate the JDBC URL format
+                if (!isValidJdbcUrl(databaseUrl)) {
+                    System.err.println("❌ Invalid JDBC URL format detected");
+                    return createFallbackDataSource(databaseUrl);
+                }
                 
                 DataSource ds = DataSourceBuilder.create()
                         .driverClassName("org.postgresql.Driver")
@@ -112,8 +127,105 @@ public class DatabaseConfig {    @Bean
         System.err.println("❌ CRITICAL ERROR: DATABASE_URL not found!");
         System.err.println("❌ Cannot start application without database configuration!");
         System.err.println("❌ Please set DATABASE_URL environment variable on Render!");
-        System.err.println("=====================================");
-        
+        System.err.println("=====================================");        
         throw new RuntimeException("DATABASE_URL environment variable is required but not found!");
+    }
+    
+    /**
+     * Validates if a JDBC URL has proper format
+     */
+    private boolean isValidJdbcUrl(String jdbcUrl) {
+        try {
+            // Basic validation - must contain host and database
+            return jdbcUrl.matches("jdbc:postgresql://[^:]+:[0-9]+/[^\\s]+");
+        } catch (Exception e) {
+            return false;
+        }
+    }
+    
+    /**
+     * Creates a fallback DataSource when standard parsing fails
+     */
+    private DataSource createFallbackDataSource(String databaseUrl) {
+        System.out.println("🔄 FALLBACK: Attempting to extract connection details manually...");
+        
+        try {
+            // Try to extract database connection info from Render environment
+            String dbHost = System.getenv("RENDER_DATABASE_HOST");
+            String dbPort = System.getenv("RENDER_DATABASE_PORT");
+            String dbName = System.getenv("RENDER_DATABASE_NAME");
+            String dbUser = System.getenv("RENDER_DATABASE_USER");
+            String dbPassword = System.getenv("RENDER_DATABASE_PASSWORD");
+            
+            System.out.println("Render DB Environment Variables:");
+            System.out.println("  RENDER_DATABASE_HOST: " + dbHost);
+            System.out.println("  RENDER_DATABASE_PORT: " + dbPort);
+            System.out.println("  RENDER_DATABASE_NAME: " + dbName);
+            System.out.println("  RENDER_DATABASE_USER: " + dbUser);
+            System.out.println("  RENDER_DATABASE_PASSWORD: " + (dbPassword != null ? "[HIDDEN]" : "null"));
+            
+            if (dbHost != null && dbName != null && dbUser != null && dbPassword != null) {
+                String port = dbPort != null ? dbPort : "5432";
+                String fallbackJdbcUrl = String.format("jdbc:postgresql://%s:%s/%s", dbHost, port, dbName);
+                
+                System.out.println("✅ FALLBACK: Using Render environment variables");
+                System.out.println("  Fallback JDBC URL: " + fallbackJdbcUrl);
+                
+                return DataSourceBuilder.create()
+                        .driverClassName("org.postgresql.Driver")
+                        .url(fallbackJdbcUrl)
+                        .username(dbUser)
+                        .password(dbPassword)
+                        .build();
+            }
+              // If Render env vars not available, try manual parsing from DATABASE_URL
+            if (databaseUrl.contains("@") && databaseUrl.contains("/")) {
+                System.out.println("🔄 FALLBACK: Attempting manual URL parsing...");
+                
+                // Extract from patterns like: postgresql://user:pass@host:port/db
+                // Handle both full hostnames and Render internal hostnames
+                String pattern = "postgresql://([^:]+):([^@]+)@([^:/]+):?([0-9]*)[^/]*/(.+)";
+                java.util.regex.Pattern p = java.util.regex.Pattern.compile(pattern);
+                java.util.regex.Matcher m = p.matcher(databaseUrl);
+                
+                if (m.matches()) {
+                    String username = m.group(1);
+                    String password = m.group(2);
+                    String host = m.group(3);
+                    String port = m.group(4).isEmpty() ? "5432" : m.group(4);
+                    String database = m.group(5);
+                    
+                    // Handle Render internal hostnames - add proper domain if missing
+                    if (host.startsWith("dpg-") && !host.contains(".")) {
+                        host = host + ".oregon-postgres.render.com";
+                        System.out.println("🔄 FALLBACK: Expanded Render hostname to: " + host);
+                    }
+                    
+                    String fallbackJdbcUrl = String.format("jdbc:postgresql://%s:%s/%s", host, port, database);
+                    
+                    System.out.println("✅ FALLBACK: Manual parsing successful");
+                    System.out.println("  Host: " + host);
+                    System.out.println("  Port: " + port);
+                    System.out.println("  Database: " + database);
+                    System.out.println("  Username: " + username);
+                    System.out.println("  Fallback JDBC URL: " + fallbackJdbcUrl);
+                    
+                    return DataSourceBuilder.create()
+                            .driverClassName("org.postgresql.Driver")
+                            .url(fallbackJdbcUrl)
+                            .username(username)
+                            .password(password)
+                            .build();
+                }
+            }
+            
+            System.err.println("❌ FALLBACK: All fallback methods failed");
+            throw new RuntimeException("Could not parse DATABASE_URL using any method");
+            
+        } catch (Exception e) {
+            System.err.println("❌ FALLBACK: Error in fallback parsing: " + e.getMessage());
+            e.printStackTrace();
+            throw new RuntimeException("Fallback DATABASE_URL parsing failed", e);
+        }
     }
 }
