@@ -1,0 +1,16 @@
+{
+  "name": "rentiva",
+  "version": "1.0.0",
+  "description": "Rentiva Car Rental Application",
+  "scripts": {
+    "build": "cd frontend && npm install --include=dev && npm run build",
+    "build:admin": "cd admin && npm install --include=dev && npm run build",
+    "build:frontend": "cd frontend && npm install --include=dev && npm run build",
+    "install": "npm run install:frontend && npm run install:admin",
+    "install:frontend": "cd frontend && npm install",
+    "install:admin": "cd admin && npm install"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
