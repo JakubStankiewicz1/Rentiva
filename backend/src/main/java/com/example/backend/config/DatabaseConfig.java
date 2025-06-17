@@ -100,9 +100,14 @@ public class DatabaseConfig {    @Bean
                     // Try fallback approach for malformed URLs
                     System.out.println("🔄 Attempting fallback URL parsing...");
                     return createFallbackDataSource(databaseUrl);
-                }
-            } else if (databaseUrl.startsWith("jdbc:postgresql://")) {
+                }            } else if (databaseUrl.startsWith("jdbc:postgresql://")) {
                 System.out.println("✅ Using JDBC PostgreSQL URL directly: " + databaseUrl);
+                
+                // For Render URLs, we need to extract and potentially fix the hostname
+                if (databaseUrl.contains("@dpg-") && !databaseUrl.contains(".oregon-postgres.render.com")) {
+                    System.out.println("🔄 Detected Render internal hostname, attempting to expand...");
+                    return createFallbackDataSource(databaseUrl);
+                }
                 
                 // Validate the JDBC URL format
                 if (!isValidJdbcUrl(databaseUrl)) {
@@ -110,13 +115,19 @@ public class DatabaseConfig {    @Bean
                     return createFallbackDataSource(databaseUrl);
                 }
                 
-                DataSource ds = DataSourceBuilder.create()
-                        .driverClassName("org.postgresql.Driver")
-                        .url(databaseUrl)
-                        .build();
-                
-                System.out.println("✅ PostgreSQL DataSource created with JDBC URL!");
-                return ds;
+                // Try to use the URL as-is first
+                try {
+                    DataSource ds = DataSourceBuilder.create()
+                            .driverClassName("org.postgresql.Driver")
+                            .url(databaseUrl)
+                            .build();
+                      System.out.println("✅ PostgreSQL DataSource created with JDBC URL!");
+                    return ds;
+                } catch (Exception e) {
+                    System.err.println("❌ Failed to create DataSource with direct JDBC URL: " + e.getMessage());
+                    System.out.println("🔄 Falling back to manual parsing...");
+                    return createFallbackDataSource(databaseUrl);
+                }
             } else {
                 System.err.println("❌ DATABASE_URL format not recognized: " + databaseUrl);
                 throw new RuntimeException("DATABASE_URL must start with 'postgresql://' or 'jdbc:postgresql://'");
@@ -130,14 +141,16 @@ public class DatabaseConfig {    @Bean
         System.err.println("=====================================");        
         throw new RuntimeException("DATABASE_URL environment variable is required but not found!");
     }
-    
-    /**
+      /**
      * Validates if a JDBC URL has proper format
      */
     private boolean isValidJdbcUrl(String jdbcUrl) {
         try {
-            // Basic validation - must contain host and database
-            return jdbcUrl.matches("jdbc:postgresql://[^:]+:[0-9]+/[^\\s]+");
+            // Basic validation - must contain user info and database name
+            // Accept both formats: with and without explicit port
+            // jdbc:postgresql://host:port/db OR jdbc:postgresql://user:pass@host/db OR jdbc:postgresql://user:pass@host:port/db
+            return jdbcUrl.matches("jdbc:postgresql://.*@.*/.+") || 
+                   jdbcUrl.matches("jdbc:postgresql://[^@/]+:[0-9]+/.+");
         } catch (Exception e) {
             return false;
         }
@@ -177,14 +190,20 @@ public class DatabaseConfig {    @Bean
                         .username(dbUser)
                         .password(dbPassword)
                         .build();
-            }
-              // If Render env vars not available, try manual parsing from DATABASE_URL
+            }            // If Render env vars not available, try manual parsing from DATABASE_URL
             if (databaseUrl.contains("@") && databaseUrl.contains("/")) {
                 System.out.println("🔄 FALLBACK: Attempting manual URL parsing...");
                 
-                // Extract from patterns like: postgresql://user:pass@host:port/db
-                // Handle both full hostnames and Render internal hostnames
-                String pattern = "postgresql://([^:]+):([^@]+)@([^:/]+):?([0-9]*)[^/]*/(.+)";
+                // Handle both postgresql:// and jdbc:postgresql:// formats
+                String pattern;
+                if (databaseUrl.startsWith("jdbc:postgresql://")) {
+                    // Pattern for jdbc:postgresql://user:pass@host:port/db or jdbc:postgresql://user:pass@host/db
+                    pattern = "jdbc:postgresql://([^:]+):([^@]+)@([^:/]+):?([0-9]*)[^/]*/(.+)";
+                } else {
+                    // Pattern for postgresql://user:pass@host:port/db or postgresql://user:pass@host/db  
+                    pattern = "postgresql://([^:]+):([^@]+)@([^:/]+):?([0-9]*)[^/]*/(.+)";
+                }
+                
                 java.util.regex.Pattern p = java.util.regex.Pattern.compile(pattern);
                 java.util.regex.Matcher m = p.matcher(databaseUrl);
                 
