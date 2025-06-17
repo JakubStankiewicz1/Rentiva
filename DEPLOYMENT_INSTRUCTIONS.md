@@ -243,6 +243,24 @@ org.hibernate.tool.schema.spi.SchemaManagementException
 # Node: Sprawdź wersję w Dockerfile (20-alpine)
 ```
 
+#### Problem: Błąd formatu DATABASE_URL
+```
+Driver org.postgresql.Driver claims to not accept jdbcUrl, postgresql://...
+```
+
+**Przyczyna**: Render podaje DATABASE_URL w formacie `postgresql://`, ale Spring Boot/HikariCP oczekuje `jdbc:postgresql://`
+
+**Rozwiązanie**:
+1. **Stworzono klasę `DatabaseConfig.java`** która automatycznie konwertuje URL
+2. **Format Render**: `postgresql://user:pass@host:port/db`
+3. **Format Spring Boot**: `jdbc:postgresql://host:port/db`
+
+**Automatyczna konwersja w kodzie**:
+```java
+// DatabaseConfig.java automatycznie parsuje URL
+String jdbcUrl = "jdbc:postgresql://" + dbUri.getHost() + ':' + dbUri.getPort() + dbUri.getPath();
+```
+
 ### 🚀 Wdrażanie Aktualizacji
 
 1. **Wypchnij zmiany na GitHub:**
