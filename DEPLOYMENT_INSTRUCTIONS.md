@@ -261,6 +261,27 @@ Driver org.postgresql.Driver claims to not accept jdbcUrl, postgresql://...
 String jdbcUrl = "jdbc:postgresql://" + dbUri.getHost() + ':' + dbUri.getPort() + dbUri.getPath();
 ```
 
+#### Problem: jdbcUrl is required with driverClassName
+```
+HikariConfig - jdbcUrl is required with driverClassName.
+```
+
+**Przyczyna**: Spring Boot nie może znaleźć URL bazy danych lub jest niepoprawnie skonfigurowany
+
+**Rozwiązanie**:
+1. **Upewnij się, że DATABASE_URL jest ustawione w Render Environment Variables**
+2. **Dodaj fallback values w application-prod.properties:**
+   ```properties
+   spring.datasource.url=${DATABASE_URL:jdbc:postgresql://localhost:5432/rentiva}
+   spring.datasource.username=${POSTGRES_USER:rentiva_user}
+   spring.datasource.password=${POSTGRES_PASSWORD:password}
+   ```
+3. **Sprawdź czy DatabaseConfig.java zawsze zwraca DataSource**
+
+**Sprawdź w Render Dashboard**:
+- Environment Variables zawiera DATABASE_URL
+- Format: `postgresql://user:pass@host.render.com:5432/db`
+
 ### 🚀 Wdrażanie Aktualizacji
 
 1. **Wypchnij zmiany na GitHub:**
