@@ -13,4 +13,4 @@ COPY --from=build /app/dist ./dist
 COPY --from=build /app/package*.json ./
 RUN npm ci --only=production
 EXPOSE 3000
-CMD ["npm", "run", "preview", "--", "--port", "3000", "--host", "0.0.0.0"]
+CMD ["npx", "vite", "preview", "--port", "3000", "--host", "0.0.0.0"]

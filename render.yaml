@@ -56,15 +56,14 @@ services:
       - key: VITE_API_URL
         value: https://rentiva-backend.onrender.com
       - key: NODE_ENV
-        value: production
-  # Admin Panel Static Site
+        value: production  # Admin Panel Static Site
   - type: web
     name: rentiva-admin
     env: static
     plan: free
     buildCommand: |
       cd admin
-      npm install --include=dev
+      npm ci
       npm run build
     staticPublishPath: admin/dist
     env:

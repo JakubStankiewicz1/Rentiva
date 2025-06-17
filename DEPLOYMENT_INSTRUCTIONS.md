@@ -282,6 +282,40 @@ HikariConfig - jdbcUrl is required with driverClassName.
 - Environment Variables zawiera DATABASE_URL
 - Format: `postgresql://user:pass@host.render.com:5432/db`
 
+#### Problem: "vite: not found" durante build
+
+```
+> admin@0.0.0 build
+> vite build
+sh: 1: vite: not found
+==> Build failed 😞
+```
+
+**Przyczyna**: Render nie może znaleźć polecenia `vite` pomimo zainstalowanych zależności
+
+**Rozwiązanie**:
+1. **Sprawdź czy `vite` jest w devDependencies** w `admin/package.json`
+2. **Upewnij się, że używasz `npx vite` zamiast `vite`** w scripts:
+   ```json
+   "scripts": {
+     "dev": "npx vite",
+     "build": "npx vite build",
+     "preview": "npx vite preview"
+   }
+   ```
+3. **Sprawdź build command w render.yaml**:
+   ```yaml
+   buildCommand: |
+     cd admin
+     npm ci
+     npm run build
+   ```
+
+**Dlaczego `npx`?**
+- `npx` uruchamia polecenia z lokalnego `node_modules/.bin`
+- Rozwiązuje problemy z PATH w środowisku Render
+- Zapewnia, że używana jest właściwa wersja narzędzi
+
 ### 🚀 Wdrażanie Aktualizacji
 
 1. **Wypchnij zmiany na GitHub:**
