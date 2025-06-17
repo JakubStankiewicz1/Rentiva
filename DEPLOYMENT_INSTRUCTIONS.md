@@ -101,70 +101,80 @@ git push -u origin main
    CORS_ORIGINS=https://rentiva-frontend.onrender.com,https://rentiva-admin.onrender.com
    ```
 
-#### Krok 4: Deployment Frontendu
+#### Krok 4: Deployment Frontendu (Static Site)
 
-1. **Kliknij "New +"** → **"Web Service"**
+1. **Kliknij "New +"** → **"Static Site"** ⚡ *(Lepsze dla React SPA)*
 2. **Połącz to samo repozytorium**
 3. **Konfiguracja serwisu:**
    - **Name**: `rentiva-frontend`
-   - **Environment**: `Node`
    - **Region**: Ten sam co backend
    - **Branch**: `main`
    - **Root Directory**: `frontend`
+   - **Publish Directory**: `dist` *(Vite output folder)*
 
 4. **Build Command:**
    ```bash
    npm install && npm run build
    ```
 
-5. **Start Command:**
-   ```bash
-   npm run preview -- --port $PORT --host 0.0.0.0
-   ```
-
-6. **Zmienne środowiskowe:**
+5. **Zmienne środowiskowe:**
    ```
    VITE_API_URL=https://rentiva-backend.onrender.com
    NODE_ENV=production
    ```
 
-#### Krok 5: Deployment Admin Panelu
+6. **Dodatkowe ustawienia Static Site:**
+   - **Headers**: Automatyczne cache headers
+   - **Redirects**: SPA routing - `/* /index.html 200`
 
-1. **Kliknij "New +"** → **"Web Service"**
+#### Krok 5: Deployment Admin Panelu (Static Site)
+
+1. **Kliknij "New +"** → **"Static Site"** ⚡ *(Lepsze dla React SPA)*
 2. **Połącz to samo repozytorium**
 3. **Konfiguracja serwisu:**
    - **Name**: `rentiva-admin`
-   - **Environment**: `Node`
    - **Region**: Ten sam co backend
    - **Branch**: `main`
    - **Root Directory**: `admin`
+   - **Publish Directory**: `dist` *(Vite output folder)*
 
 4. **Build Command:**
    ```bash
    npm install && npm run build
    ```
 
-5. **Start Command:**
-   ```bash
-   npm run preview -- --port $PORT --host 0.0.0.0
-   ```
-
-6. **Zmienne środowiskowe:**
+5. **Zmienne środowiskowe:**
    ```
    VITE_API_URL=https://rentiva-backend.onrender.com
    NODE_ENV=production
    ```
 
+6. **Dodatkowe ustawienia Static Site:**
+   - **Headers**: Automatyczne cache headers
+   - **Redirects**: SPA routing - `/* /index.html 200`
+
 ### 🔄 Alternatywny Sposób - Blueprint (render.yaml)
 
-Jeśli preferujesz automatyczny deployment:
+**💡 REKOMENDOWANY SPOSÓB** - Używa Static Sites dla lepszej wydajności!
 
 1. **Na Render.com** → **"New +"** → **"Blueprint"**
 2. **Połącz repozytorium GitHub**
 3. **Render automatycznie wykryje `render.yaml`**
-4. **Ustaw zmienne środowiskowe:**
-   - DATABASE_URL (z bazy danych)
+4. **Konfiguracja zostanie automatycznie zastosowana:**
+   - Backend: Web Service (Java)
+   - Frontend: Static Site (szybsze, lepsze dla SPA)
+   - Admin: Static Site (szybsze, lepsze dla SPA)
+   - Database: PostgreSQL
+
+5. **Ustaw tylko zmienne środowiskowe jeśli potrzebne:**
+   - DATABASE_URL (automatycznie z bazy danych)
    - CORS_ORIGINS (dostosuj do faktycznych URL-i)
+
+### 💡 Dlaczego Static Sites?
+- ⚡ **Szybsze** - pliki serwowane przez CDN
+- 💰 **Tańsze** - nie zużywają compute hours
+- 🔒 **Bezpieczniejsze** - tylko statyczne pliki
+- 🚀 **Lepsze SEO** - szybsze ładowanie strony
 
 ### 📊 Monitoring i Debugowanie
 
@@ -182,11 +192,44 @@ Jeśli preferujesz automatyczny deployment:
 
 ### 🔧 Rozwiązywanie Problemów
 
+#### Problem: Błąd Hibernate Schema Creation
+```
+org.hibernate.tool.schema.spi.SchemaManagementException
+```
+
+**Przyczyna**: Hibernate nie może utworzyć schematu bazy danych PostgreSQL
+
+**Rozwiązanie**:
+1. **Sprawdź zmienne środowiskowe w Render:**
+   ```
+   DATABASE_URL=postgresql://rentiva_user:YA0jva3xprFxe109sit1oX83MWgdfdMd@dpg-d18j2codl3ps738er37g-a/rentiva
+   SPRING_PROFILES_ACTIVE=prod
+   ```
+
+2. **Dodaj do `application-prod.properties`:**
+   ```properties
+   # PostgreSQL specific settings
+   spring.jpa.database-platform=org.hibernate.dialect.PostgreSQLDialect
+   spring.jpa.hibernate.ddl-auto=create-drop
+   spring.jpa.properties.hibernate.temp.use_jdbc_metadata_defaults=false
+   spring.jpa.show-sql=false
+   ```
+
+3. **Sprawdź Health Check Path:**
+   - Zmień z `/healthz` na `/actuator/health`
+   - Lub usuń Health Check Path (zostaw puste)
+
 #### Problem: Backend nie może połączyć się z bazą
 ```bash
 # Sprawdź DATABASE_URL w zmiennych środowiskowych
 # Format: postgresql://user:password@host:port/database
 ```
+
+**Kroki debugowania**:
+1. **W Render Dashboard** → **rentiva-backend** → **Environment**
+2. **Sprawdź czy `DATABASE_URL` jest ustawione**
+3. **Skopiuj Internal Database URL z bazy danych**
+4. **Wklej do zmiennych środowiskowych backendu**
 
 #### Problem: CORS errors
 ```bash

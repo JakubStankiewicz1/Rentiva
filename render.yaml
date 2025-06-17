@@ -10,7 +10,7 @@ services:
     startCommand: |
       cd backend
       java -jar target/backend-0.0.1-SNAPSHOT.jar --spring.profiles.active=prod
-    envVars:
+    env:
       - key: SPRING_PROFILES_ACTIVE
         value: prod
       - key: PORT
@@ -23,37 +23,33 @@ services:
           property: connectionString
     healthCheckPath: /actuator/health
 
-  # Frontend Service
+  # Frontend Static Site
   - type: web
     name: rentiva-frontend
-    env: node
+    env: static
     plan: free
     buildCommand: |
       cd frontend
       npm install
       npm run build
-    startCommand: |
-      cd frontend
-      npm run preview -- --port $PORT --host 0.0.0.0
-    envVars:
+    staticPublishPath: frontend/dist
+    env:
       - key: VITE_API_URL
         value: https://rentiva-backend.onrender.com
       - key: NODE_ENV
         value: production
 
-  # Admin Panel Service
+  # Admin Panel Static Site
   - type: web
     name: rentiva-admin
-    env: node
+    env: static
     plan: free
     buildCommand: |
       cd admin
       npm install
       npm run build
-    startCommand: |
-      cd admin
-      npm run preview -- --port $PORT --host 0.0.0.0
-    envVars:
+    staticPublishPath: admin/dist
+    env:
       - key: VITE_API_URL
         value: https://rentiva-backend.onrender.com
       - key: NODE_ENV

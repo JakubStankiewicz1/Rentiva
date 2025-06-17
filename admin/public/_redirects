@@ -1,0 +1,12 @@
+# _redirects file for Render Static Sites
+# This handles client-side routing for React SPA (Admin Panel)
+
+# Admin routing - handle all routes through index.html
+/* /index.html 200
+
+# API proxy (optional - if you want to proxy API calls)
+/api/* https://rentiva-backend.onrender.com/api/:splat 200
+
+# Cache static assets
+/assets/* /assets/:splat 200
+Cache-Control: public, max-age=31536000, immutable

@@ -23,9 +23,9 @@ git push -u origin main
 
 ### 4. Finalne URL-e
 Po 5-10 minutach:
-- 🌐 **Frontend**: `https://rentiva-frontend.onrender.com`
-- 🛠️ **Admin**: `https://rentiva-admin.onrender.com`
-- 🔧 **API**: `https://rentiva-backend.onrender.com`
+- 🌐 **Frontend**: `https://rentiva-frontend.onrender.com` *(Static Site - super szybko!)*
+- 🛠️ **Admin**: `https://rentiva-admin.onrender.com` *(Static Site - super szybko!)*
+- 🔧 **API**: `https://rentiva-backend.onrender.com` *(Web Service)*
 
 ### 5. Sprawdź deployment
 - Backend health: `https://rentiva-backend.onrender.com/actuator/health`
@@ -35,7 +35,9 @@ Po 5-10 minutach:
 Twoja aplikacja jest teraz live na internecie! 
 
 ### ⚡ Pro tips:
-- Free tier zasypia po 15 min - użyj UptimeRobot
+- **Static Sites** = szybsze ładowanie przez CDN
+- Frontend i Admin działają jako Static Sites (nie zasypiają!)
+- Tylko backend zasypia po 15 min - użyj UptimeRobot
 - Każdy git push = automatyczny redeploy
 - Logi w czasie rzeczywistym w dashboardzie
 
