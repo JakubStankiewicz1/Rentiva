@@ -41,8 +41,9 @@ services:
       - key: RENDER_DATABASE_PASSWORD
         fromDatabase:
           name: rentiva-db
-          property: password
-    healthCheckPath: /actuator/health  # Frontend Static Site
+          property: password    healthCheckPath: /actuator/health
+
+  # Frontend Static Site
   - type: web
     name: rentiva-frontend
     env: static
@@ -50,7 +51,7 @@ services:
     buildCommand: |
       cd frontend
       npm ci
-      npm run build
+      npx vite build
     staticPublishPath: frontend/dist
     env:
       - key: VITE_API_URL
@@ -71,6 +72,8 @@ services:
         value: https://rentiva-backend.onrender.com
       - key: NODE_ENV
         value: production
+      - key: NODE_OPTIONS
+        value: "--max-old-space-size=4096"
 
 databases:
   - name: rentiva-db

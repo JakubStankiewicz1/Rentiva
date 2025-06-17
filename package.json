@@ -2,7 +2,7 @@
   "name": "rentiva",
   "version": "1.0.0",
   "description": "Rentiva Car Rental Application",  "scripts": {
-    "build": "cd frontend && npm ci && npm run build",
+    "build": "cd admin && npm ci && npm run build",
     "build:admin": "cd admin && npm ci && npm run build",
     "build:frontend": "cd frontend && npm ci && npm run build",
     "install": "npm run install:frontend && npm run install:admin",
