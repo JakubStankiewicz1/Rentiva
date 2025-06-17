@@ -1,65 +1,240 @@
-# 🚗 Rentiva - Platforma Wynajmu Samochodów
+# 🚗 Rentiva - Premium Car Rental Platform
 
-![Rentiva Logo](https://img.shields.io/badge/Rentiva-Car%20Rental%20Platform-blue?style=for-the-badge)
+![Rentiva](https://img.shields.io/badge/Rentiva-Premium%20Car%20Rental-blue?style=for-the-badge)  
+![Status](https://img.shields.io/badge/Status-Production%20Ready-success?style=for-the-badge)  
+![Deployment](https://img.shields.io/badge/Deploy-Render.com-purple?style=for-the-badge)
 
-**Rentiva** to nowoczesna platforma do wynajmu samochodów premium, składająca się z backendu API, strony głównej dla klientów oraz panelu administracyjnego.
+**Rentiva** to profesjonalna platforma do wynajmu samochodów premium z pełnym systemem zarządzania flotą, rezerwacjami i płatnościami.
 
 ---
 
-## 🏗️ Architektura systemu
+## 🏗️ Architektura Systemu
 
-```mermaid
-graph TB
-    A[Frontend - Klienci] -->|API Calls| D[Backend - Spring Boot]
-    B[Admin Panel] -->|API Calls| D
-    D -->|JPA/Hibernate| E[PostgreSQL Database]
-    
-    subgraph "Render.com"
-        A
-        B
-        D
-        E
-    end
+```
+┌─────────────────┐    ┌─────────────────┐    ┌─────────────────┐
+│   Frontend      │    │   Admin Panel   │    │    Backend      │
+│   React + Vite  │    │   React + MUI   │    │  Spring Boot    │
+│   Port: 5173    │    │   Port: 3001    │    │   Port: 8081    │
+└─────────────────┘    └─────────────────┘    └─────────────────┘
+         │                       │                       │
+         └───────────────────────┼───────────────────────┘
+                                 │
+                    ┌─────────────────┐
+                    │   PostgreSQL    │
+                    │    Database     │
+                    │   Port: 5432    │
+                    └─────────────────┘
 ```
 
 ---
 
-## 📦 Komponenty
+## 📦 Komponenty Techniczne
 
 | Komponent | Technologia | Port (dev) | URL (prod) |
 |-----------|-------------|------------|------------|
-| **Backend** | Spring Boot 3.5 + PostgreSQL | 8081 | `rentiva-backend.onrender.com` |
-| **Frontend** | React 19 + Vite | 5173 | `rentiva-frontend.onrender.com` |
-| **Admin** | React 19 + Material-UI | 3001 | `rentiva-admin.onrender.com` |
+| **🔧 Backend** | Spring Boot 3.5 + Java 21 | 8081 | `rentiva-backend.onrender.com` |
+| **🌐 Frontend** | React 19 + Vite 6 | 5173 | `rentiva-frontend.onrender.com` |
+| **⚙️ Admin** | React 19 + Material-UI | 3001 | `rentiva-admin.onrender.com` |
+| **🗄️ Database** | PostgreSQL 15 | 5432 | Render Managed |
 
 ---
 
-## 🚀 Szybki start - Wdrożenie
+## 🚀 Deployment na Render.com
 
-### 1. 🔥 Szybka instrukcja (15 minut)
-```bash
-📄 QUICK-DEPLOY.md
-```
+### ⚡ Szybki Deploy (5 minut)
+1. **Przeczytaj**: [`QUICK_DEPLOY.md`](QUICK_DEPLOY.md)
+2. **Utwórz repo GitHub** i wypchnij kod
+3. **Render.com** → Blueprint → Twoje repo
+4. **Gotowe!** ✨
 
-### 2. 📚 Pełna instrukcja (krok po kroku)
-```bash
-📄 DEPLOYMENT.md
-```
-
-### 3. ⚙️ Konfiguracja zmiennych
-```bash
-📄 ENVIRONMENT-CONFIG.md
-```
+### 📚 Szczegółowe Instrukcje
+- **Pełny przewodnik**: [`DEPLOYMENT_INSTRUCTIONS.md`](DEPLOYMENT_INSTRUCTIONS.md)
+- **API Documentation**: [`INSTRUKCJA_API_REZERWACJI.md`](INSTRUKCJA_API_REZERWACJI.md)
 
 ---
 
-## 💻 Uruchomienie lokalne
+## 🛠️ Rozwój Lokalny
 
 ### Wymagania
-- Java 23+
-- Node.js 18+
-- MySQL/PostgreSQL
-- Git
+- **Java 21** (OpenJDK)
+- **Node.js 18+** (Vite)
+- **PostgreSQL 15+** lub MySQL 8+ 
+- **Git**
+
+### Uruchomienie z Docker Compose
+```bash
+# Klonuj repozytorium
+git clone https://github.com/TWOJA_NAZWA/rentiva.git
+cd rentiva
+
+# Uruchom wszystkie serwisy
+docker-compose up --build
+
+# Aplikacja dostępna:
+# Frontend: http://localhost:3000
+# Admin: http://localhost:3001  
+# Backend: http://localhost:8080
+```
+
+### Uruchomienie manualne
+
+#### 1. Backend
+```bash
+cd backend
+./mvnw spring-boot:run
+# http://localhost:8081
+```
+
+#### 2. Frontend
+```bash
+cd frontend
+npm install
+npm run dev
+# http://localhost:5173
+```
+
+#### 3. Admin Panel
+```bash
+cd admin
+npm install  
+npm run dev
+# http://localhost:3001
+```
+
+---
+
+## 📂 Struktura Projektu
+
+```
+rentiva/
+├── 📄 render.yaml                 # Konfiguracja Render
+├── 📄 docker-compose.yml          # Docker dla dev
+├── 📄 DEPLOYMENT_INSTRUCTIONS.md  # Przewodnik deploy
+├── 📄 QUICK_DEPLOY.md             # Szybki start
+│
+├── 🔧 backend/                    # Spring Boot API
+│   ├── 🐳 Dockerfile
+│   ├── 📋 pom.xml
+│   ├── ⚙️ system.properties
+│   └── 📁 src/main/java/...
+│
+├── 🌐 frontend/                   # React Client App  
+│   ├── 🐳 Dockerfile
+│   ├── 📋 package.json
+│   ├── ⚙️ vite.config.js
+│   └── 📁 src/components/...
+│
+└── ⚙️ admin/                      # Admin Dashboard
+    ├── 🐳 Dockerfile  
+    ├── 📋 package.json
+    ├── ⚙️ vite.config.js
+    └── 📁 src/pages/...
+```
+
+---
+
+## 🔐 Zmienne Środowiskowe
+
+### Backend (`application-prod.properties`)
+```properties
+SPRING_PROFILES_ACTIVE=prod
+DATABASE_URL=postgresql://user:pass@host:port/db
+CORS_ORIGINS=https://rentiva-frontend.onrender.com
+PORT=8080
+```
+
+### Frontend (`.env.production`)
+```bash
+VITE_API_URL=https://rentiva-backend.onrender.com
+NODE_ENV=production
+```
+
+### Admin Panel (`.env.production`)  
+```bash
+VITE_API_URL=https://rentiva-backend.onrender.com
+NODE_ENV=production
+```
+
+---
+
+## 🎯 Funkcjonalności
+
+### � Dla Klientów (Frontend)
+- ✅ Przeglądanie dostępnych samochodów
+- ✅ System rezerwacji z kalendarzem
+- ✅ Formularz kontaktowy
+- ✅ Responsywny design
+- ✅ Integracja z płatnościami
+
+### 🛠️ Dla Administratorów (Admin Panel)
+- ✅ Zarządzanie flotą samochodów
+- ✅ System rezerwacji
+- ✅ Panel analityki
+- ✅ Zarządzanie użytkownikami
+- ✅ Dashboard w czasie rzeczywistym
+
+### 🔧 Backend API
+- ✅ RESTful API z pełną dokumentacją
+- ✅ Zabezpieczenia Spring Security
+- ✅ Walidacja danych
+- ✅ Obsługa błędów
+- ✅ Health checks dla monitoring
+
+---
+
+## 📊 Status Deploymentu
+
+### 🌐 Production URLs
+| Service | URL | Status |
+|---------|-----|--------|
+| **Frontend** | https://rentiva-frontend.onrender.com | ![Status](https://img.shields.io/website?url=https%3A//rentiva-frontend.onrender.com) |
+| **Admin** | https://rentiva-admin.onrender.com | ![Status](https://img.shields.io/website?url=https%3A//rentiva-admin.onrender.com) |
+| **Backend** | https://rentiva-backend.onrender.com | ![Status](https://img.shields.io/website?url=https%3A//rentiva-backend.onrender.com) |
+
+### 🔍 Health Checks
+- Backend Health: `/actuator/health`
+- API Docs: `/api/cars` (przykładowy endpoint)
+- Database: Managed PostgreSQL na Render
+
+---
+
+## 🤝 Współpraca
+
+1. **Fork** repozytorium
+2. **Utwórz** feature branch (`git checkout -b feature/AmazingFeature`) 
+3. **Commit** zmiany (`git commit -m 'Add some AmazingFeature'`)
+4. **Push** do branch (`git push origin feature/AmazingFeature`)
+5. **Otwórz** Pull Request
+
+---
+
+## 📞 Wsparcie
+
+### 🐛 Problemy z Deploymentem
+1. Sprawdź logi w [Render Dashboard](https://dashboard.render.com)
+2. Zweryfikuj zmienne środowiskowe  
+3. Przeczytaj [`DEPLOYMENT_INSTRUCTIONS.md`](DEPLOYMENT_INSTRUCTIONS.md)
+
+### 💬 Kontakt
+- **Issues**: GitHub Issues w tym repo
+- **Dokumentacja**: Pliki `.md` w katalogu głównym
+- **API**: [`INSTRUKCJA_API_REZERWACJI.md`](INSTRUKCJA_API_REZERWACJI.md)
+
+---
+
+## 📄 Licencja
+
+Projekt dostępny na licencji MIT. Zobacz plik `LICENSE` dla szczegółów.
+
+---
+
+<div align="center">
+
+**🚀 Rentiva - Twoja platforma wynajmu samochodów premium**
+
+[![Deploy to Render](https://img.shields.io/badge/Deploy%20to-Render-purple?style=for-the-badge&logo=render)](https://render.com)
+
+</div>
 
 ### Backend
 ```bash

@@ -1,0 +1,10 @@
+# .dockerignore for backend
+target/
+!target/backend-0.0.1-SNAPSHOT.jar
+*.log
+.mvn/wrapper/maven-wrapper.jar
+.git
+.gitignore
+README.md
+Dockerfile*
+docker-compose*
