@@ -30,7 +30,7 @@ const ReservationsPage = () => {
   const fetchReservations = async () => {
     try {
       setLoading(true);
-      const response = await fetch("http://localhost:8081/api/reservations");
+      const response = await fetch("https://rentiva-backend.onrender.com/api/reservations");
 
       if (!response.ok) {
         throw new Error("Failed to fetch reservations");
