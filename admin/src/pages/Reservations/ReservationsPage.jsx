@@ -50,7 +50,7 @@ const ReservationsPage = () => {
   // Update reservation status
   const updateReservationStatus = async (id, newStatus) => {
     try {
-      const response = await fetch(`http://localhost:8081/api/reservations/${id}/status`, {
+      const response = await fetch(`https://rentiva-backend.onrender.com/api/reservations/${id}/status`, {
         method: "PATCH",
         headers: {
           "Content-Type": "application/json",
@@ -97,7 +97,7 @@ const ReservationsPage = () => {
   // Delete reservation
   const deleteReservation = async (id) => {
     try {
-      const response = await fetch(`http://localhost:8081/api/reservations/${id}`, {
+      const response = await fetch(`https://rentiva-backend.onrender.com/api/reservations/${id}`, {
         method: "DELETE",
       });
 
