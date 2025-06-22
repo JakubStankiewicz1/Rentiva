@@ -134,3 +134,167 @@
     width: 15px;
     height: 15px;
 }
+
+/* RESPONSIVE STYLES */
+
+/* Tablet Landscape - 1024px and down */
+@media (max-width: 1024px) {
+    .ourCollectionHero {
+        height: 50vh;
+    }
+    
+    .ourCollectionHeroContainerImage,
+    .ourCollectionHeroContainerImageContainer,
+    .ourCollectionHeroContainerImageOverlay,
+    .ourCollectionHeroContainerInfo {
+        height: 50vh;
+    }
+    
+    .ourCollectionHeroContainerImageContainerImage {
+        height: 50vh;
+    }
+    
+    .ourCollectionHeroContainerInfoContainer {
+        padding: 0 40px;
+    }
+    
+    .ourCollectionHeroContainerInfoContainerMiddleText {
+        font-size: 54px;
+        line-height: 52px;
+    }
+    
+    .ourCollectionHeroContainerInfoContainerTopContainerTwoText {
+        font-size: 15px;
+    }
+}
+
+/* Tablet Portrait - 768px and down */
+@media (max-width: 768px) {
+    .ourCollectionHero {
+        height: 45vh;
+    }
+    
+    .ourCollectionHeroContainerImage,
+    .ourCollectionHeroContainerImageContainer,
+    .ourCollectionHeroContainerImageOverlay,
+    .ourCollectionHeroContainerInfo {
+        height: 45vh;
+    }
+    
+    .ourCollectionHeroContainerImageContainerImage {
+        height: 45vh;
+    }
+    
+    .ourCollectionHeroContainerInfoContainer {
+        padding: 0 30px;
+    }
+    
+    .ourCollectionHeroContainerInfoContainerMiddleText {
+        font-size: 42px;
+        line-height: 40px;
+    }
+    
+    .ourCollectionHeroContainerInfoContainerTopContainerTwoText {
+        font-size: 14px;
+        line-height: 22px;
+    }
+    
+    .ourCollectionHeroContainerInfoContainerTopContainerTwo {
+        width: 30%;
+    }
+    
+    .ourCollectionHeroContainerInfoContainerBottom {
+        margin-top: 30px;
+    }
+}
+
+/* Mobile Large - 480px and down */
+@media (max-width: 480px) {
+    .ourCollectionHero {
+        height: 40vh;
+    }
+    
+    .ourCollectionHeroContainerImage,
+    .ourCollectionHeroContainerImageContainer,
+    .ourCollectionHeroContainerImageOverlay,
+    .ourCollectionHeroContainerInfo {
+        height: 40vh;
+    }
+    
+    .ourCollectionHeroContainerImageContainerImage {
+        height: 40vh;
+    }
+    
+    .ourCollectionHeroContainerInfoContainer {
+        padding: 0 20px;
+    }
+    
+    .ourCollectionHeroContainerInfoContainerMiddleText {
+        font-size: 32px;
+        line-height: 30px;
+    }
+    
+    .ourCollectionHeroContainerInfoContainerTopContainerTwoText {
+        font-size: 13px;
+        line-height: 20px;
+        letter-spacing: 0.5px;
+    }
+    
+    .ourCollectionHeroContainerInfoContainerTopContainerTwo {
+        width: 50%;
+    }
+    
+    .ourCollectionHeroContainerInfoContainerTopContainerOneDiv {
+        width: 25px;
+    }
+    
+    .ourCollectionHeroContainerInfoContainerBottom {
+        margin-top: 25px;
+    }
+    
+    .ourCollectionHeroContainerInfoContainerBottomContainer {
+        width: 35px;
+        height: 35px;
+    }
+    
+    .ourCollectionHeroContainerInfoContainerBottomContainerButtonIcon {
+        width: 12px;
+        height: 12px;
+    }
+}
+
+/* Mobile Small - 320px and down */
+@media (max-width: 320px) {
+    .ourCollectionHero {
+        height: 35vh;
+    }
+    
+    .ourCollectionHeroContainerImage,
+    .ourCollectionHeroContainerImageContainer,
+    .ourCollectionHeroContainerImageOverlay,
+    .ourCollectionHeroContainerInfo {
+        height: 35vh;
+    }
+    
+    .ourCollectionHeroContainerImageContainerImage {
+        height: 35vh;
+    }
+    
+    .ourCollectionHeroContainerInfoContainer {
+        padding: 0 15px;
+    }
+    
+    .ourCollectionHeroContainerInfoContainerMiddleText {
+        font-size: 28px;
+        line-height: 26px;
+    }
+    
+    .ourCollectionHeroContainerInfoContainerTopContainerTwoText {
+        font-size: 12px;
+        line-height: 18px;
+    }
+    
+    .ourCollectionHeroContainerInfoContainerTopContainerTwo {
+        width: 60%;
+    }
+}

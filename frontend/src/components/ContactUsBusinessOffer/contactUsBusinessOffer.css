@@ -113,3 +113,398 @@
   line-height: 26px;
   letter-spacing: 0.2px;
 }
+
+/* Responsive Design */
+@media (max-width: 1400px) {
+    .contactUsBusinessOfferContainer {
+        width: 92%;
+        gap: 120px;
+    }
+    
+    .contactUsBusinessOfferContainerLeftContainer {
+        width: 480px;
+        height: 620px;
+    }
+    
+    .contactUsBusinessOfferContainerRightContainerTopContainerText {
+        font-size: 28px;
+        line-height: 28px;
+    }
+    
+    .contactUsBusinessOfferContainerRightContainerBottomContainerRightContainerOneText,
+    .contactUsBusinessOfferContainerRightContainerBottomContainerRightContainerTwoText,
+    .contactUsBusinessOfferContainerRightContainerBottomContainerRightContainerThreeText,
+    .contactUsBusinessOfferContainerRightContainerBottomContainerRightContainerFourText,
+    .contactUsBusinessOfferContainerRightContainerBottomContainerRightContainerFiveText,
+    .contactUsBusinessOfferContainerRightContainerBottomContainerRightContainerSixText {
+        font-size: 15px;
+        line-height: 24px;
+    }
+}
+
+@media (max-width: 1200px) {
+    .contactUsBusinessOffer {
+        padding-top: 80px;
+        padding-bottom: 80px;
+    }
+    
+    .contactUsBusinessOfferContainer {
+        gap: 100px;
+    }
+    
+    .contactUsBusinessOfferContainerLeftContainer {
+        width: 420px;
+        height: 550px;
+    }
+    
+    .contactUsBusinessOfferContainerRightContainerTopContainerText {
+        font-size: 26px;
+        line-height: 26px;
+    }
+    
+    .contactUsBusinessOfferContainerRightContainerBottomContainer {
+        gap: 30px;
+    }
+    
+    .contactUsBusinessOfferContainerRightContainerBottomContainerLeftContainerDiv {
+        width: 50px;
+    }
+    
+    .contactUsBusinessOfferContainerRightContainerBottomContainerRightContainer {
+        gap: 22px;
+    }
+    
+    .contactUsBusinessOfferContainerRightContainerBottomContainerRightContainerOneText,
+    .contactUsBusinessOfferContainerRightContainerBottomContainerRightContainerTwoText,
+    .contactUsBusinessOfferContainerRightContainerBottomContainerRightContainerThreeText,
+    .contactUsBusinessOfferContainerRightContainerBottomContainerRightContainerFourText,
+    .contactUsBusinessOfferContainerRightContainerBottomContainerRightContainerFiveText,
+    .contactUsBusinessOfferContainerRightContainerBottomContainerRightContainerSixText {
+        font-size: 14px;
+        line-height: 22px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .contactUsBusinessOffer {
+        padding-top: 60px;
+        padding-bottom: 60px;
+    }
+    
+    .contactUsBusinessOfferContainer {
+        flex-direction: column;
+        gap: 60px;
+        width: 95%;
+    }
+    
+    .contactUsBusinessOfferContainerLeft {
+        height: auto;
+        order: 1;
+    }
+    
+    .contactUsBusinessOfferContainerRight {
+        order: 2;
+    }
+    
+    .contactUsBusinessOfferContainerLeftContainer {
+        width: 100%;
+        max-width: 500px;
+        height: 400px;
+        margin: 0 auto;
+    }
+    
+    .contactUsBusinessOfferContainerRightContainer {
+        align-items: center;
+        text-align: center;
+    }
+    
+    .contactUsBusinessOfferContainerRightContainerTopContainerText {
+        font-size: 24px;
+        line-height: 24px;
+    }
+    
+    .contactUsBusinessOfferContainerRightContainerBottomContainer {
+        flex-direction: column;
+        align-items: center;
+        gap: 25px;
+    }
+    
+    .contactUsBusinessOfferContainerRightContainerBottomContainerLeft {
+        order: 1;
+    }
+    
+    .contactUsBusinessOfferContainerRightContainerBottomContainerRight {
+        order: 2;
+    }
+    
+    .contactUsBusinessOfferContainerRightContainerBottomContainerLeftContainerDiv {
+        width: 80px;
+        margin-top: 0;
+    }
+    
+    .contactUsBusinessOfferContainerRightContainerBottomContainerRightContainer {
+        align-items: center;
+        text-align: center;
+        gap: 20px;
+    }
+}
+
+@media (max-width: 900px) {
+    .contactUsBusinessOffer {
+        padding-top: 50px;
+        padding-bottom: 50px;
+    }
+    
+    .contactUsBusinessOfferContainer {
+        gap: 50px;
+    }
+    
+    .contactUsBusinessOfferContainerLeftContainer {
+        height: 350px;
+        max-width: 450px;
+    }
+    
+    .contactUsBusinessOfferContainerRightContainerTopContainerText {
+        font-size: 22px;
+        line-height: 22px;
+    }
+    
+    .contactUsBusinessOfferContainerRightContainerBottom {
+        margin-top: 25px;
+    }
+    
+    .contactUsBusinessOfferContainerRightContainerBottomContainer {
+        gap: 20px;
+    }
+    
+    .contactUsBusinessOfferContainerRightContainerBottomContainerLeftContainerDiv {
+        width: 70px;
+    }
+    
+    .contactUsBusinessOfferContainerRightContainerBottomContainerRightContainer {
+        gap: 18px;
+    }
+    
+    .contactUsBusinessOfferContainerRightContainerBottomContainerRightContainerOneText,
+    .contactUsBusinessOfferContainerRightContainerBottomContainerRightContainerTwoText,
+    .contactUsBusinessOfferContainerRightContainerBottomContainerRightContainerThreeText,
+    .contactUsBusinessOfferContainerRightContainerBottomContainerRightContainerFourText,
+    .contactUsBusinessOfferContainerRightContainerBottomContainerRightContainerFiveText,
+    .contactUsBusinessOfferContainerRightContainerBottomContainerRightContainerSixText {
+        font-size: 13px;
+        line-height: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .contactUsBusinessOffer {
+        padding-top: 40px;
+        padding-bottom: 40px;
+    }
+    
+    .contactUsBusinessOfferContainer {
+        gap: 40px;
+        width: 90%;
+    }
+    
+    .contactUsBusinessOfferContainerLeftContainer {
+        height: 300px;
+        max-width: 400px;
+    }
+    
+    .contactUsBusinessOfferContainerRightContainerTopContainerText {
+        font-size: 20px;
+        line-height: 20px;
+    }
+    
+    .contactUsBusinessOfferContainerRightContainerBottom {
+        margin-top: 20px;
+    }
+    
+    .contactUsBusinessOfferContainerRightContainerBottomContainer {
+        gap: 18px;
+    }
+    
+    .contactUsBusinessOfferContainerRightContainerBottomContainerLeftContainerDiv {
+        width: 60px;
+        height: 2px;
+    }
+    
+    .contactUsBusinessOfferContainerRightContainerBottomContainerRightContainer {
+        gap: 16px;
+    }
+    
+    .contactUsBusinessOfferContainerRightContainerBottomContainerRightContainerOneText,
+    .contactUsBusinessOfferContainerRightContainerBottomContainerRightContainerTwoText,
+    .contactUsBusinessOfferContainerRightContainerBottomContainerRightContainerThreeText,
+    .contactUsBusinessOfferContainerRightContainerBottomContainerRightContainerFourText,
+    .contactUsBusinessOfferContainerRightContainerBottomContainerRightContainerFiveText,
+    .contactUsBusinessOfferContainerRightContainerBottomContainerRightContainerSixText {
+        font-size: 12px;
+        line-height: 18px;
+    }
+}
+
+@media (max-width: 600px) {
+    .contactUsBusinessOffer {
+        padding-top: 35px;
+        padding-bottom: 35px;
+    }
+    
+    .contactUsBusinessOfferContainer {
+        gap: 35px;
+        width: 88%;
+    }
+    
+    .contactUsBusinessOfferContainerLeftContainer {
+        height: 260px;
+        max-width: 350px;
+    }
+    
+    .contactUsBusinessOfferContainerRightContainerTopContainerText {
+        font-size: 18px;
+        line-height: 18px;
+    }
+    
+    .contactUsBusinessOfferContainerRightContainerBottom {
+        margin-top: 18px;
+    }
+    
+    .contactUsBusinessOfferContainerRightContainerBottomContainer {
+        gap: 16px;
+    }
+    
+    .contactUsBusinessOfferContainerRightContainerBottomContainerLeftContainerDiv {
+        width: 50px;
+    }
+    
+    .contactUsBusinessOfferContainerRightContainerBottomContainerRightContainer {
+        gap: 14px;
+    }
+    
+    .contactUsBusinessOfferContainerRightContainerBottomContainerRightContainerOneText,
+    .contactUsBusinessOfferContainerRightContainerBottomContainerRightContainerTwoText,
+    .contactUsBusinessOfferContainerRightContainerBottomContainerRightContainerThreeText,
+    .contactUsBusinessOfferContainerRightContainerBottomContainerRightContainerFourText,
+    .contactUsBusinessOfferContainerRightContainerBottomContainerRightContainerFiveText,
+    .contactUsBusinessOfferContainerRightContainerBottomContainerRightContainerSixText {
+        font-size: 11px;
+        line-height: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .contactUsBusinessOffer {
+        padding-top: 30px;
+        padding-bottom: 30px;
+    }
+    
+    .contactUsBusinessOfferContainer {
+        gap: 30px;
+        width: 85%;
+    }
+    
+    .contactUsBusinessOfferContainerLeftContainer {
+        height: 220px;
+        max-width: 300px;
+    }
+    
+    .contactUsBusinessOfferContainerRightContainerTopContainerText {
+        font-size: 16px;
+        line-height: 16px;
+    }
+    
+    .contactUsBusinessOfferContainerRightContainerBottom {
+        margin-top: 16px;
+    }
+    
+    .contactUsBusinessOfferContainerRightContainerBottomContainer {
+        gap: 14px;
+    }
+    
+    .contactUsBusinessOfferContainerRightContainerBottomContainerLeftContainerDiv {
+        width: 40px;
+        height: 1.5px;
+    }
+    
+    .contactUsBusinessOfferContainerRightContainerBottomContainerRightContainer {
+        gap: 12px;
+    }
+    
+    .contactUsBusinessOfferContainerRightContainerBottomContainerRightContainerOneText,
+    .contactUsBusinessOfferContainerRightContainerBottomContainerRightContainerTwoText,
+    .contactUsBusinessOfferContainerRightContainerBottomContainerRightContainerThreeText,
+    .contactUsBusinessOfferContainerRightContainerBottomContainerRightContainerFourText,
+    .contactUsBusinessOfferContainerRightContainerBottomContainerRightContainerFiveText,
+    .contactUsBusinessOfferContainerRightContainerBottomContainerRightContainerSixText {
+        font-size: 10px;
+        line-height: 14px;
+    }
+}
+
+@media (max-width: 380px) {
+    .contactUsBusinessOffer {
+        padding-top: 25px;
+        padding-bottom: 25px;
+    }
+    
+    .contactUsBusinessOfferContainer {
+        gap: 25px;
+        width: 82%;
+    }
+    
+    .contactUsBusinessOfferContainerLeftContainer {
+        height: 180px;
+        max-width: 250px;
+    }
+    
+    .contactUsBusinessOfferContainerRightContainerTopContainerText {
+        font-size: 14px;
+        line-height: 14px;
+    }
+    
+    .contactUsBusinessOfferContainerRightContainerBottom {
+        margin-top: 14px;
+    }
+    
+    .contactUsBusinessOfferContainerRightContainerBottomContainer {
+        gap: 12px;
+    }
+    
+    .contactUsBusinessOfferContainerRightContainerBottomContainerLeftContainerDiv {
+        width: 35px;
+        height: 1px;
+    }
+    
+    .contactUsBusinessOfferContainerRightContainerBottomContainerRightContainer {
+        gap: 10px;
+    }
+    
+    .contactUsBusinessOfferContainerRightContainerBottomContainerRightContainerOneText,
+    .contactUsBusinessOfferContainerRightContainerBottomContainerRightContainerTwoText,
+    .contactUsBusinessOfferContainerRightContainerBottomContainerRightContainerThreeText,
+    .contactUsBusinessOfferContainerRightContainerBottomContainerRightContainerFourText,
+    .contactUsBusinessOfferContainerRightContainerBottomContainerRightContainerFiveText,
+    .contactUsBusinessOfferContainerRightContainerBottomContainerRightContainerSixText {
+        font-size: 9px;
+        line-height: 12px;
+        letter-spacing: 0.1px;
+    }
+}
+
+/* Performance optimizations */
+.contactUsBusinessOfferContainerLeftContainerImage,
+.contactUsBusinessOfferContainerRightContainerBottomContainerLeftContainerDiv {
+    will-change: transform;
+}
+
+/* Image loading optimization */
+.contactUsBusinessOfferContainerLeftContainerImage {
+    transition: transform 0.3s ease;
+}
+
+@media (max-width: 1024px) {
+    .contactUsBusinessOfferContainerLeftContainerImage:hover {
+        transform: scale(1.02);
+    }
+}

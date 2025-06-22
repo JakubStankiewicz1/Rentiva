@@ -85,3 +85,331 @@
   text-transform: uppercase;
   letter-spacing: 0.8px;
 }
+
+/* Responsive Design */
+@media (max-width: 1400px) {
+    .contactUsRentContainerMainContainerTopContainerText {
+        font-size: 28px;
+        line-height: 28px;
+    }
+    
+    .contactUsRentContainerMainContainerMiddleContainerText {
+        font-size: 15px;
+        line-height: 24px;
+    }
+    
+    .contactUsRentContainerMainContainerBottomContainerButton {
+        width: 270px;
+        height: 48px;
+    }
+    
+    .contactUsRentContainerMainContainerBottomContainerButtonContainerText {
+        font-size: 12px;
+        letter-spacing: 0.7px;
+    }
+}
+
+@media (max-width: 1200px) {
+    .contactUsRent {
+        padding-top: 35px;
+        padding-bottom: 35px;
+    }
+    
+    .contactUsRentContainerMain {
+        height: 350px;
+    }
+    
+    .contactUsRentContainerMainContainerTopContainerText {
+        font-size: 26px;
+        line-height: 26px;
+    }
+    
+    .contactUsRentContainerMainContainerMiddleContainerText {
+        font-size: 14px;
+        line-height: 22px;
+    }
+    
+    .contactUsRentContainerMainContainerBottomContainerButton {
+        width: 250px;
+        height: 46px;
+    }
+    
+    .contactUsRentContainerMainContainerBottomContainerButtonContainerText {
+        font-size: 11px;
+        letter-spacing: 0.6px;
+    }
+    
+    .contactUsRentContainerMainContainerBottom {
+        margin-top: 25px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .contactUsRent {
+        padding-top: 30px;
+        padding-bottom: 30px;
+    }
+    
+    .contactUsRentContainer {
+        width: 95%;
+    }
+    
+    .contactUsRentContainerMain {
+        height: 320px;
+    }
+    
+    .contactUsRentContainerMainContainerTopContainerText {
+        font-size: 24px;
+        line-height: 24px;
+        text-align: center;
+    }
+    
+    .contactUsRentContainerMainContainerMiddleContainerText {
+        font-size: 13px;
+        line-height: 20px;
+        text-align: center;
+    }
+    
+    .contactUsRentContainerMainContainerBottomContainerButton {
+        width: 240px;
+        height: 44px;
+    }
+    
+    .contactUsRentContainerMainContainerBottomContainerButtonContainerText {
+        font-size: 10px;
+        letter-spacing: 0.5px;
+    }
+    
+    .contactUsRentContainerMainContainerBottom {
+        margin-top: 22px;
+    }
+}
+
+@media (max-width: 900px) {
+    .contactUsRent {
+        padding-top: 25px;
+        padding-bottom: 25px;
+    }
+    
+    .contactUsRentContainerMain {
+        height: 280px;
+    }
+    
+    .contactUsRentContainerMainContainerTopContainerText {
+        font-size: 22px;
+        line-height: 22px;
+    }
+    
+    .contactUsRentContainerMainContainerMiddleContainerText {
+        font-size: 12px;
+        line-height: 18px;
+    }
+    
+    .contactUsRentContainerMainContainerBottomContainerButton {
+        width: 220px;
+        height: 42px;
+    }
+    
+    .contactUsRentContainerMainContainerBottomContainerButtonContainerText {
+        font-size: 9px;
+        letter-spacing: 0.4px;
+    }
+    
+    .contactUsRentContainerMainContainerMiddle {
+        margin-top: 3px;
+    }
+    
+    .contactUsRentContainerMainContainerBottom {
+        margin-top: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .contactUsRent {
+        padding-top: 20px;
+    }
+    
+    .contactUsRentContainer {
+        width: 90%;
+    }
+    
+    .contactUsRentContainerMain {
+        height: 250px;
+    }
+    
+    .contactUsRentContainerMainContainerTopContainerText {
+        font-size: 20px;
+        line-height: 20px;
+    }
+    
+    .contactUsRentContainerMainContainerMiddleContainerText {
+        font-size: 11px;
+        line-height: 16px;
+    }
+    
+    .contactUsRentContainerMainContainerBottomContainerButton {
+        width: 200px;
+        height: 40px;
+        -webkit-tap-highlight-color: transparent;
+        touch-action: manipulation;
+    }
+    
+    .contactUsRentContainerMainContainerBottomContainerButtonContainerText {
+        font-size: 8px;
+        letter-spacing: 0.3px;
+    }
+    
+    .contactUsRentContainerMainContainerMiddle {
+        margin-top: 2px;
+    }
+    
+    .contactUsRentContainerMainContainerBottom {
+        margin-top: 18px;
+    }
+}
+
+@media (max-width: 600px) {
+    .contactUsRent {
+        padding-top: 18px;
+    }
+    
+    .contactUsRentContainer {
+        width: 88%;
+    }
+    
+    .contactUsRentContainerMain {
+        height: 220px;
+    }
+    
+    .contactUsRentContainerMainContainerTopContainerText {
+        font-size: 18px;
+        line-height: 18px;
+    }
+    
+    .contactUsRentContainerMainContainerMiddleContainerText {
+        font-size: 10px;
+        line-height: 14px;
+    }
+    
+    .contactUsRentContainerMainContainerBottomContainerButton {
+        width: 180px;
+        height: 38px;
+    }
+    
+    .contactUsRentContainerMainContainerBottomContainerButtonContainerText {
+        font-size: 7px;
+        letter-spacing: 0.2px;
+    }
+    
+    .contactUsRentContainerMainContainerBottom {
+        margin-top: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .contactUsRent {
+        padding-top: 15px;
+    }
+    
+    .contactUsRentContainer {
+        width: 85%;
+    }
+    
+    .contactUsRentContainerMain {
+        height: 190px;
+    }
+    
+    .contactUsRentContainerMainContainerTopContainerText {
+        font-size: 16px;
+        line-height: 16px;
+    }
+    
+    .contactUsRentContainerMainContainerMiddleContainerText {
+        font-size: 9px;
+        line-height: 12px;
+    }
+    
+    .contactUsRentContainerMainContainerBottomContainerButton {
+        width: 160px;
+        height: 36px;
+    }
+    
+    .contactUsRentContainerMainContainerBottomContainerButtonContainerText {
+        font-size: 6px;
+        letter-spacing: 0.1px;
+    }
+    
+    .contactUsRentContainerMainContainerMiddle {
+        margin-top: 1px;
+    }
+    
+    .contactUsRentContainerMainContainerBottom {
+        margin-top: 14px;
+    }
+}
+
+@media (max-width: 380px) {
+    .contactUsRent {
+        padding-top: 12px;
+    }
+    
+    .contactUsRentContainer {
+        width: 82%;
+    }
+    
+    .contactUsRentContainerMain {
+        height: 160px;
+    }
+    
+    .contactUsRentContainerMainContainerTopContainerText {
+        font-size: 14px;
+        line-height: 14px;
+    }
+    
+    .contactUsRentContainerMainContainerMiddleContainerText {
+        font-size: 8px;
+        line-height: 10px;
+    }
+    
+    .contactUsRentContainerMainContainerBottomContainerButton {
+        width: 140px;
+        height: 34px;
+    }
+    
+    .contactUsRentContainerMainContainerBottomContainerButtonContainerText {
+        font-size: 5px;
+        letter-spacing: 0px;
+    }
+    
+    .contactUsRentContainerMainContainerBottom {
+        margin-top: 12px;
+    }
+}
+
+/* Touch device optimizations */
+@media (max-width: 768px) {
+    .contactUsRentContainerMainContainerBottomContainerButton:active {
+        transform: scale(0.95);
+        transition: transform 0.1s ease;
+    }
+    
+    .contactUsRentContainerMainContainerBottomContainerButton:hover {
+        background-color: #e8a075;
+        transform: translateY(-2px);
+        box-shadow: 0 4px 8px rgba(195, 132, 94, 0.3);
+    }
+}
+
+/* Performance optimizations */
+.contactUsRentContainerMainContainerBottomContainerButton {
+    will-change: transform;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Additional mobile touch enhancements */
+@media (max-width: 1024px) {
+    .contactUsRentContainerMainContainerBottomContainerButton {
+        border-radius: 2px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+}

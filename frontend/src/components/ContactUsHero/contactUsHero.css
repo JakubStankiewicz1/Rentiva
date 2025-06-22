@@ -117,3 +117,262 @@
     width: 20px;
     height: 20px;
 }
+
+/* Responsive Design */
+@media (max-width: 1400px) {
+    .contactUsHeroContainerInfoContainerMiddleContainerText {
+        font-size: 56px;
+        line-height: 54px;
+    }
+    
+    .contactUsHeroContainerInfoContainerTopContainerTwoContainerText {
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 1200px) {
+    .contactUsHeroContainerImage {
+        height: 380px;
+    }
+    
+    .contactUsHeroContainerInfo {
+        width: 92%;
+        transform: translateY(90%) translateX(4%);
+    }
+    
+    .contactUsHeroContainerInfoContainerMiddleContainerText {
+        font-size: 48px;
+        line-height: 46px;
+    }
+    
+    .contactUsHeroContainerInfoContainerTopContainerTwoContainerText {
+        font-size: 14px;
+    }
+    
+    .contactUsHeroContainerInfoContainer {
+        gap: 18px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .contactUsHeroContainerImage {
+        height: 350px;
+    }
+    
+    .contactUsHeroContainerInfo {
+        width: 94%;
+        transform: translateY(85%) translateX(3%);
+    }
+    
+    .contactUsHeroContainerInfoContainerMiddleContainerText {
+        font-size: 42px;
+        line-height: 40px;
+    }
+    
+    .contactUsHeroContainerInfoContainerTopContainerTwoContainerText {
+        font-size: 13px;
+        line-height: 22px;
+    }
+    
+    .contactUsHeroContainerInfoContainerTopContainerOneDiv {
+        width: 25px;
+    }
+    
+    .contactUsHeroContainerInfoContainer {
+        gap: 16px;
+    }
+}
+
+@media (max-width: 900px) {
+    .contactUsHeroContainerImage {
+        height: 320px;
+    }
+    
+    .contactUsHeroContainerInfo {
+        width: 95%;
+        transform: translateY(85%) translateX(2.5%);
+    }
+    
+    .contactUsHeroContainerInfoContainerMiddleContainerText {
+        font-size: 36px;
+        line-height: 34px;
+    }
+    
+    .contactUsHeroContainerInfoContainerTopContainerTwoContainerText {
+        font-size: 12px;
+        line-height: 20px;
+    }
+    
+    .contactUsHeroContainerInfoContainerBottomContainerButton {
+        width: 45px;
+        height: 45px;
+    }
+    
+    .contactUsHeroContainerInfoContainerBottomContainerButtonContainerIcon {
+        width: 18px;
+        height: 18px;
+    }
+}
+
+@media (max-width: 768px) {
+    .contactUsHeroContainerImage {
+        height: 280px;
+    }
+    
+    .contactUsHeroContainerInfo {
+        width: 90%;
+        transform: translateY(90%) translateX(5%);
+    }
+    
+    .contactUsHeroContainerInfoContainerMiddleContainerText {
+        font-size: 32px;
+        line-height: 30px;
+    }
+    
+    .contactUsHeroContainerInfoContainerTopContainerTwoContainerText {
+        font-size: 11px;
+        line-height: 18px;
+    }
+    
+    .contactUsHeroContainerInfoContainerTopContainerOneDiv {
+        width: 20px;
+    }
+    
+    .contactUsHeroContainerInfoContainerTopContainer {
+        gap: 8px;
+    }
+    
+    .contactUsHeroContainerInfoContainer {
+        gap: 14px;
+    }
+    
+    .contactUsHeroContainerInfoContainerBottomContainerButton {
+        width: 42px;
+        height: 42px;
+        -webkit-tap-highlight-color: transparent;
+        touch-action: manipulation;
+    }
+    
+    .contactUsHeroContainerInfoContainerBottomContainerButtonContainerIcon {
+        width: 16px;
+        height: 16px;
+    }
+}
+
+@media (max-width: 600px) {
+    .contactUsHeroContainerImage {
+        height: 250px;
+    }
+    
+    .contactUsHeroContainerInfo {
+        width: 88%;
+        transform: translateY(85%) translateX(6%);
+    }
+    
+    .contactUsHeroContainerInfoContainerMiddleContainerText {
+        font-size: 28px;
+        line-height: 26px;
+    }
+    
+    .contactUsHeroContainerInfoContainerTopContainerTwoContainerText {
+        font-size: 10px;
+        line-height: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .contactUsHeroContainerImage {
+        height: 220px;
+    }
+    
+    .contactUsHeroContainerInfo {
+        width: 85%;
+        transform: translateY(80%) translateX(7.5%);
+    }
+    
+    .contactUsHeroContainerInfoContainerMiddleContainerText {
+        font-size: 24px;
+        line-height: 22px;
+    }
+    
+    .contactUsHeroContainerInfoContainerTopContainerTwoContainerText {
+        font-size: 9px;
+        line-height: 14px;
+    }
+    
+    .contactUsHeroContainerInfoContainerTopContainerOneDiv {
+        width: 18px;
+    }
+    
+    .contactUsHeroContainerInfoContainerTopContainer {
+        gap: 6px;
+    }
+    
+    .contactUsHeroContainerInfoContainer {
+        gap: 12px;
+    }
+    
+    .contactUsHeroContainerInfoContainerBottomContainerButton {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .contactUsHeroContainerInfoContainerBottomContainerButtonContainerIcon {
+        width: 14px;
+        height: 14px;
+    }
+}
+
+@media (max-width: 380px) {
+    .contactUsHeroContainerImage {
+        height: 200px;
+    }
+    
+    .contactUsHeroContainerInfo {
+        width: 82%;
+        transform: translateY(95%) translateX(9%);
+    }
+    
+    .contactUsHeroContainerInfoContainerMiddleContainerText {
+        font-size: 22px;
+        line-height: 20px;
+    }
+    
+    .contactUsHeroContainerInfoContainerTopContainerTwoContainerText {
+        font-size: 8px;
+        line-height: 12px;
+    }
+    
+    .contactUsHeroContainerInfoContainerTopContainerOneDiv {
+        width: 15px;
+    }
+    
+    .contactUsHeroContainerInfoContainer {
+        gap: 10px;
+    }
+    
+    .contactUsHeroContainerInfoContainerBottomContainerButton {
+        width: 38px;
+        height: 38px;
+    }
+    
+    .contactUsHeroContainerInfoContainerBottomContainerButtonContainerIcon {
+        width: 12px;
+        height: 12px;
+    }
+}
+
+/* Touch device optimizations */
+@media (max-width: 768px) {
+    .contactUsHeroContainerInfoContainerBottomContainerButton:active {
+        transform: scale(0.95);
+        transition: transform 0.1s ease;
+    }
+}
+
+/* Performance optimizations */
+.contactUsHeroContainerImageContainerImage,
+.contactUsHeroContainerImageOverlay,
+.contactUsHeroContainerInfoContainerBottomContainerButton {
+    will-change: transform;
+}

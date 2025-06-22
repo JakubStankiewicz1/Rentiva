@@ -378,19 +378,12 @@
     color: #FFFFFF;
 }
 
-
-
-
-
 .cooperationFormContainerOverlayContainerFormContainerNine {
     margin-top: 50px;
     width: 45%;
     margin-left: auto;
     margin-right: auto;
 }
-
-
-
 
 .cooperationFormContainerOverlayContainerFormContainerEight {
     width: 45%;
@@ -410,4 +403,321 @@
     width: 50px;
     height: 2px;
     background-color: #C3845E;
+}
+
+/* RESPONSIVE DESIGN */
+
+/* Mobile First - Default styles above are for mobile */
+@media (max-width: 480px) {
+  .cooperationFormContainerOverlayContainerFormContainer {
+    padding: 20px;
+  }
+
+  .cooperationFormContainerOverlayContainerForm {
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+
+  .cooperationFormContainerOverlayContainerFormContainerOneContainerText {
+    font-size: 18px;
+    line-height: 24px;
+  }
+
+  .cooperationFormContainerOverlayContainerFormContainerTwoContainer {
+    width: 95%;
+  }
+
+  .cooperationFormContainerOverlayContainerFormContainerTwoContainerText {
+    font-size: 14px;
+    line-height: 20px;
+  }
+
+  .cooperationFormContainerOverlayContainerFormContainerThreeContainerText {
+    font-size: 18px;
+    line-height: 24px;
+  }
+
+  .cooperationFormContainerOverlayContainerFormContainerFour {
+    width: 95%;
+    margin-top: 30px;
+  }
+
+  .cooperationFormContainerOverlayContainerFormContainerFourContainerTextColor,
+  .cooperationFormContainerOverlayContainerFormContainerFourContainerText {
+    font-size: 14px;
+    line-height: 20px;
+  }
+
+  .cooperationFormContainerOverlayContainerFormContainerFiveContainerOneIcon,
+  .cooperationFormContainerOverlayContainerFormContainerSixContainerOneIcon {
+    width: 20px;
+    height: 20px;
+  }
+
+  .cooperationFormContainerOverlayContainerFormContainerFiveContainerTwoText,
+  .cooperationFormContainerOverlayContainerFormContainerSixContainerTwoText {
+    font-size: 14px;
+    line-height: 20px;
+  }
+
+  .cooperationFormContainerOverlayContainerFormContainerSevenContainerText {
+    font-size: 18px;
+    line-height: 24px;
+  }
+
+  .cooperationFormContainerOverlayContainerFormContainerNine,
+  .cooperationFormContainerOverlayContainerFormContainerEight,
+  .cooperationFormContainerOverlayContainerFormContainerTen,
+  .cooperationFormContainerOverlayContainerFormContainerEleven {
+    width: 95%;
+  }
+
+  .cooperationFormContainerOverlayContainerFormContainerNineContainerOneInput,
+  .cooperationFormContainerOverlayContainerFormContainerNineContainerTwoInput,
+  .cooperationFormContainerOverlayContainerFormContainerNineContainerThreeInput {
+    font-size: 14px;
+    height: 44px;
+    padding: 0 14px;
+  }
+
+  .cooperationFormContainerOverlayContainerFormContainerNineContainerFourTextarea {
+    font-size: 14px;
+    padding: 14px;
+    min-height: 120px;
+  }
+
+  .cooperationFormContainerOverlayContainerFormContainerNineContainerFiveTwoText,
+  .cooperationFormContainerOverlayContainerFormContainerNineContainerSixTwoText {
+    font-size: 11px;
+  }
+
+  .cooperationFormContainerOverlayContainerFormContainerElevenContainerButton {
+    width: 100%;
+    height: 44px;
+    font-size: 13px;
+  }
+}
+
+/* Small Mobile */
+@media (min-width: 481px) and (max-width: 767px) {
+  .cooperationFormContainerOverlayContainerFormContainer {
+    padding: 25px;
+  }
+
+  .cooperationFormContainerOverlayContainerForm {
+    padding-top: 70px;
+    padding-bottom: 70px;
+  }
+
+  .cooperationFormContainerOverlayContainerFormContainerOneContainerText {
+    font-size: 20px;
+    line-height: 26px;
+  }
+
+  .cooperationFormContainerOverlayContainerFormContainerTwoContainer {
+    width: 90%;
+  }
+
+  .cooperationFormContainerOverlayContainerFormContainerTwoContainerText {
+    font-size: 16px;
+    line-height: 22px;
+  }
+
+  .cooperationFormContainerOverlayContainerFormContainerThreeContainerText {
+    font-size: 20px;
+    line-height: 26px;
+  }
+
+  .cooperationFormContainerOverlayContainerFormContainerFour {
+    width: 85%;
+    margin-top: 35px;
+  }
+
+  .cooperationFormContainerOverlayContainerFormContainerFourContainerTextColor,
+  .cooperationFormContainerOverlayContainerFormContainerFourContainerText {
+    font-size: 16px;
+    line-height: 22px;
+  }
+
+  .cooperationFormContainerOverlayContainerFormContainerFiveContainerTwoText,
+  .cooperationFormContainerOverlayContainerFormContainerSixContainerTwoText {
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  .cooperationFormContainerOverlayContainerFormContainerSevenContainerText {
+    font-size: 20px;
+    line-height: 26px;
+  }
+
+  .cooperationFormContainerOverlayContainerFormContainerNine,
+  .cooperationFormContainerOverlayContainerFormContainerEight,
+  .cooperationFormContainerOverlayContainerFormContainerTen,
+  .cooperationFormContainerOverlayContainerFormContainerEleven {
+    width: 85%;
+  }
+
+  .cooperationFormContainerOverlayContainerFormContainerNineContainerFiveTwoText,
+  .cooperationFormContainerOverlayContainerFormContainerNineContainerSixTwoText {
+    font-size: 12px;
+  }
+
+  .cooperationFormContainerOverlayContainerFormContainerElevenContainerButton {
+    width: 100%;
+  }
+}
+
+/* Tablet */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .cooperationFormContainerOverlayContainerFormContainer {
+    padding: 30px;
+  }
+
+  .cooperationFormContainerOverlayContainerForm {
+    padding-top: 80px;
+    padding-bottom: 80px;
+  }
+
+  .cooperationFormContainerOverlayContainerFormContainerTwoContainer {
+    width: 80%;
+  }
+
+  .cooperationFormContainerOverlayContainerFormContainerTwoContainerText {
+    font-size: 17px;
+    line-height: 24px;
+  }
+
+  .cooperationFormContainerOverlayContainerFormContainerFour {
+    width: 75%;
+  }
+
+  .cooperationFormContainerOverlayContainerFormContainerFourContainerTextColor,
+  .cooperationFormContainerOverlayContainerFormContainerFourContainerText {
+    font-size: 17px;
+    line-height: 24px;
+  }
+
+  .cooperationFormContainerOverlayContainerFormContainerFiveContainerTwoText,
+  .cooperationFormContainerOverlayContainerFormContainerSixContainerTwoText {
+    font-size: 17px;
+    line-height: 26px;
+  }
+
+  .cooperationFormContainerOverlayContainerFormContainerNine,
+  .cooperationFormContainerOverlayContainerFormContainerEight,
+  .cooperationFormContainerOverlayContainerFormContainerTen,
+  .cooperationFormContainerOverlayContainerFormContainerEleven {
+    width: 65%;
+  }
+
+  .cooperationFormContainerOverlayContainerFormContainerElevenContainerButton {
+    width: 250px;
+  }
+}
+
+/* Small Desktop */
+@media (min-width: 1024px) and (max-width: 1199px) {
+  .cooperationFormContainerOverlayContainerFormContainerTwoContainer {
+    width: 75%;
+  }
+
+  .cooperationFormContainerOverlayContainerFormContainerTwoContainerText {
+    font-size: 18px;
+    line-height: 25px;
+  }
+
+  .cooperationFormContainerOverlayContainerFormContainerFour {
+    width: 65%;
+  }
+
+  .cooperationFormContainerOverlayContainerFormContainerFourContainerTextColor,
+  .cooperationFormContainerOverlayContainerFormContainerFourContainerText {
+    font-size: 18px;
+    line-height: 25px;
+  }
+
+  .cooperationFormContainerOverlayContainerFormContainerFiveContainerTwoText,
+  .cooperationFormContainerOverlayContainerFormContainerSixContainerTwoText {
+    font-size: 18px;
+    line-height: 27px;
+  }
+
+  .cooperationFormContainerOverlayContainerFormContainerNine,
+  .cooperationFormContainerOverlayContainerFormContainerEight,
+  .cooperationFormContainerOverlayContainerFormContainerTen,
+  .cooperationFormContainerOverlayContainerFormContainerEleven {
+    width: 55%;
+  }
+}
+
+/* Large Desktop */
+@media (min-width: 1200px) and (max-width: 1399px) {
+  .cooperationFormContainerOverlayContainerFormContainerTwoContainer {
+    width: 70%;
+  }
+
+  .cooperationFormContainerOverlayContainerFormContainerFour {
+    width: 58%;
+  }
+
+  .cooperationFormContainerOverlayContainerFormContainerNine,
+  .cooperationFormContainerOverlayContainerFormContainerEight,
+  .cooperationFormContainerOverlayContainerFormContainerTen,
+  .cooperationFormContainerOverlayContainerFormContainerEleven {
+    width: 50%;
+  }
+}
+
+/* Extra Large Desktop */
+@media (min-width: 1400px) {
+  .cooperationFormContainerOverlayContainerFormContainer {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .cooperationFormContainerOverlayContainerFormContainerTwoContainer {
+    width: 65%;
+  }
+
+  .cooperationFormContainerOverlayContainerFormContainerFour {
+    width: 55%;
+  }
+
+  .cooperationFormContainerOverlayContainerFormContainerNine,
+  .cooperationFormContainerOverlayContainerFormContainerEight,
+  .cooperationFormContainerOverlayContainerFormContainerTen,
+  .cooperationFormContainerOverlayContainerFormContainerEleven {
+    width: 45%;
+  }
+}
+
+/* Landscape Mobile */
+@media (max-width: 767px) and (orientation: landscape) {
+  .cooperationFormContainerOverlayContainerForm {
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+
+  .cooperationFormContainerOverlayContainerFormContainerTwo {
+    margin-top: 30px;
+  }
+
+  .cooperationFormContainerOverlayContainerFormContainerSeven {
+    margin-top: 40px;
+  }
+}
+
+/* ReCAPTCHA Responsive */
+@media (max-width: 480px) {
+  .cooperationFormContainerOverlayContainerFormContainerTen {
+    transform: scale(0.8);
+    transform-origin: left center;
+  }
+}
+
+@media (min-width: 481px) and (max-width: 767px) {
+  .cooperationFormContainerOverlayContainerFormContainerTen {
+    transform: scale(0.9);
+    transform-origin: center;
+  }
 }

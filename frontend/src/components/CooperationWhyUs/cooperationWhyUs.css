@@ -119,3 +119,424 @@
     margin-bottom: 0;
     text-align: left;
 }
+
+/* Responsive Design */
+@media (max-width: 1400px) {
+    .cooperationWhyUs {
+        padding-top: 80px;
+        padding-bottom: 80px;
+    }
+    
+    .cooperationWhyUsContainer {
+        width: 92%;
+        gap: 50px;
+    }
+    
+    .cooperationWhyUsContainerTopContainerText {
+        font-size: 26px;
+    }
+    
+    .cooperationWhyUsContainerBottomContainer {
+        gap: 40px 28px;
+    }
+    
+    .cooperationWhyUsContainerBottomContainerElement {
+        flex: 0 1 calc(33.33% - 28px);
+        min-width: 280px;
+        max-width: 380px;
+    }
+    
+    .cooperationWhyUsContainerBottomContainerElementContainerTopContainerOneIcon {
+        width: 36px;
+        height: 36px;
+    }
+    
+    .cooperationWhyUsContainerBottomContainerElementContainerTopContainerTwoTextOne,
+    .cooperationWhyUsContainerBottomContainerElementContainerTopContainerTwoTextTwo {
+        font-size: 18px;
+    }
+    
+    .cooperationWhyUsContainerBottomContainerElementContainerBottomContainerText {
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 1200px) {
+    .cooperationWhyUs {
+        padding-top: 70px;
+        padding-bottom: 70px;
+    }
+    
+    .cooperationWhyUsContainer {
+        gap: 45px;
+    }
+    
+    .cooperationWhyUsContainerTopContainerText {
+        font-size: 24px;
+    }
+    
+    .cooperationWhyUsContainerBottomContainer {
+        gap: 36px 24px;
+    }
+    
+    .cooperationWhyUsContainerBottomContainerElement {
+        flex: 0 1 calc(50% - 24px);
+        min-width: 260px;
+        max-width: 100%;
+    }
+    
+    .cooperationWhyUsContainerBottomContainerElementContainerTopContainer {
+        gap: 16px;
+    }
+    
+    .cooperationWhyUsContainerBottomContainerElementContainerTopContainerOneIcon {
+        width: 34px;
+        height: 34px;
+    }
+    
+    .cooperationWhyUsContainerBottomContainerElementContainerTopContainerTwoTextOne,
+    .cooperationWhyUsContainerBottomContainerElementContainerTopContainerTwoTextTwo {
+        font-size: 17px;
+    }
+    
+    .cooperationWhyUsContainerBottomContainerElementContainerBottomContainerText {
+        font-size: 14px;
+        line-height: 1.6;
+    }
+    
+    .cooperationWhyUsContainerBottomContainerElementContainerTop {
+        margin-bottom: 14px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .cooperationWhyUs {
+        padding-top: 60px;
+        padding-bottom: 60px;
+    }
+    
+    .cooperationWhyUsContainer {
+        width: 95%;
+        gap: 40px;
+    }
+    
+    .cooperationWhyUsContainerTopContainerText {
+        font-size: 22px;
+        text-align: center;
+    }
+    
+    .cooperationWhyUsContainerBottomContainer {
+        gap: 32px 20px;
+        justify-content: center;
+    }
+    
+    .cooperationWhyUsContainerBottomContainerElement {
+        flex: 0 1 calc(50% - 20px);
+        min-width: 240px;
+        max-width: 400px;
+    }
+    
+    .cooperationWhyUsContainerBottomContainerElementContainerTopContainer {
+        gap: 14px;
+    }
+    
+    .cooperationWhyUsContainerBottomContainerElementContainerTopContainerOneIcon {
+        width: 32px;
+        height: 32px;
+    }
+    
+    .cooperationWhyUsContainerBottomContainerElementContainerTopContainerTwoTextOne,
+    .cooperationWhyUsContainerBottomContainerElementContainerTopContainerTwoTextTwo {
+        font-size: 16px;
+    }
+    
+    .cooperationWhyUsContainerBottomContainerElementContainerBottomContainerText {
+        font-size: 13px;
+        line-height: 1.5;
+    }
+    
+    .cooperationWhyUsContainerBottomContainerElementContainerTop {
+        margin-bottom: 12px;
+    }
+}
+
+@media (max-width: 900px) {
+    .cooperationWhyUs {
+        padding-top: 50px;
+        padding-bottom: 50px;
+    }
+    
+    .cooperationWhyUsContainer {
+        gap: 35px;
+    }
+    
+    .cooperationWhyUsContainerTopContainerText {
+        font-size: 20px;
+    }
+    
+    .cooperationWhyUsContainerBottomContainer {
+        gap: 28px 18px;
+    }
+    
+    .cooperationWhyUsContainerBottomContainerElement {
+        flex: 0 1 calc(50% - 18px);
+        min-width: 220px;
+    }
+    
+    .cooperationWhyUsContainerBottomContainerElementContainerTopContainer {
+        gap: 12px;
+    }
+    
+    .cooperationWhyUsContainerBottomContainerElementContainerTopContainerOneIcon {
+        width: 30px;
+        height: 30px;
+    }
+    
+    .cooperationWhyUsContainerBottomContainerElementContainerTopContainerTwoTextOne,
+    .cooperationWhyUsContainerBottomContainerElementContainerTopContainerTwoTextTwo {
+        font-size: 15px;
+    }
+    
+    .cooperationWhyUsContainerBottomContainerElementContainerBottomContainerText {
+        font-size: 12px;
+        line-height: 1.4;
+    }
+    
+    .cooperationWhyUsContainerBottomContainerElementContainerTop {
+        margin-bottom: 10px;
+    }
+}
+
+@media (max-width: 768px) {
+    .cooperationWhyUs {
+        padding-top: 40px;
+        padding-bottom: 40px;
+    }
+    
+    .cooperationWhyUsContainer {
+        width: 90%;
+        gap: 30px;
+    }
+    
+    .cooperationWhyUsContainerTopContainerText {
+        font-size: 18px;
+    }
+    
+    .cooperationWhyUsContainerBottomContainer {
+        gap: 24px;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .cooperationWhyUsContainerBottomContainerElement {
+        flex: none;
+        width: 100%;
+        max-width: 100%;
+        min-width: auto;
+        text-align: left;
+    }
+    
+    .cooperationWhyUsContainerBottomContainerElementContainer {
+        align-items: flex-start;
+    }
+    
+    .cooperationWhyUsContainerBottomContainerElementContainerTopContainer {
+        gap: 12px;
+        align-items: flex-start;
+    }
+    
+    .cooperationWhyUsContainerBottomContainerElementContainerTopContainerOneIcon {
+        width: 28px;
+        height: 28px;
+        margin-top: 1px;
+    }
+    
+    .cooperationWhyUsContainerBottomContainerElementContainerTopContainerTwoTextOne,
+    .cooperationWhyUsContainerBottomContainerElementContainerTopContainerTwoTextTwo {
+        font-size: 14px;
+        line-height: 1.3;
+    }
+    
+    .cooperationWhyUsContainerBottomContainerElementContainerBottomContainerText {
+        font-size: 11px;
+        line-height: 1.4;
+        text-align: left;
+    }
+    
+    .cooperationWhyUsContainerBottomContainerElementContainerTop {
+        margin-bottom: 8px;
+    }
+}
+
+@media (max-width: 600px) {
+    .cooperationWhyUs {
+        padding-top: 35px;
+        padding-bottom: 35px;
+    }
+    
+    .cooperationWhyUsContainer {
+        width: 88%;
+        gap: 25px;
+    }
+    
+    .cooperationWhyUsContainerTopContainerText {
+        font-size: 16px;
+    }
+    
+    .cooperationWhyUsContainerBottomContainer {
+        gap: 20px;
+    }
+    
+    .cooperationWhyUsContainerBottomContainerElementContainerTopContainer {
+        gap: 10px;
+    }
+    
+    .cooperationWhyUsContainerBottomContainerElementContainerTopContainerOneIcon {
+        width: 26px;
+        height: 26px;
+    }
+    
+    .cooperationWhyUsContainerBottomContainerElementContainerTopContainerTwoTextOne,
+    .cooperationWhyUsContainerBottomContainerElementContainerTopContainerTwoTextTwo {
+        font-size: 13px;
+    }
+    
+    .cooperationWhyUsContainerBottomContainerElementContainerBottomContainerText {
+        font-size: 10px;
+        line-height: 1.3;
+    }
+    
+    .cooperationWhyUsContainerBottomContainerElementContainerTop {
+        margin-bottom: 6px;
+    }
+}
+
+@media (max-width: 480px) {
+    .cooperationWhyUs {
+        padding-top: 30px;
+        padding-bottom: 30px;
+    }
+    
+    .cooperationWhyUsContainer {
+        width: 85%;
+        gap: 22px;
+    }
+    
+    .cooperationWhyUsContainerTopContainerText {
+        font-size: 15px;
+        line-height: 1.2;
+    }
+    
+    .cooperationWhyUsContainerBottomContainer {
+        gap: 18px;
+    }
+    
+    .cooperationWhyUsContainerBottomContainerElementContainerTopContainer {
+        gap: 8px;
+    }
+    
+    .cooperationWhyUsContainerBottomContainerElementContainerTopContainerOneIcon {
+        width: 24px;
+        height: 24px;
+    }
+    
+    .cooperationWhyUsContainerBottomContainerElementContainerTopContainerTwoTextOne,
+    .cooperationWhyUsContainerBottomContainerElementContainerTopContainerTwoTextTwo {
+        font-size: 12px;
+        line-height: 1.2;
+    }
+    
+    .cooperationWhyUsContainerBottomContainerElementContainerBottomContainerText {
+        font-size: 9px;
+        line-height: 1.3;
+    }
+    
+    .cooperationWhyUsContainerBottomContainerElementContainerTop {
+        margin-bottom: 5px;
+    }
+}
+
+@media (max-width: 380px) {
+    .cooperationWhyUs {
+        padding-top: 25px;
+        padding-bottom: 25px;
+    }
+    
+    .cooperationWhyUsContainer {
+        width: 82%;
+        gap: 20px;
+    }
+    
+    .cooperationWhyUsContainerTopContainerText {
+        font-size: 14px;
+        line-height: 1.1;
+    }
+    
+    .cooperationWhyUsContainerBottomContainer {
+        gap: 16px;
+    }
+    
+    .cooperationWhyUsContainerBottomContainerElementContainerTopContainer {
+        gap: 6px;
+    }
+    
+    .cooperationWhyUsContainerBottomContainerElementContainerTopContainerOneIcon {
+        width: 22px;
+        height: 22px;
+    }
+    
+    .cooperationWhyUsContainerBottomContainerElementContainerTopContainerTwoTextOne,
+    .cooperationWhyUsContainerBottomContainerElementContainerTopContainerTwoTextTwo {
+        font-size: 11px;
+        line-height: 1.1;
+    }
+    
+    .cooperationWhyUsContainerBottomContainerElementContainerBottomContainerText {
+        font-size: 8px;
+        line-height: 1.2;
+    }
+    
+    .cooperationWhyUsContainerBottomContainerElementContainerTop {
+        margin-bottom: 4px;
+    }
+}
+
+/* Performance optimizations */
+.cooperationWhyUsContainerBottomContainerElementContainerTopContainerOneIcon,
+.cooperationWhyUsContainerBottomContainerElement {
+    will-change: transform;
+}
+
+/* Touch device optimizations */
+@media (max-width: 768px) {
+    .cooperationWhyUsContainerBottomContainerElement {
+        transition: transform 0.2s ease;
+        -webkit-tap-highlight-color: transparent;
+        touch-action: manipulation;
+    }
+    
+    .cooperationWhyUsContainerBottomContainerElement:active {
+        transform: scale(0.98);
+    }
+}
+
+/* Icon hover effects for desktop */
+@media (min-width: 769px) {
+    .cooperationWhyUsContainerBottomContainerElementContainerTopContainerOneIcon {
+        transition: transform 0.3s ease, color 0.3s ease;
+    }
+    
+    .cooperationWhyUsContainerBottomContainerElement:hover .cooperationWhyUsContainerBottomContainerElementContainerTopContainerOneIcon {
+        transform: scale(1.1);
+        color: #f0b485;
+    }
+}
+
+/* Accessibility improvements */
+@media (max-width: 768px) {
+    .cooperationWhyUsContainerBottomContainerElementContainerTopContainerTwoTextOne,
+    .cooperationWhyUsContainerBottomContainerElementContainerTopContainerTwoTextTwo,
+    .cooperationWhyUsContainerBottomContainerElementContainerBottomContainerText {
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+    }
+}

@@ -77,3 +77,392 @@
   font-weight: 600;
   line-height: 19px;
 }
+
+/* Responsive Design */
+@media (max-width: 1400px) {
+    .cooperationHowToStart {
+        padding-top: 80px;
+        padding-bottom: 80px;
+    }
+    
+    .cooperationHowToStartContainer {
+        width: 92%;
+        gap: 35px;
+    }
+    
+    .cooperationHowToStartContainerTopCotainerText {
+        font-size: 20px;
+        line-height: 26px;
+    }
+    
+    .cooperationHowToStartContainerBottom {
+        width: 78%;
+    }
+    
+    .cooperationHowToStartContainerBottomContainerElement {
+        height: 95px;
+        width: 82%;
+    }
+    
+    .cooperationHowToStartContainerBottomContainerElementContainerOneText {
+        font-size: 20px;
+        line-height: 26px;
+    }
+    
+    .cooperationHowToStartContainerBottomContainerElementContainerTwoText {
+        font-size: 17px;
+        line-height: 18px;
+    }
+}
+
+@media (max-width: 1200px) {
+    .cooperationHowToStart {
+        padding-top: 70px;
+        padding-bottom: 70px;
+    }
+    
+    .cooperationHowToStartContainer {
+        gap: 32px;
+    }
+    
+    .cooperationHowToStartContainerTopCotainerText {
+        font-size: 19px;
+        line-height: 24px;
+    }
+    
+    .cooperationHowToStartContainerBottom {
+        width: 80%;
+    }
+    
+    .cooperationHowToStartContainerBottomContainer {
+        gap: 22px;
+    }
+    
+    .cooperationHowToStartContainerBottomContainerElement {
+        height: 90px;
+        width: 85%;
+    }
+    
+    .cooperationHowToStartContainerBottomContainerElementContainer {
+        gap: 12px;
+    }
+    
+    .cooperationHowToStartContainerBottomContainerElementContainerOneText {
+        font-size: 19px;
+        line-height: 24px;
+    }
+    
+    .cooperationHowToStartContainerBottomContainerElementContainerTwoText {
+        font-size: 16px;
+        line-height: 17px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .cooperationHowToStart {
+        padding-top: 60px;
+        padding-bottom: 60px;
+    }
+    
+    .cooperationHowToStartContainer {
+        width: 95%;
+        gap: 30px;
+    }
+    
+    .cooperationHowToStartContainerTopCotainerText {
+        font-size: 18px;
+        line-height: 22px;
+    }
+    
+    .cooperationHowToStartContainerBottom {
+        width: 85%;
+    }
+    
+    .cooperationHowToStartContainerBottomContainer {
+        gap: 20px;
+    }
+    
+    .cooperationHowToStartContainerBottomContainerElement {
+        height: 85px;
+        width: 90%;
+        border: 1.5px solid #ffffff;
+    }
+    
+    .cooperationHowToStartContainerBottomContainerElementContainer {
+        gap: 10px;
+    }
+    
+    .cooperationHowToStartContainerBottomContainerElementContainerOneText {
+        font-size: 18px;
+        line-height: 22px;
+    }
+    
+    .cooperationHowToStartContainerBottomContainerElementContainerTwoText {
+        font-size: 15px;
+        line-height: 16px;
+    }
+}
+
+@media (max-width: 900px) {
+    .cooperationHowToStart {
+        padding-top: 50px;
+        padding-bottom: 50px;
+    }
+    
+    .cooperationHowToStartContainer {
+        gap: 28px;
+    }
+    
+    .cooperationHowToStartContainerTopCotainerText {
+        font-size: 17px;
+        line-height: 20px;
+    }
+    
+    .cooperationHowToStartContainerBottom {
+        width: 88%;
+    }
+    
+    .cooperationHowToStartContainerBottomContainer {
+        gap: 18px;
+    }
+    
+    .cooperationHowToStartContainerBottomContainerElement {
+        height: 80px;
+        width: 92%;
+    }
+    
+    .cooperationHowToStartContainerBottomContainerElementContainer {
+        gap: 8px;
+    }
+    
+    .cooperationHowToStartContainerBottomContainerElementContainerOneText {
+        font-size: 17px;
+        line-height: 20px;
+    }
+    
+    .cooperationHowToStartContainerBottomContainerElementContainerTwoText {
+        font-size: 14px;
+        line-height: 15px;
+    }
+}
+
+@media (max-width: 768px) {
+    .cooperationHowToStart {
+        padding-top: 40px;
+        padding-bottom: 40px;
+    }
+    
+    .cooperationHowToStartContainer {
+        width: 90%;
+        gap: 25px;
+    }
+    
+    .cooperationHowToStartContainerTopCotainerText {
+        font-size: 16px;
+        line-height: 18px;
+    }
+    
+    .cooperationHowToStartContainerBottom {
+        width: 90%;
+    }
+    
+    .cooperationHowToStartContainerBottomContainer {
+        gap: 16px;
+    }
+    
+    .cooperationHowToStartContainerBottomContainerElement {
+        height: 75px;
+        width: 95%;
+        border: 1px solid #ffffff;
+        -webkit-tap-highlight-color: transparent;
+        touch-action: manipulation;
+    }
+    
+    .cooperationHowToStartContainerBottomContainerElementContainer {
+        gap: 6px;
+        width: 92%;
+    }
+    
+    .cooperationHowToStartContainerBottomContainerElementContainerOneText {
+        font-size: 16px;
+        line-height: 18px;
+    }
+    
+    .cooperationHowToStartContainerBottomContainerElementContainerTwoText {
+        font-size: 13px;
+        line-height: 14px;
+    }
+}
+
+@media (max-width: 600px) {
+    .cooperationHowToStart {
+        padding-top: 35px;
+        padding-bottom: 35px;
+    }
+    
+    .cooperationHowToStartContainer {
+        width: 88%;
+        gap: 22px;
+    }
+    
+    .cooperationHowToStartContainerTopCotainerText {
+        font-size: 15px;
+        line-height: 17px;
+    }
+    
+    .cooperationHowToStartContainerBottom {
+        width: 92%;
+    }
+    
+    .cooperationHowToStartContainerBottomContainer {
+        gap: 14px;
+    }
+    
+    .cooperationHowToStartContainerBottomContainerElement {
+        height: 70px;
+        width: 98%;
+    }
+    
+    .cooperationHowToStartContainerBottomContainerElementContainer {
+        gap: 5px;
+        width: 90%;
+    }
+    
+    .cooperationHowToStartContainerBottomContainerElementContainerOneText {
+        font-size: 15px;
+        line-height: 17px;
+    }
+    
+    .cooperationHowToStartContainerBottomContainerElementContainerTwoText {
+        font-size: 12px;
+        line-height: 13px;
+    }
+}
+
+@media (max-width: 480px) {
+    .cooperationHowToStart {
+        padding-top: 30px;
+        padding-bottom: 30px;
+    }
+    
+    .cooperationHowToStartContainer {
+        width: 85%;
+        gap: 20px;
+    }
+    
+    .cooperationHowToStartContainerTopCotainerText {
+        font-size: 14px;
+        line-height: 16px;
+    }
+    
+    .cooperationHowToStartContainerBottom {
+        width: 95%;
+    }
+    
+    .cooperationHowToStartContainerBottomContainer {
+        gap: 12px;
+    }
+    
+    .cooperationHowToStartContainerBottomContainerElement {
+        height: 65px;
+        width: 100%;
+    }
+    
+    .cooperationHowToStartContainerBottomContainerElementContainer {
+        gap: 4px;
+        width: 88%;
+    }
+    
+    .cooperationHowToStartContainerBottomContainerElementContainerOneText {
+        font-size: 14px;
+        line-height: 16px;
+    }
+    
+    .cooperationHowToStartContainerBottomContainerElementContainerTwoText {
+        font-size: 11px;
+        line-height: 12px;
+    }
+}
+
+@media (max-width: 380px) {
+    .cooperationHowToStart {
+        padding-top: 25px;
+        padding-bottom: 25px;
+    }
+    
+    .cooperationHowToStartContainer {
+        width: 82%;
+        gap: 18px;
+    }
+    
+    .cooperationHowToStartContainerTopCotainerText {
+        font-size: 13px;
+        line-height: 15px;
+    }
+    
+    .cooperationHowToStartContainerBottom {
+        width: 98%;
+    }
+    
+    .cooperationHowToStartContainerBottomContainer {
+        gap: 10px;
+    }
+    
+    .cooperationHowToStartContainerBottomContainerElement {
+        height: 60px;
+        width: 100%;
+    }
+    
+    .cooperationHowToStartContainerBottomContainerElementContainer {
+        gap: 3px;
+        width: 85%;
+    }
+    
+    .cooperationHowToStartContainerBottomContainerElementContainerOneText {
+        font-size: 13px;
+        line-height: 15px;
+    }
+    
+    .cooperationHowToStartContainerBottomContainerElementContainerTwoText {
+        font-size: 10px;
+        line-height: 11px;
+    }
+}
+
+/* Touch device optimizations */
+@media (max-width: 768px) {
+    .cooperationHowToStartContainerBottomContainerElement {
+        transition: transform 0.2s ease;
+    }
+    
+    .cooperationHowToStartContainerBottomContainerElement:active {
+        transform: scale(0.98);
+    }
+}
+
+/* Performance optimizations */
+.cooperationHowToStartContainerBottomContainerElement {
+    will-change: transform;
+}
+
+/* Text readability improvements */
+@media (max-width: 768px) {
+    .cooperationHowToStartContainerTopCotainerText,
+    .cooperationHowToStartContainerBottomContainerElementContainerOneText,
+    .cooperationHowToStartContainerBottomContainerElementContainerTwoText {
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+    }
+}
+
+/* Hover effects for desktop */
+@media (min-width: 769px) {
+    .cooperationHowToStartContainerBottomContainerElement {
+        transition: all 0.3s ease;
+    }
+    
+    .cooperationHowToStartContainerBottomContainerElement:hover {
+        transform: translateY(-3px);
+        border-color: #C3845E;
+        box-shadow: 0 6px 16px rgba(195, 132, 94, 0.2);
+    }
+}

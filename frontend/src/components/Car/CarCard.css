@@ -174,3 +174,295 @@
   line-height: 21px;
   text-transform: uppercase;
 }
+
+/* RESPONSIVE STYLES */
+
+/* Large Desktop - 1440px and up */
+@media (min-width: 1440px) {
+  .carCardContainerTopContainerImage {
+    transition: transform 0.8s cubic-bezier(.4,1.6,.6,1);
+  }
+}
+
+/* Desktop - 1024px to 1439px */
+@media (max-width: 1439px) and (min-width: 1024px) {
+  .carCardContainerBottomContainerTitleText {
+    font-size: 22px;
+    line-height: 26px;
+  }
+  
+  .carCardContainerBottomContainerSpecsContainerOneValueText,
+  .carCardContainerBottomContainerSpecsContainerTwoValueText,
+  .carCardContainerBottomContainerSpecsContainerThreeValueText {
+    font-size: 13px;
+  }
+}
+
+/* Tablet Landscape - 768px to 1023px */
+@media (max-width: 1023px) and (min-width: 768px) {
+  .carCard {
+    max-width: 350px;
+    margin: 0 auto;
+  }
+  
+  .carCardContainerTop {
+    height: 220px;
+  }
+  
+  .carCardContainerBottomContainerTitleText {
+    font-size: 20px;
+    line-height: 24px;
+  }
+  
+  .carCardContainerBottomContainerSpecsContainerOneValueText,
+  .carCardContainerBottomContainerSpecsContainerTwoValueText,
+  .carCardContainerBottomContainerSpecsContainerThreeValueText {
+    font-size: 12px;
+    line-height: 18px;
+  }
+  
+  .carCardContainerBottomContainerSpecsContainer {
+    gap: 12px;
+  }
+  
+  .carCardContainerBottomContainerSpecsContainerOne,
+  .carCardContainerBottomContainerSpecsContainerTwo,
+  .carCardContainerBottomContainerSpecsContainerThree {
+    padding: 4px 8px;
+    gap: 8px;
+  }
+  
+  .carCardContainerBottomContainerCta {
+    width: 140px;
+    margin-top: 28px;
+  }
+  
+  .carCardContainerBottomContainerCtaContainerLeft {
+    height: 45px;
+    padding: 0 8px;
+  }
+  
+  .carCardContainerBottomContainerCtaContainerLeftContainerText {
+    font-size: 14px;
+    line-height: 18px;
+  }
+  
+  .carCardContainerBottomContainerCtaContainerRight {
+    height: 45px;
+    padding-left: 12px;
+  }
+  
+  .carCardContainerBottomContainerCtaContainerRightContainerIcon {
+    font-size: 14px;
+  }
+}
+
+/* Tablet Portrait - 481px to 767px */
+@media (max-width: 767px) and (min-width: 481px) {
+  .carCard {
+    max-width: 300px;
+    margin: 0 auto;
+  }
+  
+  .carCardContainerTop {
+    height: 200px;
+  }
+  
+  .carCardContainerBottomContainerTitleText {
+    font-size: 18px;
+    line-height: 22px;
+  }
+  
+  .carCardContainerBottomContainerSpecs {
+    margin-top: 25px;
+  }
+  
+  .carCardContainerBottomContainerSpecsContainer {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+  
+  .carCardContainerBottomContainerSpecsContainerOne,
+  .carCardContainerBottomContainerSpecsContainerTwo,
+  .carCardContainerBottomContainerSpecsContainerThree {
+    padding: 6px 10px;
+    gap: 8px;
+    width: fit-content;
+  }
+  
+  .carCardContainerBottomContainerSpecsContainerOneValueText,
+  .carCardContainerBottomContainerSpecsContainerTwoValueText,
+  .carCardContainerBottomContainerSpecsContainerThreeValueText {
+    font-size: 12px;
+    line-height: 18px;
+  }
+  
+  .carCardContainerBottomContainerCta {
+    width: 130px;
+    margin-top: 25px;
+  }
+  
+  .carCardContainerBottomContainerCtaContainerLeft {
+    height: 42px;
+    padding: 0 8px;
+  }
+  
+  .carCardContainerBottomContainerCtaContainerLeftContainerText {
+    font-size: 13px;
+    line-height: 16px;
+  }
+  
+  .carCardContainerBottomContainerCtaContainerRight {
+    height: 42px;
+    padding-left: 10px;
+  }
+  
+  .carCardContainerBottomContainerCtaContainerRightContainerIcon {
+    font-size: 13px;
+  }
+}
+
+/* Mobile Large - 361px to 480px */
+@media (max-width: 480px) and (min-width: 361px) {
+  .carCard {
+    max-width: 280px;
+    margin: 0 auto;
+  }
+  
+  .carCardContainerTop {
+    height: 180px;
+  }
+  
+  .carCardContainerBottomContainerTitleText {
+    font-size: 16px;
+    line-height: 20px;
+  }
+  
+  .carCardContainerBottomContainerSpecs {
+    margin-top: 20px;
+  }
+  
+  .carCardContainerBottomContainerSpecsContainer {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+  
+  .carCardContainerBottomContainerSpecsContainerOne,
+  .carCardContainerBottomContainerSpecsContainerTwo,
+  .carCardContainerBottomContainerSpecsContainerThree {
+    padding: 5px 8px;
+    gap: 6px;
+    width: fit-content;
+  }
+  
+  .carCardContainerBottomContainerSpecsContainerOneValueText,
+  .carCardContainerBottomContainerSpecsContainerTwoValueText,
+  .carCardContainerBottomContainerSpecsContainerThreeValueText {
+    font-size: 11px;
+    line-height: 16px;
+  }
+  
+  .carCardContainerBottomContainerCta {
+    width: 120px;
+    margin-top: 22px;
+  }
+  
+  .carCardContainerBottomContainerCtaContainerLeft {
+    height: 40px;
+    padding: 0 6px;
+  }
+  
+  .carCardContainerBottomContainerCtaContainerLeftContainerText {
+    font-size: 12px;
+    line-height: 15px;
+  }
+  
+  .carCardContainerBottomContainerCtaContainerRight {
+    height: 40px;
+    padding-left: 8px;
+  }
+  
+  .carCardContainerBottomContainerCtaContainerRightContainerIcon {
+    font-size: 12px;
+  }
+}
+
+/* Mobile Small - 320px to 360px */
+@media (max-width: 360px) {
+  .carCard {
+    max-width: 260px;
+    margin: 0 auto;
+  }
+  
+  .carCardContainerTop {
+    height: 160px;
+  }
+  
+  .carCardContainerBottomContainerTitleText {
+    font-size: 15px;
+    line-height: 18px;
+  }
+  
+  .carCardContainerBottomContainerSpecs {
+    margin-top: 18px;
+  }
+  
+  .carCardContainerBottomContainerSpecsContainer {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+  }
+  
+  .carCardContainerBottomContainerSpecsContainerOne,
+  .carCardContainerBottomContainerSpecsContainerTwo,
+  .carCardContainerBottomContainerSpecsContainerThree {
+    padding: 4px 6px;
+    gap: 5px;
+    width: fit-content;
+  }
+  
+  .carCardContainerBottomContainerSpecsContainerOneValueText,
+  .carCardContainerBottomContainerSpecsContainerTwoValueText,
+  .carCardContainerBottomContainerSpecsContainerThreeValueText {
+    font-size: 10px;
+    line-height: 14px;
+  }
+  
+  .carCardContainerBottomContainerCta {
+    width: 110px;
+    margin-top: 20px;
+  }
+  
+  .carCardContainerBottomContainerCtaContainerLeft {
+    height: 38px;
+    padding: 0 5px;
+  }
+  
+  .carCardContainerBottomContainerCtaContainerLeftContainerText {
+    font-size: 11px;
+    line-height: 14px;
+  }
+  
+  .carCardContainerBottomContainerCtaContainerRight {
+    height: 38px;
+    padding-left: 6px;
+  }
+  
+  .carCardContainerBottomContainerCtaContainerRightContainerIcon {
+    font-size: 11px;
+  }
+}
+
+/* Hover Effects Adjustments for Touch Devices */
+@media (hover: none) and (pointer: coarse) {
+  .carCard:hover .carCardContainerTopContainerImage {
+    transform: none;
+  }
+  
+  .carCard:active .carCardContainerTopContainerImage {
+    transform: scale(1.02) translateZ(0);
+    transition: transform 0.2s ease;
+  }
+}

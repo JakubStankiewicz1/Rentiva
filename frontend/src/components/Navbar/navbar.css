@@ -525,6 +525,7 @@
     
     .navbarContainerLeftContainer {
         gap: 8px;
+        margin-left: 15px;
     }
     
     .hamburgerMenu {

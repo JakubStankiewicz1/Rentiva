@@ -140,3 +140,454 @@
   border-radius: 0;
   transition: background 0.3s;
 }
+
+/* Responsive Design */
+@media (max-width: 1400px) {
+    .cooperationHero {
+        padding-top: 220px;
+        padding-bottom: 0px;
+    }
+    
+    .cooperationHeroContainer {
+        width: 92%;
+        gap: 45px;
+    }
+    
+    .cooperationHeroContainerTopContainerOneContainerText {
+        font-size: 32px;
+        line-height: 40px;
+    }
+    
+    .cooperationHeroContainerTopContainerTwoContainerText,
+    .cooperationHeroContainerTopContainerThreeContainerText {
+        font-size: 20px;
+        line-height: 26px;
+    }
+    
+    .cooperationHeroContainerTopContainerFourContainerText,
+    .cooperationHeroContainerTopContainerFiveContainerText {
+        font-size: 15px;
+        line-height: 18px;
+    }
+
+    .cooperationHeroContainerBottom {
+      margin-top: -30px;
+      margin-bottom: -30px;
+    }
+    
+    .cooperationHeroContainerBottomContainer {
+        height: 450px;
+    }
+}
+
+@media (max-width: 1200px) {
+    .cooperationHero {
+        padding-top: 200px;
+        padding-bottom: -140px;
+    }
+    
+    .cooperationHeroContainer {
+        gap: 40px;
+    }
+    
+    .cooperationHeroContainerTopContainerOneContainerText {
+        font-size: 28px;
+        line-height: 36px;
+    }
+    
+    .cooperationHeroContainerTopContainerTwoContainerText,
+    .cooperationHeroContainerTopContainerThreeContainerText {
+        font-size: 18px;
+        line-height: 24px;
+    }
+    
+    .cooperationHeroContainerTopContainerFourContainerText,
+    .cooperationHeroContainerTopContainerFiveContainerText {
+        font-size: 14px;
+        line-height: 17px;
+    }
+    
+    .cooperationHeroContainerTopContainerTwo {
+        margin-top: 25px;
+    }
+    
+    .cooperationHeroContainerTopContainerFour {
+        margin-top: 25px;
+    }
+    
+    .cooperationHeroContainerTopContainerFive {
+        margin-top: 18px;
+        width: 60%;
+    }
+
+    .cooperationHeroContainerBottom {
+      margin-top: -60px;
+      margin-bottom: -110px;
+    }
+    
+    .cooperationHeroContainerBottomContainer {
+        height: 400px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .cooperationHero {
+        padding-top: 180px;
+        padding-bottom: -180px;
+    }
+    
+    .cooperationHeroContainer {
+        width: 95%;
+        gap: 35px;
+    }
+    
+    .cooperationHeroContainerTopContainerOneContainerText {
+        font-size: 26px;
+        line-height: 32px;
+        text-align: center;
+    }
+    
+    .cooperationHeroContainerTopContainerTwoContainerText,
+    .cooperationHeroContainerTopContainerThreeContainerText {
+        font-size: 16px;
+        line-height: 22px;
+        text-align: center;
+    }
+    
+    .cooperationHeroContainerTopContainerFourContainerText {
+        font-size: 13px;
+        line-height: 16px;
+        text-align: center;
+    }
+    
+    .cooperationHeroContainerTopContainerFiveContainerText {
+        font-size: 13px;
+        line-height: 16px;
+    }
+    
+    .cooperationHeroContainerTopContainerTwo {
+        margin-top: 22px;
+    }
+    
+    .cooperationHeroContainerTopContainerFour {
+        margin-top: 22px;
+    }
+    
+    .cooperationHeroContainerTopContainerFive {
+        margin-top: 16px;
+        width: 70%;
+    }
+    
+    .cooperationHeroContainerBottom {
+      margin-bottom: -110px;
+    }
+    
+    .cooperationHeroContainerBottomContainer {
+        height: 350px;
+    }
+}
+
+@media (max-width: 900px) {
+    .cooperationHero {
+        padding-top: 160px;
+        padding-bottom: -250px;
+    }
+    
+    .cooperationHeroContainer {
+        gap: 30px;
+    }
+    
+    .cooperationHeroContainerTopContainerOneContainerText {
+        font-size: 24px;
+        line-height: 30px;
+    }
+    
+    .cooperationHeroContainerTopContainerTwoContainerText,
+    .cooperationHeroContainerTopContainerThreeContainerText {
+        font-size: 15px;
+        line-height: 20px;
+    }
+    
+    .cooperationHeroContainerTopContainerFourContainerText {
+        font-size: 12px;
+        line-height: 15px;
+    }
+    
+    .cooperationHeroContainerTopContainerFiveContainerText {
+        font-size: 12px;
+        line-height: 15px;
+    }
+    
+    .cooperationHeroContainerTopContainerTwo {
+        margin-top: 20px;
+    }
+    
+    .cooperationHeroContainerTopContainerFour {
+        margin-top: 20px;
+    }
+    
+    .cooperationHeroContainerTopContainerFive {
+        margin-top: 14px;
+        width: 80%;
+    }
+
+    .cooperationHeroContainerBottom {
+      margin-top: -100px;
+      margin-bottom: -130px;
+    }
+    
+    .cooperationHeroContainerBottomContainer {
+        height: 300px;
+    }
+}
+
+@media (max-width: 768px) {
+    .cooperationHero {
+        padding-top: 140px;
+        padding-bottom: -180px;
+    }
+    
+    .cooperationHeroContainer {
+        width: 90%;
+        gap: 25px;
+    }
+    
+    .cooperationHeroContainerTopContainerOneContainerText {
+        font-size: 22px;
+        line-height: 28px;
+    }
+    
+    .cooperationHeroContainerTopContainerTwoContainerText,
+    .cooperationHeroContainerTopContainerThreeContainerText {
+        font-size: 14px;
+        line-height: 18px;
+    }
+    
+    .cooperationHeroContainerTopContainerFourContainerText {
+        font-size: 11px;
+        line-height: 14px;
+    }
+    
+    .cooperationHeroContainerTopContainerFiveContainerText {
+        font-size: 11px;
+        line-height: 14px;
+    }
+    
+    .cooperationHeroContainerTopContainerTwo {
+        margin-top: 18px;
+    }
+    
+    .cooperationHeroContainerTopContainerFour {
+        margin-top: 18px;
+    }
+    
+    .cooperationHeroContainerTopContainerFive {
+        margin-top: 12px;
+        width: 85%;
+    }
+
+    .cooperationHeroContainerBottom {
+      margin-top: -120px;
+      margin-bottom: -160px;
+    }
+    
+    .cooperationHeroContainerBottomContainer {
+        height: 260px;
+    }
+}
+
+@media (max-width: 600px) {
+    .cooperationHero {
+        padding-top: 120px;
+        padding-bottom: -250px;
+    }
+    
+    .cooperationHeroContainer {
+        width: 88%;
+        gap: 22px;
+    }
+    
+    .cooperationHeroContainerTopContainerOneContainerText {
+        font-size: 20px;
+        line-height: 25px;
+    }
+    
+    .cooperationHeroContainerTopContainerTwoContainerText,
+    .cooperationHeroContainerTopContainerThreeContainerText {
+        font-size: 13px;
+        line-height: 17px;
+    }
+    
+    .cooperationHeroContainerTopContainerFourContainerText {
+        font-size: 10px;
+        line-height: 13px;
+    }
+    
+    .cooperationHeroContainerTopContainerFiveContainerText {
+        font-size: 10px;
+        line-height: 13px;
+    }
+    
+    .cooperationHeroContainerTopContainerTwo {
+        margin-top: 16px;
+    }
+    
+    .cooperationHeroContainerTopContainerFour {
+        margin-top: 16px;
+    }
+    
+    .cooperationHeroContainerTopContainerFive {
+        margin-top: 10px;
+        width: 90%;
+    }
+
+    .cooperationHeroContainerBottom {
+      margin-top: -140px;
+      margin-bottom: -180px;
+    }
+    
+    .cooperationHeroContainerBottomContainer {
+        height: 220px;
+    }
+}
+
+@media (max-width: 480px) {
+    .cooperationHero {
+        padding-top: 100px;
+        padding-bottom: -200px;
+    }
+    
+    .cooperationHeroContainer {
+        width: 85%;
+        gap: 20px;
+    }
+    
+    .cooperationHeroContainerTopContainerOneContainerText {
+        font-size: 18px;
+        line-height: 23px;
+    }
+    
+    .cooperationHeroContainerTopContainerTwoContainerText,
+    .cooperationHeroContainerTopContainerThreeContainerText {
+        font-size: 12px;
+        line-height: 16px;
+    }
+    
+    .cooperationHeroContainerTopContainerFourContainerText {
+        font-size: 9px;
+        line-height: 12px;
+    }
+    
+    .cooperationHeroContainerTopContainerFiveContainerText {
+        font-size: 9px;
+        line-height: 12px;
+    }
+    
+    .cooperationHeroContainerTopContainerTwo {
+        margin-top: 14px;
+    }
+    
+    .cooperationHeroContainerTopContainerFour {
+        margin-top: 14px;
+    }
+    
+    .cooperationHeroContainerTopContainerFive {
+        margin-top: 8px;
+        width: 95%;
+    }
+
+    .cooperationHeroContainerBottom {
+      margin-top: -160px;
+      margin-bottom: -210px;
+    }
+    
+    .cooperationHeroContainerBottomContainer {
+        height: 180px;
+    }
+}
+
+@media (max-width: 380px) {
+    .cooperationHero {
+        padding-top: 90px;
+        padding-bottom: -200px;
+    }
+    
+    .cooperationHeroContainer {
+        width: 82%;
+        gap: 18px;
+    }
+    
+    .cooperationHeroContainerTopContainerOneContainerText {
+        font-size: 16px;
+        line-height: 20px;
+    }
+    
+    .cooperationHeroContainerTopContainerTwoContainerText,
+    .cooperationHeroContainerTopContainerThreeContainerText {
+        font-size: 11px;
+        line-height: 14px;
+    }
+    
+    .cooperationHeroContainerTopContainerFourContainerText {
+        font-size: 8px;
+        line-height: 11px;
+    }
+    
+    .cooperationHeroContainerTopContainerFiveContainerText {
+        font-size: 8px;
+        line-height: 11px;
+    }
+    
+    .cooperationHeroContainerTopContainerTwo {
+        margin-top: 12px;
+    }
+    
+    .cooperationHeroContainerTopContainerFour {
+        margin-top: 12px;
+    }
+    
+    .cooperationHeroContainerTopContainerFive {
+        margin-top: 6px;
+        width: 100%;
+    }
+
+    .cooperationHeroContainerBottom {
+      margin-top: -180px;
+      margin-bottom: -240px;
+    }
+    
+    .cooperationHeroContainerBottomContainer {
+        height: 150px;
+    }
+}
+
+/* Performance optimizations */
+.cooperationHeroContainerBottomContainerImage,
+.cooperationHeroContainerBottomContainerOverlay {
+    will-change: transform;
+}
+
+/* Image loading optimization */
+.cooperationHeroContainerBottomContainerImage {
+    transition: transform 0.3s ease;
+}
+
+@media (max-width: 1024px) {
+    .cooperationHeroContainerBottomContainer:hover .cooperationHeroContainerBottomContainerImage {
+        transform: scale(1.02);
+    }
+    
+    .cooperationHeroContainerBottomContainerOverlay:hover {
+        background: rgba(24, 24, 24, 0.35);
+    }
+}
+
+/* Text readability improvements */
+@media (max-width: 768px) {
+    .cooperationHeroContainerTopContainerOneContainerText,
+    .cooperationHeroContainerTopContainerTwoContainerText,
+    .cooperationHeroContainerTopContainerThreeContainerText,
+    .cooperationHeroContainerTopContainerFourContainerText {
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+    }
+}

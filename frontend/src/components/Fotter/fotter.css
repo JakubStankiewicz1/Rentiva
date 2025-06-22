@@ -270,73 +270,51 @@
 
 .fotterContainerMainContainerRightContainerThreeContainerOne {
     display: flex;
-    align-items: center;
-    justify-content: flex-start;
+    align-items: flex-start;
+    justify-content: center;
     margin: 0;
     padding: 0;
-}
-
-.fotterContainerMainContainerRightContainerThreeContainerOneContainer {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    margin: 0;
-    padding: 0;
-}
-
-.fotterContainerMainContainerRightContainerThreeContainerOneContainerInput {
-    width: 16px;
-    height: 16px;
-    accent-color: transparent;
-    border-radius: 0;
-    border: 1px solid #393939;
-    background: transparent;
-    margin: 0 18px 0 0;
-    transition: border-color 0.2s;
-    cursor: pointer;
-    vertical-align: middle;
-    appearance: none;
-    outline: none;
-    position: relative;
-    box-sizing: border-box;
-}
-
-.fotterContainerMainContainerRightContainerThreeContainerOneContainerInput:checked {
-    background-color: #232221;
-    border-color: #A6A690;
-}
-
-.fotterContainerMainContainerRightContainerThreeContainerOneContainerInput:focus {
-    outline: 2px solid #A6A690;
-    box-shadow: 0 0 0 2px #A6A69033;
+    flex-shrink: 0;
+    margin-top: 2px;
 }
 
 .fotterContainerMainContainerRightContainerThreeContainerTwo {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     width: 100%;
     margin: 0;
     padding: 0;
+    text-align: left;
 }
 
 .fotterContainerMainContainerRightContainerThreeContainerTwoContainer {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     width: 100%;
     margin: 0;
     padding: 0;
 }
 
 .fotterContainerMainContainerRightContainerThreeContainerTwoContainerText {
-    color: #A6A690;
-    font-size: 15px;
-    font-family: "Bai Jamjuree", sans-serif;
-    font-weight: 400;
+    text-align: left;
     line-height: 1.5;
-    margin: 0;
-    user-select: text;
-    letter-spacing: 0.01em;
-    /* Brak pogrubienia, brak uppercase */
+    /* text-align: center; */
+}
+
+.fotterContainerMainContainerRightContainerThreeContainerOneContainerInput {
+    margin-right: 12px;
+    margin-top: 2px;
+}
+
+.fotterContainerMainContainerRightContainerThree {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 25px;
 }
 
 /* --- Footer bottom --- */
@@ -411,4 +389,730 @@
     font-size: 15px;
     font-weight: 400;
     line-height: normal;
+}
+
+/* Responsive Design */
+@media (max-width: 1400px) {
+    .fotter {
+        padding-top: 80px;
+        padding-bottom: 25px;
+    }
+    
+    .fotterContainer {
+        width: 92%;
+    }
+    
+    .fotterContainerMainContainer {
+        gap: 35px;
+    }
+    
+    .fotterContainerMainContainerLeftContainerTopContainerElementContainerText {
+        font-size: 12px;
+    }
+    
+    .fotterContainerMainContainerRightContainerOneContainerText {
+        font-size: 14px;
+    }
+    
+    .fotterContainerMainContainerRightContainerTwoContainerOneContainerInput {
+        width: 280px;
+        height: 46px;
+        font-size: 15px;
+    }
+    
+    .fotterContainerMainContainerRightContainerTwoContainerTwoContainerButton {
+        width: 110px;
+        height: 46px;
+    }
+    
+    .fotterContainerMainContainerRightContainerTwoContainerTwoContainerButtonContainerText {
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 1200px) {
+    .fotter {
+        padding-top: 70px;
+        padding-bottom: 20px;
+    }
+    
+    .fotterContainerMainContainer {
+        gap: 30px;
+    }
+    
+    .fotterContainerMainContainerLeftContainerTopContainer {
+        gap: 28px;
+    }
+    
+    .fotterContainerMainContainerLeftContainerBottomContainer {
+        gap: 20px;
+    }
+    
+    .fotterContainerMainContainerLeftContainerBottomContainerElementContainer {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .fotterContainerMainContainerLeftContainerBottomContainerElementContainerDivIcon {
+        width: 20px;
+        height: 20px;
+    }
+    
+    .fotterContainerMainContainerRightContainerTwoContainerOneContainerInput {
+        width: 260px;
+        height: 44px;
+        font-size: 14px;
+    }
+    
+    .fotterContainerMainContainerRightContainerTwoContainerTwoContainerButton {
+        width: 100px;
+        height: 44px;
+    }
+    
+    .fotterContainerMainContainerRightContainerThreeContainerTwoContainerText {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .fotter {
+        padding-top: 60px;
+        padding-bottom: 18px;
+    }
+    
+    .fotterContainer {
+        width: 95%;
+    }
+    
+    .fotterContainerMainContainer {
+        flex-direction: column;
+        gap: 50px;
+        align-items: center;
+        text-align: center;
+    }
+    
+    .fotterContainerMainContainerLeft {
+        order: 2;
+        width: 100%;
+        justify-content: center;
+    }
+    
+    .fotterContainerMainContainerRight {
+        order: 1;
+        width: 100%;
+        justify-content: center;
+    }
+    
+    .fotterContainerMainContainerLeftContainer {
+        align-items: center;
+        gap: 40px;
+    }
+    
+    .fotterContainerMainContainerLeftContainerTopContainer {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 24px;
+    }
+    
+    .fotterContainerMainContainerLeftContainerBottomContainer {
+        justify-content: center;
+    }
+    
+    .fotterContainerMainContainerRightContainer {
+        align-items: center;
+        max-width: 100%;
+        text-align: center;
+    }
+    
+    .fotterContainerMainContainerRightContainerOneContainerText {
+        text-align: center;
+    }
+    
+    .fotterContainerMainContainerRightContainerTwoContainer {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 12px;
+    }
+
+    .fotterContainerMainContainerRightContainerThree {
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin-top: 25px;
+    }
+    
+    .fotterContainerMainContainerRightContainerThreeContainer {
+        justify-content: center;
+        text-align: center;
+        width: 100%;
+        max-width: 660px;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: row;
+        /* align-items: flex-start; */
+        /* background-color: red; */
+        /* gap: 12px; */
+    }
+    
+    .fotterContainerMainContainerRightContainerThreeContainerOne {
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+        margin: 0;
+        padding: 0;
+        flex-shrink: 0;
+        margin-top: 2px;
+    }
+    
+    .fotterContainerMainContainerRightContainerThreeContainerTwo {
+        display: flex;
+        align-items: flex-start;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        text-align: left;
+    }
+    
+    .fotterContainerMainContainerRightContainerThreeContainerTwoContainer {
+        display: flex;
+        align-items: flex-start;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+    }
+    
+    .fotterContainerMainContainerRightContainerThreeContainerTwoContainerText {
+        text-align: left;
+        line-height: 1.5;
+    }
+    
+    .fotterContainerMainContainerRightContainerThreeContainerOneContainerInput {
+        margin-right: 12px;
+        margin-top: 2px;
+    }
+}
+
+@media (max-width: 900px) {
+    .fotter {
+        padding-top: 50px;
+        padding-bottom: 15px;
+    }
+    
+    .fotterContainerMainContainer {
+        gap: 40px;
+    }
+    
+    .fotterContainerMainContainerLeftContainerTopContainer {
+        gap: 20px;
+    }
+    
+    .fotterContainerMainContainerLeftContainerTopContainerElementContainerText {
+        font-size: 11px;
+    }
+    
+    .fotterContainerMainContainerLeftContainerBottomContainer {
+        gap: 18px;
+    }
+    
+    .fotterContainerMainContainerLeftContainerBottomContainerElementContainer {
+        width: 38px;
+        height: 38px;
+    }
+    
+    .fotterContainerMainContainerLeftContainerBottomContainerElementContainerDivIcon {
+        width: 18px;
+        height: 18px;
+    }
+    
+    .fotterContainerMainContainerRightContainerOneContainerText {
+        font-size: 13px;
+    }
+    
+    .fotterContainerMainContainerRightContainerTwoContainerOneContainerInput {
+        width: 240px;
+        height: 42px;
+        font-size: 13px;
+        padding-left: 14px;
+    }
+    
+    .fotterContainerMainContainerRightContainerTwoContainerTwoContainerButton {
+        width: 90px;
+        height: 42px;
+    }
+    
+    .fotterContainerMainContainerRightContainerTwoContainerTwoContainerButtonContainerText {
+        font-size: 12px;
+    }
+    
+    .fotterContainerMainContainerRightContainerThreeContainerTwoContainerText {
+        font-size: 13px;
+        text-align: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .fotter {
+        padding-top: 40px;
+        padding-bottom: 12px;
+    }
+    
+    .fotterContainer {
+        width: 90%;
+    }
+    
+    .fotterContainerMainContainer {
+        gap: 35px;
+    }
+    
+    .fotterContainerMainContainerLeftContainerTopContainer {
+        gap: 16px;
+    }
+    
+    .fotterContainerMainContainerLeftContainerTopContainerElementContainerText {
+        font-size: 10px;
+    }
+    
+    .fotterContainerMainContainerLeftContainerBottomContainer {
+        gap: 16px;
+    }
+    
+    .fotterContainerMainContainerLeftContainerBottomContainerElementContainer {
+        width: 36px;
+        height: 36px;
+        -webkit-tap-highlight-color: transparent;
+        touch-action: manipulation;
+    }
+    
+    .fotterContainerMainContainerLeftContainerBottomContainerElementContainerDivIcon {
+        width: 16px;
+        height: 16px;
+    }
+    
+    .fotterContainerMainContainerRightContainerOneContainerText {
+        font-size: 12px;
+    }
+    
+    .fotterContainerMainContainerRightContainerTwoContainer {
+        width: 100%;
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .fotterContainerMainContainerRightContainerTwoContainerOneContainerInput {
+        width: 100%;
+        max-width: 300px;
+        height: 40px;
+        font-size: 12px;
+        padding-left: 12px;
+        -webkit-tap-highlight-color: transparent;
+    }
+
+    .fotterContainerMainContainerRightContainerTwoContainerTwo {
+        /* background-color: blue; */
+        display: flex;
+        justify-content: center;
+    }
+    
+    
+    .fotterContainerMainContainerRightContainerTwoContainerTwoContainerButton {
+        width: 100%;
+        /* min-width: 500px; */
+        /* max-width: 500px; */
+        padding-left: 30px;
+        padding-right: 30px;
+        margin-left: auto;
+        margin-right: auto;
+        height: 40px;
+        -webkit-tap-highlight-color: transparent;
+        touch-action: manipulation;
+
+        /* background-color: red; */
+    }
+    
+    .fotterContainerMainContainerRightContainerTwoContainerTwoContainerButtonContainerText {
+        font-size: 11px;
+    }
+    
+    .fotterContainerMainContainerRightContainerThree {
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin-top: 25px;
+    }
+    
+    .fotterContainerMainContainerRightContainerThreeContainer {
+        justify-content: center;
+        text-align: center;
+        width: 100%;
+        max-width: 400px;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        /* gap: 12px; */
+    }
+    
+    .fotterContainerMainContainerRightContainerThreeContainerOne {
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+        margin: 0;
+        padding: 0;
+        flex-shrink: 0;
+        margin-top: 2px;
+    }
+    
+    .fotterContainerMainContainerRightContainerThreeContainerTwo {
+        display: flex;
+        align-items: flex-start;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        text-align: left;
+    }
+    
+    .fotterContainerMainContainerRightContainerThreeContainerTwoContainer {
+        display: flex;
+        align-items: flex-start;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+    }
+    
+    .fotterContainerMainContainerRightContainerThreeContainerTwoContainerText {
+        text-align: left;
+        line-height: 1.5;
+        text-align: center;
+    }
+    
+    .fotterContainerMainContainerRightContainerThreeContainerOneContainerInput {
+        margin-right: 12px;
+        margin-top: 2px;
+    }
+}
+
+@media (max-width: 600px) {
+    .fotter {
+        padding-top: 35px;
+        padding-bottom: 10px;
+    }
+    
+    .fotterContainer {
+        width: 88%;
+    }
+    
+    .fotterContainerMainContainer {
+        gap: 30px;
+    }
+    
+    .fotterContainerMainContainerLeftContainerTopContainer {
+        gap: 14px;
+    }
+    
+    .fotterContainerMainContainerLeftContainerTopContainerElementContainerText {
+        font-size: 9px;
+    }
+    
+    .fotterContainerMainContainerLeftContainerBottomContainer {
+        gap: 14px;
+    }
+    
+    .fotterContainerMainContainerLeftContainerBottomContainerElementContainer {
+        width: 34px;
+        height: 34px;
+    }
+    
+    .fotterContainerMainContainerLeftContainerBottomContainerElementContainerDivIcon {
+        width: 14px;
+        height: 14px;
+    }
+    
+    .fotterContainerMainContainerRightContainerOneContainerText {
+        font-size: 11px;
+    }
+    
+    .fotterContainerMainContainerRightContainerTwoContainerOneContainerInput {
+        max-width: 250px;
+        height: 38px;
+        font-size: 11px;
+        padding-left: 10px;
+    }
+    
+    .fotterContainerMainContainerRightContainerTwoContainerTwoContainerButton {
+        max-width: 250px;
+        height: 38px;
+    }
+    
+    .fotterContainerMainContainerRightContainerTwoContainerTwoContainerButtonContainerText {
+        font-size: 10px;
+    }
+    
+    .fotterContainerMainContainerRightContainerThreeContainerOneContainerInput {
+        width: 14px;
+        height: 14px;
+        margin-right: 12px;
+    }
+    
+    .fotterContainerMainContainerRightContainerThreeContainerTwoContainerText {
+        font-size: 12px;
+        line-height: 1.4;
+    }
+    
+    .fotterContainerBottomContainerLeftContainer {
+        flex-direction: column;
+        gap: 12px;
+    }
+    
+    .fotterContainerBottomContainerLeftContainerOneText,
+    .fotterContainerBottomContainerLeftContainerTwoText,
+    .fotterContainerBottomContainerLeftContainerThreeText {
+        font-size: 12px;
+    }
+    
+    .fotterContainerBottomContainerRightContaineText {
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .fotter {
+        padding-top: 30px;
+        padding-bottom: 8px;
+    }
+    
+    .fotterContainer {
+        width: 85%;
+    }
+    
+    .fotterContainerMainContainer {
+        gap: 25px;
+    }
+    
+    .fotterContainerMainContainerLeftContainer {
+        gap: 25px;
+    }
+    
+    .fotterContainerMainContainerLeftContainerTopContainer {
+        gap: 12px;
+        justify-content: center;
+    }
+    
+    .fotterContainerMainContainerLeftContainerTopContainerElementContainerText {
+        font-size: 8px;
+    }
+    
+    .fotterContainerMainContainerLeftContainerBottomContainer {
+        gap: 12px;
+    }
+    
+    .fotterContainerMainContainerLeftContainerBottomContainerElementContainer {
+        width: 32px;
+        height: 32px;
+    }
+    
+    .fotterContainerMainContainerLeftContainerBottomContainerElementContainerDivIcon {
+        width: 12px;
+        height: 12px;
+    }
+    
+    .fotterContainerMainContainerRightContainerOneContainerText {
+        font-size: 10px;
+    }
+    
+    .fotterContainerMainContainerRightContainerTwoContainerOneContainerInput {
+        max-width: 200px;
+        height: 36px;
+        font-size: 10px;
+        padding-left: 8px;
+    }
+    
+    .fotterContainerMainContainerRightContainerTwoContainerTwoContainerButton {
+        max-width: 200px;
+        height: 36px;
+    }
+    
+    .fotterContainerMainContainerRightContainerTwoContainerTwoContainerButtonContainerText {
+        font-size: 9px;
+    }
+    
+    .fotterContainerMainContainerRightContainerThreeContainerOneContainerInput {
+        width: 10px;
+        height: 10px;
+        margin-right: 8px;
+    }
+    
+    .fotterContainerMainContainerRightContainerThreeContainerTwoContainerText {
+        font-size: 10px;
+        line-height: 1.3;
+    }
+    
+    .fotterContainerBottomContainer {
+        gap: 15px;
+    }
+    
+    .fotterContainerBottomContainerLeftContainer {
+        gap: 10px;
+    }
+    
+    .fotterContainerBottomContainerLeftContainerOneText,
+    .fotterContainerBottomContainerLeftContainerTwoText,
+    .fotterContainerBottomContainerLeftContainerThreeText {
+        font-size: 10px;
+    }
+    
+    .fotterContainerBottomContainerRightContaineText {
+        font-size: 10px;
+        line-height: 1.3;
+    }
+}
+
+@media (max-width: 380px) {
+    .fotter {
+        padding-top: 25px;
+        padding-bottom: 6px;
+    }
+    
+    .fotterContainer {
+        width: 82%;
+    }
+    
+    .fotterContainerMainContainer {
+        gap: 20px;
+    }
+    
+    .fotterContainerMainContainerLeftContainer {
+        gap: 20px;
+    }
+    
+    .fotterContainerMainContainerLeftContainerTopContainer {
+        gap: 10px;
+    }
+    
+    .fotterContainerMainContainerLeftContainerTopContainerElementContainerText {
+        font-size: 7px;
+    }
+    
+    .fotterContainerMainContainerLeftContainerBottomContainer {
+        gap: 10px;
+    }
+    
+    .fotterContainerMainContainerLeftContainerBottomContainerElementContainer {
+        width: 30px;
+        height: 30px;
+    }
+    
+    .fotterContainerMainContainerLeftContainerBottomContainerElementContainerDivIcon {
+        width: 10px;
+        height: 10px;
+    }
+    
+    .fotterContainerMainContainerRightContainerOneContainerText {
+        font-size: 9px;
+    }
+    
+    .fotterContainerMainContainerRightContainerTwoContainerOneContainerInput {
+        max-width: 150px;
+        height: 34px;
+        font-size: 9px;
+        padding-left: 6px;
+    }
+    
+    .fotterContainerMainContainerRightContainerTwoContainerTwoContainerButton {
+        max-width: 150px;
+        height: 34px;
+    }
+    
+    .fotterContainerMainContainerRightContainerTwoContainerTwoContainerButtonContainerText {
+        font-size: 8px;
+    }
+    
+    .fotterContainerMainContainerRightContainerThreeContainerOneContainerInput {
+        width: 8px;
+        height: 8px;
+        margin-right: 6px;
+    }
+    
+    .fotterContainerMainContainerRightContainerThreeContainerTwoContainerText {
+        font-size: 9px;
+        line-height: 1.2;
+    }
+    
+    .fotterContainerBottomContainer {
+        gap: 12px;
+    }
+    
+    .fotterContainerBottomContainerLeftContainer {
+        gap: 8px;
+    }
+    
+    .fotterContainerBottomContainerLeftContainerOneText,
+    .fotterContainerBottomContainerLeftContainerTwoText,
+    .fotterContainerBottomContainerLeftContainerThreeText {
+        font-size: 9px;
+    }
+    
+    .fotterContainerBottomContainerRightContaineText {
+        font-size: 9px;
+        line-height: 1.2;
+    }
+}
+
+/* Touch device optimizations */
+@media (max-width: 1024px) {
+    .fotterContainerMainContainerLeftContainerBottomContainerElementContainer:active {
+        transform: scale(0.95);
+        transition: transform 0.1s ease;
+    }
+    
+    .fotterContainerMainContainerRightContainerTwoContainerTwoContainerButton:active {
+        transform: scale(0.98);
+        transition: transform 0.1s ease;
+    }
+    
+    .fotterContainerMainContainerRightContainerTwoContainerOneContainerInput:focus {
+        transform: scale(1.02);
+        transition: transform 0.2s ease;
+    }
+}
+
+/* Performance optimizations */
+.fotterContainerMainContainerLeftContainerBottomContainerElementContainer,
+.fotterContainerMainContainerRightContainerTwoContainerTwoContainerButton,
+.fotterContainerMainContainerRightContainerTwoContainerOneContainerInput {
+    will-change: transform;
+}
+
+/* Additional mobile optimizations */
+@media (max-width: 768px) {
+    .fotterContainerMainContainerLeftContainerTopContainer {
+        max-width: 100%;
+        overflow-x: auto;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+    }
+    
+    .fotterContainerMainContainerLeftContainerTopContainer::-webkit-scrollbar {
+        display: none;
+    }
+}
+
+/* Newsletter form mobile improvements */
+@media (max-width: 600px) {
+    .fotterContainerMainContainerRightContainerTwoContainerOneContainerInput::placeholder {
+        font-size: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .fotterContainerMainContainerRightContainerTwoContainerOneContainerInput::placeholder {
+        font-size: 9px;
+    }
 }

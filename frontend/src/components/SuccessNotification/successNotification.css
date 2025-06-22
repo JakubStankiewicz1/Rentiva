@@ -76,8 +76,117 @@
   opacity: 1;
 }
 
-/* Mobile responsive */
-@media (max-width: 480px) {
+/* COMPREHENSIVE RESPONSIVE DESIGN */
+
+/* Large Desktop - 1440px and up */
+@media (min-width: 1440px) {
+  .success-notification {
+    top: 30px;
+    right: 30px;
+  }
+  
+  .success-notification-content {
+    max-width: 450px;
+    min-width: 350px;
+    padding: 18px 22px;
+  }
+  
+  .success-icon {
+    width: 36px;
+    height: 36px;
+    font-size: 20px;
+  }
+  
+  .success-message h3 {
+    font-size: 17px;
+  }
+  
+  .success-message p {
+    font-size: 15px;
+  }
+}
+
+/* Desktop - 1024px to 1439px */
+@media (max-width: 1439px) and (min-width: 1024px) {
+  .success-notification {
+    top: 25px;
+    right: 25px;
+  }
+  
+  .success-notification-content {
+    max-width: 420px;
+    min-width: 320px;
+  }
+}
+
+/* Tablet Landscape - 768px to 1023px */
+@media (max-width: 1023px) and (min-width: 768px) {
+  .success-notification {
+    top: 20px;
+    right: 20px;
+  }
+  
+  .success-notification-content {
+    max-width: 380px;
+    min-width: 280px;
+    padding: 15px 18px;
+  }
+  
+  .success-icon {
+    width: 30px;
+    height: 30px;
+    font-size: 16px;
+  }
+  
+  .success-message h3 {
+    font-size: 15px;
+  }
+  
+  .success-message p {
+    font-size: 13px;
+  }
+  
+  .success-close {
+    font-size: 18px;
+  }
+}
+
+/* Tablet Portrait - 481px to 767px */
+@media (max-width: 767px) and (min-width: 481px) {
+  .success-notification {
+    top: 15px;
+    right: 15px;
+    left: 15px;
+  }
+  
+  .success-notification-content {
+    min-width: auto;
+    width: 100%;
+    max-width: none;
+    padding: 14px 16px;
+  }
+  
+  .success-icon {
+    width: 28px;
+    height: 28px;
+    font-size: 15px;
+  }
+  
+  .success-message h3 {
+    font-size: 14px;
+  }
+  
+  .success-message p {
+    font-size: 12px;
+  }
+  
+  .success-close {
+    font-size: 16px;
+  }
+}
+
+/* Mobile Large - 361px to 480px */
+@media (max-width: 480px) and (min-width: 361px) {
   .success-notification {
     top: 10px;
     right: 10px;
@@ -87,5 +196,106 @@
   .success-notification-content {
     min-width: auto;
     width: 100%;
+    padding: 12px 14px;
+    gap: 10px;
+  }
+  
+  .success-icon {
+    width: 26px;
+    height: 26px;
+    font-size: 14px;
+  }
+  
+  .success-message h3 {
+    font-size: 13px;
+    margin-bottom: 2px;
+  }
+  
+  .success-message p {
+    font-size: 11px;
+  }
+  
+  .success-close {
+    font-size: 15px;
+    padding: 2px;
+  }
+}
+
+/* Mobile Small - 320px to 360px */
+@media (max-width: 360px) {
+  .success-notification {
+    top: 5px;
+    right: 5px;
+    left: 5px;
+  }
+  
+  .success-notification-content {
+    min-width: auto;
+    width: 100%;
+    padding: 10px 12px;
+    gap: 8px;
+    border-radius: 8px;
+  }
+  
+  .success-icon {
+    width: 24px;
+    height: 24px;
+    font-size: 13px;
+  }
+  
+  .success-message h3 {
+    font-size: 12px;
+    margin-bottom: 1px;
+  }
+  
+  .success-message p {
+    font-size: 10px;
+  }
+  
+  .success-close {
+    font-size: 14px;
+    padding: 1px;
+  }
+}
+
+/* Animation adjustments for mobile */
+@media (max-width: 767px) {
+  @keyframes slideInRight {
+    from {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+
+/* Touch Device Optimizations */
+@media (hover: none) and (pointer: coarse) {
+  .success-close {
+    min-width: 32px;
+    min-height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .success-close:hover {
+    opacity: 0.7;
+  }
+  
+  .success-close:active {
+    opacity: 1;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+  }
+}
+
+/* High DPI display optimizations */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .success-notification-content {
+    box-shadow: 0 10px 25px rgba(16, 185, 129, 0.4);
   }
 }
