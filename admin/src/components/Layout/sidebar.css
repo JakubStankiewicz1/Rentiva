@@ -447,7 +447,7 @@
 }
 
 /* Medium Desktop (1200px-1599px) */
-@media screen and (min-width: 1200px) and (max-width: 1599px) {
+/* @media screen and (min-width: 1200px) and (max-width: 1599px) {
   .rentivaAdminSidebar {
     width: 260px;
   }
@@ -507,10 +507,10 @@
     width: 22px;
     height: 22px;
   }
-}
+} */
 
 /* Large Desktop (1600px+) */
-@media screen and (min-width: 1600px) {
+/* @media screen and (min-width: 1600px) {
   .rentivaAdminSidebar {
     width: 280px;
   }
@@ -572,7 +572,7 @@
     width: 24px;
     height: 24px;
   }
-}
+} */
 
 /* High DPI/Retina Display Optimizations */
 @media screen and (-webkit-min-device-pixel-ratio: 2),
