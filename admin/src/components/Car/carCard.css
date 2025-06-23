@@ -224,3 +224,538 @@
   height: 16px;
   display: inline-block;
 }
+
+/* ============================================================================
+   🚀 PROFESSIONAL MULTI-LEVEL RESPONSIVE DESIGN SYSTEM
+   Mobile-First Approach with 7+ Breakpoints for Perfect UX
+   ============================================================================ */
+
+/* =========================
+   📱 MOBILE PHONES (320px+)
+   Base Styles & Small Devices
+   ========================= */
+@media (min-width: 320px) {
+  .rentivaAdminCarCard {
+    font-size: 14px;
+    min-height: 280px;
+  }
+  
+  .rentivaAdminCarCard__image {
+    height: 160px;
+  }
+  
+  .rentivaAdminCarCard__content {
+    padding: 12px;
+  }
+  
+  .rentivaAdminCarCard__title {
+    font-size: 16px;
+    margin-bottom: 8px;
+    line-height: 1.3;
+  }
+  
+  .rentivaAdminCarCard__badges {
+    gap: 4px;
+    margin-bottom: 12px;
+  }
+  
+  .rentivaAdminCarCard__badge {
+    padding: 3px 8px;
+    font-size: 10px;
+    letter-spacing: 0.3px;
+  }
+  
+  .rentivaAdminCarCard__specLabel,
+  .rentivaAdminCarCard__specValue {
+    font-size: 12px;
+  }
+  
+  .rentivaAdminCarCard__price {
+    font-size: 18px;
+    margin: 12px 0 0 0;
+  }
+  
+  .rentivaAdminCarCard__actions {
+    padding: 12px;
+    gap: 6px;
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .rentivaAdminCarCard__detailsButton,
+  .rentivaAdminCarCard__editButton,
+  .rentivaAdminCarCard__deleteButton {
+    min-height: 44px;
+    min-width: 44px;
+    padding: 12px 16px;
+    font-size: 11px;
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
+  }
+  
+  .rentivaAdminCarCard__actionButtons {
+    width: 100%;
+    justify-content: center;
+    margin-top: 8px;
+  }
+}
+
+/* =========================
+   📱 LARGE PHONES (361px+)
+   Enhanced Mobile Experience
+   ========================= */
+@media (min-width: 361px) {
+  .rentivaAdminCarCard {
+    min-height: 300px;
+  }
+  
+  .rentivaAdminCarCard__image {
+    height: 180px;
+  }
+  
+  .rentivaAdminCarCard__content {
+    padding: 16px;
+  }
+  
+  .rentivaAdminCarCard__title {
+    font-size: 17px;
+    margin-bottom: 10px;
+  }
+  
+  .rentivaAdminCarCard__badges {
+    gap: 6px;
+    margin-bottom: 14px;
+  }
+  
+  .rentivaAdminCarCard__badge {
+    padding: 4px 10px;
+    font-size: 11px;
+  }
+  
+  .rentivaAdminCarCard__price {
+    font-size: 20px;
+    margin: 14px 0 0 0;
+  }
+  
+  .rentivaAdminCarCard__actions {
+    padding: 14px 16px;
+    flex-direction: row;
+    align-items: center;
+  }
+  
+  .rentivaAdminCarCard__actionButtons {
+    width: auto;
+    margin-top: 0;
+  }
+}
+
+/* =========================
+   📱 PHABLETS (481px+)
+   Transition to Tablet UX
+   ========================= */
+@media (min-width: 481px) {
+  .rentivaAdminCarCard {
+    min-height: 320px;
+  }
+  
+  .rentivaAdminCarCard__image {
+    height: 190px;
+  }
+  
+  .rentivaAdminCarCard__content {
+    padding: 18px;
+  }
+  
+  .rentivaAdminCarCard__title {
+    font-size: 18px;
+    margin-bottom: 11px;
+  }
+  
+  .rentivaAdminCarCard__badges {
+    gap: 7px;
+    margin-bottom: 15px;
+  }
+  
+  .rentivaAdminCarCard__badge {
+    padding: 4px 11px;
+    font-size: 11px;
+  }
+  
+  .rentivaAdminCarCard__specLabel,
+  .rentivaAdminCarCard__specValue {
+    font-size: 13px;
+  }
+  
+  .rentivaAdminCarCard__price {
+    font-size: 22px;
+    margin: 15px 0 0 0;
+  }
+  
+  .rentivaAdminCarCard__actions {
+    padding: 15px 18px;
+  }
+  
+  .rentivaAdminCarCard__detailsButton,
+  .rentivaAdminCarCard__editButton,
+  .rentivaAdminCarCard__deleteButton {
+    padding: 10px 18px;
+    font-size: 12px;
+  }
+}
+
+/* =========================
+   📟 TABLETS PORTRAIT (601px+)
+   Enhanced Grid Layout
+   ========================= */
+@media (min-width: 601px) {
+  .rentivaAdminCarCard {
+    min-height: 340px;
+  }
+  
+  .rentivaAdminCarCard__image {
+    height: 195px;
+  }
+  
+  .rentivaAdminCarCard__content {
+    padding: 19px;
+  }
+  
+  .rentivaAdminCarCard__title {
+    font-size: 19px;
+    margin-bottom: 11px;
+  }
+  
+  .rentivaAdminCarCard__badges {
+    margin-bottom: 15px;
+  }
+  
+  .rentivaAdminCarCard__badge {
+    padding: 4px 12px;
+    font-size: 12px;
+    letter-spacing: 0.4px;
+  }
+  
+  .rentivaAdminCarCard__price {
+    font-size: 23px;
+  }
+  
+  .rentivaAdminCarCard__actions {
+    padding: 16px 19px;
+  }
+}
+
+/* =========================
+   💻 TABLETS LANDSCAPE (768px+)
+   Desktop-like Experience
+   ========================= */
+@media (min-width: 768px) {
+  .rentivaAdminCarCard {
+    min-height: 360px;
+  }
+  
+  .rentivaAdminCarCard__image {
+    height: 200px;
+  }
+  
+  .rentivaAdminCarCard__content {
+    padding: 20px;
+  }
+  
+  .rentivaAdminCarCard__title {
+    font-size: 20px;
+    margin-bottom: 12px;
+  }
+  
+  .rentivaAdminCarCard__badges {
+    gap: 8px;
+    margin-bottom: 16px;
+  }
+  
+  .rentivaAdminCarCard__badge {
+    padding: 4px 12px;
+    font-size: 12px;
+    letter-spacing: 0.5px;
+  }
+  
+  .rentivaAdminCarCard__specLabel,
+  .rentivaAdminCarCard__specValue {
+    font-size: 14px;
+  }
+  
+  .rentivaAdminCarCard__price {
+    font-size: 24px;
+    margin: 16px 0 0 0;
+  }
+  
+  .rentivaAdminCarCard__actions {
+    padding: 16px 20px;
+    gap: 8px;
+  }
+  
+  .rentivaAdminCarCard__detailsButton,
+  .rentivaAdminCarCard__editButton,
+  .rentivaAdminCarCard__deleteButton {
+    padding: 8px 16px;
+    font-size: 12px;
+    min-height: 40px;
+  }
+}
+
+/* =========================
+   🖥️ SMALL DESKTOPS (1024px+)
+   Enhanced Desktop Layout
+   ========================= */
+@media (min-width: 1024px) {
+  .rentivaAdminCarCard {
+    min-height: 380px;
+  }
+  
+  .rentivaAdminCarCard__image {
+    height: 210px;
+  }
+  
+  .rentivaAdminCarCard__content {
+    padding: 22px;
+  }
+  
+  .rentivaAdminCarCard__title {
+    font-size: 21px;
+  }
+  
+  .rentivaAdminCarCard__price {
+    font-size: 25px;
+  }
+  
+  .rentivaAdminCarCard__actions {
+    padding: 17px 22px;
+  }
+  
+  .rentivaAdminCarCard__detailsButton,
+  .rentivaAdminCarCard__editButton,
+  .rentivaAdminCarCard__deleteButton {
+    padding: 9px 18px;
+    font-size: 12px;
+  }
+  
+  /* Hover effects for desktop */
+  .rentivaAdminCarCard:hover {
+    transform: translateY(-2px);
+  }
+  
+  .rentivaAdminCarCard:hover .rentivaAdminCarCard__image {
+    transform: scale(1.02);
+  }
+  
+  .rentivaAdminCarCard__detailsButton:hover,
+  .rentivaAdminCarCard__editButton:hover,
+  .rentivaAdminCarCard__deleteButton:hover {
+    transform: translateY(-1px);
+  }
+}
+
+/* =========================
+   🖥️ LARGE DESKTOPS (1440px+)
+   Premium Desktop Experience
+   ========================= */
+@media (min-width: 1440px) {
+  .rentivaAdminCarCard {
+    min-height: 400px;
+  }
+  
+  .rentivaAdminCarCard__image {
+    height: 220px;
+  }
+  
+  .rentivaAdminCarCard__content {
+    padding: 24px;
+  }
+  
+  .rentivaAdminCarCard__title {
+    font-size: 22px;
+  }
+  
+  .rentivaAdminCarCard__price {
+    font-size: 26px;
+  }
+  
+  .rentivaAdminCarCard__actions {
+    padding: 18px 24px;
+  }
+  
+  .rentivaAdminCarCard__detailsButton,
+  .rentivaAdminCarCard__editButton,
+  .rentivaAdminCarCard__deleteButton {
+    padding: 10px 20px;
+    font-size: 13px;
+  }
+}
+
+/* ============================================================================
+   🎯 TOUCH DEVICE OPTIMIZATIONS
+   Enhanced Touch Experience
+   ============================================================================ */
+@media (hover: none) and (pointer: coarse) {
+  .rentivaAdminCarCard__detailsButton,
+  .rentivaAdminCarCard__editButton,
+  .rentivaAdminCarCard__deleteButton {
+    min-height: 48px;
+    min-width: 48px;
+    padding: 14px 18px;
+    font-size: 14px;
+  }
+  
+  .rentivaAdminCarCard__actions {
+    gap: 12px;
+  }
+  
+  .rentivaAdminCarCard:hover {
+    transform: none;
+  }
+  
+  .rentivaAdminCarCard:active {
+    transform: scale(0.98);
+  }
+  
+  .rentivaAdminCarCard__detailsButton:active,
+  .rentivaAdminCarCard__editButton:active,
+  .rentivaAdminCarCard__deleteButton:active {
+    transform: scale(0.95);
+  }
+}
+
+/* ============================================================================
+   🔍 HIGH-DPI DISPLAYS & RETINA OPTIMIZATION
+   Crisp Graphics on High-DPI Screens
+   ============================================================================ */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .rentivaAdminCarCard {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  .rentivaAdminCarCard__image {
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+  }
+  
+  .rentivaAdminCarCard__badge,
+  .rentivaAdminCarCard__detailsButton,
+  .rentivaAdminCarCard__editButton,
+  .rentivaAdminCarCard__deleteButton {
+    text-rendering: optimizeLegibility;
+  }
+}
+
+/* ============================================================================
+   ♿ ACCESSIBILITY ENHANCEMENTS
+   Better Experience for All Users
+   ============================================================================ */
+@media (prefers-reduced-motion: reduce) {
+  .rentivaAdminCarCard,
+  .rentivaAdminCarCard *,
+  .rentivaAdminCarCard::before,
+  .rentivaAdminCarCard::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    transform: none !important;
+  }
+}
+
+@media (prefers-contrast: high) {
+  .rentivaAdminCarCard {
+    border-color: #ffffff;
+    box-shadow: 0 0 0 2px #ffffff;
+  }
+  
+  .rentivaAdminCarCard__title,
+  .rentivaAdminCarCard__specValue {
+    color: #ffffff;
+    text-shadow: 1px 1px 1px #000000;
+  }
+  
+  .rentivaAdminCarCard__badge--brand,
+  .rentivaAdminCarCard__detailsButton:hover,
+  .rentivaAdminCarCard__editButton,
+  .rentivaAdminCarCard__deleteButton {
+    border: 2px solid #ffffff;
+  }
+}
+
+/* ============================================================================
+   📊 CONTAINER QUERIES (Future-Proof)
+   Component-Based Responsive Design
+   ============================================================================ */
+@container (max-width: 250px) {
+  .rentivaAdminCarCard__title {
+    font-size: 14px;
+  }
+  
+  .rentivaAdminCarCard__price {
+    font-size: 16px;
+  }
+  
+  .rentivaAdminCarCard__actions {
+    flex-direction: column;
+    gap: 4px;
+  }
+}
+
+@container (min-width: 350px) {
+  .rentivaAdminCarCard__actions {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+/* ============================================================================
+   🎨 ENHANCED VISUAL POLISH
+   Professional Visual Refinements
+   ============================================================================ */
+@media (min-width: 768px) {
+  .rentivaAdminCarCard {
+    box-shadow: 
+      0 4px 20px rgba(0, 0, 0, 0.15),
+      0 1px 3px rgba(0, 0, 0, 0.1),
+      inset 0 1px 0 rgba(255, 255, 255, 0.05);
+  }
+  
+  .rentivaAdminCarCard:hover {
+    box-shadow: 
+      0 8px 32px rgba(0, 0, 0, 0.2),
+      0 4px 8px rgba(0, 0, 0, 0.15),
+      0 0 0 1px rgba(195, 132, 94, 0.3),
+      inset 0 1px 0 rgba(255, 255, 255, 0.08);
+  }
+}
+
+/* ============================================================================
+   📱 ORIENTATION SPECIFIC STYLES
+   Landscape vs Portrait Optimizations
+   ============================================================================ */
+@media (orientation: landscape) and (max-height: 500px) {
+  .rentivaAdminCarCard {
+    min-height: auto;
+  }
+  
+  .rentivaAdminCarCard__image {
+    height: 140px;
+  }
+  
+  .rentivaAdminCarCard__content {
+    padding: 12px;
+  }
+}
+
+@media (orientation: portrait) and (max-width: 480px) {
+  .rentivaAdminCarCard__actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .rentivaAdminCarCard__actionButtons {
+    width: 100%;
+    justify-content: center;
+    margin-top: 8px;
+  }
+}

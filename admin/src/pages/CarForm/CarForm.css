@@ -330,3 +330,836 @@ input.car-form-text-field {
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
 }
+
+/* COMPREHENSIVE RESPONSIVE DESIGN - PROFESSIONAL MOBILE-FIRST */
+
+/* Extra Large Desktops & 4K Displays (1440px+) */
+@media (min-width: 1440px) {
+  .car-form-container {
+    margin-left: 260px;
+    width: calc(100vw - 260px);
+  }
+  
+  .car-form-header {
+    padding: 48px 56px 40px;
+  }
+  
+  .car-form-header-content {
+    height: 150px;
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+  
+  .car-form-title {
+    font-size: 3rem;
+  }
+  
+  .car-form-subtitle {
+    font-size: 1.2rem;
+    margin-top: 12px;
+  }
+  
+  .car-form-back-button {
+    padding: 14px 32px;
+    font-size: 1.05rem;
+    margin-left: 32px;
+  }
+  
+  .car-form-main-paper {
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-top: 20px;
+    padding-bottom: 60px;
+  }
+  
+  .car-form-section {
+    margin-bottom: 48px;
+  }
+  
+  .car-form-section-title {
+    font-size: 1.6rem;
+    margin-bottom: 28px;
+  }
+  
+  .car-form-field-group {
+    gap: 24px;
+  }
+  
+  .car-form-text-field {
+    padding: 18px 22px;
+    font-size: 1.05rem;
+  }
+  
+  .car-form-image-section {
+    padding: 48px 24px;
+    min-height: 200px;
+  }
+  
+  .car-form-submit-section {
+    padding: 40px 0 0 0;
+    margin-top: 40px;
+    gap: 32px;
+  }
+  
+  .car-form-cancel-button,
+  .car-form-submit-button {
+    padding: 14px 36px;
+    font-size: 1.05rem;
+  }
+}
+
+/* Large Desktops (1024px - 1439px) */
+@media (min-width: 1024px) and (max-width: 1439px) {
+  .car-form-container {
+    margin-left: 240px;
+    width: calc(100vw - 240px);
+  }
+  
+  .car-form-header {
+    padding: 44px 52px 36px;
+  }
+  
+  .car-form-header-content {
+    height: 140px;
+    padding-left: 28px;
+    padding-right: 28px;
+  }
+  
+  .car-form-title {
+    font-size: 2.8rem;
+  }
+  
+  .car-form-subtitle {
+    font-size: 1.15rem;
+    margin-top: 10px;
+  }
+  
+  .car-form-back-button {
+    padding: 13px 30px;
+    font-size: 1rem;
+    margin-left: 28px;
+  }
+  
+  .car-form-main-paper {
+    padding-left: 35px;
+    padding-right: 35px;
+    padding-top: 18px;
+    padding-bottom: 55px;
+  }
+  
+  .car-form-section {
+    margin-bottom: 44px;
+  }
+  
+  .car-form-section-title {
+    font-size: 1.5rem;
+    margin-bottom: 26px;
+  }
+  
+  .car-form-field-group {
+    gap: 22px;
+  }
+  
+  .car-form-text-field {
+    padding: 17px 21px;
+    font-size: 1rem;
+  }
+  
+  .car-form-image-section {
+    padding: 44px 22px;
+    min-height: 190px;
+  }
+  
+  .car-form-submit-section {
+    padding: 36px 0 0 0;
+    margin-top: 36px;
+    gap: 28px;
+  }
+  
+  .car-form-cancel-button,
+  .car-form-submit-button {
+    padding: 13px 34px;
+    font-size: 1rem;
+  }
+}
+
+/* Tablets & Small Laptops (768px - 1023px) */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .car-form-container {
+    margin-left: 200px;
+    width: calc(100vw - 200px);
+  }
+  
+  .car-form-header {
+    padding: 36px 40px 28px;
+  }
+  
+  .car-form-header-content {
+    height: 120px;
+    padding-left: 24px;
+    padding-right: 24px;
+    flex-direction: column;
+    gap: 16px;
+    justify-content: center;
+  }
+  
+  .car-form-title {
+    font-size: 2.4rem;
+    text-align: center;
+  }
+  
+  .car-form-subtitle {
+    font-size: 1.05rem;
+    margin-top: 6px;
+    text-align: center;
+  }
+  
+  .car-form-back-button {
+    padding: 12px 26px;
+    font-size: 0.95rem;
+    margin-left: 0;
+    align-self: center;
+  }
+  
+  .car-form-main-paper {
+    padding-left: 28px;
+    padding-right: 28px;
+    padding-top: 16px;
+    padding-bottom: 45px;
+  }
+  
+  .car-form-section {
+    margin-bottom: 36px;
+  }
+  
+  .car-form-section-title {
+    font-size: 1.35rem;
+    margin-bottom: 22px;
+    text-align: center;
+  }
+  
+  .car-form-field-group {
+    gap: 20px;
+  }
+  
+  .car-form-text-field {
+    padding: 15px 18px;
+    font-size: 0.95rem;
+  }
+  
+  .car-form-image-section {
+    padding: 36px 20px;
+    min-height: 170px;
+  }
+  
+  .car-form-submit-section {
+    padding: 32px 0 0 0;
+    margin-top: 32px;
+    gap: 24px;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .car-form-cancel-button,
+  .car-form-submit-button {
+    padding: 12px 30px;
+    font-size: 0.95rem;
+    width: 100%;
+    max-width: 280px;
+  }
+}
+
+/* Large Mobile Landscape & Small Tablets (601px - 767px) */
+@media (min-width: 601px) and (max-width: 767px) {
+  .car-form-container {
+    margin-left: 0;
+    width: 100vw;
+  }
+  
+  .car-form-header {
+    padding: 32px 32px 24px;
+  }
+  
+  .car-form-header-content {
+    height: 110px;
+    padding-left: 20px;
+    padding-right: 20px;
+    flex-direction: column;
+    gap: 14px;
+    justify-content: center;
+  }
+  
+  .car-form-title {
+    font-size: 2.1rem;
+    text-align: center;
+  }
+  
+  .car-form-subtitle {
+    font-size: 1rem;
+    margin-top: 4px;
+    text-align: center;
+  }
+  
+  .car-form-back-button {
+    padding: 11px 24px;
+    font-size: 0.9rem;
+    margin-left: 0;
+    align-self: center;
+    max-width: 200px;
+  }
+  
+  .car-form-main-paper {
+    padding-left: 24px;
+    padding-right: 24px;
+    padding-top: 14px;
+    padding-bottom: 40px;
+  }
+  
+  .car-form-section {
+    margin-bottom: 32px;
+  }
+  
+  .car-form-section-title {
+    font-size: 1.25rem;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  .car-form-field-group {
+    gap: 18px;
+  }
+  
+  .car-form-text-field {
+    padding: 14px 16px;
+    font-size: 0.9rem;
+  }
+  
+  .car-form-text-field::placeholder {
+    font-size: 0.85rem;
+  }
+  
+  .car-form-image-section {
+    padding: 32px 18px;
+    min-height: 160px;
+  }
+  
+  .car-form-image-section .car-form-image-section-title {
+    font-size: 1.1rem;
+  }
+  
+  .car-form-image-section .car-form-image-section-subtext {
+    font-size: 0.9rem;
+  }
+  
+  .car-form-add-image-button,
+  .car-form-delete-image-button {
+    padding: 9px 20px;
+    font-size: 0.85rem;
+  }
+  
+  .car-form-submit-section {
+    padding: 28px 0 0 0;
+    margin-top: 28px;
+    gap: 20px;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .car-form-cancel-button,
+  .car-form-submit-button {
+    padding: 11px 28px;
+    font-size: 0.9rem;
+    width: 100%;
+    max-width: 260px;
+  }
+}
+
+/* Mobile Portrait & Landscape (481px - 600px) */
+@media (min-width: 481px) and (max-width: 600px) {
+  .car-form-container {
+    margin-left: 0;
+    width: 100vw;
+  }
+  
+  .car-form-header {
+    padding: 28px 24px 20px;
+  }
+  
+  .car-form-header-content {
+    height: 100px;
+    padding-left: 18px;
+    padding-right: 18px;
+    flex-direction: column;
+    gap: 12px;
+    justify-content: center;
+  }
+  
+  .car-form-title {
+    font-size: 1.8rem;
+    text-align: center;
+  }
+  
+  .car-form-subtitle {
+    font-size: 0.95rem;
+    margin-top: 2px;
+    text-align: center;
+  }
+  
+  .car-form-back-button {
+    padding: 10px 22px;
+    font-size: 0.85rem;
+    margin-left: 0;
+    align-self: center;
+    max-width: 180px;
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .car-form-main-paper {
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 12px;
+    padding-bottom: 35px;
+  }
+  
+  .car-form-section {
+    margin-bottom: 28px;
+  }
+  
+  .car-form-section-title {
+    font-size: 1.2rem;
+    margin-bottom: 18px;
+    text-align: center;
+  }
+  
+  .car-form-field-group {
+    gap: 16px;
+  }
+  
+  .car-form-text-field {
+    padding: 13px 15px;
+    font-size: 0.85rem;
+  }
+  
+  .car-form-text-field::placeholder {
+    font-size: 0.8rem;
+  }
+  
+  .car-form-image-section {
+    padding: 28px 16px;
+    min-height: 150px;
+  }
+  
+  .car-form-image-section .car-form-image-section-title {
+    font-size: 1.05rem;
+  }
+  
+  .car-form-image-section .car-form-image-section-subtext {
+    font-size: 0.85rem;
+  }
+  
+  .car-form-add-image-button,
+  .car-form-delete-image-button {
+    padding: 8px 18px;
+    font-size: 0.8rem;
+    min-height: 44px;
+  }
+  
+  .car-form-submit-section {
+    padding: 24px 0 0 0;
+    margin-top: 24px;
+    gap: 16px;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .car-form-cancel-button,
+  .car-form-submit-button {
+    padding: 10px 26px;
+    font-size: 0.85rem;
+    width: 100%;
+    max-width: 240px;
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .car-form-error-alert {
+    padding: 10px 16px;
+    margin: 10px 0;
+    font-size: 0.85rem;
+  }
+}
+
+/* Small Mobile (361px - 480px) */
+@media (min-width: 361px) and (max-width: 480px) {
+  .car-form-container {
+    margin-left: 0;
+    width: 100vw;
+  }
+  
+  .car-form-header {
+    padding: 24px 20px 18px;
+  }
+  
+  .car-form-header-content {
+    height: 90px;
+    padding-left: 16px;
+    padding-right: 16px;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: center;
+  }
+  
+  .car-form-title {
+    font-size: 1.6rem;
+    text-align: center;
+  }
+  
+  .car-form-subtitle {
+    font-size: 0.9rem;
+    margin-top: 0;
+    text-align: center;
+  }
+  
+  .car-form-back-button {
+    padding: 9px 20px;
+    font-size: 0.8rem;
+    margin-left: 0;
+    align-self: center;
+    max-width: 160px;
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .car-form-main-paper {
+    padding-left: 24px;
+    padding-right: 24px;
+    padding-top: 14px;
+    padding-bottom: 40px;
+  }
+  
+  .car-form-section {
+    margin-bottom: 24px;
+  }
+  
+  .car-form-section-title {
+    font-size: 1.15rem;
+    margin-bottom: 16px;
+    text-align: center;
+  }
+  
+  .car-form-field-group {
+    gap: 14px;
+  }
+  
+  .car-form-text-field {
+    padding: 12px 14px;
+    font-size: 0.8rem;
+  }
+  
+  .car-form-text-field::placeholder {
+    font-size: 0.75rem;
+  }
+  
+  .car-form-image-section {
+    padding: 24px 14px;
+    min-height: 140px;
+  }
+  
+  .car-form-image-section .car-form-image-section-title {
+    font-size: 1rem;
+  }
+  
+  .car-form-image-section .car-form-image-section-subtext {
+    font-size: 0.8rem;
+  }
+  
+  .car-form-add-image-button,
+  .car-form-delete-image-button {
+    padding: 7px 16px;
+    font-size: 0.75rem;
+    min-height: 44px;
+  }
+  
+  .car-form-submit-section {
+    padding: 20px 0 0 0;
+    margin-top: 20px;
+    gap: 14px;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .car-form-cancel-button,
+  .car-form-submit-button {
+    padding: 9px 24px;
+    font-size: 0.8rem;
+    width: 100%;
+    max-width: 220px;
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .car-form-error-alert {
+    padding: 9px 14px;
+    margin: 8px 0;
+    font-size: 0.8rem;
+  }
+  
+  .car-form-divider {
+    margin: 24px 0;
+  }
+}
+
+/* Extra Small Mobile (320px - 360px) */
+@media (max-width: 360px) {
+  .car-form-container {
+    margin-left: 0;
+    width: 100vw;
+  }
+  
+  .car-form-header {
+    padding: 20px 16px 16px;
+  }
+  
+  .car-form-header-content {
+    height: 80px;
+    padding-left: 14px;
+    padding-right: 14px;
+    flex-direction: column;
+    gap: 8px;
+    justify-content: center;
+  }
+  
+  .car-form-title {
+    font-size: 1.4rem;
+    text-align: center;
+  }
+  
+  .car-form-subtitle {
+    font-size: 0.85rem;
+    margin-top: 0;
+    text-align: center;
+  }
+  
+  .car-form-back-button {
+    padding: 8px 18px;
+    font-size: 0.75rem;
+    margin-left: 0;
+    align-self: center;
+    max-width: 140px;
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .car-form-main-paper {
+    padding-left: 16px;
+    padding-right: 16px;
+    padding-top: 8px;
+    padding-bottom: 25px;
+  }
+  
+  .car-form-section {
+    margin-bottom: 20px;
+  }
+  
+  .car-form-section-title {
+    font-size: 1.1rem;
+    margin-bottom: 14px;
+    text-align: center;
+  }
+  
+  .car-form-field-group {
+    gap: 12px;
+  }
+  
+  .car-form-text-field {
+    padding: 11px 12px;
+    font-size: 0.75rem;
+  }
+  
+  .car-form-text-field::placeholder {
+    font-size: 0.7rem;
+  }
+  
+  .car-form-image-section {
+    padding: 20px 12px;
+    min-height: 130px;
+  }
+  
+  .car-form-image-section .car-form-image-section-title {
+    font-size: 0.95rem;
+  }
+  
+  .car-form-image-section .car-form-image-section-subtext {
+    font-size: 0.75rem;
+  }
+  
+  .car-form-add-image-button,
+  .car-form-delete-image-button {
+    padding: 6px 14px;
+    font-size: 0.7rem;
+    min-height: 44px;
+  }
+  
+  .car-form-submit-section {
+    padding: 18px 0 0 0;
+    margin-top: 18px;
+    gap: 12px;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .car-form-cancel-button,
+  .car-form-submit-button {
+    padding: 8px 22px;
+    font-size: 0.75rem;
+    width: 100%;
+    max-width: 200px;
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .car-form-error-alert {
+    padding: 8px 12px;
+    margin: 6px 0;
+    font-size: 0.75rem;
+  }
+  
+  .car-form-divider {
+    margin: 20px 0;
+  }
+  
+  .car-form-loading-container {
+    height: 40vh;
+  }
+  
+  .car-form-loading-spinner {
+    width: 30px;
+    height: 30px;
+  }
+}
+
+/* Touch device optimizations */
+@media (hover: none) and (pointer: coarse) {
+  .car-form-back-button,
+  .car-form-cancel-button,
+  .car-form-submit-button,
+  .car-form-add-image-button,
+  .car-form-delete-image-button {
+    min-height: 44px;
+    min-width: 44px;
+  }
+  
+  .car-form-text-field {
+    min-height: 44px;
+  }
+  
+  .car-form-back-button:hover,
+  .car-form-cancel-button:hover,
+  .car-form-add-image-button:hover,
+  .car-form-delete-image-button:hover {
+    transform: none;
+  }
+  
+  .car-form-back-button:active,
+  .car-form-cancel-button:active,
+  .car-form-add-image-button:active,
+  .car-form-delete-image-button:active {
+    transform: scale(0.95);
+  }
+  
+  .car-form-submit-button:hover {
+    background: linear-gradient(90deg, #C3845E 0%, #E8A075 100%);
+  }
+  
+  .car-form-submit-button:active {
+    background: linear-gradient(90deg, #E8A075 0%, #F2B088 100%);
+    transform: scale(0.95);
+  }
+}
+
+/* High DPI displays optimization */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .car-form-title,
+  .car-form-subtitle,
+  .car-form-section-title,
+  .car-form-text-field {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  .car-form-divider {
+    background-size: 200% 100%;
+  }
+}
+
+/* Accessibility improvements */
+@media (prefers-reduced-motion: reduce) {
+  .car-form-back-button,
+  .car-form-cancel-button,
+  .car-form-submit-button,
+  .car-form-add-image-button,
+  .car-form-delete-image-button {
+    transition: background-color 0.2s ease, border-color 0.2s ease;
+  }
+  
+  .car-form-back-button:hover,
+  .car-form-cancel-button:hover,
+  .car-form-add-image-button:hover,
+  .car-form-delete-image-button:hover,
+  .car-form-back-button:active,
+  .car-form-cancel-button:active,
+  .car-form-add-image-button:active,
+  .car-form-delete-image-button:active {
+    transform: none;
+  }
+  
+  .car-form-loading-spinner {
+    animation: spin 2s linear infinite;
+  }
+}
+
+/* Form field improvements for mobile */
+@media (max-width: 600px) {
+  .car-form-text-field:focus {
+    border-color: #C3845E;
+    box-shadow: 0 0 0 2px rgba(195, 132, 94, 0.2);
+  }
+  
+  select.car-form-text-field {
+    background-size: 16px 16px;
+    padding-right: 35px;
+  }
+  
+  textarea.car-form-text-field {
+    min-height: 80px;
+    resize: vertical;
+  }
+}
+
+@media (max-width: 360px) {
+  .car-form-text-field:focus {
+    box-shadow: 0 0 0 1px rgba(195, 132, 94, 0.3);
+  }
+  
+  select.car-form-text-field {
+    background-size: 14px 14px;
+    padding-right: 30px;
+  }
+  
+  textarea.car-form-text-field {
+    min-height: 70px;
+  }
+}

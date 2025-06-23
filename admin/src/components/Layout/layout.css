@@ -100,11 +100,425 @@
   color: #C3845E;
 }
 
-/* Responsive Design */
-@media (max-width: 900px) {
+/* ===== PROFESSIONAL MULTI-LEVEL RESPONSIVENESS ===== */
+
+/* Mobile First Base (320px-383px) */
+@media screen and (max-width: 383px) {
   .rentivaAdminLayout__content {
     margin-left: 0;
+    margin-top: 56px;
+    padding: 8px;
+    min-height: calc(100vh - 56px);
+  }
+  
+  .rentivaAdminLayout__main {
+    width: 100%;
+    max-width: none;
+    padding: 0;
+  }
+  
+  .rentivaAdminLayout .Toastify__toast-container {
+    top: 64px;
+    left: 8px;
+    right: 8px;
+    width: auto;
+  }
+  
+  .rentivaAdminLayout .Toastify__toast {
+    margin-bottom: 8px;
+    min-height: 56px;
+    padding: 12px;
+    font-size: 14px;
+    border-radius: 8px;
+  }
+  
+  .rentivaAdminLayout__loadingSpinner {
+    width: 40px;
+    height: 40px;
+    border-width: 2px;
+  }
+}
+
+/* Mobile Small (384px-479px) */
+@media screen and (min-width: 384px) and (max-width: 479px) {
+  .rentivaAdminLayout__content {
+    margin-left: 0;
+    margin-top: 60px;
+    padding: 12px;
+    min-height: calc(100vh - 60px);
+  }
+  
+  .rentivaAdminLayout__main {
+    width: 100%;
+    max-width: none;
+    padding: 0;
+  }
+  
+  .rentivaAdminLayout .Toastify__toast-container {
+    top: 68px;
+    left: 12px;
+    right: 12px;
+    width: auto;
+  }
+  
+  .rentivaAdminLayout .Toastify__toast {
+    margin-bottom: 10px;
+    min-height: 56px;
+    padding: 14px;
+    font-size: 14px;
+    border-radius: 8px;
+  }
+  
+  .rentivaAdminLayout__loadingSpinner {
+    width: 42px;
+    height: 42px;
+    border-width: 2px;
+  }
+}
+
+/* Mobile Medium (480px-767px) */
+@media screen and (min-width: 480px) and (max-width: 767px) {
+  .rentivaAdminLayout__content {
+    margin-left: 0;
+    margin-top: 64px;
     padding: 16px;
+    min-height: calc(100vh - 64px);
+  }
+  
+  .rentivaAdminLayout__main {
+    width: 100%;
+    max-width: none;
+    padding: 0;
+  }
+  
+  .rentivaAdminLayout .Toastify__toast-container {
+    top: 72px;
+    left: 16px;
+    right: 16px;
+    width: auto;
+  }
+  
+  .rentivaAdminLayout .Toastify__toast {
+    margin-bottom: 12px;
+    min-height: 60px;
+    padding: 16px;
+    font-size: 15px;
+    border-radius: 8px;
+  }
+  
+  .rentivaAdminLayout__loadingSpinner {
+    width: 45px;
+    height: 45px;
+    border-width: 3px;
+  }
+}
+
+/* Tablet (768px-899px) */
+@media screen and (min-width: 768px) and (max-width: 899px) {
+  .rentivaAdminLayout__content {
+    margin-left: 0;
+    margin-top: 64px;
+    padding: 20px;
+    min-height: calc(100vh - 64px);
+  }
+  
+  .rentivaAdminLayout__main {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0;
+  }
+  
+  .rentivaAdminLayout .Toastify__toast-container {
+    top: 80px;
+    left: 20px;
+    right: 20px;
+    width: auto;
+  }
+  
+  .rentivaAdminLayout .Toastify__toast {
+    margin-bottom: 14px;
+    min-height: 64px;
+    padding: 18px;
+    font-size: 15px;
+    border-radius: 6px;
+  }
+  
+  .rentivaAdminLayout__loadingSpinner {
+    width: 48px;
+    height: 48px;
+    border-width: 3px;
+  }
+}
+
+/* Small Desktop (900px-1199px) */
+@media screen and (min-width: 900px) and (max-width: 1199px) {
+  .rentivaAdminLayout__content {
+    margin-left: 240px;
+    margin-top: 64px;
+    padding: 24px;
+    min-height: calc(100vh - 64px);
+  }
+  
+  .rentivaAdminLayout__content--mobile {
+    margin-left: 0;
+  }
+  
+  .rentivaAdminLayout__main {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .rentivaAdminLayout .Toastify__toast-container {
+    top: 88px;
+    right: 32px;
+    width: 320px;
+  }
+  
+  .rentivaAdminLayout .Toastify__toast {
+    margin-bottom: 16px;
+    min-height: 64px;
+    padding: 16px;
+    font-size: 14px;
+    border-radius: 4px;
+  }
+  
+  .rentivaAdminLayout__loadingSpinner {
+    width: 50px;
+    height: 50px;
+    border-width: 3px;
+  }
+}
+
+/* Medium Desktop (1200px-1599px) */
+@media screen and (min-width: 1200px) and (max-width: 1599px) {
+  .rentivaAdminLayout__content {
+    margin-left: 260px;
+    margin-top: 64px;
+    padding: 28px;
+    min-height: calc(100vh - 64px);
+  }
+  
+  .rentivaAdminLayout__content--mobile {
+    margin-left: 0;
+  }
+  
+  .rentivaAdminLayout__main {
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+  
+  .rentivaAdminLayout .Toastify__toast-container {
+    top: 92px;
+    right: 36px;
+    width: 340px;
+  }
+  
+  .rentivaAdminLayout .Toastify__toast {
+    margin-bottom: 18px;
+    min-height: 68px;
+    padding: 18px;
+    font-size: 15px;
+    border-radius: 6px;
+  }
+  
+  .rentivaAdminLayout__loadingSpinner {
+    width: 52px;
+    height: 52px;
+    border-width: 3px;
+  }
+}
+
+/* Large Desktop (1600px+) */
+@media screen and (min-width: 1600px) {
+  .rentivaAdminLayout__content {
+    margin-left: 280px;
+    margin-top: 72px;
+    padding: 32px;
+    min-height: calc(100vh - 72px);
+  }
+  
+  .rentivaAdminLayout__content--mobile {
+    margin-left: 0;
+  }
+  
+  .rentivaAdminLayout__main {
+    width: 100%;
+    max-width: 1600px;
+    margin: 0 auto;
+  }
+  
+  .rentivaAdminLayout .Toastify__toast-container {
+    top: 96px;
+    right: 40px;
+    width: 360px;
+  }
+  
+  .rentivaAdminLayout .Toastify__toast {
+    margin-bottom: 20px;
+    min-height: 72px;
+    padding: 20px;
+    font-size: 16px;
+    border-radius: 8px;
+  }
+  
+  .rentivaAdminLayout__loadingSpinner {
+    width: 56px;
+    height: 56px;
+    border-width: 4px;
+  }
+}
+
+/* High DPI/Retina Display Optimizations */
+@media screen and (-webkit-min-device-pixel-ratio: 2),
+       screen and (min-resolution: 192dpi),
+       screen and (min-resolution: 2dppx) {
+  .rentivaAdminLayout .Toastify__toast {
+    border-width: 0.5px;
+  }
+  
+  .rentivaAdminLayout__loadingSpinner {
+    border-width: 2px;
+  }
+}
+
+/* Touch Device Optimizations */
+@media (hover: none) and (pointer: coarse) {
+  .rentivaAdminLayout {
+    -webkit-overflow-scrolling: touch;
+    scroll-behavior: smooth;
+  }
+  
+  .rentivaAdminLayout__content {
+    -webkit-overflow-scrolling: touch;
+  }
+  
+  .rentivaAdminLayout .Toastify__toast {
+    min-height: 56px;
+    touch-action: manipulation;
+  }
+  
+  .rentivaAdminLayout .Toastify__close-button {
+    min-width: 44px;
+    min-height: 44px;
+    touch-action: manipulation;
+  }
+}
+
+/* Landscape Orientation Adjustments */
+@media screen and (orientation: landscape) and (max-height: 500px) {
+  .rentivaAdminLayout__content {
+    margin-top: 52px;
+    padding: 12px;
+    min-height: calc(100vh - 52px);
+  }
+  
+  .rentivaAdminLayout .Toastify__toast-container {
+    top: 60px;
+  }
+  
+  .rentivaAdminLayout .Toastify__toast {
+    min-height: 48px;
+    padding: 12px;
+    font-size: 13px;
+  }
+  
+  .rentivaAdminLayout__loadingSpinner {
+    width: 36px;
+    height: 36px;
+    border-width: 2px;
+  }
+}
+
+/* Accessibility Enhancements */
+@media (prefers-reduced-motion: reduce) {
+  .rentivaAdminLayout__content {
+    transition: none;
+  }
+  
+  .rentivaAdminLayout__loadingSpinner {
+    animation: none;
+    border-top-color: #C3845E;
+    border-right-color: #C3845E;
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(0deg); }
+  }
+}
+
+@media (prefers-contrast: high) {
+  .rentivaAdminLayout {
+    background: #000000;
+  }
+  
+  .rentivaAdminLayout::before {
+    display: none;
+  }
+  
+  .rentivaAdminLayout .Toastify__toast {
+    background: #000000;
+    border-color: #ffffff;
+    color: #ffffff;
+  }
+  
+  .rentivaAdminLayout .Toastify__toast--success {
+    border-color: #00ff00;
+    color: #00ff00;
+  }
+  
+  .rentivaAdminLayout .Toastify__toast--error {
+    border-color: #ff0000;
+    color: #ff0000;
+  }
+  
+  .rentivaAdminLayout .Toastify__toast--warning {
+    border-color: #ffff00;
+    color: #ffff00;
+  }
+  
+  .rentivaAdminLayout .Toastify__toast--info {
+    border-color: #ffffff;
+    color: #ffffff;
+  }
+  
+  .rentivaAdminLayout .Toastify__progress-bar {
+    background: #ffffff;
+  }
+  
+  .rentivaAdminLayout .Toastify__close-button {
+    color: #ffffff;
+  }
+  
+  .rentivaAdminLayout__loading {
+    background: rgba(0, 0, 0, 0.9);
+  }
+  
+  .rentivaAdminLayout__loadingSpinner {
+    border-color: #ffffff;
+    border-top-color: #ffffff;
+  }
+}
+
+/* Focus Visibility */
+.rentivaAdminLayout *:focus-visible {
+  outline: 2px solid #C3845E;
+  outline-offset: 2px;
+}
+
+/* Container Queries for Content Areas */
+@container (max-width: 600px) {
+  .rentivaAdminLayout__main {
+    padding: 0 8px;
+  }
+}
+
+@container (min-width: 1200px) {
+  .rentivaAdminLayout__main {
+    padding: 0 16px;
   }
 }
 

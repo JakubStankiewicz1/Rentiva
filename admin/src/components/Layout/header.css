@@ -202,20 +202,7 @@
   border-radius: 0; /* Proste kąty przy hover dla wyloguj */
 }
 
-/* Responsive Design */
-/* @media (max-width: 900px) {
-  .rentivaAdminHeader {
-    left: 0;
-  }
-  
-  .rentivaAdminHeader__menuButton {
-    display: block;
-  }
-  
-  .rentivaAdminHeader__userName {
-    display: none;
-  }
-} */
+
 
 /* Animations */
 @keyframes slideDown {
@@ -231,4 +218,466 @@
 
 .rentivaAdminHeader__userMenu {
   animation: slideDown 0.2s ease-out;
+}
+
+/* ===== PROFESSIONAL MULTI-LEVEL RESPONSIVENESS ===== */
+
+/* Mobile First Base (320px-383px) */
+@media screen and (max-width: 383px) {
+  .rentivaAdminHeader {
+    left: 0;
+    height: 56px;
+    padding: 0 12px;
+    gap: 8px;
+  }
+  
+  .rentivaAdminHeader__left {
+    gap: 8px;
+    flex: 1;
+    min-width: 0;
+  }
+  
+  .rentivaAdminHeader__menuButton {
+    display: block;
+    padding: 6px;
+    min-width: 44px;
+    min-height: 44px;
+    touch-action: manipulation;
+  }
+  
+  .rentivaAdminHeader__title {
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+  
+  .rentivaAdminHeader__right {
+    gap: 4px;
+    flex-shrink: 0;
+  }
+  
+  .rentivaAdminHeader__notifications {
+    padding: 6px;
+    min-width: 40px;
+    min-height: 40px;
+    touch-action: manipulation;
+  }
+  
+  .rentivaAdminHeader__userButton {
+    padding: 6px 8px;
+    gap: 6px;
+    min-width: 44px;
+    min-height: 44px;
+    touch-action: manipulation;
+  }
+  
+  .rentivaAdminHeader__avatar {
+    width: 28px;
+    height: 28px;
+    font-size: 12px;
+  }
+  
+  .rentivaAdminHeader__userName {
+    display: none;
+  }
+  
+  .rentivaAdminHeader__userMenu {
+    right: -8px;
+    min-width: 140px;
+    border-radius: 8px;
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.4);
+  }
+  
+  .rentivaAdminHeader__menuItem {
+    padding: 14px 16px;
+    font-size: 15px;
+    min-height: 48px;
+    touch-action: manipulation;
+  }
+}
+
+/* Mobile Small (384px-479px) */
+@media screen and (min-width: 384px) and (max-width: 479px) {
+  .rentivaAdminHeader {
+    left: 0;
+    height: 60px;
+    padding: 0 16px;
+  }
+  
+  .rentivaAdminHeader__left {
+    gap: 12px;
+  }
+  
+  .rentivaAdminHeader__menuButton {
+    display: block;
+    padding: 8px;
+    min-width: 44px;
+    min-height: 44px;
+    touch-action: manipulation;
+  }
+  
+  .rentivaAdminHeader__title {
+    font-size: 17px;
+    font-weight: 600;
+    letter-spacing: 0.4px;
+  }
+  
+  .rentivaAdminHeader__right {
+    gap: 8px;
+  }
+  
+  .rentivaAdminHeader__notifications {
+    padding: 8px;
+    min-width: 44px;
+    min-height: 44px;
+    touch-action: manipulation;
+  }
+  
+  .rentivaAdminHeader__userButton {
+    padding: 8px 12px;
+    gap: 8px;
+    min-width: 44px;
+    min-height: 44px;
+    touch-action: manipulation;
+  }
+  
+  .rentivaAdminHeader__avatar {
+    width: 30px;
+    height: 30px;
+    font-size: 13px;
+  }
+  
+  .rentivaAdminHeader__userName {
+    display: none;
+  }
+  
+  .rentivaAdminHeader__userMenu {
+    min-width: 160px;
+    border-radius: 8px;
+  }
+  
+  .rentivaAdminHeader__menuItem {
+    padding: 14px 16px;
+    font-size: 15px;
+    min-height: 48px;
+    touch-action: manipulation;
+  }
+}
+
+/* Mobile Medium (480px-767px) */
+@media screen and (min-width: 480px) and (max-width: 767px) {
+  .rentivaAdminHeader {
+    left: 0;
+    height: 64px;
+    padding: 0 20px;
+  }
+  
+  .rentivaAdminHeader__menuButton {
+    display: block;
+    min-width: 44px;
+    min-height: 44px;
+    touch-action: manipulation;
+  }
+  
+  .rentivaAdminHeader__title {
+    font-size: 18px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+  }
+  
+  .rentivaAdminHeader__notifications {
+    min-width: 44px;
+    min-height: 44px;
+    touch-action: manipulation;
+  }
+  
+  .rentivaAdminHeader__userButton {
+    gap: 10px;
+    min-width: 44px;
+    min-height: 44px;
+    touch-action: manipulation;
+  }
+  
+  .rentivaAdminHeader__userName {
+    display: none;
+  }
+  
+  .rentivaAdminHeader__menuItem {
+    min-height: 48px;
+    touch-action: manipulation;
+  }
+}
+
+/* Tablet (768px-899px) */
+@media screen and (min-width: 768px) and (max-width: 899px) {
+  .rentivaAdminHeader {
+    left: 0;
+    padding: 0 24px;
+  }
+  
+  .rentivaAdminHeader__menuButton {
+    display: block;
+    min-width: 44px;
+    min-height: 44px;
+    touch-action: manipulation;
+  }
+  
+  .rentivaAdminHeader__title {
+    font-size: 19px;
+    font-weight: 500;
+  }
+  
+  .rentivaAdminHeader__userName {
+    font-size: 13px;
+    margin-top: 0;
+  }
+  
+  .rentivaAdminHeader__userButton {
+    min-width: 44px;
+    min-height: 44px;
+    touch-action: manipulation;
+  }
+  
+  .rentivaAdminHeader__notifications {
+    min-width: 44px;
+    min-height: 44px;
+    touch-action: manipulation;
+  }
+  
+  .rentivaAdminHeader__menuItem {
+    min-height: 48px;
+    touch-action: manipulation;
+  }
+}
+
+/* Small Desktop (900px-1199px) */
+@media screen and (min-width: 900px) and (max-width: 1199px) {
+  .rentivaAdminHeader {
+    left: 240px;
+    padding: 0 24px;
+  }
+  
+  .rentivaAdminHeader__menuButton {
+    display: none;
+  }
+  
+  .rentivaAdminHeader__title {
+    font-size: 20px;
+    font-weight: 500;
+  }
+  
+  .rentivaAdminHeader__userName {
+    font-size: 14px;
+    margin-top: 12px;
+  }
+}
+
+/* Medium Desktop (1200px-1599px) */
+@media screen and (min-width: 1200px) and (max-width: 1599px) {
+  .rentivaAdminHeader {
+    left: 240px;
+    padding: 0 32px;
+  }
+  
+  .rentivaAdminHeader__left {
+    gap: 20px;
+  }
+  
+  .rentivaAdminHeader__right {
+    gap: 20px;
+  }
+  
+  .rentivaAdminHeader__title {
+    font-size: 21px;
+    font-weight: 500;
+    letter-spacing: 0.6px;
+  }
+  
+  .rentivaAdminHeader__userName {
+    font-size: 15px;
+  }
+  
+  .rentivaAdminHeader__userButton {
+    padding: 8px 18px;
+    gap: 14px;
+  }
+  
+  .rentivaAdminHeader__avatar {
+    width: 34px;
+    height: 34px;
+    font-size: 15px;
+  }
+}
+
+/* Large Desktop (1600px+) */
+@media screen and (min-width: 1600px) {
+  .rentivaAdminHeader {
+    left: 240px;
+    padding: 0 40px;
+    height: 72px;
+  }
+  
+  .rentivaAdminHeader__left {
+    gap: 24px;
+  }
+  
+  .rentivaAdminHeader__right {
+    gap: 24px;
+  }
+  
+  .rentivaAdminHeader__title {
+    font-size: 22px;
+    font-weight: 500;
+    letter-spacing: 0.7px;
+  }
+  
+  .rentivaAdminHeader__userName {
+    font-size: 16px;
+  }
+  
+  .rentivaAdminHeader__userButton {
+    padding: 12px 20px;
+    gap: 16px;
+    height: 56px;
+  }
+  
+  .rentivaAdminHeader__avatar {
+    width: 36px;
+    height: 36px;
+    font-size: 16px;
+  }
+  
+  .rentivaAdminHeader__notifications {
+    padding: 12px;
+  }
+  
+  .rentivaAdminHeader__userMenu {
+    min-width: 180px;
+  }
+  
+  .rentivaAdminHeader__menuItem {
+    padding: 16px 20px;
+    font-size: 15px;
+  }
+}
+
+/* High DPI/Retina Display Optimizations */
+@media screen and (-webkit-min-device-pixel-ratio: 2),
+       screen and (min-resolution: 192dpi),
+       screen and (min-resolution: 2dppx) {
+  .rentivaAdminHeader {
+    border-bottom-width: 0.5px;
+  }
+  
+  .rentivaAdminHeader__notificationsBadge {
+    border: 0.5px solid #181818;
+  }
+  
+  .rentivaAdminHeader__userMenu {
+    border-width: 0.5px;
+  }
+  
+  .rentivaAdminHeader__menuItem {
+    border-bottom-width: 0.5px;
+  }
+}
+
+/* Touch Device Optimizations */
+@media (hover: none) and (pointer: coarse) {
+  .rentivaAdminHeader__menuButton,
+  .rentivaAdminHeader__notifications,
+  .rentivaAdminHeader__userButton,
+  .rentivaAdminHeader__menuItem {
+    min-width: 44px;
+    min-height: 44px;
+    touch-action: manipulation;
+  }
+  
+  .rentivaAdminHeader__menuButton:active,
+  .rentivaAdminHeader__notifications:active,
+  .rentivaAdminHeader__userButton:active {
+    transform: scale(0.98);
+    transition: transform 0.1s ease;
+  }
+  
+  .rentivaAdminHeader__menuItem:active {
+    transform: scale(0.98);
+    transition: transform 0.1s ease;
+  }
+}
+
+/* Landscape Orientation Adjustments */
+@media screen and (orientation: landscape) and (max-height: 500px) {
+  .rentivaAdminHeader {
+    height: 52px;
+  }
+  
+  .rentivaAdminHeader__title {
+    font-size: 16px;
+  }
+  
+  .rentivaAdminHeader__avatar {
+    width: 28px;
+    height: 28px;
+    font-size: 12px;
+  }
+  
+  .rentivaAdminHeader__userButton {
+    height: 40px;
+    padding: 6px 12px;
+  }
+}
+
+/* Accessibility Enhancements */
+@media (prefers-reduced-motion: reduce) {
+  .rentivaAdminHeader__menuButton,
+  .rentivaAdminHeader__notifications,
+  .rentivaAdminHeader__userButton,
+  .rentivaAdminHeader__menuItem,
+  .rentivaAdminHeader__userMenu {
+    transition: none;
+    animation: none;
+  }
+}
+
+@media (prefers-contrast: high) {
+  .rentivaAdminHeader {
+    border-bottom-color: #ffffff;
+  }
+  
+  .rentivaAdminHeader__title {
+    color: #ffffff;
+    font-weight: 600;
+  }
+  
+  .rentivaAdminHeader__menuButton,
+  .rentivaAdminHeader__notifications {
+    color: #ffffff;
+  }
+  
+  .rentivaAdminHeader__userName {
+    color: #ffffff;
+    font-weight: 600;
+  }
+  
+  .rentivaAdminHeader__userMenu {
+    border-color: #ffffff;
+  }
+  
+  .rentivaAdminHeader__menuItem {
+    color: #ffffff;
+    border-bottom-color: #666666;
+  }
+}
+
+/* Focus Visibility */
+.rentivaAdminHeader__menuButton:focus-visible,
+.rentivaAdminHeader__notifications:focus-visible,
+.rentivaAdminHeader__userButton:focus-visible,
+.rentivaAdminHeader__menuItem:focus-visible {
+  outline: 2px solid #C3845E;
+  outline-offset: 2px;
 }

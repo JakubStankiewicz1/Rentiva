@@ -260,19 +260,649 @@
   100% { transform: rotate(360deg); }
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
+/* ============================================================================
+   🚀 PROFESSIONAL MULTI-LEVEL RESPONSIVE DESIGN SYSTEM
+   Mobile-First Approach with 7+ Breakpoints for Perfect UX
+   ============================================================================ */
+
+/* =========================
+   📱 MOBILE PHONES (320px+)
+   Base Styles & Small Devices
+   ========================= */
+@media (min-width: 320px) {
   .rentivaAdminImageUpload {
     padding: 16px;
+    border-radius: 0;
   }
   
-  .rentivaAdminImageUpload__dropzone {
-    padding: 30px 16px;
+  .rentivaAdminImageUpload__header {
+    gap: 8px;
+    margin-bottom: 16px;
+  }
+  
+  .rentivaAdminImageUpload__title {
+    font-size: 16px;
+  }
+  
+  .rentivaAdminImageUpload__icon {
+    width: 18px;
+    height: 18px;
+  }
+  
+  .car-form-image-section {
+    padding: 24px 16px;
+    border-radius: 0;
+  }
+  
+  .rentivaAdminImageUpload__dropzoneContent {
+    gap: 12px;
+  }
+  
+  .rentivaAdminImageUpload__uploadIcon {
+    width: 36px;
+    height: 36px;
+  }
+  
+  .rentivaAdminImageUpload__uploadText {
+    font-size: 14px;
+    text-align: center;
+  }
+  
+  .rentivaAdminImageUpload__uploadSubtext {
+    font-size: 12px;
+    text-align: center;
+  }
+  
+  .rentivaAdminImageUpload__browseButton {
+    padding: 12px 18px;
+    font-size: 12px;
+    min-height: 44px;
+    min-width: 120px;
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
+  }
+  
+  .rentivaAdminImageUpload__preview {
+    margin-top: 20px;
+  }
+  
+  .rentivaAdminImageUpload__previewTitle {
+    font-size: 14px;
+    margin-bottom: 12px;
+  }
+  
+  .rentivaAdminImageUpload__previewGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(70px, 1fr));
+    gap: 8px;
+    max-width: 100%;
+  }
+  
+  .rentivaAdminImageUpload__previewItem {
+    border-radius: 0;
+    min-height: 70px;
+  }
+  
+  .rentivaAdminImageUpload__removeButton {
+    width: 28px;
+    height: 28px;
+    top: 2px;
+    right: 2px;
+    font-size: 14px;
+    border-radius: 0;
+    min-height: 44px;
+    min-width: 44px;
+  }
+  
+  .rentivaAdminImageUpload__error,
+  .rentivaAdminImageUpload__info {
+    padding: 12px 14px;
+    margin-top: 12px;
+    font-size: 13px;
+    border-radius: 0;
+  }
+  
+  .rentivaAdminImageUpload__progressBar {
+    border-radius: 0;
+  }
+  
+  .rentivaAdminImageUpload__progressText {
+    font-size: 11px;
+    margin-top: 6px;
+  }
+}
+
+/* =========================
+   📱 LARGE PHONES (361px+)
+   Enhanced Mobile Experience
+   ========================= */
+@media (min-width: 361px) {
+  .rentivaAdminImageUpload {
+    padding: 18px;
+  }
+  
+  .rentivaAdminImageUpload__header {
+    gap: 10px;
+    margin-bottom: 18px;
+  }
+  
+  .rentivaAdminImageUpload__title {
+    font-size: 17px;
+  }
+  
+  .rentivaAdminImageUpload__icon {
+    width: 19px;
+    height: 19px;
+  }
+  
+  .car-form-image-section {
+    padding: 30px 18px;
+  }
+  
+  .rentivaAdminImageUpload__dropzoneContent {
+    gap: 14px;
+  }
+  
+  .rentivaAdminImageUpload__uploadIcon {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .rentivaAdminImageUpload__uploadText {
+    font-size: 15px;
+  }
+  
+  .rentivaAdminImageUpload__uploadSubtext {
+    font-size: 13px;
+  }
+  
+  .rentivaAdminImageUpload__browseButton {
+    padding: 12px 20px;
+    font-size: 13px;
+  }
+  
+  .rentivaAdminImageUpload__preview {
+    margin-top: 22px;
+  }
+  
+  .rentivaAdminImageUpload__previewTitle {
+    font-size: 15px;
+    margin-bottom: 14px;
   }
   
   .rentivaAdminImageUpload__previewGrid {
     grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
-    gap: 8px;
+    gap: 10px;
+  }
+  
+  .rentivaAdminImageUpload__previewItem {
+    min-height: 80px;
+  }
+  
+  .rentivaAdminImageUpload__removeButton {
+    width: 26px;
+    height: 26px;
+    top: 3px;
+    right: 3px;
+  }
+}
+
+/* =========================
+   📱 PHABLETS (481px+)
+   Transition to Tablet UX
+   ========================= */
+@media (min-width: 481px) {
+  .rentivaAdminImageUpload {
+    padding: 20px;
+  }
+  
+  .rentivaAdminImageUpload__header {
+    gap: 11px;
+    margin-bottom: 19px;
+  }
+  
+  .rentivaAdminImageUpload__title {
+    font-size: 17px;
+  }
+  
+  .car-form-image-section {
+    padding: 35px 20px;
+  }
+  
+  .rentivaAdminImageUpload__uploadIcon {
+    width: 42px;
+    height: 42px;
+  }
+  
+  .rentivaAdminImageUpload__browseButton {
+    padding: 11px 22px;
+    font-size: 13px;
+  }
+  
+  .rentivaAdminImageUpload__previewGrid {
+    grid-template-columns: repeat(auto-fill, minmax(90px, 1fr));
+    gap: 12px;
+  }
+  
+  .rentivaAdminImageUpload__previewItem {
+    min-height: 90px;
+  }
+}
+
+/* =========================
+   📟 TABLETS PORTRAIT (601px+)
+   Enhanced Grid Layout
+   ========================= */
+@media (min-width: 601px) {
+  .rentivaAdminImageUpload {
+    padding: 22px;
+  }
+  
+  .rentivaAdminImageUpload__header {
+    gap: 12px;
+    margin-bottom: 20px;
+  }
+  
+  .rentivaAdminImageUpload__title {
+    font-size: 18px;
+  }
+  
+  .rentivaAdminImageUpload__icon {
+    width: 20px;
+    height: 20px;
+  }
+  
+  .car-form-image-section {
+    padding: 38px 22px;
+  }
+  
+  .rentivaAdminImageUpload__dropzoneContent {
+    gap: 15px;
+  }
+  
+  .rentivaAdminImageUpload__uploadIcon {
+    width: 44px;
+    height: 44px;
+  }
+  
+  .rentivaAdminImageUpload__uploadText {
+    font-size: 15px;
+  }
+  
+  .rentivaAdminImageUpload__uploadSubtext {
+    font-size: 13px;
+  }
+  
+  .rentivaAdminImageUpload__browseButton {
+    padding: 10px 18px;
+    font-size: 13px;
+  }
+  
+  .rentivaAdminImageUpload__preview {
+    margin-top: 23px;
+  }
+  
+  .rentivaAdminImageUpload__previewTitle {
+    font-size: 15px;
+    margin-bottom: 15px;
+  }
+  
+  .rentivaAdminImageUpload__previewGrid {
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    gap: 15px;
+    max-width: 600px;
+  }
+  
+  .rentivaAdminImageUpload__previewItem {
+    min-height: 100px;
+  }
+  
+  .rentivaAdminImageUpload__removeButton {
+    width: 24px;
+    height: 24px;
+    top: 4px;
+    right: 4px;
+    font-size: 12px;
+  }
+}
+
+/* =========================
+   💻 TABLETS LANDSCAPE (768px+)
+   Desktop-like Experience
+   ========================= */
+@media (min-width: 768px) {
+  .rentivaAdminImageUpload {
+    padding: 24px;
+  }
+  
+  .rentivaAdminImageUpload__header {
+    margin-bottom: 20px;
+  }
+  
+  .rentivaAdminImageUpload__title {
+    font-size: 18px;
+  }
+  
+  .car-form-image-section {
+    padding: 40px 20px;
+  }
+  
+  .rentivaAdminImageUpload__dropzoneContent {
+    gap: 16px;
+  }
+  
+  .rentivaAdminImageUpload__uploadIcon {
+    width: 48px;
+    height: 48px;
+  }
+  
+  .rentivaAdminImageUpload__uploadText {
+    font-size: 16px;
+  }
+  
+  .rentivaAdminImageUpload__uploadSubtext {
+    font-size: 14px;
+  }
+  
+  .rentivaAdminImageUpload__browseButton {
+    padding: 10px 20px;
+    font-size: 14px;
+  }
+  
+  .rentivaAdminImageUpload__preview {
+    margin-top: 24px;
+  }
+  
+  .rentivaAdminImageUpload__previewTitle {
+    font-size: 16px;
+    margin-bottom: 16px;
+  }
+  
+  .rentivaAdminImageUpload__previewGrid {
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: 18px;
+    max-width: 700px;
+  }
+  
+  .rentivaAdminImageUpload__previewItem {
+    min-height: 120px;
+  }
+  
+  /* Add hover effects for desktop */
+  .rentivaAdminImageUpload__browseButton:hover {
+    transform: translateY(-1px);
+  }
+  
+  .rentivaAdminImageUpload__previewItem:hover {
+    transform: scale(1.02);
+  }
+  
+  .rentivaAdminImageUpload__previewItem:hover .rentivaAdminImageUpload__removeButton {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* =========================
+   🖥️ SMALL DESKTOPS (1024px+)
+   Enhanced Desktop Layout
+   ========================= */
+@media (min-width: 1024px) {
+  .rentivaAdminImageUpload {
+    padding: 26px;
+  }
+  
+  .rentivaAdminImageUpload__header {
+    margin-bottom: 22px;
+  }
+  
+  .rentivaAdminImageUpload__title {
+    font-size: 19px;
+  }
+  
+  .car-form-image-section {
+    padding: 42px 22px;
+  }
+  
+  .rentivaAdminImageUpload__uploadIcon {
+    width: 50px;
+    height: 50px;
+  }
+  
+  .rentivaAdminImageUpload__browseButton {
+    padding: 11px 22px;
+    font-size: 14px;
+  }
+  
+  .rentivaAdminImageUpload__preview {
+    margin-top: 26px;
+  }
+  
+  .rentivaAdminImageUpload__previewTitle {
+    font-size: 17px;
+    margin-bottom: 17px;
+  }
+  
+  .rentivaAdminImageUpload__previewGrid {
+    grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+    gap: 20px;
+    max-width: 750px;
+  }
+  
+  .rentivaAdminImageUpload__previewItem {
+    min-height: 130px;
+  }
+  
+  /* Enhanced hover effects */
+  .car-form-image-section:hover {
+    border-color: #E8A075;
+    background: rgba(195, 132, 94, 0.08);
+    transform: translateY(-1px);
+  }
+  
+  .rentivaAdminImageUpload__browseButton:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(195, 132, 94, 0.3);
+  }
+}
+
+/* =========================
+   🖥️ LARGE DESKTOPS (1440px+)
+   Premium Desktop Experience
+   ========================= */
+@media (min-width: 1440px) {
+  .rentivaAdminImageUpload {
+    padding: 28px;
+  }
+  
+  .rentivaAdminImageUpload__header {
+    margin-bottom: 24px;
+  }
+  
+  .rentivaAdminImageUpload__title {
+    font-size: 20px;
+  }
+  
+  .car-form-image-section {
+    padding: 45px 25px;
+  }
+  
+  .rentivaAdminImageUpload__uploadIcon {
+    width: 52px;
+    height: 52px;
+  }
+  
+  .rentivaAdminImageUpload__browseButton {
+    padding: 12px 24px;
+    font-size: 15px;
+  }
+  
+  .rentivaAdminImageUpload__preview {
+    margin-top: 28px;
+  }
+  
+  .rentivaAdminImageUpload__previewTitle {
+    font-size: 18px;
+    margin-bottom: 18px;
+  }
+  
+  .rentivaAdminImageUpload__previewGrid {
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 22px;
+    max-width: 800px;
+  }
+  
+  .rentivaAdminImageUpload__previewItem {
+    min-height: 140px;
+  }
+}
+
+/* ============================================================================
+   🎯 TOUCH DEVICE OPTIMIZATIONS
+   Enhanced Touch Experience
+   ============================================================================ */
+@media (hover: none) and (pointer: coarse) {
+  .rentivaAdminImageUpload__browseButton {
+    min-height: 48px;
+    min-width: 48px;
+    padding: 16px 24px;
+    font-size: 16px; /* Prevent zoom on iOS */
+  }
+  
+  .rentivaAdminImageUpload__removeButton {
+    min-height: 44px;
+    min-width: 44px;
+    opacity: 1; /* Always visible on touch devices */
+    transform: scale(1);
+    border-radius: 0;
+  }
+  
+  .car-form-image-section {
+    min-height: 120px;
+  }
+  
+  /* Remove hover effects on touch */
+  .car-form-image-section:hover,
+  .rentivaAdminImageUpload__browseButton:hover,
+  .rentivaAdminImageUpload__previewItem:hover {
+    transform: none;
+    background: initial;
+    border-color: initial;
+    box-shadow: initial;
+  }
+  
+  /* Add active states for touch feedback */
+  .rentivaAdminImageUpload__browseButton:active {
+    transform: scale(0.98);
+    background: linear-gradient(135deg, #B07952, #D19968);
+  }
+  
+  .rentivaAdminImageUpload__previewItem:active {
+    transform: scale(0.95);
+  }
+  
+  .rentivaAdminImageUpload__removeButton:active {
+    transform: scale(0.9);
+    background: rgba(255, 68, 68, 1);
+  }
+}
+
+/* ============================================================================
+   🔍 HIGH-DPI DISPLAYS & RETINA OPTIMIZATION
+   Crisp Graphics on High-DPI Screens
+   ============================================================================ */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .rentivaAdminImageUpload {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  .rentivaAdminImageUpload__previewImage {
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+  }
+  
+  .rentivaAdminImageUpload__title,
+  .rentivaAdminImageUpload__uploadText {
+    text-rendering: optimizeLegibility;
+  }
+}
+
+/* ============================================================================
+   ♿ ACCESSIBILITY ENHANCEMENTS
+   Better Experience for All Users
+   ============================================================================ */
+@media (prefers-reduced-motion: reduce) {
+  .rentivaAdminImageUpload,
+  .rentivaAdminImageUpload *,
+  .rentivaAdminImageUpload::before,
+  .rentivaAdminImageUpload::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    transform: none !important;
+  }
+}
+
+@media (prefers-contrast: high) {
+  .rentivaAdminImageUpload {
+    border: 2px solid #ffffff;
+    background: #000000;
+  }
+  
+  .car-form-image-section {
+    border: 2px solid #ffffff;
+    background: #000000;
+  }
+  
+  .rentivaAdminImageUpload__title,
+  .rentivaAdminImageUpload__uploadText {
+    color: #ffffff;
+    text-shadow: 1px 1px 2px #000000;
+  }
+  
+  .rentivaAdminImageUpload__browseButton {
+    border: 2px solid #ffffff;
+  }
+  
+  .rentivaAdminImageUpload__previewItem {
+    border: 2px solid #ffffff;
+  }
+}
+
+/* ============================================================================
+   📊 CONTAINER QUERIES (Future-Proof)
+   Component-Based Responsive Design
+   ============================================================================ */
+@container (max-width: 300px) {
+  .rentivaAdminImageUpload__previewGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@container (min-width: 400px) {
+  .rentivaAdminImageUpload__previewGrid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@container (min-width: 600px) {
+  .rentivaAdminImageUpload__previewGrid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* ============================================================================
+   📱 ORIENTATION SPECIFIC STYLES
+   Landscape vs Portrait Optimizations
+   ============================================================================ */
+@media (orientation: landscape) and (max-height: 500px) {
+  .rentivaAdminImageUpload {
+    padding: 16px;
+  }
+  
+  .car-form-image-section {
+    padding: 20px 16px;
   }
   
   .rentivaAdminImageUpload__uploadIcon {
@@ -280,32 +910,23 @@
     height: 32px;
   }
   
-  .rentivaAdminImageUpload__uploadText {
-    font-size: 14px;
+  .rentivaAdminImageUpload__preview {
+    margin-top: 16px;
+  }
+  
+  .rentivaAdminImageUpload__previewGrid {
+    grid-template-columns: repeat(auto-fill, minmax(60px, 1fr));
+    gap: 8px;
+  }
+  
+  .rentivaAdminImageUpload__previewItem {
+    min-height: 60px;
   }
 }
 
-/* Animations */
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(10px);
+@media (orientation: portrait) and (max-width: 480px) {
+  .rentivaAdminImageUpload__previewGrid {
+    grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+    gap: 12px;
   }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes pulse {
-  0%, 100% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0.5;
-  }
-}
-
-.rentivaAdminImageUpload--loading {
-  animation: pulse 2s infinite;
 }
