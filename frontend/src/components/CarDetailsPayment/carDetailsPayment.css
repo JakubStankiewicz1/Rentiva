@@ -26,3 +26,150 @@
 .carDetailsPaymentContainerBottomContainerImage {
     transform: scale(0.95);
 }
+
+/* COMPREHENSIVE RESPONSIVE DESIGN */
+
+/* Large Desktop - 1440px and up */
+@media (min-width: 1440px) {
+  .carDetailsPayment {
+    padding-top: 120px;
+    padding-bottom: 30px;
+  }
+  
+  .carDetailsPaymentContainer {
+    width: 85%;
+    max-width: 1400px;
+    gap: 25px;
+  }
+  
+  .carDetailsPaymentContainerTopContainerText {
+    font-size: 52px;
+    line-height: 48px;
+  }
+  
+  .carDetailsPaymentContainerBottomContainerImage {
+    transform: scale(1);
+  }
+}
+
+/* Desktop - 1024px to 1439px */
+@media (max-width: 1439px) and (min-width: 1024px) {
+  .carDetailsPayment {
+    padding-top: 110px;
+    padding-bottom: 25px;
+  }
+  
+  .carDetailsPaymentContainer {
+    width: 92%;
+  }
+  
+  .carDetailsPaymentContainerTopContainerText {
+    font-size: 44px;
+    line-height: 40px;
+  }
+}
+
+/* Tablet Landscape - 768px to 1023px */
+@media (max-width: 1023px) and (min-width: 768px) {
+  .carDetailsPayment {
+    padding-top: 80px;
+    padding-bottom: 20px;
+  }
+  
+  .carDetailsPaymentContainer {
+    width: 95%;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .carDetailsPaymentContainerTopContainerText {
+    font-size: 36px;
+    line-height: 34px;
+  }
+  
+  .carDetailsPaymentContainerBottomContainerImage {
+    transform: scale(0.85);
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+/* Tablet Portrait - 481px to 767px */
+@media (max-width: 767px) and (min-width: 481px) {
+  .carDetailsPayment {
+    padding-top: 60px;
+    padding-bottom: 15px;
+  }
+  
+  .carDetailsPaymentContainer {
+    width: 98%;
+    align-items: center;
+    text-align: center;
+    gap: 15px;
+  }
+  
+  .carDetailsPaymentContainerTopContainerText {
+    font-size: 28px;
+    line-height: 28px;
+  }
+  
+  .carDetailsPaymentContainerBottomContainerImage {
+    transform: scale(0.75);
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+/* Mobile Large - 361px to 480px */
+@media (max-width: 480px) and (min-width: 361px) {
+  .carDetailsPayment {
+    padding-top: 50px;
+    padding-bottom: 15px;
+  }
+  
+  .carDetailsPaymentContainer {
+    width: 100%;
+    padding: 0 15px;
+    align-items: center;
+    text-align: center;
+    gap: 12px;
+  }
+  
+  .carDetailsPaymentContainerTopContainerText {
+    font-size: 24px;
+    line-height: 24px;
+  }
+  
+  .carDetailsPaymentContainerBottomContainerImage {
+    transform: scale(0.65);
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+/* Mobile Small - 320px to 360px */
+@media (max-width: 360px) {
+  .carDetailsPayment {
+    padding-top: 40px;
+    padding-bottom: 10px;
+  }
+  
+  .carDetailsPaymentContainer {
+    width: 100%;
+    padding: 0 10px;
+    align-items: center;
+    text-align: center;
+    gap: 10px;
+  }
+  
+  .carDetailsPaymentContainerTopContainerText {
+    font-size: 20px;
+    line-height: 22px;
+  }
+  
+  .carDetailsPaymentContainerBottomContainerImage {
+    transform: scale(0.55);
+    max-width: 100%;
+    height: auto;
+  }
+}

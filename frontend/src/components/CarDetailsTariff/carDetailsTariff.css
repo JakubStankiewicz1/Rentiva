@@ -175,3 +175,416 @@
   font-weight: 500;
   line-height: 19px;
 }
+
+/* COMPREHENSIVE RESPONSIVE DESIGN */
+
+/* Large Desktop - 1440px and up */
+@media (min-width: 1440px) {
+  .carDetailsTariff {
+    margin-top: 80px;
+  }
+  
+  .carDetailsTariffContainer {
+    width: 85%;
+    max-width: 1400px;
+  }
+  
+  .carDetailsTariffContainerTopContainerText {
+    font-size: 42px;
+  }
+  
+  .carDetailsTariffTable {
+    font-size: 20px;
+    min-width: 1000px;
+  }
+  
+  .carDetailsTariffTable th {
+    font-size: 22px;
+    padding: 20px 26px 14px 26px;
+  }
+  
+  .carDetailsTariffTable td {
+    font-size: 24px;
+    padding: 20px 26px 14px 26px;
+  }
+  
+  .carDetailsTariffTableValue {
+    font-size: 24px;
+  }
+  
+  .carDetailsTariffContainerBottomContainerText {
+    font-size: 20px;
+    line-height: 28px;
+  }
+}
+
+/* Desktop - 1024px to 1439px */
+@media (max-width: 1439px) and (min-width: 1024px) {
+  .carDetailsTariff {
+    margin-top: 70px;
+  }
+  
+  .carDetailsTariffContainer {
+    width: 92%;
+  }
+  
+  .carDetailsTariffContainerTopContainerText {
+    font-size: 36px;
+  }
+  
+  .carDetailsTariffTable {
+    font-size: 18px;
+    min-width: 850px;
+  }
+  
+  .carDetailsTariffTable th {
+    font-size: 19px;
+  }
+  
+  .carDetailsTariffTable td {
+    font-size: 20px;
+  }
+  
+  .carDetailsTariffTableValue {
+    font-size: 20px;
+  }
+}
+
+/* Tablet Landscape - 768px to 1023px */
+@media (max-width: 1023px) and (min-width: 768px) {
+  .carDetailsTariff {
+    margin-top: 60px;
+  }
+  
+  .carDetailsTariffContainer {
+    width: 95%;
+  }
+  
+  .carDetailsTariffContainerTopContainerText {
+    font-size: 32px;
+    text-align: center;
+  }
+  
+  .carDetailsTariffContainerTop {
+    padding-top: 28px;
+    padding-bottom: 20px;
+  }
+  
+  .carDetailsTariffTable {
+    font-size: 16px;
+    min-width: 700px;
+  }
+  
+  .carDetailsTariffTable th {
+    font-size: 17px;
+    padding: 16px 20px 12px 20px;
+  }
+  
+  .carDetailsTariffTable td {
+    font-size: 18px;
+    padding: 16px 20px 12px 20px;
+  }
+  
+  .carDetailsTariffTableValue {
+    font-size: 18px;
+  }
+  
+  .carDetailsTariffTableDay,
+  .carDetailsTariffTableDaTwo,
+  .carDetailsTariffTableDayThree,
+  .carDetailsTariffTableDayDeposit {
+    font-size: 15px;
+  }
+  
+  .carDetailsTariffTableDayWeek,
+  .carDetailsTariffTableDayWeekTwo,
+  .carDetailsTariffTableDayMonth {
+    font-size: 15px;
+  }
+  
+  .carDetailsTariffContainerBottomContainerText {
+    font-size: 16px;
+    line-height: 24px;
+    text-align: center;
+  }
+}
+
+/* Tablet Portrait - 481px to 767px */
+@media (max-width: 767px) and (min-width: 481px) {
+  .carDetailsTariff {
+    margin-top: 50px;
+  }
+  
+  .carDetailsTariffContainer {
+    width: 98%;
+  }
+  
+  .carDetailsTariffContainerTopContainerText {
+    font-size: 28px;
+    text-align: center;
+  }
+  
+  .carDetailsTariffContainerTop {
+    padding-top: 24px;
+    padding-bottom: 18px;
+  }
+  
+  .carDetailsTariffTableWrapper {
+    margin-bottom: 20px;
+  }
+  
+  .carDetailsTariffTable {
+    font-size: 14px;
+    min-width: 600px;
+  }
+  
+  .carDetailsTariffTable th {
+    font-size: 15px;
+    padding: 14px 16px 10px 16px;
+  }
+  
+  .carDetailsTariffTable td {
+    font-size: 16px;
+    padding: 14px 16px 10px 16px;
+  }
+  
+  .carDetailsTariffTableValue {
+    font-size: 16px;
+  }
+  
+  .carDetailsTariffTableDay,
+  .carDetailsTariffTableDaTwo,
+  .carDetailsTariffTableDayThree,
+  .carDetailsTariffTableDayDeposit {
+    font-size: 13px;
+    line-height: 16px;
+  }
+  
+  .carDetailsTariffTableDayWeek,
+  .carDetailsTariffTableDayWeekTwo,
+  .carDetailsTariffTableDayMonth {
+    font-size: 13px;
+    line-height: 16px;
+  }
+  
+  .carDetailsTariffTableSub {
+    font-size: 12px;
+  }
+  
+  .carDetailsTariffContainerBottomContainerText {
+    font-size: 15px;
+    line-height: 22px;
+    text-align: center;
+  }
+  
+  .carDetailsTariffTableValueTextOne,
+  .carDetailsTariffTableValueText,
+  .carDetailsTariffTableValueTextTwo {
+    font-size: 14px;
+    line-height: 17px;
+  }
+  
+  .carDetailsTariffTableSubText,
+  .carDetailsTariffTableSubTextTwo {
+    font-size: 12px;
+    line-height: 16px;
+  }
+}
+
+/* Mobile Large - 361px to 480px */
+@media (max-width: 480px) and (min-width: 361px) {
+  .carDetailsTariff {
+    margin-top: 40px;
+  }
+  
+  .carDetailsTariffContainer {
+    width: 100%;
+    padding: 0 15px;
+  }
+  
+  .carDetailsTariffContainerTopContainerText {
+    font-size: 24px;
+    text-align: center;
+  }
+  
+  .carDetailsTariffContainerTop {
+    padding-top: 20px;
+    padding-bottom: 16px;
+  }
+  
+  .carDetailsTariffTableWrapper {
+    margin-bottom: 18px;
+  }
+  
+  .carDetailsTariffTable {
+    font-size: 12px;
+    min-width: 500px;
+  }
+  
+  .carDetailsTariffTable th {
+    font-size: 13px;
+    padding: 12px 12px 8px 12px;
+  }
+  
+  .carDetailsTariffTable td {
+    font-size: 14px;
+    padding: 12px 12px 8px 12px;
+  }
+  
+  .carDetailsTariffTableValue {
+    font-size: 14px;
+  }
+  
+  .carDetailsTariffTableDay,
+  .carDetailsTariffTableDaTwo,
+  .carDetailsTariffTableDayThree,
+  .carDetailsTariffTableDayDeposit {
+    font-size: 11px;
+    line-height: 14px;
+  }
+  
+  .carDetailsTariffTableDayWeek,
+  .carDetailsTariffTableDayWeekTwo,
+  .carDetailsTariffTableDayMonth {
+    font-size: 11px;
+    line-height: 14px;
+  }
+  
+  .carDetailsTariffTableSub {
+    font-size: 10px;
+  }
+  
+  .carDetailsTariffContainerBottomContainerText {
+    font-size: 14px;
+    line-height: 20px;
+    text-align: center;
+  }
+  
+  .carDetailsTariffTableValueTextOne,
+  .carDetailsTariffTableValueText,
+  .carDetailsTariffTableValueTextTwo {
+    font-size: 12px;
+    line-height: 15px;
+  }
+  
+  .carDetailsTariffTableSubText,
+  .carDetailsTariffTableSubTextTwo {
+    font-size: 10px;
+    line-height: 14px;
+  }
+}
+
+/* Mobile Small - 320px to 360px */
+@media (max-width: 360px) {
+  .carDetailsTariff {
+    margin-top: 35px;
+  }
+  
+  .carDetailsTariffContainer {
+    width: 100%;
+    padding: 0 10px;
+  }
+  
+  .carDetailsTariffContainerTopContainerText {
+    font-size: 20px;
+    text-align: center;
+  }
+  
+  .carDetailsTariffContainerTop {
+    padding-top: 18px;
+    padding-bottom: 14px;
+  }
+  
+  .carDetailsTariffTableWrapper {
+    margin-bottom: 16px;
+  }
+  
+  .carDetailsTariffTable {
+    font-size: 10px;
+    min-width: 450px;
+  }
+  
+  .carDetailsTariffTable th {
+    font-size: 11px;
+    padding: 10px 8px 6px 8px;
+  }
+  
+  .carDetailsTariffTable td {
+    font-size: 12px;
+    padding: 10px 8px 6px 8px;
+  }
+  
+  .carDetailsTariffTableValue {
+    font-size: 12px;
+  }
+  
+  .carDetailsTariffTableDay,
+  .carDetailsTariffTableDaTwo,
+  .carDetailsTariffTableDayThree,
+  .carDetailsTariffTableDayDeposit {
+    font-size: 9px;
+    line-height: 12px;
+  }
+  
+  .carDetailsTariffTableDayWeek,
+  .carDetailsTariffTableDayWeekTwo,
+  .carDetailsTariffTableDayMonth {
+    font-size: 9px;
+    line-height: 12px;
+  }
+  
+  .carDetailsTariffTableSub {
+    font-size: 8px;
+  }
+  
+  .carDetailsTariffContainerBottomContainerText {
+    font-size: 12px;
+    line-height: 18px;
+    text-align: center;
+  }
+  
+  .carDetailsTariffTableValueTextOne,
+  .carDetailsTariffTableValueText,
+  .carDetailsTariffTableValueTextTwo {
+    font-size: 10px;
+    line-height: 13px;
+  }
+  
+  .carDetailsTariffTableSubText,
+  .carDetailsTariffTableSubTextTwo {
+    font-size: 8px;
+    line-height: 12px;
+  }
+}
+
+/* Horizontal scroll indicator for small screens */
+@media (max-width: 767px) {
+  .carDetailsTariffTableWrapper {
+    position: relative;
+  }
+  
+  .carDetailsTariffTableWrapper::after {
+    content: "→ Scroll horizontally to see more";
+    position: absolute;
+    bottom: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #e8a075;
+    font-size: 12px;
+    font-weight: 500;
+    text-align: center;
+    opacity: 0.8;
+  }
+}
+
+/* Touch Device Optimizations */
+@media (hover: none) and (pointer: coarse) {
+  .carDetailsTariffTableWrapper {
+    scroll-behavior: smooth;
+  }
+  
+  .carDetailsTariffTable th,
+  .carDetailsTariffTable td {
+    min-height: 44px;
+  }
+}

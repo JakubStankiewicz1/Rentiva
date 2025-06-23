@@ -139,3 +139,209 @@
   border-radius: 2px;
   transition: width 0.25s cubic-bezier(0.4, 0, 0.2, 1), background 0.2s;
 }
+
+/* COMPREHENSIVE RESPONSIVE DESIGN */
+
+/* Large Desktop - 1440px and up */
+@media (min-width: 1440px) {
+  .carDetailsHero {
+    max-width: 900px;
+  }
+  
+  .carDetailsHeroContainerImageContainerIndicators {
+    bottom: 32px;
+    gap: 20px;
+  }
+  
+  .carDetailsHeroContainerImageContainerIndicatorsOne {
+    width: 18px;
+    height: 18px;
+    border-width: 3px;
+  }
+}
+
+/* Desktop - 1024px to 1439px */
+@media (max-width: 1439px) and (min-width: 1024px) {
+  .carDetailsHero {
+    max-width: 750px;
+  }
+  
+  .carDetailsHeroContainerImageContainerIndicators {
+    bottom: 30px;
+    gap: 16px;
+  }
+  
+  .carDetailsHeroContainerImageContainerIndicatorsOne {
+    width: 15px;
+    height: 15px;
+    border-width: 2px;
+  }
+}
+
+/* Tablet Landscape - 768px to 1023px */
+@media (max-width: 1023px) and (min-width: 768px) {
+  .carDetailsHero {
+    max-width: 100%;
+    height: 400px;
+  }
+  
+  .carDetailsHeroContainerImageContainerIndicators {
+    bottom: 25px;
+    gap: 14px;
+  }
+  
+  .carDetailsHeroContainerImageContainerIndicatorsOne {
+    width: 14px;
+    height: 14px;
+    border-width: 2px;
+  }
+  
+  .carDetailsHeroContainerImageContainerStackLayerImage {
+    border-radius: 6px;
+  }
+  
+  .carDetailsHeroContainerImageContainerDrag {
+    width: 80px;
+    height: 3px;
+  }
+}
+
+/* Tablet Portrait - 481px to 767px */
+@media (max-width: 767px) and (min-width: 481px) {
+  .carDetailsHero {
+    max-width: 100%;
+    height: 350px;
+  }
+  
+  .carDetailsHeroContainerImageContainerIndicators {
+    bottom: 20px;
+    gap: 12px;
+  }
+  
+  .carDetailsHeroContainerImageContainerIndicatorsOne {
+    width: 12px;
+    height: 12px;
+    border-width: 2px;
+  }
+  
+  .carDetailsHeroContainerImageContainerStackLayerImage {
+    border-radius: 4px;
+  }
+  
+  .carDetailsHeroContainerImageContainerDrag {
+    width: 70px;
+    height: 3px;
+    bottom: 3px;
+  }
+}
+
+/* Mobile Large - 361px to 480px */
+@media (max-width: 480px) and (min-width: 361px) {
+  .carDetailsHero {
+    max-width: 100%;
+    height: 300px;
+  }
+  
+  .carDetailsHeroContainerImageContainerIndicators {
+    bottom: 18px;
+    gap: 10px;
+  }
+  
+  .carDetailsHeroContainerImageContainerIndicatorsOne {
+    width: 10px;
+    height: 10px;
+    border-width: 1.5px;
+  }
+  
+  .carDetailsHeroContainerImageContainerStackLayerImage {
+    border-radius: 4px;
+  }
+  
+  .carDetailsHeroContainerImageContainerDrag {
+    width: 60px;
+    height: 2px;
+    bottom: 2px;
+  }
+}
+
+/* Mobile Small - 320px to 360px */
+@media (max-width: 360px) {
+  .carDetailsHero {
+    max-width: 100%;
+    height: 250px;
+  }
+  
+  .carDetailsHeroContainerImageContainerIndicators {
+    bottom: 15px;
+    gap: 8px;
+  }
+  
+  .carDetailsHeroContainerImageContainerIndicatorsOne {
+    width: 8px;
+    height: 8px;
+    border-width: 1.5px;
+  }
+  
+  .carDetailsHeroContainerImageContainerStackLayerImage {
+    border-radius: 3px;
+  }
+  
+  .carDetailsHeroContainerImageContainerDrag {
+    width: 50px;
+    height: 2px;
+    bottom: 2px;
+  }
+}
+
+/* Touch Device Optimizations */
+@media (hover: none) and (pointer: coarse) {
+  .carDetailsHeroContainerImageContainerIndicatorsOne {
+    min-width: 32px;
+    min-height: 32px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .carDetailsHeroContainerImageContainerIndicatorsOne::before {
+    content: '';
+    width: 50%;
+    height: 50%;
+    border-radius: 50%;
+    background: currentColor;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+  }
+  
+  .carDetailsHeroContainerImageContainerIndicatorsOneActive::before {
+    opacity: 1;
+  }
+  
+  .carDetailsHeroContainerImageContainer {
+    cursor: default;
+  }
+  
+  .carDetailsHeroContainerImageContainer:active {
+    cursor: default;
+  }
+}
+
+/* Reduce motion for accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .carDetailsHeroContainerImageContainerStackLayerActive .carDetailsHeroContainerImageContainerStackLayerImage {
+    animation: none;
+  }
+  
+  .carDetailsHeroContainerImageContainerStackLayer {
+    transition: opacity 0.3s ease;
+  }
+  
+  .carDetailsHeroContainerImageContainerIndicatorsOne {
+    transition: background 0.2s ease, border-color 0.2s ease;
+  }
+  
+  .carDetailsHeroContainerImageContainerProgressBar {
+    animation: none;
+  }
+}

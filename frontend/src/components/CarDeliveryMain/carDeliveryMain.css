@@ -228,3 +228,493 @@
   transform: translateY(-2px);
   box-shadow: 0 8px 25px rgba(184, 134, 11, 0.3);
 }
+
+/* COMPREHENSIVE RESPONSIVE DESIGN */
+
+/* Large Desktop - 1440px and up */
+@media (min-width: 1440px) {
+  .carDeliveryMain {
+    padding: 50px 0;
+  }
+  
+  .carDeliveryMainContainer {
+    width: 85%;
+    max-width: 1400px;
+  }
+  
+  .carDeliveryMainFilters {
+    margin-bottom: 50px;
+  }
+  
+  .carDeliveryMainFiltersContainerDiv {
+    gap: 30px;
+  }
+  
+  .filtersText {
+    font-size: 18px;
+  }
+  
+  .filterDropdownButton {
+    width: 220px;
+    height: 55px;
+    padding: 0 20px;
+  }
+  
+  .filterDropdownButtonText {
+    font-size: 18px;
+  }
+  
+  .carDeliveryMainTitleText {
+    font-size: 42px;
+    line-height: 52px;
+  }
+  
+  .carDeliveryMainCarsContainer {
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 40px;
+  }
+}
+
+/* Desktop - 1024px to 1439px */
+@media (max-width: 1439px) and (min-width: 1024px) {
+  .carDeliveryMain {
+    padding: 45px 0;
+  }
+  
+  .carDeliveryMainContainer {
+    width: 88%;
+  }
+  
+  .carDeliveryMainFilters {
+    margin-bottom: 45px;
+  }
+  
+  .carDeliveryMainFiltersContainerDiv {
+    gap: 25px;
+  }
+  
+  .filterDropdownButton {
+    width: 210px;
+    height: 52px;
+  }
+  
+  .filterDropdownButtonText {
+    font-size: 17px;
+  }
+  
+  .carDeliveryMainTitleText {
+    font-size: 38px;
+    line-height: 48px;
+  }
+  
+  .carDeliveryMainCarsContainer {
+    grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+    gap: 35px;
+  }
+}
+
+/* Tablet Landscape - 768px to 1023px */
+@media (max-width: 1023px) and (min-width: 768px) {
+  .carDeliveryMain {
+    padding: 35px 0;
+  }
+  
+  .carDeliveryMainContainer {
+    width: 92%;
+  }
+  
+  .carDeliveryMainFilters {
+    margin-bottom: 35px;
+  }
+  
+  .carDeliveryMainFiltersContainer {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+  
+  .carDeliveryMainFiltersContainerDiv {
+    gap: 20px;
+  }
+  
+  .filtersText {
+    font-size: 16px;
+  }
+  
+  .filterDropdownButton {
+    width: 190px;
+    height: 48px;
+    padding: 0 16px;
+  }
+  
+  .filterDropdownButtonText {
+    font-size: 16px;
+  }
+  
+  .filterDropdownButtonIcon {
+    font-size: 11px;
+  }
+  
+  .filterDropdownMenuItem {
+    padding: 10px 14px;
+    font-size: 14px;
+  }
+  
+  .carDeliveryMainTitle {
+    margin-bottom: 40px;
+  }
+  
+  .carDeliveryMainTitleText {
+    font-size: 32px;
+    line-height: 40px;
+  }
+  
+  .carDeliveryMainCarsContainer {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+  }
+}
+
+/* Tablet Portrait - 481px to 767px */
+@media (max-width: 767px) and (min-width: 481px) {
+  .carDeliveryMain {
+    padding: 30px 0;
+  }
+  
+  .carDeliveryMainContainer {
+    width: 95%;
+  }
+  
+  .carDeliveryMainFilters {
+    margin-bottom: 30px;
+  }
+  
+  .carDeliveryMainFiltersContainer {
+    flex-direction: column;
+    align-items: center;
+    gap: 18px;
+  }
+  
+  .carDeliveryMainFiltersContainerDiv {
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+    max-width: 300px;
+  }
+  
+  .filtersText {
+    font-size: 15px;
+    text-align: center;
+  }
+  
+  .filterDropdown {
+    width: 100%;
+  }
+  
+  .filterDropdownButton {
+    width: 100%;
+    height: 45px;
+    padding: 0 14px;
+  }
+  
+  .filterDropdownButtonText {
+    font-size: 15px;
+  }
+  
+  .filterDropdownButtonIcon {
+    font-size: 10px;
+  }
+  
+  .filterDropdownMenu {
+    width: 100%;
+  }
+  
+  .filterDropdownMenuItem {
+    padding: 9px 12px;
+    font-size: 13px;
+  }
+  
+  .carDeliveryMainTitle {
+    margin-bottom: 35px;
+  }
+  
+  .carDeliveryMainTitleText {
+    font-size: 26px;
+    line-height: 32px;
+    padding: 0 15px;
+  }
+  
+  .carDeliveryMainCarsContainer {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 15px 0;
+  }
+  
+  .noCarsContainer {
+    padding: 40px 15px;
+  }
+  
+  .noCarsText {
+    font-size: 16px;
+    margin-bottom: 15px;
+  }
+  
+  .resetFiltersButton {
+    padding: 10px 20px;
+    font-size: 14px;
+  }
+}
+
+/* Mobile Large - 361px to 480px */
+@media (max-width: 480px) and (min-width: 361px) {
+  .carDeliveryMain {
+    padding: 25px 0;
+  }
+  
+  .carDeliveryMainContainer {
+    width: 98%;
+  }
+  
+  .carDeliveryMainFilters {
+    margin-bottom: 25px;
+  }
+  
+  .carDeliveryMainFiltersContainer {
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+  }
+  
+  .carDeliveryMainFiltersContainerDiv {
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+    max-width: 280px;
+  }
+  
+  .filtersText {
+    font-size: 14px;
+    text-align: center;
+  }
+  
+  .filterDropdown {
+    width: 100%;
+  }
+  
+  .filterDropdownButton {
+    width: 100%;
+    height: 42px;
+    padding: 0 12px;
+  }
+  
+  .filterDropdownButtonText {
+    font-size: 14px;
+  }
+  
+  .filterDropdownButtonIcon {
+    font-size: 9px;
+  }
+  
+  .filterDropdownMenu {
+    width: 100%;
+  }
+  
+  .filterDropdownMenuItem {
+    padding: 8px 10px;
+    font-size: 12px;
+  }
+  
+  .carDeliveryMainTitle {
+    margin-bottom: 30px;
+  }
+  
+  .carDeliveryMainTitleText {
+    font-size: 22px;
+    line-height: 28px;
+    padding: 0 12px;
+  }
+  
+  .carDeliveryMainCarsContainer {
+    grid-template-columns: 1fr;
+    gap: 18px;
+    padding: 12px 0;
+  }
+  
+  .noCarsContainer {
+    padding: 35px 12px;
+  }
+  
+  .noCarsText {
+    font-size: 15px;
+    margin-bottom: 12px;
+  }
+  
+  .resetFiltersButton {
+    padding: 9px 18px;
+    font-size: 13px;
+  }
+}
+
+/* Mobile Small - 320px to 360px */
+@media (max-width: 360px) {
+  .carDeliveryMain {
+    padding: 20px 0;
+  }
+  
+  .carDeliveryMainContainer {
+    width: 100%;
+  }
+  
+  .carDeliveryMainFilters {
+    margin-bottom: 20px;
+    padding: 0 8px;
+  }
+  
+  .carDeliveryMainFiltersContainer {
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+  }
+  
+  .carDeliveryMainFiltersContainerDiv {
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+    max-width: 250px;
+  }
+  
+  .filtersText {
+    font-size: 13px;
+    text-align: center;
+  }
+  
+  .filterDropdown {
+    width: 100%;
+  }
+  
+  .filterDropdownButton {
+    width: 100%;
+    height: 40px;
+    padding: 0 10px;
+  }
+  
+  .filterDropdownButtonText {
+    font-size: 13px;
+  }
+  
+  .filterDropdownButtonIcon {
+    font-size: 8px;
+  }
+  
+  .filterDropdownMenu {
+    width: 100%;
+  }
+  
+  .filterDropdownMenuItem {
+    padding: 7px 8px;
+    font-size: 11px;
+  }
+  
+  .carDeliveryMainTitle {
+    margin-bottom: 25px;
+    padding: 0 8px;
+  }
+  
+  .carDeliveryMainTitleText {
+    font-size: 20px;
+    line-height: 26px;
+  }
+  
+  .carDeliveryMainCarsContainer {
+    grid-template-columns: 1fr;
+    gap: 15px;
+    padding: 10px 8px;
+  }
+  
+  .noCarsContainer {
+    padding: 30px 8px;
+  }
+  
+  .noCarsText {
+    font-size: 14px;
+    margin-bottom: 10px;
+  }
+  
+  .resetFiltersButton {
+    padding: 8px 16px;
+    font-size: 12px;
+  }
+}
+
+/* Touch Device Optimizations */
+@media (hover: none) and (pointer: coarse) {
+  .filterDropdownButton {
+    min-height: 44px;
+  }
+  
+  .filterDropdownMenuItem {
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+  }
+  
+  .resetFiltersButton {
+    min-height: 44px;
+  }
+  
+  .filterDropdownButton:hover {
+    background-color: #9A6B4E;
+  }
+  
+  .filterDropdownButton:active {
+    background-color: #8B5A3C;
+  }
+  
+  .filterDropdownMenuItem:hover {
+    background-color: #333333;
+  }
+  
+  .filterDropdownMenuItem:active {
+    background-color: #9A6B4E;
+  }
+  
+  .resetFiltersButton:hover {
+    background: linear-gradient(135deg, #B8860B, #DAA520);
+    transform: none;
+    box-shadow: none;
+  }
+  
+  .resetFiltersButton:active {
+    background: linear-gradient(135deg, #DAA520, #B8860B);
+    transform: translateY(1px);
+    box-shadow: 0 4px 15px rgba(184, 134, 11, 0.2);
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .filterDropdownButton {
+    border: 2px solid #fff;
+  }
+  
+  .filterDropdownMenu {
+    border: 2px solid #fff;
+  }
+  
+  .filterDropdownMenuItem {
+    border-bottom: 1px solid #fff;
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .filterDropdownButtonIcon {
+    transition: none;
+  }
+  
+  .filterDropdownButton,
+  .filterDropdownMenuItem,
+  .resetFiltersButton {
+    transition: none;
+  }
+}

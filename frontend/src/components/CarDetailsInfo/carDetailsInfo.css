@@ -193,3 +193,412 @@
   width: 25px;
   height: 25px;
 }
+
+/* COMPREHENSIVE RESPONSIVE DESIGN */
+
+/* Large Desktop - 1440px and up */
+@media (min-width: 1440px) {
+  .carDetailsInfo {
+    padding-top: 140px;
+  }
+  
+  .carDetailsInfoContainer {
+    width: 85%;
+    max-width: 1400px;
+  }
+  
+  .carDetailsInfoContainerTopContainerText {
+    font-size: 36px;
+    line-height: 42px;
+  }
+  
+  .carDetailsInfoContainerMiddle {
+    padding-top: 65px;
+  }
+  
+  .carDetailsInfoContainerMiddleContainer {
+    gap: 30px;
+  }
+  
+  .carDetailsInfoContainerMiddleContainerLeftContinerTop,
+  .carDetailsInfoContainerMiddleContainerRightContainerTop {
+    height: 550px;
+  }
+  
+  .carDetailsInfoContainerMiddleContainerRightContainerBottom {
+    margin-left: 65px;
+  }
+  
+  .carDetailsInfoContainerBottomContainerButton {
+    width: 170px;
+    height: 55px;
+  }
+  
+  .carDetailsInfoContainerBottomContainerArrow {
+    width: 55px;
+    height: 55px;
+  }
+}
+
+/* Desktop - 1024px to 1439px */
+@media (max-width: 1439px) and (min-width: 1024px) {
+  .carDetailsInfo {
+    padding-top: 130px;
+  }
+  
+  .carDetailsInfoContainer {
+    width: 92%;
+  }
+  
+  .carDetailsInfoContainerTopContainerText {
+    font-size: 30px;
+    line-height: 36px;
+  }
+  
+  .carDetailsInfoContainerMiddle {
+    padding-top: 50px;
+  }
+  
+  .carDetailsInfoContainerMiddleContainer {
+    gap: 25px;
+  }
+  
+  .carDetailsInfoContainerMiddleContainerLeftContinerTop,
+  .carDetailsInfoContainerMiddleContainerRightContainerTop {
+    height: 450px;
+  }
+  
+  .carDetailsInfoContainerMiddleContainerRightContainerBottom {
+    margin-left: 45px;
+  }
+  
+  .carDetailsInfoContainerBottom {
+    margin-top: 100px;
+  }
+}
+
+/* Tablet Landscape - 768px to 1023px */
+@media (max-width: 1023px) and (min-width: 768px) {
+  .carDetailsInfo {
+    padding-top: 100px;
+  }
+  
+  .carDetailsInfoContainer {
+    width: 95%;
+  }
+  
+  .carDetailsInfoContainerTopContainerText {
+    font-size: 28px;
+    line-height: 34px;
+    text-align: center;
+  }
+  
+  .carDetailsInfoContainerMiddle {
+    padding-top: 40px;
+  }
+  
+  .carDetailsInfoContainerMiddleContainer {
+    flex-direction: column;
+    gap: 40px;
+  }
+  
+  .carDetailsInfoContainerMiddleContainerLeftContinerTop,
+  .carDetailsInfoContainerMiddleContainerRightContainerTop {
+    height: 350px;
+  }
+  
+  .carDetailsInfoContainerMiddleContainerRightContainerBottom {
+    margin-left: 0;
+  }
+  
+  .carDetailsInfoContainerMiddleContainerLeftContinerBottom,
+  .carDetailsInfoContainerMiddleContainerRightContainerBottom {
+    margin-top: 30px;
+  }
+  
+  .carDetailsInfoContainerBottom {
+    margin-top: 80px;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .carDetailsInfoContainerBottomContainerButton {
+    width: 160px;
+    height: 48px;
+  }
+  
+  .carDetailsInfoContainerBottomContainerArrow {
+    width: 48px;
+    height: 48px;
+  }
+}
+
+/* Tablet Portrait - 481px to 767px */
+@media (max-width: 767px) and (min-width: 481px) {
+  .carDetailsInfo {
+    padding-top: 80px;
+  }
+  
+  .carDetailsInfoContainer {
+    width: 98%;
+  }
+  
+  .carDetailsInfoContainerTopContainerText {
+    font-size: 24px;
+    line-height: 30px;
+    text-align: center;
+  }
+  
+  .carDetailsInfoContainerMiddle {
+    padding-top: 35px;
+  }
+  
+  .carDetailsInfoContainerMiddleContainer {
+    flex-direction: column;
+    gap: 30px;
+  }
+  
+  .carDetailsInfoContainerMiddleContainerLeftContinerTop,
+  .carDetailsInfoContainerMiddleContainerRightContainerTop {
+    height: 280px;
+  }
+  
+  .carDetailsInfoContainerMiddleContainerRightContainerBottom {
+    margin-left: 0;
+  }
+  
+  .carDetailsInfoContainerMiddleContainerLeftContinerBottom,
+  .carDetailsInfoContainerMiddleContainerRightContainerBottom {
+    margin-top: 25px;
+  }
+  
+  .carDetailsInfoContainerMiddleContainerLeftContinerBottomContainer,
+  .carDetailsInfoContainerMiddleContainerRightContainerBottomContainer {
+    gap: 20px;
+  }
+  
+  .carDetailsInfoContainerMiddleContainerLeftContinerBottomContainerTextOne,
+  .carDetailsInfoContainerMiddleContainerLeftContinerBottomContainerTextTwo,
+  .carDetailsInfoContainerMiddleContainerLeftContinerBottomContainerTextThree,
+  .carDetailsInfoContainerMiddleContainerRightContainerBottomContainerTextOne,
+  .carDetailsInfoContainerMiddleContainerRightContainerBottomContainerTextTwo,
+  .carDetailsInfoContainerMiddleContainerRightContainerBottomContainerTextThree {
+    font-size: 15px;
+    line-height: 22px;
+  }
+  
+  .carDetailsInfoContainerBottom {
+    margin-top: 60px;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .carDetailsInfoContainerBottomContainerButton {
+    width: 140px;
+    height: 45px;
+  }
+  
+  .carDetailsInfoContainerBottomContainerButtonContainerText {
+    font-size: 12px;
+  }
+  
+  .carDetailsInfoContainerBottomContainerArrow {
+    width: 45px;
+    height: 45px;
+  }
+  
+  .carDetailsInfoContainerBottomContainerArrowContainerIcon {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+/* Mobile Large - 361px to 480px */
+@media (max-width: 480px) and (min-width: 361px) {
+  .carDetailsInfo {
+    padding-top: 60px;
+  }
+  
+  .carDetailsInfoContainer {
+    width: 100%;
+    padding: 0 15px;
+  }
+  
+  .carDetailsInfoContainerTopContainerText {
+    font-size: 22px;
+    line-height: 26px;
+    text-align: center;
+  }
+  
+  .carDetailsInfoContainerMiddle {
+    padding-top: 30px;
+  }
+  
+  .carDetailsInfoContainerMiddleContainer {
+    flex-direction: column;
+    gap: 25px;
+  }
+  
+  .carDetailsInfoContainerMiddleContainerLeftContinerTop,
+  .carDetailsInfoContainerMiddleContainerRightContainerTop {
+    height: 220px;
+  }
+  
+  .carDetailsInfoContainerMiddleContainerRightContainerBottom {
+    margin-left: 0;
+  }
+  
+  .carDetailsInfoContainerMiddleContainerLeftContinerBottom,
+  .carDetailsInfoContainerMiddleContainerRightContainerBottom {
+    margin-top: 20px;
+  }
+  
+  .carDetailsInfoContainerMiddleContainerLeftContinerBottomContainer,
+  .carDetailsInfoContainerMiddleContainerRightContainerBottomContainer {
+    gap: 15px;
+  }
+  
+  .carDetailsInfoContainerMiddleContainerLeftContinerBottomContainerTextOne,
+  .carDetailsInfoContainerMiddleContainerLeftContinerBottomContainerTextTwo,
+  .carDetailsInfoContainerMiddleContainerLeftContinerBottomContainerTextThree,
+  .carDetailsInfoContainerMiddleContainerRightContainerBottomContainerTextOne,
+  .carDetailsInfoContainerMiddleContainerRightContainerBottomContainerTextTwo,
+  .carDetailsInfoContainerMiddleContainerRightContainerBottomContainerTextThree {
+    font-size: 14px;
+    line-height: 20px;
+  }
+  
+  .carDetailsInfoContainerBottom {
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .carDetailsInfoContainerBottomContainerButton {
+    width: 130px;
+    height: 42px;
+  }
+  
+  .carDetailsInfoContainerBottomContainerButtonContainerText {
+    font-size: 11px;
+  }
+  
+  .carDetailsInfoContainerBottomContainerArrow {
+    width: 42px;
+    height: 42px;
+  }
+  
+  .carDetailsInfoContainerBottomContainerArrowContainerIcon {
+    width: 18px;
+    height: 18px;
+  }
+}
+
+/* Mobile Small - 320px to 360px */
+@media (max-width: 360px) {
+  .carDetailsInfo {
+    padding-top: 50px;
+  }
+  
+  .carDetailsInfoContainer {
+    width: 100%;
+    padding: 0 10px;
+  }
+  
+  .carDetailsInfoContainerTopContainerText {
+    font-size: 20px;
+    line-height: 24px;
+    text-align: center;
+  }
+  
+  .carDetailsInfoContainerMiddle {
+    padding-top: 25px;
+  }
+  
+  .carDetailsInfoContainerMiddleContainer {
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .carDetailsInfoContainerMiddleContainerLeftContinerTop,
+  .carDetailsInfoContainerMiddleContainerRightContainerTop {
+    height: 180px;
+  }
+  
+  .carDetailsInfoContainerMiddleContainerRightContainerBottom {
+    margin-left: 0;
+  }
+  
+  .carDetailsInfoContainerMiddleContainerLeftContinerBottom,
+  .carDetailsInfoContainerMiddleContainerRightContainerBottom {
+    margin-top: 15px;
+  }
+  
+  .carDetailsInfoContainerMiddleContainerLeftContinerBottomContainer,
+  .carDetailsInfoContainerMiddleContainerRightContainerBottomContainer {
+    gap: 12px;
+  }
+  
+  .carDetailsInfoContainerMiddleContainerLeftContinerBottomContainerTextOne,
+  .carDetailsInfoContainerMiddleContainerLeftContinerBottomContainerTextTwo,
+  .carDetailsInfoContainerMiddleContainerLeftContinerBottomContainerTextThree,
+  .carDetailsInfoContainerMiddleContainerRightContainerBottomContainerTextOne,
+  .carDetailsInfoContainerMiddleContainerRightContainerBottomContainerTextTwo,
+  .carDetailsInfoContainerMiddleContainerRightContainerBottomContainerTextThree {
+    font-size: 13px;
+    line-height: 18px;
+  }
+  
+  .carDetailsInfoContainerBottom {
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .carDetailsInfoContainerBottomContainerButton {
+    width: 120px;
+    height: 40px;
+  }
+  
+  .carDetailsInfoContainerBottomContainerButtonContainerText {
+    font-size: 10px;
+  }
+  
+  .carDetailsInfoContainerBottomContainerArrow {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .carDetailsInfoContainerBottomContainerArrowContainerIcon {
+    width: 16px;
+    height: 16px;
+  }
+}
+
+/* Touch Device Optimizations */
+@media (hover: none) and (pointer: coarse) {
+  .carDetailsInfoContainerBottomContainerButton {
+    min-height: 44px;
+  }
+  
+  .carDetailsInfoContainerBottomContainerButton:hover {
+    background-color: #c3845e;
+  }
+  
+  .carDetailsInfoContainerBottomContainerButton:active {
+    background-color: #e8a075;
+    transform: scale(0.98);
+  }
+  
+  .carDetailsInfoContainerBottomContainerButton:hover .carDetailsInfoContainerBottomContainerArrow {
+    border-top: 1px solid #c3845e;
+    border-right: 1px solid #c3845e;
+    border-bottom: 1px solid #c3845e;
+  }
+  
+  .carDetailsInfoContainerBottomContainerButton:active .carDetailsInfoContainerBottomContainerArrow {
+    border-top: 1px solid #e8a075;
+    border-right: 1px solid #e8a075;
+    border-bottom: 1px solid #e8a075;
+  }
+}

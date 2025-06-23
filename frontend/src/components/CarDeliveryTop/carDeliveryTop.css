@@ -210,3 +210,445 @@
         letter-spacing: -0.3px;
 
 }
+
+/* COMPREHENSIVE RESPONSIVE DESIGN */
+
+/* Large Desktop - 1440px and up */
+@media (min-width: 1440px) {
+    .carDeliveryTop {
+        padding-top: 250px;
+        padding-bottom: 120px;
+    }
+    
+    .carDeliveryTopContainerDivFirstContainerText {
+        font-size: 50px;
+        line-height: 60px;
+    }
+    
+    .carDeliveryTopContainerDivSecondContainerText {
+        font-size: 18px;
+        line-height: 24px;
+        max-width: 900px;
+        margin: 0 auto;
+    }
+    
+    .carDeliveryTopContainerDivThird {
+        width: 85%;
+        margin-top: 30px;
+    }
+    
+    .carDeliveryTopContainerDivThirdContainerOneText {
+        font-size: 22px;
+    }
+    
+    .pricingTableCellText {
+        font-size: 18px;
+        padding-left: 20px;
+    }
+    
+    .pricingTableHeader .pricingTableCellText {
+        font-size: 20px;
+    }
+    
+    .pricingTableData .pricingTableCellText {
+        font-size: 18px;
+    }
+    
+    .pricingTableCell {
+        height: 50px;
+    }
+    
+    .carDeliveryTopContainerDivFourthContainerText,
+    .carDeliveryTopContainerDivFourthContainerTextTwo {
+        font-size: 18px;
+        line-height: 28px;
+    }
+}
+
+/* Desktop - 1024px to 1439px */
+@media (max-width: 1439px) and (min-width: 1024px) {
+    .carDeliveryTop {
+        padding-top: 200px;
+        padding-bottom: 90px;
+    }
+    
+    .carDeliveryTopContainerDivFirstContainerText {
+        font-size: 42px;
+        line-height: 52px;
+    }
+    
+    .carDeliveryTopContainerDivSecondContainerText {
+        font-size: 17px;
+        line-height: 23px;
+        max-width: 800px;
+        margin: 0 auto;
+    }
+    
+    .carDeliveryTopContainerDivThird {
+        width: 86%;
+    }
+    
+    .carDeliveryTopContainerDivThirdContainerOneText {
+        font-size: 21px;
+    }
+    
+    .pricingTableCellText {
+        font-size: 17px;
+        padding-left: 18px;
+    }
+    
+    .pricingTableHeader .pricingTableCellText {
+        font-size: 19px;
+    }
+    
+    .pricingTableData .pricingTableCellText {
+        font-size: 17px;
+    }
+    
+    .pricingTableCell {
+        height: 48px;
+    }
+}
+
+/* Tablet Landscape - 768px to 1023px */
+@media (max-width: 1023px) and (min-width: 768px) {
+    .carDeliveryTop {
+        padding-top: 150px;
+        padding-bottom: 70px;
+    }
+    
+    .carDeliveryTopContainerDivFirst {
+        margin-bottom: 30px;
+    }
+    
+    .carDeliveryTopContainerDivFirstContainerText {
+        font-size: 36px;
+        line-height: 44px;
+    }
+    
+    .carDeliveryTopContainerDivSecondContainerText {
+        font-size: 16px;
+        line-height: 22px;
+        max-width: 700px;
+        margin: 0 auto;
+        padding: 0 20px;
+    }
+    
+    .carDeliveryTopContainerDivThird {
+        width: 92%;
+        margin-top: 20px;
+    }
+    
+    .carDeliveryTopContainerDivThirdContainerOneText {
+        font-size: 19px;
+    }
+    
+    .carDeliveryTopContainerDivThirdContainerTwo {
+        margin-top: 18px;
+    }
+    
+    .pricingTableCellText {
+        font-size: 15px;
+        padding-left: 15px;
+    }
+    
+    .pricingTableHeader .pricingTableCellText {
+        font-size: 17px;
+    }
+    
+    .pricingTableData .pricingTableCellText {
+        font-size: 15px;
+    }
+    
+    .pricingTableCell {
+        height: 45px;
+    }
+    
+    .carDeliveryTopContainerDivFourth {
+        margin-top: 14px;
+        width: 92%;
+    }
+    
+    .carDeliveryTopContainerDivFourthContainer {
+        flex-direction: column;
+        gap: 2px;
+        text-align: center;
+    }
+    
+    .carDeliveryTopContainerDivFourthContainerText,
+    .carDeliveryTopContainerDivFourthContainerTextTwo {
+        font-size: 15px;
+        line-height: 24px;
+    }
+}
+
+/* Tablet Portrait - 481px to 767px */
+@media (max-width: 767px) and (min-width: 481px) {
+    .carDeliveryTop {
+        padding-top: 120px;
+        padding-bottom: 60px;
+    }
+    
+    .carDeliveryTopContainerDivFirst {
+        margin-bottom: 25px;
+    }
+    
+    .carDeliveryTopContainerDivFirstContainerText {
+        font-size: 30px;
+        line-height: 36px;
+    }
+    
+    .carDeliveryTopContainerDivSecondContainerText {
+        font-size: 15px;
+        line-height: 21px;
+        max-width: 600px;
+        margin: 0 auto;
+        padding: 0 20px;
+    }
+    
+    .carDeliveryTopContainerDivThird {
+        width: 95%;
+        margin-top: 18px;
+    }
+    
+    .carDeliveryTopContainerDivThirdContainerOneText {
+        font-size: 17px;
+        text-align: center;
+    }
+    
+    .carDeliveryTopContainerDivThirdContainerTwo {
+        margin-top: 16px;
+    }
+    
+    .pricingTable {
+        overflow-x: auto;
+    }
+    
+    .pricingTableRow {
+        min-width: 500px;
+    }
+    
+    .pricingTableCellText {
+        font-size: 14px;
+        padding-left: 12px;
+    }
+    
+    .pricingTableHeader .pricingTableCellText {
+        font-size: 15px;
+    }
+    
+    .pricingTableData .pricingTableCellText {
+        font-size: 14px;
+    }
+    
+    .pricingTableCell {
+        height: 42px;
+        min-width: 120px;
+    }
+    
+    .carDeliveryTopContainerDivFourth {
+        margin-top: 12px;
+        width: 95%;
+    }
+    
+    .carDeliveryTopContainerDivFourthContainer {
+        flex-direction: column;
+        gap: 1px;
+        text-align: center;
+    }
+    
+    .carDeliveryTopContainerDivFourthContainerText,
+    .carDeliveryTopContainerDivFourthContainerTextTwo {
+        font-size: 14px;
+        line-height: 22px;
+    }
+}
+
+/* Mobile Large - 361px to 480px */
+@media (max-width: 480px) and (min-width: 361px) {
+    .carDeliveryTop {
+        padding-top: 100px;
+        padding-bottom: 50px;
+    }
+    
+    .carDeliveryTopContainerDivFirst {
+        margin-bottom: 20px;
+    }
+    
+    .carDeliveryTopContainerDivFirstContainerText {
+        font-size: 26px;
+        line-height: 32px;
+    }
+    
+    .carDeliveryTopContainerDivSecondContainerText {
+        font-size: 14px;
+        line-height: 20px;
+        max-width: 100%;
+        margin: 0 auto;
+        padding: 0 15px;
+    }
+    
+    .carDeliveryTopContainerDivThird {
+        width: 98%;
+        margin-top: 16px;
+    }
+    
+    .carDeliveryTopContainerDivThirdContainerOneText {
+        font-size: 16px;
+        text-align: center;
+    }
+    
+    .carDeliveryTopContainerDivThirdContainerTwo {
+        margin-top: 14px;
+    }
+    
+    .pricingTable {
+        overflow-x: auto;
+    }
+    
+    .pricingTableRow {
+        min-width: 400px;
+    }
+    
+    .pricingTableCellText {
+        font-size: 13px;
+        padding-left: 10px;
+    }
+    
+    .pricingTableHeader .pricingTableCellText {
+        font-size: 14px;
+    }
+    
+    .pricingTableData .pricingTableCellText {
+        font-size: 13px;
+    }
+    
+    .pricingTableCell {
+        height: 40px;
+        min-width: 100px;
+    }
+    
+    .carDeliveryTopContainerDivFourth {
+        margin-top: 10px;
+        width: 98%;
+    }
+    
+    .carDeliveryTopContainerDivFourthContainer {
+        flex-direction: column;
+        gap: 0px;
+        text-align: center;
+    }
+    
+    .carDeliveryTopContainerDivFourthContainerText,
+    .carDeliveryTopContainerDivFourthContainerTextTwo {
+        font-size: 13px;
+        line-height: 20px;
+    }
+}
+
+/* Mobile Small - 320px to 360px */
+@media (max-width: 360px) {
+    .carDeliveryTop {
+        padding-top: 80px;
+        padding-bottom: 40px;
+    }
+    
+    .carDeliveryTopContainerDivFirst {
+        margin-bottom: 18px;
+    }
+    
+    .carDeliveryTopContainerDivFirstContainerText {
+        font-size: 22px;
+        line-height: 28px;
+    }
+    
+    .carDeliveryTopContainerDivSecondContainerText {
+        font-size: 13px;
+        line-height: 19px;
+        max-width: 100%;
+        margin: 0 auto;
+        padding: 0 10px;
+    }
+    
+    .carDeliveryTopContainerDivThird {
+        width: 100%;
+        margin-top: 14px;
+    }
+    
+    .carDeliveryTopContainerDivThirdContainerOneText {
+        font-size: 15px;
+        text-align: center;
+        padding: 0 10px;
+    }
+    
+    .carDeliveryTopContainerDivThirdContainerTwo {
+        margin-top: 12px;
+    }
+    
+    .pricingTable {
+        overflow-x: auto;
+        margin: 0 10px;
+    }
+    
+    .pricingTableRow {
+        min-width: 350px;
+    }
+    
+    .pricingTableCellText {
+        font-size: 12px;
+        padding-left: 8px;
+    }
+    
+    .pricingTableHeader .pricingTableCellText {
+        font-size: 13px;
+    }
+    
+    .pricingTableData .pricingTableCellText {
+        font-size: 12px;
+    }
+    
+    .pricingTableCell {
+        height: 38px;
+        min-width: 87px;
+    }
+    
+    .carDeliveryTopContainerDivFourth {
+        margin-top: 8px;
+        width: 100%;
+    }
+    
+    .carDeliveryTopContainerDivFourthContainer {
+        flex-direction: column;
+        gap: 0px;
+        text-align: center;
+        padding: 0 10px;
+    }
+    
+    .carDeliveryTopContainerDivFourthContainerText,
+    .carDeliveryTopContainerDivFourthContainerTextTwo {
+        font-size: 12px;
+        line-height: 18px;
+    }
+}
+
+/* Touch Device Optimizations */
+@media (hover: none) and (pointer: coarse) {
+    .carDeliveryTopContainerDivFourthContainerTextTwo {
+        min-height: 44px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .pricingTable {
+        scroll-behavior: smooth;
+    }
+}
+
+/* High DPI display optimizations */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    .carDeliveryTop {
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+}

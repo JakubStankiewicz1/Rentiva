@@ -1,0 +1,84 @@
+.carDelivery {
+    width: 100%;
+    min-height: 100vh;
+    background-color: #202020;
+    overflow-x: hidden;
+}
+
+/* Responsive Styles for CarDelivery Page */
+
+/* Large Desktop - 1440px and up */
+@media (min-width: 1440px) {
+    .carDelivery {
+        max-width: 100%;
+    }
+}
+
+/* Desktop - 1024px to 1439px */
+@media (max-width: 1439px) and (min-width: 1024px) {
+    .carDelivery {
+        width: 100%;
+    }
+}
+
+/* Tablet Landscape - 768px to 1023px */
+@media (max-width: 1023px) and (min-width: 768px) {
+    .carDelivery {
+        width: 100%;
+        min-height: 100vh;
+    }
+}
+
+/* Tablet Portrait - 481px to 767px */
+@media (max-width: 767px) and (min-width: 481px) {
+    .carDelivery {
+        width: 100%;
+        min-height: 100vh;
+    }
+}
+
+/* Mobile Large - 361px to 480px */
+@media (max-width: 480px) and (min-width: 361px) {
+    .carDelivery {
+        width: 100%;
+        min-height: 100vh;
+    }
+}
+
+/* Mobile Small - 320px to 360px */
+@media (max-width: 360px) {
+    .carDelivery {
+        width: 100%;
+        min-height: 100vh;
+    }
+}
+
+/* Smooth scrolling for better UX */
+@media (prefers-reduced-motion: no-preference) {
+    .carDelivery {
+        scroll-behavior: smooth;
+    }
+}
+
+/* High DPI display optimizations */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    .carDelivery {
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+}
+
+/* Dark mode support (already dark, but adding for completeness) */
+@media (prefers-color-scheme: dark) {
+    .carDelivery {
+        background-color: #202020;
+    }
+}
+
+/* Print styles */
+@media print {
+    .carDelivery {
+        background-color: white;
+        color: black;
+    }
+}

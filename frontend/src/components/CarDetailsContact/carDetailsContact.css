@@ -597,3 +597,301 @@
   margin-right: auto;
   margin-top: 5px;
 }
+
+/* COMPREHENSIVE RESPONSIVE DESIGN */
+
+/* Large Desktop - 1440px and up */
+@media (min-width: 1440px) {
+  .carDetailsContact {
+    padding-top: 120px;
+    padding-bottom: 120px;
+  }
+  
+  .carDetailsContactContainer {
+    width: 90%;
+    max-width: 1400px;
+  }
+  
+  .carDetailsContactContainerTopContainerRightContainer {
+    gap: 22px;
+  }
+  
+  .carDetailsContactContainerTopContainerRightContainerOneContainerOneInput,
+  .carDetailsContactContainerTopContainerRightContainerOneContainerTwoInput,
+  .carDetailsContactContainerTopContainerRightContainerTwoContainerOneInput,
+  .carDetailsContactContainerTopContainerRightContainerTwoContainerTwoInput {
+    height: 52px;
+  }
+  
+  .carDetailsContactContainerBottomContainerBototom {
+    width: 55%;
+  }
+}
+
+/* Desktop - 1024px to 1439px */
+@media (max-width: 1439px) and (min-width: 1024px) {
+  .carDetailsContact {
+    padding-top: 110px;
+    padding-bottom: 110px;
+  }
+  
+  .carDetailsContactContainer {
+    width: 96%;
+  }
+  
+  .carDetailsContactContainerTopContainerRightContainer {
+    gap: 20px;
+  }
+  
+  .carDetailsContactContainerTopContainerRightContainerOneContainerOneInput,
+  .carDetailsContactContainerTopContainerRightContainerOneContainerTwoInput,
+  .carDetailsContactContainerTopContainerRightContainerTwoContainerOneInput,
+  .carDetailsContactContainerTopContainerRightContainerTwoContainerTwoInput {
+    height: 50px;
+  }
+  
+  .carDetailsContactContainerBottomContainerBototom {
+    width: 60%;
+  }
+}
+
+/* Tablet Landscape - 768px to 1023px */
+@media (max-width: 1023px) and (min-width: 768px) {
+  .carDetailsContact {
+    padding-top: 80px;
+    padding-bottom: 80px;
+  }
+  
+  .carDetailsContactContainer {
+    width: 98%;
+  }
+  
+  .carDetailsContactContainerTopContainerTopContainer {
+    flex-direction: column;
+    gap: 40px;
+  }
+  
+  .carDetailsContactContainerTopContainerLeft {
+    order: 1;
+  }
+  
+  .carDetailsContactContainerTopContainerRight {
+    order: 2;
+    flex: 1;
+  }
+  
+  .carDetailsContactContainerTopContainerRightContainer {
+    gap: 18px;
+  }
+  
+  .carDetailsContactContainerTopContainerRightContainerOneContainerOneInput,
+  .carDetailsContactContainerTopContainerRightContainerOneContainerTwoInput,
+  .carDetailsContactContainerTopContainerRightContainerTwoContainerOneInput,
+  .carDetailsContactContainerTopContainerRightContainerTwoContainerTwoInput {
+    height: 46px;
+  }
+  
+  .carDetailsContactContainerBottomContainerBototom {
+    width: 70%;
+  }
+  
+  .faqAccordionItemPanelInner {
+    font-size: 15px;
+  }
+}
+
+/* Tablet Portrait - 481px to 767px */
+@media (max-width: 767px) and (min-width: 481px) {
+  .carDetailsContact {
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+  
+  .carDetailsContactContainer {
+    width: 100%;
+    padding: 0 15px;
+  }
+  
+  .carDetailsContactContainerTopContainerTopContainer {
+    flex-direction: column;
+    gap: 30px;
+  }
+  
+  .carDetailsContactContainerTopContainerLeft {
+    order: 1;
+  }
+  
+  .carDetailsContactContainerTopContainerRight {
+    order: 2;
+    flex: 1;
+  }
+  
+  .carDetailsContactContainerTopContainerRightContainer {
+    gap: 16px;
+  }
+  
+  .carDetailsContactContainerTopContainerRightContainerOneContainer,
+  .carDetailsContactContainerTopContainerRightContainerTwoContainer {
+    flex-direction: column;
+    gap: 16px;
+  }
+  
+  .carDetailsContactContainerTopContainerRightContainerOneContainerOne,
+  .carDetailsContactContainerTopContainerRightContainerOneContainerTwo,
+  .carDetailsContactContainerTopContainerRightContainerTwoContainerOne,
+  .carDetailsContactContainerTopContainerRightContainerTwoContainerTwo {
+    width: 100%;
+  }
+  
+  .carDetailsContactContainerTopContainerRightContainerOneContainerOneInput,
+  .carDetailsContactContainerTopContainerRightContainerOneContainerTwoInput,
+  .carDetailsContactContainerTopContainerRightContainerTwoContainerOneInput,
+  .carDetailsContactContainerTopContainerRightContainerTwoContainerTwoInput {
+    height: 44px;
+  }
+  
+  .carDetailsContactContainerBottomContainerBototom {
+    width: 85%;
+  }
+  
+  .faqAccordionItemPanelInner {
+    font-size: 14px;
+  }
+}
+
+/* Mobile Large - 361px to 480px */
+@media (max-width: 480px) and (min-width: 361px) {
+  .carDetailsContact {
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+  
+  .carDetailsContactContainer {
+    width: 100%;
+    padding: 0 10px;
+  }
+  
+  .carDetailsContactContainerTopContainerTopContainer {
+    flex-direction: column;
+    gap: 25px;
+  }
+  
+  .carDetailsContactContainerTopContainerLeft {
+    order: 1;
+  }
+  
+  .carDetailsContactContainerTopContainerRight {
+    order: 2;
+    flex: 1;
+  }
+  
+  .carDetailsContactContainerTopContainerRightContainer {
+    gap: 14px;
+  }
+  
+  .carDetailsContactContainerTopContainerRightContainerOneContainer,
+  .carDetailsContactContainerTopContainerRightContainerTwoContainer {
+    flex-direction: column;
+    gap: 14px;
+  }
+  
+  .carDetailsContactContainerTopContainerRightContainerOneContainerOne,
+  .carDetailsContactContainerTopContainerRightContainerOneContainerTwo,
+  .carDetailsContactContainerTopContainerRightContainerTwoContainerOne,
+  .carDetailsContactContainerTopContainerRightContainerTwoContainerTwo {
+    width: 100%;
+  }
+  
+  .carDetailsContactContainerTopContainerRightContainerOneContainerOneInput,
+  .carDetailsContactContainerTopContainerRightContainerOneContainerTwoInput,
+  .carDetailsContactContainerTopContainerRightContainerTwoContainerOneInput,
+  .carDetailsContactContainerTopContainerRightContainerTwoContainerTwoInput {
+    height: 42px;
+  }
+  
+  .carDetailsContactContainerBottomContainerBototom {
+    width: 95%;
+  }
+  
+  .faqAccordionItemPanelInner {
+    font-size: 13px;
+    line-height: 1.5;
+  }
+}
+
+/* Mobile Small - 320px to 360px */
+@media (max-width: 360px) {
+  .carDetailsContact {
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+  
+  .carDetailsContactContainer {
+    width: 100%;
+    padding: 0 8px;
+  }
+  
+  .carDetailsContactContainerTopContainerTopContainer {
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .carDetailsContactContainerTopContainerLeft {
+    order: 1;
+  }
+  
+  .carDetailsContactContainerTopContainerRight {
+    order: 2;
+    flex: 1;
+  }
+  
+  .carDetailsContactContainerTopContainerRightContainer {
+    gap: 12px;
+  }
+  
+  .carDetailsContactContainerTopContainerRightContainerOneContainer,
+  .carDetailsContactContainerTopContainerRightContainerTwoContainer {
+    flex-direction: column;
+    gap: 12px;
+  }
+  
+  .carDetailsContactContainerTopContainerRightContainerOneContainerOne,
+  .carDetailsContactContainerTopContainerRightContainerOneContainerTwo,
+  .carDetailsContactContainerTopContainerRightContainerTwoContainerOne,
+  .carDetailsContactContainerTopContainerRightContainerTwoContainerTwo {
+    width: 100%;
+  }
+  
+  .carDetailsContactContainerTopContainerRightContainerOneContainerOneInput,
+  .carDetailsContactContainerTopContainerRightContainerOneContainerTwoInput,
+  .carDetailsContactContainerTopContainerRightContainerTwoContainerOneInput,
+  .carDetailsContactContainerTopContainerRightContainerTwoContainerTwoInput {
+    height: 40px;
+  }
+  
+  .carDetailsContactContainerBottomContainerBototom {
+    width: 100%;
+  }
+  
+  .faqAccordionItemPanelInner {
+    font-size: 12px;
+    line-height: 1.4;
+    padding-bottom: 16px;
+  }
+}
+
+/* Touch Device Optimizations */
+@media (hover: none) and (pointer: coarse) {
+  .carDetailsContactContainerTopContainerRightContainerOneContainerOneInput,
+  .carDetailsContactContainerTopContainerRightContainerOneContainerTwoInput,
+  .carDetailsContactContainerTopContainerRightContainerTwoContainerOneInput,
+  .carDetailsContactContainerTopContainerRightContainerTwoContainerTwoInput {
+    min-height: 44px;
+  }
+  
+  .faqAccordionItemHeader {
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+  }
+}
