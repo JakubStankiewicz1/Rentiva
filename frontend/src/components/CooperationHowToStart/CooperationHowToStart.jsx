@@ -21,60 +21,60 @@ const CooperationHowToStart = () => {
                     {/* Element */}
                     <div className="cooperationHowToStartContainerBottomContainerElement">
                         <div className="cooperationHowToStartContainerBottomContainerElementContainer">
-                            <p className="cooperationHowToStartContainerBottomContainerElementContainerOne">
+                            <div className="cooperationHowToStartContainerBottomContainerElementContainerOne">
                                 <p className="cooperationHowToStartContainerBottomContainerElementContainerOneText bai-jamjuree-regular">
                                     1.
                                 </p>
-                            </p>                            <p className="cooperationHowToStartContainerBottomContainerElementContainerTwo">
+                            </div>                            <div className="cooperationHowToStartContainerBottomContainerElementContainerTwo">
                                 <p className="cooperationHowToStartContainerBottomContainerElementContainerTwoText bai-jamjuree-regular">
                                     Contact us by phone or fill out our online form – we offer free consultation and detailed discussion of cooperation terms.
                                 </p>
-                            </p>
+                            </div>
                         </div>
                     </div>
 
                     {/* Element */}
                     <div className="cooperationHowToStartContainerBottomContainerElement">
                         <div className="cooperationHowToStartContainerBottomContainerElementContainer">
-                            <p className="cooperationHowToStartContainerBottomContainerElementContainerOne">
+                            <div className="cooperationHowToStartContainerBottomContainerElementContainerOne">
                                 <p className="cooperationHowToStartContainerBottomContainerElementContainerOneText bai-jamjuree-regular">
                                     2.
                                 </p>
-                            </p>                            <p className="cooperationHowToStartContainerBottomContainerElementContainerTwo">
+                            </div>                            <div className="cooperationHowToStartContainerBottomContainerElementContainerTwo">
                                 <p className="cooperationHowToStartContainerBottomContainerElementContainerTwoText bai-jamjuree-regular">
                                     We finalize the partnership agreement – individually tailoring cooperation terms to your vehicle and preferences.
                                 </p>
-                            </p>
+                            </div>
                         </div>
                     </div>
 
                     {/* Element */}
                     <div className="cooperationHowToStartContainerBottomContainerElement">
                         <div className="cooperationHowToStartContainerBottomContainerElementContainer">
-                            <p className="cooperationHowToStartContainerBottomContainerElementContainerOne">
+                            <div className="cooperationHowToStartContainerBottomContainerElementContainerOne">
                                 <p className="cooperationHowToStartContainerBottomContainerElementContainerOneText bai-jamjuree-regular">
                                     3.
                                 </p>
-                            </p>                            <p className="cooperationHowToStartContainerBottomContainerElementContainerTwo">
+                            </div>                            <div className="cooperationHowToStartContainerBottomContainerElementContainerTwo">
                                 <p className="cooperationHowToStartContainerBottomContainerElementContainerTwoText bai-jamjuree-regular">
                                     Hand over your vehicle to the Rentiva platform – we perform full technical service, documentation and introduce your car to our premium fleet.
                                 </p>
-                            </p>
+                            </div>
                         </div>
                     </div>
 
                     {/* Element */}
                     <div className="cooperationHowToStartContainerBottomContainerElement">
                         <div className="cooperationHowToStartContainerBottomContainerElementContainer">
-                            <p className="cooperationHowToStartContainerBottomContainerElementContainerOne">
+                            <div className="cooperationHowToStartContainerBottomContainerElementContainerOne">
                                 <p className="cooperationHowToStartContainerBottomContainerElementContainerOneText bai-jamjuree-regular">
                                     4.
                                 </p>
-                            </p>                            <p className="cooperationHowToStartContainerBottomContainerElementContainerTwo">
+                            </div>                            <div className="cooperationHowToStartContainerBottomContainerElementContainerTwo">
                                 <p className="cooperationHowToStartContainerBottomContainerElementContainerTwoText bai-jamjuree-regular">
                                     Receive steady income – get transparent settlements at your chosen payout schedule and track profits in real time.
                                 </p>
-                            </p>
+                            </div>
                         </div>
                     </div>
 

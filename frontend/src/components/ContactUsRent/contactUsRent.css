@@ -62,10 +62,19 @@
   background-color: #c3845e;
   cursor: pointer;
   transition: all 0.3s ease-in-out;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
 }
 
 .contactUsRentContainerMainContainerBottomContainerButton:hover {
   background-color: #e8a075;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(195, 132, 94, 0.3);
+}
+
+.contactUsRentContainerMainContainerBottomContainerButton:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 6px rgba(195, 132, 94, 0.2);
 }
 
 .contactUsRentContainerMainContainerBottomContainerButtonContainer {
@@ -250,8 +259,6 @@
     .contactUsRentContainerMainContainerBottomContainerButton {
         width: 200px;
         height: 40px;
-        -webkit-tap-highlight-color: transparent;
-        touch-action: manipulation;
     }
     
     .contactUsRentContainerMainContainerBottomContainerButtonContainerText {
@@ -387,23 +394,20 @@
 }
 
 /* Touch device optimizations */
-@media (max-width: 768px) {
-    .contactUsRentContainerMainContainerBottomContainerButton:active {
-        transform: scale(0.95);
-        transition: transform 0.1s ease;
-    }
-    
-    .contactUsRentContainerMainContainerBottomContainerButton:hover {
-        background-color: #e8a075;
-        transform: translateY(-2px);
-        box-shadow: 0 4px 8px rgba(195, 132, 94, 0.3);
-    }
+@media (hover: none) and (pointer: coarse) {
+  .contactUsRentContainerMainContainerBottomContainerButton {
+    min-height: 44px;
+  }
+  
+  .contactUsRentContainerMainContainerBottomContainerButton:active {
+    background-color: #d4946e;
+    transform: scale(0.98);
+  }
 }
 
 /* Performance optimizations */
 .contactUsRentContainerMainContainerBottomContainerButton {
-    will-change: transform;
-    transition: all 0.3s ease-in-out;
+  will-change: transform, background-color;
 }
 
 /* Additional mobile touch enhancements */

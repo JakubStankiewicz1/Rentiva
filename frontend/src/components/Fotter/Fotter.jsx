@@ -1,10 +1,22 @@
-import React from 'react';
+import React, { useState } from 'react';
 import "./fotter.css";
 import { FaInstagram } from "react-icons/fa";
 import { FaFacebookF } from "react-icons/fa6";
 import { AiOutlineYoutube } from "react-icons/ai";
+import { useNavigate } from 'react-router-dom';
 
 const Fotter = () => {
+  const navigate = useNavigate();
+  const [newsletterConsent, setNewsletterConsent] = useState(false);
+
+  const handleNewsletterClick = () => {
+    setNewsletterConsent(!newsletterConsent);
+  };
+
+  const handleNavigationClick = (path) => {
+    navigate(path);
+  };
+
   return (
     <div className='fotter'>
         <div className="fotterContainer">
@@ -15,9 +27,6 @@ const Fotter = () => {
                     <div className="fotterContainerHrContainerDiv" />
                 </div>
             </div>
-
-
-
 
             {/* Main Container */}
             <div className="fotterContainerMain">
@@ -31,7 +40,11 @@ const Fotter = () => {
 
                                     {/* Element */}
                                     <div className="fotterContainerMainContainerLeftContainerTopContainerElement">
-                                        <div className="fotterContainerMainContainerLeftContainerTopContainerElementContainer">
+                                        <div 
+                                            className="fotterContainerMainContainerLeftContainerTopContainerElementContainer"
+                                            onClick={() => handleNavigationClick('/')}
+                                            style={{ cursor: 'pointer' }}
+                                        >
                                             <p className="fotterContainerMainContainerLeftContainerTopContainerElementContainerText bai-jamjuree-regular">
                                                 Home Page
                                             </p>
@@ -40,7 +53,11 @@ const Fotter = () => {
 
                                     {/* Element */}
                                     <div className="fotterContainerMainContainerLeftContainerTopContainerElement">
-                                        <div className="fotterContainerMainContainerLeftContainerTopContainerElementContainer">
+                                        <div 
+                                            className="fotterContainerMainContainerLeftContainerTopContainerElementContainer"
+                                            onClick={() => handleNavigationClick('/collection')}
+                                            style={{ cursor: 'pointer' }}
+                                        >
                                             <p className="fotterContainerMainContainerLeftContainerTopContainerElementContainerText bai-jamjuree-regular">
                                                 Our Cars
                                             </p>
@@ -49,27 +66,39 @@ const Fotter = () => {
 
                                     {/* Element */}
                                     <div className="fotterContainerMainContainerLeftContainerTopContainerElement">
-                                        <div className="fotterContainerMainContainerLeftContainerTopContainerElementContainer">
-                                            <p className="fotterContainerMainContainerLeftContainerTopContainerElementContainerText bai-jamjuree-regular">
-                                                Faq
-                                            </p>
-                                        </div>
-                                    </div>
-
-                                    {/* Element */}
-                                    <div className="fotterContainerMainContainerLeftContainerTopContainerElement">
-                                        <div className="fotterContainerMainContainerLeftContainerTopContainerElementContainer">
-                                            <p className="fotterContainerMainContainerLeftContainerTopContainerElementContainerText bai-jamjuree-regular">
-                                                Blog
-                                            </p>
-                                        </div>
-                                    </div>
-
-                                    {/* Element */}
-                                    <div className="fotterContainerMainContainerLeftContainerTopContainerElement">
-                                        <div className="fotterContainerMainContainerLeftContainerTopContainerElementContainer">
+                                        <div 
+                                            className="fotterContainerMainContainerLeftContainerTopContainerElementContainer"
+                                            onClick={() => handleNavigationClick('/contact-us')}
+                                            style={{ cursor: 'pointer' }}
+                                        >
                                             <p className="fotterContainerMainContainerLeftContainerTopContainerElementContainerText bai-jamjuree-regular">
                                                 Contact
+                                            </p>
+                                        </div>
+                                    </div>
+
+                                    {/* Element */}
+                                    <div className="fotterContainerMainContainerLeftContainerTopContainerElement">
+                                        <div 
+                                            className="fotterContainerMainContainerLeftContainerTopContainerElementContainer"
+                                            onClick={() => handleNavigationClick('/cooperation')}
+                                            style={{ cursor: 'pointer' }}
+                                        >
+                                            <p className="fotterContainerMainContainerLeftContainerTopContainerElementContainerText bai-jamjuree-regular">
+                                                Cooperation
+                                            </p>
+                                        </div>
+                                    </div>
+
+                                    {/* Element */}
+                                    <div className="fotterContainerMainContainerLeftContainerTopContainerElement">
+                                        <div 
+                                            className="fotterContainerMainContainerLeftContainerTopContainerElementContainer"
+                                            onClick={() => handleNavigationClick('/car-delivery')}
+                                            style={{ cursor: 'pointer' }}
+                                        >
+                                            <p className="fotterContainerMainContainerLeftContainerTopContainerElementContainerText bai-jamjuree-regular">
+                                                Car Delivery
                                             </p>
                                         </div>
                                     </div>
@@ -137,7 +166,7 @@ const Fotter = () => {
                                             <div className="fotterContainerMainContainerRightContainerTwoContainerTwoContainerButton">
                                                 <div className="fotterContainerMainContainerRightContainerTwoContainerTwoContainerButtonContainer">
                                                     <p className="fotterContainerMainContainerRightContainerTwoContainerTwoContainerButtonContainerText bai-jamjuree-regular">
-                                                        Sing Up!
+                                                        Sign Up!
                                                     </p>
                                                 </div>
                                             </div>
@@ -150,11 +179,20 @@ const Fotter = () => {
                                 <div className="fotterContainerMainContainerRightContainerThreeContainer">
                                     <div className="fotterContainerMainContainerRightContainerThreeContainerOne">
                                         <div className="fotterContainerMainContainerRightContainerThreeContainerOneContainer">
-                                            <input type="checkbox" className='fotterContainerMainContainerRightContainerThreeContainerOneContainerInput' />
+                                            <input 
+                                                type="checkbox" 
+                                                className='fotterContainerMainContainerRightContainerThreeContainerOneContainerInput'
+                                                checked={newsletterConsent}
+                                                onChange={() => setNewsletterConsent(!newsletterConsent)}
+                                            />
                                         </div>
                                     </div>
 
-                                    <div className="fotterContainerMainContainerRightContainerThreeContainerTwo">
+                                    <div 
+                                        className="fotterContainerMainContainerRightContainerThreeContainerTwo"
+                                        onClick={handleNewsletterClick}
+                                        style={{ cursor: 'pointer' }}
+                                    >
                                         <div className="fotterContainerMainContainerRightContainerThreeContainerTwoContainer">
                                             <p className="fotterContainerMainContainerRightContainerThreeContainerTwoContainerText bai-jamjuree-regular">
                                                 I consent to the processing of my personal data provided by me in order to receive the newsletter.
@@ -167,9 +205,6 @@ const Fotter = () => {
                     </div>
                 </div>
             </div>
-
-
-
 
             {/* Hr Divider */}
             <div className="fotterContainerHrOne">
@@ -185,22 +220,22 @@ const Fotter = () => {
                     <div className="fotterContainerBottomContainerLeft">
                         <div className="fotterContainerBottomContainerLeftContainer">
                             <div className="fotterContainerBottomContainerLeftContainerOne">
-                                <p className="fotterContainerBottomContainerLeftContainerOneText bai-jamjuree-regular">
+                                <p 
+                                    className="fotterContainerBottomContainerLeftContainerOneText bai-jamjuree-regular"
+                                    style={{ cursor: 'pointer' }}
+                                >
                                     Privacy Policy
                                 </p>
                             </div>
 
                             <div className="fotterContainerBottomContainerLeftContainerTwo">
-                                <p className="fotterContainerBottomContainerLeftContainerTwoText bai-jamjuree-regular">
+                                <p 
+                                    className="fotterContainerBottomContainerLeftContainerTwoText bai-jamjuree-regular"
+                                    style={{ cursor: 'pointer' }}
+                                >
                                     Terms & Conditions
                                 </p>
                             </div>
-
-                            {/* <div className="fotterContainerBottomContainerLeftContainerThree">
-                                <p className="fotterContainerBottomContainerLeftContainerThreeText bai-jamjuree-regular">
-                                    Topczarter.pl
-                                </p>
-                            </div> */}
                         </div>
                     </div>
 

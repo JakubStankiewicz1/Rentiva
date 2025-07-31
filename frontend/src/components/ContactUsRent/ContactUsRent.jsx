@@ -1,7 +1,14 @@
 import React from 'react';
 import "./contactUsRent.css";
+import { useNavigate } from 'react-router-dom';
 
 const ContactUsRent = () => {
+  const navigate = useNavigate();
+
+  const handleDiscoverCarsClick = () => {
+    navigate('/collection');
+  };
+
   return (
     <div className='contactUsRent'>
         <div className="contactUsRentContainer">
@@ -30,7 +37,10 @@ const ContactUsRent = () => {
                     {/* Bottom Part */}
                     <div className="contactUsRentContainerMainContainerBottom">
                         <div className="contactUsRentContainerMainContainerBottomContainer">
-                            <div className="contactUsRentContainerMainContainerBottomContainerButton">
+                            <div 
+                                className="contactUsRentContainerMainContainerBottomContainerButton"
+                                onClick={handleDiscoverCarsClick}
+                            >
                                 <div className="contactUsRentContainerMainContainerBottomContainerButtonContainer">
                                     <p className="contactUsRentContainerMainContainerBottomContainerButtonContainerText bai-jamjuree-regular">
                                         Discover Car Collection

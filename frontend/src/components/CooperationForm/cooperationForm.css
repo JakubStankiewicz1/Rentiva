@@ -160,6 +160,12 @@
   font-weight: 400;
   margin: 0;
   line-height: 1.5;
+  transition: color 0.2s ease;
+}
+
+.cooperationFormContainerOverlayContainerFormContainerNineContainerFiveTwo:hover .cooperationFormContainerOverlayContainerFormContainerNineContainerFiveTwoText,
+.cooperationFormContainerOverlayContainerFormContainerNineContainerSixTwo:hover .cooperationFormContainerOverlayContainerFormContainerNineContainerSixTwoText {
+  color: #c3845e;
 }
 
 .cooperationFormContainerOverlayContainerFormContainerNineContainerFiveTwoText b,
@@ -172,6 +178,21 @@
 .cooperationFormContainerOverlayContainerFormContainerNineContainerSixTwoText a {
   color: #e8a06a;
   text-decoration: underline;
+}
+
+/* Touch device optimizations */
+@media (hover: none) and (pointer: coarse) {
+  .cooperationFormContainerOverlayContainerFormContainerNineContainerFiveTwo,
+  .cooperationFormContainerOverlayContainerFormContainerNineContainerSixTwo {
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+  }
+  
+  .cooperationFormContainerOverlayContainerFormContainerNineContainerFiveTwo:active .cooperationFormContainerOverlayContainerFormContainerNineContainerFiveTwoText,
+  .cooperationFormContainerOverlayContainerFormContainerNineContainerSixTwo:active .cooperationFormContainerOverlayContainerFormContainerNineContainerSixTwoText {
+    color: #E8A075;
+  }
 }
 
 .cooperationFormContainerOverlayContainerFormContainerTen {

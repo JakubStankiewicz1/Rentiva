@@ -89,6 +89,11 @@
     text-transform: uppercase;
     letter-spacing: 0.3px;
     padding-bottom: 2px;
+    transition: color 0.2s ease;
+}
+
+.fotterContainerMainContainerLeftContainerTopContainerElementContainer:hover .fotterContainerMainContainerLeftContainerTopContainerElementContainerText {
+    color: #c3845e;
 }
 
 .fotterContainerMainContainerLeftContainerBottom {
@@ -304,6 +309,48 @@
 .fotterContainerMainContainerRightContainerThreeContainerOneContainerInput {
     margin-right: 12px;
     margin-top: 2px;
+    width: 18px;
+    height: 18px;
+    accent-color: #c3845e;
+    border: 1.5px solid #393939;
+    background: transparent;
+    transition: border-color 0.2s;
+    cursor: pointer;
+    flex-shrink: 0;
+}
+
+.fotterContainerMainContainerRightContainerThreeContainerOneContainerInput:hover {
+    border-color: #c3845e;
+}
+
+.fotterContainerMainContainerRightContainerThreeContainerOneContainerInput:focus {
+    border-color: #E8A075;
+    outline: none;
+}
+
+/* Responsive checkbox styles */
+@media (max-width: 600px) {
+    .fotterContainerMainContainerRightContainerThreeContainerOneContainerInput {
+        width: 14px;
+        height: 14px;
+        margin-right: 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .fotterContainerMainContainerRightContainerThreeContainerOneContainerInput {
+        width: 10px;
+        height: 10px;
+        margin-right: 8px;
+    }
+}
+
+@media (max-width: 380px) {
+    .fotterContainerMainContainerRightContainerThreeContainerOneContainerInput {
+        width: 8px;
+        height: 8px;
+        margin-right: 6px;
+    }
 }
 
 .fotterContainerMainContainerRightContainerThree {
@@ -353,13 +400,44 @@
     font-size: 14px;
     font-weight: 400;
     line-height: 21px;
-    transition: color 0.2s;
+    transition: color 0.2s ease;
 }
 
 .fotterContainerBottomContainerLeftContainerOneText:hover,
 .fotterContainerBottomContainerLeftContainerTwoText:hover,
 .fotterContainerBottomContainerLeftContainerThreeText:hover {
     color: #E8A075;
+}
+
+/* Enhanced hover effects for better UX */
+.fotterContainerBottomContainerLeftContainerOneText:active,
+.fotterContainerBottomContainerLeftContainerTwoText:active {
+    color: #c3845e;
+}
+
+/* Touch device optimizations */
+@media (hover: none) and (pointer: coarse) {
+  .fotterContainerMainContainerLeftContainerTopContainerElementContainer,
+  .fotterContainerMainContainerRightContainerThreeContainerTwo,
+  .fotterContainerBottomContainerLeftContainerOneText,
+  .fotterContainerBottomContainerLeftContainerTwoText {
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+  }
+  
+  .fotterContainerMainContainerLeftContainerTopContainerElementContainer:active .fotterContainerMainContainerLeftContainerTopContainerElementContainerText {
+    color: #E8A075;
+  }
+  
+  .fotterContainerMainContainerRightContainerThreeContainerTwo:active .fotterContainerMainContainerRightContainerThreeContainerTwoContainerText {
+    color: #E8A075;
+  }
+  
+  .fotterContainerBottomContainerLeftContainerOneText:active,
+  .fotterContainerBottomContainerLeftContainerTwoText:active {
+    color: #E8A075;
+  }
 }
 
 .fotterContainerBottomContainerRight {
@@ -389,6 +467,11 @@
     font-size: 15px;
     font-weight: 400;
     line-height: normal;
+    transition: color 0.2s ease;
+}
+
+.fotterContainerMainContainerRightContainerThreeContainerTwo:hover .fotterContainerMainContainerRightContainerThreeContainerTwoContainerText {
+    color: #c3845e;
 }
 
 /* Responsive Design */

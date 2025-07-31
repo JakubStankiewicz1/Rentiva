@@ -9,6 +9,8 @@ const CooperationForm = () => {
       const recaptchaRef = useRef(null);
       const [recaptchaValue, setRecaptchaValue] = useState(null);
       const [openIndex, setOpenIndex] = useState(0);
+      const [termsAccepted, setTermsAccepted] = useState(false);
+      const [marketingConsent, setMarketingConsent] = useState(false);
 
       function onChange(value) {
     console.log("Captcha value:", value);
@@ -27,6 +29,14 @@ const CooperationForm = () => {
 
   const handleToggle = (idx) => {
     setOpenIndex(openIndex === idx ? null : idx);
+  };
+
+  const handleTermsClick = () => {
+    setTermsAccepted(!termsAccepted);
+  };
+
+  const handleMarketingClick = () => {
+    setMarketingConsent(!marketingConsent);
   };
 
   
@@ -120,7 +130,8 @@ const CooperationForm = () => {
                           </div>
 
                           <div className="cooperationFormContainerOverlayContainerFormContainerNine">
-                              <div className="cooperationFormContainerOverlayContainerFormContainerNineContainer">                                  <div className="cooperationFormContainerOverlayContainerFormContainerNineContainerOne">
+                              <div className="cooperationFormContainerOverlayContainerFormContainerNineContainer">
+                                  <div className="cooperationFormContainerOverlayContainerFormContainerNineContainerOne">
                                       <input type="text" placeholder='Full Name' className='cooperationFormContainerOverlayContainerFormContainerNineContainerOneInput' />
                                   </div>
 
@@ -138,8 +149,17 @@ const CooperationForm = () => {
 
                                   <div className="cooperationFormContainerOverlayContainerFormContainerNineContainerFive">
                                       <div className="cooperationFormContainerOverlayContainerFormContainerNineContainerFiveOne">
-                                          <input type="checkbox" className='cooperationFormContainerOverlayContainerFormContainerNineContainerFiveOneInput' />
-                                      </div>                                      <div className="cooperationFormContainerOverlayContainerFormContainerNineContainerFiveTwo">
+                                          <input 
+                                              type="checkbox" 
+                                              className='cooperationFormContainerOverlayContainerFormContainerNineContainerFiveOneInput'
+                                              checked={termsAccepted}
+                                              onChange={() => setTermsAccepted(!termsAccepted)}
+                                          />
+                                      </div>                                      <div 
+                                          className="cooperationFormContainerOverlayContainerFormContainerNineContainerFiveTwo"
+                                          onClick={handleTermsClick}
+                                          style={{ cursor: 'pointer' }}
+                                      >
                                           <p className="cooperationFormContainerOverlayContainerFormContainerNineContainerFiveTwoText bai-jamjuree-regular">
                                               I declare that I have read and agree to the terms and privacy policy of the rentiva.com service.
                                           </p>
@@ -148,8 +168,17 @@ const CooperationForm = () => {
 
                                   <div className="cooperationFormContainerOverlayContainerFormContainerNineContainerSix">
                                       <div className="cooperationFormContainerOverlayContainerFormContainerNineContainerSixOne">
-                                          <input type="checkbox" className='cooperationFormContainerOverlayContainerFormContainerNineContainerSixOneInput' />
-                                      </div>                                      <div className="cooperationFormContainerOverlayContainerFormContainerNineContainerSixTwo">
+                                          <input 
+                                              type="checkbox" 
+                                              className='cooperationFormContainerOverlayContainerFormContainerNineContainerSixOneInput'
+                                              checked={marketingConsent}
+                                              onChange={() => setMarketingConsent(!marketingConsent)}
+                                          />
+                                      </div>                                      <div 
+                                          className="cooperationFormContainerOverlayContainerFormContainerNineContainerSixTwo"
+                                          onClick={handleMarketingClick}
+                                          style={{ cursor: 'pointer' }}
+                                      >
                                           <p className="cooperationFormContainerOverlayContainerFormContainerNineContainerSixTwoText bai-jamjuree-regular">
                                               I consent to the processing of my personal data by Rentiva Sp. z o.o. for marketing and offer purposes, including through the following communication channels: email, SMS, phone.
                                           </p>
