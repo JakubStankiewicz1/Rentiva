@@ -10,8 +10,6 @@
   overflow: hidden;
 }
 
-
-
 .rentivaAdminCarsFilter__header {
   display: flex;
   align-items: center;
@@ -71,7 +69,6 @@
   font-weight: 400;
   padding: 0 60px 0 24px;
   outline: none;
-  /* border-radius: 12px; */
   box-sizing: border-box;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
@@ -80,7 +77,6 @@
 .rentivaAdminCarsFilter__searchInput:focus {
   border-color: #C3845E;
   box-shadow: 0 0 0 4px rgba(195, 132, 94, 0.15), 0 8px 25px rgba(0, 0, 0, 0.2);
-  /* transform: translateY(-2px); */
 }
 
 .rentivaAdminCarsFilter__searchInput:hover {
@@ -132,7 +128,6 @@
 
 .rentivaAdminCarsFilter__searchButton:hover {
   background: linear-gradient(135deg, #E8A075, #F2B088);
-  /* transform: translateY(-2px); */
 }
 
 .rentivaAdminCarsFilter__filtersGrid {
@@ -186,7 +181,7 @@
   font-weight: 400;
   padding: 0 20px;
   outline: none;
-  border-radius: 0; /* Ensure flat select */
+  border-radius: 0;
   box-sizing: border-box;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   cursor: pointer;
@@ -196,7 +191,6 @@
 .rentivaAdminCarsFilter__select:focus {
   border-color: #C3845E;
   box-shadow: 0 0 0 3px rgba(195, 132, 94, 0.15), 0 4px 15px rgba(0, 0, 0, 0.2);
-  /* transform: translateY(-1px); */
 }
 
 .rentivaAdminCarsFilter__select:hover {
@@ -207,8 +201,7 @@
   background: #181818;
   color: #ffffff;
   padding: 8px;
-  border-radius: 0; /* Try to enforce flat option, but may not work in all browsers */
-  
+  border-radius: 0;
 }
 
 .rentivaAdminCarsFilter__numberInput {
@@ -221,7 +214,6 @@
   font-weight: 400;
   padding: 0 20px;
   outline: none;
-  /* border-radius: 8px; */
   box-sizing: border-box;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
@@ -230,7 +222,6 @@
 .rentivaAdminCarsFilter__numberInput:focus {
   border-color: #C3845E;
   box-shadow: 0 0 0 3px rgba(195, 132, 94, 0.15), 0 4px 15px rgba(0, 0, 0, 0.2);
-  /* transform: translateY(-1px); */
 }
 
 .rentivaAdminCarsFilter__numberInput:hover {
@@ -298,32 +289,10 @@
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  /* border-radius: 8px; */
   box-shadow: 0 4px 15px rgba(195, 132, 94, 0.3);
   position: relative;
   overflow: hidden;
 }
-
-/* .rentivaAdminCarsFilter__applyButton::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-  transition: left 0.5s ease;
-} */
-
-
-
-/* .rentivaAdminCarsFilter__applyButton:hover::before {
-  left: 100%;
-} */
-
-/* .rentivaAdminCarsFilter__applyButton:active {
-  transform: translateY(-1px);
-} */
 
 .rentivaAdminCarsFilter__clearButton {
   background: transparent;
@@ -340,7 +309,6 @@
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  /* border-radius: 8px; */
   position: relative;
   overflow: hidden;
 }
@@ -361,9 +329,7 @@
 
 .rentivaAdminCarsFilter__clearButton:hover {
   color: #ffffff;
-  /* box-shadow: 0 8px 25px rgba(255, 68, 68, 0.3); */
 }
-
 
 .rentivaAdminCarsFilter__applyButton:disabled,
 .rentivaAdminCarsFilter__clearButton:disabled {
@@ -379,17 +345,6 @@
 }
 
 /* Animations */
-/* @keyframes slideDown {
-  from {
-    opacity: 0;
-    transform: translateY(-20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-} */
-
 @keyframes fadeInScale {
   from {
     opacity: 0;
@@ -516,7 +471,7 @@
   }
   
   .rentivaAdminCarsFilter__searchButton {
-    display: none; /* Hide on mobile - use icon instead */
+    display: none;
   }
   
   .rentivaAdminCarsFilter__filtersGrid {
@@ -972,7 +927,7 @@
   .rentivaAdminCarsFilter__select,
   .rentivaAdminCarsFilter__numberInput {
     min-height: 48px;
-    font-size: 16px; /* Prevent zoom on iOS */
+    font-size: 16px;
   }
   
   .rentivaAdminCarsFilter__applyButton,

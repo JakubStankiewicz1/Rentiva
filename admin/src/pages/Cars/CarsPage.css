@@ -3,38 +3,21 @@
 
 .cars-page-container {
   font-family: 'Bai Jamjuree', sans-serif;
-  /* background: linear-gradient(135deg, #0f0f0f 0%, #1a1a1a 100%); */
   min-height: 100vh;
-  width: calc(100vw - 240px);
-  margin-left: 240px;
+  width: 100%;
   position: relative;
   padding-bottom: 60px;
-  
+  box-sizing: border-box;
 }
 
 .cars-page-header {
-  /* background: linear-gradient(135deg, #181818 0%, #242424 100%); */
   background-color: #181818 !important;
-  /* border: 1px solid #393939; */
-  /* border-radius: 20px; */
-  /* padding: 32px 40px; */
   height: 118px;
-  /* margin-bottom: 32px; */
   position: relative;
   overflow: hidden;
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
   width: 100%;
 }
-/* 
-.cars-page-header::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 4px;
-  background: linear-gradient(90deg, #C3845E 0%, #E8A075 100%);
-} */
 
 .cars-page-title {
   color: #ffffff !important;
@@ -52,10 +35,8 @@
 
 /* Premium Add Car Button Styling */
 .cars-page-add-button {
-  /* background: linear-gradient(135deg, #C3845E 0%, #E8A075 100%) !important; */
   border: none !important;
   color: #ffffff !important;
-  /* border-radius: 16px !important; */
   padding: 14px 32px !important;
   text-transform: none !important;
   font-weight: 600 !important;
@@ -63,70 +44,10 @@
   font-family: 'Bai Jamjuree', sans-serif !important;
   letter-spacing: 0.5px !important;
   transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) !important;
-  /* box-shadow: 
-    0 8px 24px rgba(195, 132, 94, 0.3),
-    0 4px 12px rgba(0, 0, 0, 0.2),
-    inset 0 1px 0 rgba(255, 255, 255, 0.1) !important; */
   position: relative;
   overflow: hidden;
   min-width: 180px;
 }
-
-/* .cars-page-add-button::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.25), transparent);
-  transition: left 0.6s ease;
-  z-index: 1;
-} */
-
-/* .cars-page-add-button:hover::before {
-  left: 100%;
-} */
-
-/* .cars-page-add-button:hover {
-  background: linear-gradient(135deg, #E8A075 0%, #F4B088 100%) !important;
-  transform: translateY(-3px) scale(1.02) !important;
-  box-shadow: 
-    0 12px 32px rgba(195, 132, 94, 0.4),
-    0 6px 16px rgba(0, 0, 0, 0.3),
-    inset 0 1px 0 rgba(255, 255, 255, 0.15),
-    0 0 25px rgba(232, 160, 117, 0.2) !important;
-  animation: button-glow 2s ease-in-out infinite alternate;
-} */
-
-/* .cars-page-add-button:active {
-  transform: translateY(-1px) scale(1.01) !important;
-  transition: transform 0.1s ease !important;
-}
-
-.cars-page-add-button .MuiButton-startIcon {
-  margin-right: 10px !important;
-  font-size: 1.2rem !important;
-  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
-} */
-
-/* Button glow animation */
-/* @keyframes button-glow {
-  0% {
-    box-shadow: 
-      0 12px 32px rgba(195, 132, 94, 0.4),
-      0 6px 16px rgba(0, 0, 0, 0.3),
-      inset 0 1px 0 rgba(255, 255, 255, 0.15),
-      0 0 25px rgba(232, 160, 117, 0.2);
-  }
-  100% {
-    box-shadow: 
-      0 12px 32px rgba(195, 132, 94, 0.5),
-      0 6px 16px rgba(0, 0, 0, 0.3),
-      inset 0 1px 0 rgba(255, 255, 255, 0.15),
-      0 0 35px rgba(232, 160, 117, 0.35);
-  }
-} */
 
 /* Disabled state */
 .cars-page-add-button:disabled {
@@ -159,10 +80,7 @@
   justify-content: space-between;
   align-items: center;
   width: 100%;
-
-  /* background-color: red; */
   height: 100%;
-
   width: 95%;
   margin-left: auto;
   margin-right: auto;
@@ -180,7 +98,6 @@
 .cars-page-spinner {
   width: 40px;
   height: 40px;
-  /* border: 4px solid #393939; */
   border-top: 4px solid #C3845E;
   border-radius: 50%;
   animation: spin 1s linear infinite;
@@ -204,7 +121,6 @@
   background: linear-gradient(135deg, #ff416c 0%, #ff4757 100%);
   color: white;
   padding: 16px 20px;
-  /* border-radius: 12px; */
   margin-bottom: 24px;
   border: none;
   box-shadow: 0 4px 16px rgba(255, 65, 108, 0.3);
@@ -223,8 +139,6 @@
   background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
   color: white;
   padding: 16px 20px;
-  /* border-radius: 12px; */
-  /* margin-top: 24px; */
   text-align: center;
   font-size: 1rem;
   font-weight: 500;
@@ -236,11 +150,6 @@
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 24px;
-  /* margin-top: 24px; */
-
-  /* background-color: red; */
-
-  /* width: 98%; */
   margin-left: auto;
   margin-right: auto;
   margin-right: 18px;
@@ -280,7 +189,6 @@
 
 .cars-page-dialog {
   background: linear-gradient(135deg, #181818 0%, #242424 100%);
-  /* border-radius: 16px; */
   border: 1px solid #393939;
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
   min-width: 400px;
@@ -337,7 +245,6 @@
   background: linear-gradient(135deg, #555555 0%, #666666 100%);
   color: #ffffff;
   border: none;
-  /* border-radius: 12px; */
   padding: 12px 24px;
   font-weight: 600;
   font-size: 0.95rem;
@@ -347,17 +254,10 @@
   letter-spacing: 0.3px;
 }
 
-/* .cars-page-dialog-cancel:hover {
-  background: linear-gradient(135deg, #666666 0%, #777777 100%);
-  transform: translateY(-2px);
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
-} */
-
 .cars-page-dialog-confirm {
   background: linear-gradient(135deg, #ff416c 0%, #ff4757 100%);
   color: #ffffff;
   border: none;
-  /* border-radius: 12px; */
   padding: 12px 24px;
   font-weight: 600;
   font-size: 0.95rem;
@@ -373,19 +273,15 @@
   box-shadow: 0 6px 16px rgba(255, 65, 108, 0.4);
 }
 
-
 /* Enhanced title styling */
 .cars-page-title {
   color: #ffffff !important;
   font-weight: 700 !important;
   font-size: 2.4rem !important;
   margin: 0 !important;
-  /* text-shadow: 0 4px 16px rgba(0, 0, 0, 0.5), 0 2px 8px rgba(195, 132, 94, 0.3); */
-  /* background: linear-gradient(135deg, #ffffff 0%, #f5f5f5 100%); */
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
-  /* filter: brightness(1.1); */
   font-family: 'Bai Jamjuree', sans-serif !important;
 }
 
@@ -394,18 +290,11 @@
   background: linear-gradient(135deg, #C3845E 0%, #E8A075 100%) !important;
   border: none !important;
   color: #ffffff !important;
-  /* border-radius: 16px !important; */
   padding: 14px 32px !important;
-  /* text-transform: none !important; */
   font-weight: 600 !important;
   font-size: 1.05rem !important;
   font-family: 'Bai Jamjuree', sans-serif !important;
   letter-spacing: 0.5px !important;
-  /* transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) !important; */
-  /* box-shadow: 
-    0 8px 24px rgba(195, 132, 94, 0.3),
-    0 4px 12px rgba(0, 0, 0, 0.2),
-    inset 0 1px 0 rgba(255, 255, 255, 0.1) !important; */
   position: relative;
   overflow: hidden;
   min-width: 180px;
@@ -416,25 +305,11 @@
   text-decoration: none !important;
 }
 
-/* .cars-page-add-button:hover {
-  background: linear-gradient(135deg, #E8A075 0%, #F4B088 100%) !important;
-  transform: translateY(-3px) scale(1.02) !important;
-  box-shadow: 
-    0 12px 32px rgba(195, 132, 94, 0.4),
-    0 6px 16px rgba(0, 0, 0, 0.3),
-    inset 0 1px 0 rgba(255, 255, 255, 0.15),
-    0 0 25px rgba(232, 160, 117, 0.2) !important;
-  text-decoration: none;
-  color: #ffffff !important;
-} */
-
 /* COMPREHENSIVE RESPONSIVE DESIGN - PROFESSIONAL MOBILE-FIRST */
 
 /* Extra Large Desktops & 4K Displays (1440px+) */
 @media (min-width: 1440px) {
   .cars-page-container {
-    width: calc(100vw - 260px);
-    margin-left: 260px;
     padding-bottom: 80px;
   }
   
@@ -476,8 +351,6 @@
 /* Large Desktops (1024px - 1439px) */
 @media (min-width: 1024px) and (max-width: 1439px) {
   .cars-page-container {
-    width: calc(100vw - 240px);
-    margin-left: 240px;
     padding-bottom: 70px;
   }
   
@@ -519,8 +392,6 @@
 /* Tablets & Small Laptops (768px - 1023px) */
 @media (min-width: 768px) and (max-width: 1023px) {
   .cars-page-container {
-    width: calc(100vw - 200px);
-    margin-left: 200px;
     padding-bottom: 60px;
   }
   
@@ -569,8 +440,6 @@
 /* Large Mobile Landscape & Small Tablets (601px - 767px) */
 @media (min-width: 601px) and (max-width: 767px) {
   .cars-page-container {
-    width: 100vw;
-    margin-left: 0;
     padding-bottom: 50px;
   }
   
@@ -636,8 +505,6 @@
 /* Mobile Portrait & Landscape (481px - 600px) */
 @media (min-width: 481px) and (max-width: 600px) {
   .cars-page-container {
-    width: 100vw;
-    margin-left: 0;
     padding-bottom: 40px;
   }
   
@@ -669,7 +536,6 @@
     justify-content: center;
     letter-spacing: 0.3px !important;
     align-self: center;
-    /* Ensure minimum touch target */
     min-height: 44px;
     display: flex;
     align-items: center;
@@ -728,8 +594,6 @@
 /* Small Mobile (361px - 480px) */
 @media (min-width: 361px) and (max-width: 480px) {
   .cars-page-container {
-    width: 100vw;
-    margin-left: 0;
     padding-bottom: 35px;
   }
   
@@ -835,8 +699,6 @@
 /* Extra Small Mobile (320px - 360px) */
 @media (max-width: 360px) {
   .cars-page-container {
-    width: 100vw;
-    margin-left: 0;
     padding-bottom: 30px;
   }
   

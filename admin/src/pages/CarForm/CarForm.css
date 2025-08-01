@@ -10,6 +10,7 @@
   margin-left: 240px;
   box-sizing: border-box;
   /* padding-bottom: 48px; */
+  transform: translateX(-300px) translateY(-30px);
 }
 
 .car-form-header {

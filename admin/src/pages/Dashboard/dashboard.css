@@ -1,29 +1,18 @@
 /* Rentiva Dashboard - spójny z głównym frontendem */
 .rentivaDashboard {
-  /* min-height: calc(100vh - 64px); */
-  width: calc(100vw - 240px);
-  margin-left: 240px;
+  width: 100%;
   background: transparent;
   font-family: "Bai Jamjuree", sans-serif;
   color: #ffffff;
-  /* padding: 24px; */
   position: relative;
   overflow-x: hidden;
 }
 
-/* .rentivaDashboard::before {
-  display: none;
-} */
-
 .rentivaDashboard__container {
   width: 100%;
-  /* background-color: red; */
   margin: 0 auto;
   position: relative;
-  /* max-width: 1100px; */
-
-  width: 96%;
-  margin-left: auto;
+  box-sizing: border-box;
 }
 
 /* Header Section */
@@ -66,8 +55,6 @@
 
 .rentivaDashboard__addButton:hover {
   background: linear-gradient(135deg, #E8A075, #F2B088);
-  /* transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(195, 132, 94, 0.3); */
 }
 
 /* Stats Grid */
@@ -93,8 +80,6 @@
 
 .rentivaDashboard__statCard:hover {
   border-color: #C3845E;
-  /* transform: translateY(-4px);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3); */
 }
 
 .rentivaDashboard__statCard--primary {
@@ -286,13 +271,7 @@
 
 /* Extra Large Desktops & 4K Displays (1440px+) */
 @media (min-width: 1440px) {
-  .rentivaDashboard {
-    width: calc(100vw - 260px);
-    margin-left: 260px;
-  }
-  
   .rentivaDashboard__container {
-    width: 94%;
     max-width: 1200px;
   }
   
@@ -355,13 +334,7 @@
 
 /* Large Desktops (1024px - 1439px) */
 @media (min-width: 1024px) and (max-width: 1439px) {
-  .rentivaDashboard {
-    width: calc(100vw - 240px);
-    margin-left: 240px;
-  }
-  
   .rentivaDashboard__container {
-    width: 95%;
     max-width: 1000px;
   }
   
@@ -418,13 +391,8 @@
 
 /* Tablets & Small Laptops (768px - 1023px) */
 @media (min-width: 768px) and (max-width: 1023px) {
-  .rentivaDashboard {
-    width: calc(100vw - 200px);
-    margin-left: 200px;
-  }
-  
   .rentivaDashboard__container {
-    width: 96%;
+    max-width: 100%;
   }
   
   .rentivaDashboard__header {
@@ -494,15 +462,8 @@
 
 /* Large Mobile Landscape & Small Tablets (601px - 767px) */
 @media (min-width: 601px) and (max-width: 767px) {
-  .rentivaDashboard {
-    width: 100vw;
-    margin-left: 0;
-    padding: 20px;
-  }
-  
   .rentivaDashboard__container {
-    width: 100%;
-    margin-left: 0;
+    max-width: 100%;
   }
   
   .rentivaDashboard__header {
@@ -593,15 +554,8 @@
 
 /* Mobile Portrait & Landscape (481px - 600px) */
 @media (min-width: 481px) and (max-width: 600px) {
-  .rentivaDashboard {
-    width: 100vw;
-    margin-left: 0;
-    padding: 18px;
-  }
-  
   .rentivaDashboard__container {
-    width: 100%;
-    margin-left: 0;
+    max-width: 100%;
   }
   
   .rentivaDashboard__header {
@@ -625,7 +579,6 @@
     width: 100%;
     max-width: 260px;
     justify-content: center;
-    /* Ensure minimum touch target */
     min-height: 44px;
   }
   
@@ -713,15 +666,8 @@
 
 /* Small Mobile (361px - 480px) */
 @media (min-width: 361px) and (max-width: 480px) {
-  .rentivaDashboard {
-    width: 100vw;
-    margin-left: 0;
-    padding: 16px;
-  }
-  
   .rentivaDashboard__container {
-    width: 100%;
-    margin-left: 0;
+    max-width: 100%;
   }
   
   .rentivaDashboard__header {
@@ -832,15 +778,8 @@
 
 /* Extra Small Mobile (320px - 360px) */
 @media (max-width: 360px) {
-  .rentivaDashboard {
-    width: 100vw;
-    margin-left: 0;
-    padding: 12px;
-  }
-  
   .rentivaDashboard__container {
-    width: 100%;
-    margin-left: 0;
+    max-width: 100%;
   }
   
   .rentivaDashboard__header {

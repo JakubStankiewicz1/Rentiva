@@ -5,16 +5,24 @@
   font-family: 'Bai Jamjuree', sans-serif;
   background: linear-gradient(135deg, #181818 0%, #232323 100%);
   min-height: 100vh;
-  width: calc(100vw - 240px);
+  width: calc(100vw - 300px);
   margin-left: 240px;
   position: relative;
   padding-bottom: 60px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translateX(-240px);
+  /* transform: translateX(-280px) translateY(-30px); */
 }
 
 .reservations-container {
   /* width: 96%; */
   margin-left: auto;
   position: relative;
+  /* width: 90%; */
+  left: 0;
+  margin-right: auto;
   /* background-color: red ; */
 }
 

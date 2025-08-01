@@ -23,22 +23,25 @@
 }
 
 .rentivaAdminLayout__content {
-  margin-left: 241px;
+  margin-left: 240px;
   margin-top: 64px;
   min-height: calc(100vh - 64px);
   position: relative;
   z-index: 1;
   padding: 0;
+  transition: margin-left 0.3s ease, width 0.3s ease;
 }
 
 .rentivaAdminLayout__content--mobile {
   margin-left: 0;
+  width: 100%;
 }
 
 .rentivaAdminLayout__main {
   margin: 0;
   width: 100%;
   padding: 24px;
+  box-sizing: border-box;
 }
 
 /* Toast container customization */
@@ -107,6 +110,7 @@
     margin-top: 56px;
     padding: 0;
     min-height: calc(100vh - 56px);
+    width: 100%;
   }
   
   .rentivaAdminLayout__main {
@@ -144,6 +148,7 @@
     margin-top: 60px;
     padding: 0;
     min-height: calc(100vh - 60px);
+    width: 100%;
   }
   
   .rentivaAdminLayout__main {
@@ -181,6 +186,7 @@
     margin-top: 64px;
     padding: 0;
     min-height: calc(100vh - 64px);
+    width: 100%;
   }
   
   .rentivaAdminLayout__main {
@@ -218,6 +224,7 @@
     margin-top: 64px;
     padding: 0;
     min-height: calc(100vh - 64px);
+    width: 100%;
   }
   
   .rentivaAdminLayout__main {
@@ -249,17 +256,19 @@
   }
 }
 
-/* Small Desktop (900px-1199px) */
-@media screen and (min-width: 900px) and (max-width: 1199px) {
+/* Small Desktop (900px-1023px) */
+@media screen and (min-width: 900px) and (max-width: 1023px) {
   .rentivaAdminLayout__content {
-    margin-left: 241px;
+    margin-left: 240px;
     margin-top: 64px;
     padding: 0;
     min-height: calc(100vh - 64px);
+    width: calc(100vw - 240px);
   }
   
   .rentivaAdminLayout__content--mobile {
     margin-left: 0;
+    width: 100%;
   }
   
   .rentivaAdminLayout__main {
@@ -290,17 +299,62 @@
   }
 }
 
-/* Medium Desktop (1200px-1599px) */
-@media screen and (min-width: 1200px) and (max-width: 1599px) {
+/* Medium Desktop (1024px-1199px) */
+@media screen and (min-width: 1024px) and (max-width: 1199px) {
   .rentivaAdminLayout__content {
-    margin-left: 261px;
+    margin-left: 240px;
     margin-top: 64px;
     padding: 0;
     min-height: calc(100vh - 64px);
+    width: calc(100vw - 240px);
   }
   
   .rentivaAdminLayout__content--mobile {
     margin-left: 0;
+    width: 100%;
+  }
+  
+  .rentivaAdminLayout__main {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 24px;
+  }
+  
+  .rentivaAdminLayout .Toastify__toast-container {
+    top: 88px;
+    right: 32px;
+    width: 320px;
+  }
+  
+  .rentivaAdminLayout .Toastify__toast {
+    margin-bottom: 16px;
+    min-height: 64px;
+    padding: 16px;
+    font-size: 14px;
+    border-radius: 4px;
+  }
+  
+  .rentivaAdminLayout__loadingSpinner {
+    width: 50px;
+    height: 50px;
+    border-width: 3px;
+  }
+}
+
+/* Large Desktop (1200px-1599px) */
+@media screen and (min-width: 1200px) and (max-width: 1599px) {
+  .rentivaAdminLayout__content {
+    margin-left: 260px;
+    margin-top: 64px;
+    padding: 0;
+    min-height: calc(100vh - 64px);
+    width: calc(100vw - 260px);
+  }
+  
+  .rentivaAdminLayout__content--mobile {
+    margin-left: 0;
+    width: 100%;
   }
   
   .rentivaAdminLayout__main {
@@ -334,14 +388,16 @@
 /* Large Desktop (1600px+) */
 @media screen and (min-width: 1600px) {
   .rentivaAdminLayout__content {
-    margin-left: 281px;
+    margin-left: 280px;
     margin-top: 72px;
     padding: 0;
     min-height: calc(100vh - 72px);
+    width: calc(100vw - 280px);
   }
   
   .rentivaAdminLayout__content--mobile {
     margin-left: 0;
+    width: 100%;
   }
   
   .rentivaAdminLayout__main {
@@ -557,7 +613,7 @@
 
 /* Smooth transitions */
 .rentivaAdminLayout__content {
-  transition: margin-left 0.3s ease;
+  transition: margin-left 0.3s ease, width 0.3s ease;
 }
 
 /* Focus styles for accessibility */

@@ -11,6 +11,7 @@
   z-index: 1300;
   overflow-y: auto;
   transition: transform 0.3s ease;
+  box-sizing: border-box;
 }
 
 .rentivaAdminSidebar--mobile {
@@ -79,7 +80,6 @@
   padding: 12px 16px;
   color: #a6a6a6;
   text-decoration: none;
-  /* border-radius: 4px; */
   transition: all 0.2s ease;
   font-size: 14px;
   font-weight: 500;
@@ -94,7 +94,6 @@
 .rentivaAdminSidebar__menuLink--active {
   background: linear-gradient(135deg, rgba(195, 132, 94, 0.2), rgba(195, 132, 94, 0.1));
   color: #C3845E;
-  /* border-left: 3px solid #C3845E; */
   padding-left: 13px;
 }
 
@@ -133,7 +132,6 @@
   background: none;
   border: none;
   color: #ff4444;
-  /* border-radius: 4px; */
   transition: all 0.2s ease;
   font-size: 14px;
   font-weight: 500;
@@ -162,6 +160,7 @@
     width: 280px;
     transform: translateX(-100%);
     box-shadow: 4px 0 20px rgba(0, 0, 0, 0.3);
+    box-sizing: border-box;
   }
   
   .rentivaAdminSidebar--mobileOpen {
@@ -245,6 +244,7 @@
     width: 300px;
     transform: translateX(-100%);
     box-shadow: 4px 0 20px rgba(0, 0, 0, 0.3);
+    box-sizing: border-box;
   }
   
   .rentivaAdminSidebar--mobileOpen {
@@ -305,6 +305,7 @@
     width: 320px;
     transform: translateX(-100%);
     box-shadow: 4px 0 24px rgba(0, 0, 0, 0.3);
+    box-sizing: border-box;
   }
   
   .rentivaAdminSidebar--mobileOpen {
@@ -344,6 +345,7 @@
     width: 280px;
     transform: translateX(-100%);
     box-shadow: 4px 0 24px rgba(0, 0, 0, 0.25);
+    box-sizing: border-box;
   }
   
   .rentivaAdminSidebar--mobileOpen {
@@ -371,13 +373,14 @@
   }
 }
 
-/* Small Desktop (900px-1199px) */
-@media screen and (min-width: 900px) and (max-width: 1199px) {
+/* Small Desktop (900px-1023px) */
+@media screen and (min-width: 900px) and (max-width: 1023px) {
   .rentivaAdminSidebar {
     width: 240px;
     transform: translateX(0);
     position: fixed;
     box-shadow: none;
+    box-sizing: border-box;
   }
   
   .rentivaAdminSidebar--mobile {
@@ -446,13 +449,90 @@
   }
 }
 
-/* Medium Desktop (1200px-1599px) */
+/* Medium Desktop (1024px-1199px) */
+@media screen and (min-width: 1024px) and (max-width: 1199px) {
+  .rentivaAdminSidebar {
+    width: 240px;
+    transform: translateX(0);
+    position: fixed;
+    box-shadow: none;
+    box-sizing: border-box;
+  }
+  
+  .rentivaAdminSidebar--mobile {
+    transform: translateX(0);
+  }
+  
+  .rentivaAdminSidebar__overlay {
+    display: none !important;
+  }
+  
+  .rentivaAdminSidebar__header {
+    height: 64px;
+    padding: 0 24px;
+  }
+  
+  .rentivaAdminSidebar__logo {
+    font-size: 24px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+  }
+  
+  .rentivaAdminSidebar__nav {
+    padding: 16px 0;
+  }
+  
+  .rentivaAdminSidebar__menuList {
+    gap: 5px;
+    padding-bottom: 5px;
+  }
+  
+  .rentivaAdminSidebar__menuItem {
+    margin: 4px 12px;
+  }
+  
+  .rentivaAdminSidebar__menuLink {
+    padding: 12px 16px;
+    gap: 12px;
+    font-size: 14px;
+    font-weight: 500;
+  }
+  
+  .rentivaAdminSidebar__menuIcon {
+    width: 20px;
+    height: 20px;
+  }
+  
+  .rentivaAdminSidebar__menuText {
+    font-size: 14px;
+    font-weight: 500;
+  }
+  
+  .rentivaAdminSidebar__logoutSection {
+    padding: 16px 12px;
+  }
+  
+  .rentivaAdminSidebar__logoutButton {
+    padding: 12px 16px;
+    gap: 12px;
+    font-size: 14px;
+    font-weight: 500;
+  }
+  
+  .rentivaAdminSidebar__logoutIcon {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+/* Large Desktop (1200px-1599px) */
 @media screen and (min-width: 1200px) and (max-width: 1599px) {
   .rentivaAdminSidebar {
     width: 260px;
     transform: translateX(0);
     position: fixed;
     box-shadow: none;
+    box-sizing: border-box;
   }
   
   .rentivaAdminSidebar--mobile {
@@ -532,6 +612,7 @@
     transform: translateX(0);
     position: fixed;
     box-shadow: none;
+    box-sizing: border-box;
   }
   
   .rentivaAdminSidebar--mobile {
@@ -797,7 +878,6 @@
 
 .rentivaAdminSidebar::-webkit-scrollbar-thumb {
   background: #393939;
-  /* border-radius: 2px; */
 }
 
 .rentivaAdminSidebar::-webkit-scrollbar-thumb:hover {

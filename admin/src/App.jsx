@@ -58,13 +58,17 @@ const theme = createTheme({
 function App() {
   return (
     <ThemeProvider theme={theme}>
+
       <AuthProvider>
         <ToastContainer position="top-right" autoClose={3000} />
         <Routes>
           {/* Public Routes */}
           <Route path="/login" element={<LoginPage />} />
             {/* Protected Routes */}
-          <Route element={<ProtectedRoute />}>
+
+          {/* <Route element={<ProtectedRoute />}> */}
+
+          
             {/* Main application layout with nested routes */}
             <Route element={<Layout />}>
               {/* Dashboard route */}
@@ -81,12 +85,14 @@ function App() {
                 <Route index element={<ReservationsPage />} />
               </Route>
             </Route>
-          </Route>
+
+          {/* </Route> */}
 
           {/* Redirect any unknown paths to dashboard */}
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
       </AuthProvider>
+
     </ThemeProvider>
   )
 }
