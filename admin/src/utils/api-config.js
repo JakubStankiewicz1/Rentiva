@@ -3,7 +3,7 @@
  */
 
 const API_BASE_URL = import.meta.env.PROD 
-  ? import.meta.env.VITE_API_URL || 'https://rentiva-backend.onrender.com/api'
+  ? import.meta.env.VITE_API_URL || 'https://rentiva.onrender.com/api'
   : 'http://localhost:8081/api';
 
 export const API_ENDPOINTS = {
