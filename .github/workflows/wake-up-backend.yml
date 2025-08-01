@@ -1,0 +1,68 @@
+name: Wake Up Backend Service
+
+on:
+  schedule:
+    - cron: '0 */2 * * *' # co 2 godziny
+  workflow_dispatch:
+
+jobs:
+  wake-up:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Wake up backend service
+        run: |
+          echo "🌅 Waking up backend service..."
+          
+          # Set timeout for curl requests
+          TIMEOUT=60
+          
+          # Try multiple endpoints with longer timeouts
+          echo "Attempting to wake up the service..."
+          
+          # First try the wake endpoint
+          echo "Calling /api/wake endpoint..."
+          wake_response=$(curl -s -w "%{http_code}" --max-time $TIMEOUT https://rentiva.onrender.com/api/wake)
+          wake_code="${wake_response: -3}"
+          
+          if [ "$wake_code" -eq 200 ]; then
+            echo "✅ Wake endpoint responded (HTTP $wake_code)"
+          else
+            echo "⚠️  Wake endpoint responded with HTTP $wake_code"
+          fi
+          
+          # Try ping endpoint
+          echo "Calling /api/ping endpoint..."
+          ping_response=$(curl -s -w "%{http_code}" --max-time $TIMEOUT https://rentiva.onrender.com/api/ping)
+          ping_code="${ping_response: -3}"
+          
+          if [ "$ping_code" -eq 200 ]; then
+            echo "✅ Ping endpoint responded (HTTP $ping_code)"
+          else
+            echo "⚠️  Ping endpoint responded with HTTP $ping_code"
+          fi
+          
+          # Try health endpoint
+          echo "Calling /api/health endpoint..."
+          health_response=$(curl -s -w "%{http_code}" --max-time $TIMEOUT https://rentiva.onrender.com/api/health)
+          health_code="${health_response: -3}"
+          
+          if [ "$health_code" -eq 200 ]; then
+            echo "✅ Health endpoint responded (HTTP $health_code)"
+          else
+            echo "⚠️  Health endpoint responded with HTTP $health_code"
+          fi
+          
+          # Try cars endpoint
+          echo "Calling /api/cars endpoint..."
+          cars_response=$(curl -s -w "%{http_code}" --max-time $TIMEOUT https://rentiva.onrender.com/api/cars)
+          cars_code="${cars_response: -3}"
+          
+          if [ "$cars_code" -eq 200 ]; then
+            echo "✅ Cars endpoint responded (HTTP $cars_code)"
+          else
+            echo "⚠️  Cars endpoint responded with HTTP $cars_code"
+          fi
+          
+          echo "🎯 Wake-up attempt completed!"
+          echo "✅ Wake-up workflow completed successfully"
+          exit 0 

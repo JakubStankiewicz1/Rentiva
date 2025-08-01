@@ -39,4 +39,23 @@ public class HealthController {
         response.put("message", "Service is active and responding");
         return ResponseEntity.ok(response);
     }
+    
+    @GetMapping("/ping")
+    public ResponseEntity<Map<String, Object>> ping() {
+        Map<String, Object> response = new HashMap<>();
+        response.put("pong", true);
+        response.put("timestamp", LocalDateTime.now());
+        response.put("service", "Rentiva Backend");
+        return ResponseEntity.ok(response);
+    }
+    
+    @GetMapping("/wake")
+    public ResponseEntity<Map<String, Object>> wake() {
+        Map<String, Object> response = new HashMap<>();
+        response.put("awake", true);
+        response.put("timestamp", LocalDateTime.now());
+        response.put("message", "Service has been woken up");
+        response.put("service", "Rentiva Backend");
+        return ResponseEntity.ok(response);
+    }
 }

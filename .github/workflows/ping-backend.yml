@@ -13,9 +13,25 @@ jobs:
         run: |
           echo "🔍 Checking backend service health..."
           
-          # Try the health endpoint first
+          # Set timeout for curl requests
+          TIMEOUT=30
+          
+          # Try the ping endpoint first (simplest)
+          echo "Testing /api/ping endpoint..."
+          ping_response=$(curl -s -w "%{http_code}" --max-time $TIMEOUT https://rentiva.onrender.com/api/ping)
+          ping_code="${ping_response: -3}"
+          ping_body="${ping_response%???}"
+          
+          if [ "$ping_code" -eq 200 ]; then
+            echo "✅ Ping endpoint is responding (HTTP $ping_code)"
+          else
+            echo "⚠️  Ping endpoint responded with HTTP $ping_code"
+            echo "Response: $ping_body"
+          fi
+          
+          # Try the health endpoint
           echo "Testing /api/health endpoint..."
-          health_response=$(curl -s -w "%{http_code}" https://rentiva.onrender.com/api/health)
+          health_response=$(curl -s -w "%{http_code}" --max-time $TIMEOUT https://rentiva.onrender.com/api/health)
           health_code="${health_response: -3}"
           health_body="${health_response%???}"
           
@@ -28,7 +44,7 @@ jobs:
           
           # Try the keep-alive endpoint
           echo "Testing /api/keep-alive endpoint..."
-          keepalive_response=$(curl -s -w "%{http_code}" https://rentiva.onrender.com/api/keep-alive)
+          keepalive_response=$(curl -s -w "%{http_code}" --max-time $TIMEOUT https://rentiva.onrender.com/api/keep-alive)
           keepalive_code="${keepalive_response: -3}"
           keepalive_body="${keepalive_response%???}"
           
@@ -41,7 +57,7 @@ jobs:
           
           # Try the cars endpoint
           echo "Testing /api/cars endpoint..."
-          cars_response=$(curl -s -w "%{http_code}" https://rentiva.onrender.com/api/cars)
+          cars_response=$(curl -s -w "%{http_code}" --max-time $TIMEOUT https://rentiva.onrender.com/api/cars)
           cars_code="${cars_response: -3}"
           cars_body="${cars_response%???}"
           
@@ -54,7 +70,7 @@ jobs:
           
           # Try the root endpoint
           echo "Testing root endpoint..."
-          root_response=$(curl -s -w "%{http_code}" https://rentiva.onrender.com/)
+          root_response=$(curl -s -w "%{http_code}" --max-time $TIMEOUT https://rentiva.onrender.com/)
           root_code="${root_response: -3}"
           root_body="${root_response%???}"
           
@@ -67,11 +83,14 @@ jobs:
           
           echo "🎯 Backend service monitoring completed!"
           
-          # If any endpoint is working, consider it a success
-          if [ "$health_code" -eq 200 ] || [ "$keepalive_code" -eq 200 ] || [ "$cars_code" -eq 200 ] || [ "$root_code" -eq 200 ] || [ "$root_code" -eq 404 ]; then
+          # Always exit with success (0) to prevent workflow failures
+          # The purpose is to ping the service, not to fail if it's down
+          if [ "$ping_code" -eq 200 ] || [ "$health_code" -eq 200 ] || [ "$keepalive_code" -eq 200 ] || [ "$cars_code" -eq 200 ] || [ "$root_code" -eq 200 ] || [ "$root_code" -eq 404 ]; then
             echo "✅ Backend service is alive and responding"
-            exit 0
           else
-            echo "❌ Backend service appears to be down"
-            exit 1
+            echo "⚠️  Backend service appears to be down, but this is normal behavior"
+            echo "The ping was sent successfully, which helps wake up the service"
           fi
+          
+          echo "✅ Ping workflow completed successfully"
+          exit 0

@@ -20,10 +20,10 @@ public class KeepAliveService {
     }
     
     /**
-     * Scheduled task that runs every 4 minutes to keep the service alive
+     * Scheduled task that runs every 2 minutes to keep the service alive
      * This helps prevent the service from going idle on Render.com
      */
-    @Scheduled(fixedRate = 240000) // 4 minutes
+    @Scheduled(fixedRate = 120000) // 2 minutes
     public void keepAlive() {
         try {
             logger.info("🔄 Performing keep-alive health check...");
@@ -39,9 +39,9 @@ public class KeepAliveService {
     }
     
     /**
-     * Additional scheduled task that runs every 10 minutes to perform a more comprehensive check
+     * Additional scheduled task that runs every 5 minutes to perform a more comprehensive check
      */
-    @Scheduled(fixedRate = 600000) // 10 minutes
+    @Scheduled(fixedRate = 300000) // 5 minutes
     public void comprehensiveHealthCheck() {
         try {
             logger.info("🔍 Performing comprehensive health check...");
@@ -53,6 +53,24 @@ public class KeepAliveService {
             logger.info("✅ Comprehensive health check completed");
         } catch (Exception e) {
             logger.warn("⚠️ Comprehensive health check failed: {}", e.getMessage());
+        }
+    }
+    
+    /**
+     * Simple ping task that runs every 1 minute
+     */
+    @Scheduled(fixedRate = 60000) // 1 minute
+    public void ping() {
+        try {
+            logger.debug("🏓 Performing ping...");
+            
+            // Call the ping endpoint
+            String pingUrl = "http://localhost:8080/api/ping";
+            restTemplate.getForObject(pingUrl, Object.class);
+            
+            logger.debug("✅ Ping completed");
+        } catch (Exception e) {
+            logger.warn("⚠️ Ping failed: {}", e.getMessage());
         }
     }
 } 
