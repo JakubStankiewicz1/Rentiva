@@ -1,456 +1,130 @@
-# 🚗 Rentiva - Premium Car Rental Platform
+# Rentiva - Car Rental Application
 
-![Rentiva](https://img.shields.io/badge/Rentiva-Premium%20Car%20Rental-blue?style=for-the-badge)  
-![Status](https://img.shields.io/badge/Status-Production%20Ready-success?style=for-the-badge)  
-![Deployment](https://img.shields.io/badge/Deploy-Render.com-purple?style=for-the-badge)
+A modern car rental application with React frontend, admin panel, and Spring Boot backend.
 
-**Rentiva** to profesjonalna platforma do wynajmu samochodów premium z pełnym systemem zarządzania flotą, rezerwacjami i płatnościami.
+## 🚀 Live Applications
 
-## 🆕 Najnowsze Poprawki (Jun 2025)
+- **Frontend**: https://rentiva-frontend.onrender.com
+- **Admin Panel**: https://rentiva-admin.onrender.com  
+- **Backend API**: https://rentiva-backend.onrender.com
 
-### ✅ **Naprawiono Problem z Bazą Danych**
-- **Problem**: Backend próbował łączyć się z `localhost:5432` zamiast z bazą Render PostgreSQL
-- **Rozwiązanie**: Wyłączono Spring Boot DataSource AutoConfiguration
-- **Rezultat**: Wymuszone użycie custom DatabaseConfig z automatycznym parsowaniem DATABASE_URL
+## 📊 Backend Health Status
 
-### 🔧 **Poprawki Techniczne**
-- ✅ Usunięto konflikt MySQL/PostgreSQL dependency  
-- ✅ Enhanced database connection debugging
-- ✅ Forced PostgreSQL dialect usage
-- ✅ Improved error handling for missing DATABASE_URL
+### Automated Monitoring
+The backend is automatically monitored by GitHub Actions workflows:
 
-### 📋 **Szybkie Sprawdzenia**
-- 🔗 **Health Check**: `https://your-backend.onrender.com/actuator/health`
-- 🔗 **API Test**: `https://your-backend.onrender.com/api/cars`
-- 📁 **Quick Fix**: Zobacz `DATABASE_CONNECTION_FIX.md`
+- **Keep Backend Active**: Runs every 2 minutes
+- **Database Activity**: Runs every 15 minutes  
+- **Backend Monitoring**: Runs every 6 hours
 
----
-
-## 🏗️ Architektura Systemu
-
+### Manual Health Check
+You can manually check backend health by visiting:
 ```
-┌─────────────────┐    ┌─────────────────┐    ┌─────────────────┐
-│   Frontend      │    │   Admin Panel   │    │    Backend      │
-│   React + Vite  │    │   React + MUI   │    │  Spring Boot    │
-│   Port: 5173    │    │   Port: 3001    │    │   Port: 8081    │
-└─────────────────┘    └─────────────────┘    └─────────────────┘
-         │                       │                       │
-         └───────────────────────┼───────────────────────┘
-                                 │
-                    ┌─────────────────┐
-                    │   PostgreSQL    │
-                    │    Database     │
-                    │   Port: 5432    │
-                    └─────────────────┘
+https://rentiva-backend.onrender.com/api/health
 ```
 
----
+### Workflow Status
+Check the latest workflow runs at: [GitHub Actions](https://github.com/[your-username]/Rentiva/actions)
 
-## 📦 Komponenty Techniczne
-
-| Komponent | Technologia | Port (dev) | URL (prod) |
-|-----------|-------------|------------|------------|
-| **🔧 Backend** | Spring Boot 3.5 + Java 21 | 8081 | `rentiva-backend.onrender.com` |
-| **🌐 Frontend** | React 19 + Vite 6 | 5173 | `rentiva-frontend.onrender.com` |
-| **⚙️ Admin** | React 19 + Material-UI | 3001 | `rentiva-admin.onrender.com` |
-| **🗄️ Database** | PostgreSQL 15 | 5432 | Render Managed |
-
----
-
-## 🚀 Deployment na Render.com
-
-### ⚡ Szybki Deploy (5 minut)
-1. **Przeczytaj**: [`QUICK_DEPLOY.md`](QUICK_DEPLOY.md)
-2. **Utwórz repo GitHub** i wypchnij kod
-3. **Render.com** → Blueprint → Twoje repo
-4. **Gotowe!** ✨
-
-### 📚 Szczegółowe Instrukcje
-- **Pełny przewodnik**: [`DEPLOYMENT_INSTRUCTIONS.md`](DEPLOYMENT_INSTRUCTIONS.md)
-- **API Documentation**: [`INSTRUKCJA_API_REZERWACJI.md`](INSTRUKCJA_API_REZERWACJI.md)
-
----
-
-## 🛠️ Rozwój Lokalny
-
-### Wymagania
-- **Java 21** (OpenJDK)
-- **Node.js 18+** (Vite)
-- **PostgreSQL 15+** lub MySQL 8+ 
-- **Git**
-
-### Uruchomienie z Docker Compose
-```bash
-# Klonuj repozytorium
-git clone https://github.com/TWOJA_NAZWA/rentiva.git
-cd rentiva
-
-# Uruchom wszystkie serwisy
-docker-compose up --build
-
-# Aplikacja dostępna:
-# Frontend: http://localhost:3000
-# Admin: http://localhost:3001  
-# Backend: http://localhost:8080
-```
-
-### Uruchomienie manualne
-
-#### 1. Backend
-```bash
-cd backend
-./mvnw spring-boot:run
-# http://localhost:8081
-```
-
-#### 2. Frontend
-```bash
-cd frontend
-npm install
-npm run dev
-# http://localhost:5173
-```
-
-#### 3. Admin Panel
-```bash
-cd admin
-npm install  
-npm run dev
-# http://localhost:3001
-```
-
----
-
-## 📂 Struktura Projektu
+## 🏗️ Project Structure
 
 ```
-rentiva/
-├── 📄 render.yaml                 # Konfiguracja Render
-├── 📄 docker-compose.yml          # Docker dla dev
-├── 📄 DEPLOYMENT_INSTRUCTIONS.md  # Przewodnik deploy
-├── 📄 QUICK_DEPLOY.md             # Szybki start
-│
-├── 🔧 backend/                    # Spring Boot API
-│   ├── 🐳 Dockerfile
-│   ├── 📋 pom.xml
-│   ├── ⚙️ system.properties
-│   └── 📁 src/main/java/...
-│
-├── 🌐 frontend/                   # React Client App  
-│   ├── 🐳 Dockerfile
-│   ├── 📋 package.json
-│   ├── ⚙️ vite.config.js
-│   └── 📁 src/components/...
-│
-└── ⚙️ admin/                      # Admin Dashboard
-    ├── 🐳 Dockerfile  
-    ├── 📋 package.json
-    ├── ⚙️ vite.config.js
-    └── 📁 src/pages/...
+Rentiva/
+├── frontend/          # React frontend application
+├── admin/            # React admin panel
+├── backend/          # Spring Boot backend
+├── .github/workflows/ # GitHub Actions workflows
+└── render.yaml       # Render deployment configuration
 ```
 
----
+## 🛠️ Technologies
 
-## 🔐 Zmienne Środowiskowe
+- **Frontend**: React, Vite, Tailwind CSS
+- **Admin Panel**: React, Material-UI
+- **Backend**: Spring Boot, Java 21, PostgreSQL
+- **Deployment**: Render
+- **Monitoring**: GitHub Actions
 
-### Backend (`application-prod.properties`)
-```properties
-SPRING_PROFILES_ACTIVE=prod
-DATABASE_URL=postgresql://user:pass@host:port/db
-CORS_ORIGINS=https://rentiva-frontend.onrender.com
-PORT=8080
+## 📈 Backend Monitoring Workflows
+
+### 1. Keep Backend Active (Every 2 minutes)
+- Health checks
+- API endpoint testing
+- Basic functionality verification
+
+### 2. Database Activity (Every 15 minutes)  
+- Complex database queries
+- Search and filtering tests
+- Reservation operations
+
+### 3. Backend Monitoring (Every 6 hours)
+- Performance testing
+- Comprehensive API testing
+- Detailed status reporting
+
+## 🔧 Development
+
+### Prerequisites
+- Node.js 18+
+- Java 21
+- Maven
+
+### Running Locally
+
+1. **Backend**:
+   ```bash
+   cd backend
+   ./mvnw spring-boot:run
+   ```
+
+2. **Frontend**:
+   ```bash
+   cd frontend
+   npm install
+   npm run dev
+   ```
+
+3. **Admin Panel**:
+   ```bash
+   cd admin
+   npm install
+   npm run dev
+   ```
+
+## 📝 API Documentation
+
+### Health Check
+```
+GET /api/health
 ```
 
-### Frontend (`.env.production`)
-```bash
-VITE_API_URL=https://rentiva-backend.onrender.com
-NODE_ENV=production
+### Cars API
+```
+GET /api/cars
+GET /api/cars/{id}
+GET /api/cars/count
+GET /api/cars?search={term}
+GET /api/cars?brand={brand}&type={type}
 ```
 
-### Admin Panel (`.env.production`)  
-```bash
-VITE_API_URL=https://rentiva-backend.onrender.com
-NODE_ENV=production
+### Reservations API
 ```
-
----
-
-## 🎯 Funkcjonalności
-
-### � Dla Klientów (Frontend)
-- ✅ Przeglądanie dostępnych samochodów
-- ✅ System rezerwacji z kalendarzem
-- ✅ Formularz kontaktowy
-- ✅ Responsywny design
-- ✅ Integracja z płatnościami
-
-### 🛠️ Dla Administratorów (Admin Panel)
-- ✅ Zarządzanie flotą samochodów
-- ✅ System rezerwacji
-- ✅ Panel analityki
-- ✅ Zarządzanie użytkownikami
-- ✅ Dashboard w czasie rzeczywistym
-
-### 🔧 Backend API
-- ✅ RESTful API z pełną dokumentacją
-- ✅ Zabezpieczenia Spring Security
-- ✅ Walidacja danych
-- ✅ Obsługa błędów
-- ✅ Health checks dla monitoring
-
----
-
-## 📊 Status Deploymentu
-
-### 🌐 Production URLs
-| Service | URL | Status |
-|---------|-----|--------|
-| **Frontend** | https://rentiva-frontend.onrender.com | ![Status](https://img.shields.io/website?url=https%3A//rentiva-frontend.onrender.com) |
-| **Admin** | https://rentiva-admin.onrender.com | ![Status](https://img.shields.io/website?url=https%3A//rentiva-admin.onrender.com) |
-| **Backend** | https://rentiva-backend.onrender.com | ![Status](https://img.shields.io/website?url=https%3A//rentiva-backend.onrender.com) |
-
-### 🔍 Health Checks
-- Backend Health: `/actuator/health`
-- API Docs: `/api/cars` (przykładowy endpoint)
-- Database: Managed PostgreSQL na Render
-
----
-
-## 🤝 Współpraca
-
-1. **Fork** repozytorium
-2. **Utwórz** feature branch (`git checkout -b feature/AmazingFeature`) 
-3. **Commit** zmiany (`git commit -m 'Add some AmazingFeature'`)
-4. **Push** do branch (`git push origin feature/AmazingFeature`)
-5. **Otwórz** Pull Request
-
----
-
-## 📞 Wsparcie
-
-### 🐛 Problemy z Deploymentem
-1. Sprawdź logi w [Render Dashboard](https://dashboard.render.com)
-2. Zweryfikuj zmienne środowiskowe  
-3. Przeczytaj [`DEPLOYMENT_INSTRUCTIONS.md`](DEPLOYMENT_INSTRUCTIONS.md)
-
-### 💬 Kontakt
-- **Issues**: GitHub Issues w tym repo
-- **Dokumentacja**: Pliki `.md` w katalogu głównym
-- **API**: [`INSTRUKCJA_API_REZERWACJI.md`](INSTRUKCJA_API_REZERWACJI.md)
-
----
-
-## 📄 Licencja
-
-Projekt dostępny na licencji MIT. Zobacz plik `LICENSE` dla szczegółów.
-
----
-
-<div align="center">
-
-**🚀 Rentiva - Twoja platforma wynajmu samochodów premium**
-
-[![Deploy to Render](https://img.shields.io/badge/Deploy%20to-Render-purple?style=for-the-badge&logo=render)](https://render.com)
-
-</div>
-
-### Backend
-```bash
-cd backend
-./mvnw spring-boot:run
+GET /api/reservations
+POST /api/reservations
+GET /api/reservations/{id}
+GET /api/reservations/upcoming
+GET /api/reservations/statistics
 ```
-
-### Frontend
-```bash
-cd frontend
-npm install
-npm run dev
-```
-
-### Admin Panel
-```bash
-cd admin
-npm install
-npm run dev
-```
-
----
-
-## 🔧 Konfiguracja deweloperska
-
-### Backend (application.properties)
-```properties
-spring.datasource.url=jdbc:mysql://localhost:3306/rentiva_db
-spring.datasource.username=root
-spring.datasource.password=your_password
-server.port=8081
-```
-
-### Frontend (.env)
-```env
-VITE_API_URL=http://localhost:8081/api
-```
-
-### Admin (.env)
-```env
-VITE_API_URL=http://localhost:8081/api
-```
-
----
-
-## 📋 Funkcjonalności
-
-### 👤 Frontend (Klienci)
-- [x] Przeglądanie dostępnych samochodów
-- [x] Szczegóły pojazdu
-- [x] System rezerwacji
-- [x] Kontakt i współpraca
-- [x] Responsywny design
-
-### 🛠️ Admin Panel
-- [x] Zarządzanie flotą samochodów
-- [x] Dodawanie/edycja pojazdów
-- [x] Upload zdjęć
-- [x] Dashboard z statistykami
-- [x] System autoryzacji
-
-### 🔧 Backend API
-- [x] REST API endpoints
-- [x] CRUD operacje na samochodach
-- [x] Upload plików
-- [x] CORS configuration
-- [x] Walidacja danych
-
----
-
-## 🛡️ Bezpieczeństwo
-
-- [x] **CORS**: Skonfigurowane dla produkcji
-- [x] **Validation**: Walidacja danych po stronie serwera
-- [x] **Environment Variables**: Wrażliwe dane w zmiennych środowiskowych
-- [x] **HTTPS**: Automatyczne SSL na Render.com
-
----
-
-## 📈 Performance & Monitoring
-
-### Render.com Metryki
-- **Backend**: Health check endpoint `/health`
-- **Database**: PostgreSQL z automatic backups
-- **CDN**: Static assets served via Render CDN
-- **Logging**: Centralized logs in Render dashboard
-
-### Optymalizacje
-- **Frontend**: Vite bundling + code splitting
-- **Backend**: JPA query optimization
-- **Database**: Proper indexing
-- **Caching**: Browser caching for static assets
-
----
 
 ## 🚨 Troubleshooting
 
-### Najczęstsze problemy
+If the backend appears to be down:
 
-| Problem | Rozwiązanie |
-|---------|-------------|
-| **502 Bad Gateway** | Sprawdź czy backend wystartował (może trwać 2-3 min) |
-| **CORS Errors** | Zweryfikuj `CORS_ORIGINS` w backendzie |
-| **Database Connection** | Sprawdź `DATABASE_URL` format |
-| **Build Failures** | Sprawdź logi w Render dashboard |
+1. Check GitHub Actions for recent workflow runs
+2. Verify the health endpoint: `https://rentiva-backend.onrender.com/api/health`
+3. Check Render dashboard for service status
+4. Review workflow logs for error details
 
-### Przydatne komendy
+## 📞 Support
 
-```bash
-# Sprawdź status API
-curl https://rentiva-backend.onrender.com/health
-
-# Sprawdź logi lokalne
-./mvnw spring-boot:run --debug
-
-# Test bazy danych
-psql $DATABASE_URL
-```
-
----
-
-## 📊 Ograniczenia Free Tier (Render.com)
-
-| Zasób | Limit |
-|-------|--------|
-| **Web Services** | 750h/miesiąc |
-| **Static Sites** | Unlimited |
-| **PostgreSQL** | 1GB storage |
-| **Sleep after** | 15 min inactivity |
-| **Cold start** | ~30 sekund |
-
----
-
-## 🔄 CI/CD Pipeline
-
-Automatyczne wdrożenie po każdym push:
-
-```mermaid
-graph LR
-    A[Git Push] --> B[Render Webhook]
-    B --> C[Automatic Build]
-    C --> D[Deploy]
-    D --> E[Health Check]
-```
-
----
-
-## 🎯 Roadmap
-
-### v1.1 (Planowane)
-- [ ] System płatności
-- [ ] Notyfikacje email
-- [ ] Zaawansowane filtry
-- [ ] API rate limiting
-- [ ] Unit tests
-
-### v1.2 (Przyszłość)
-- [ ] Mobile app
-- [ ] Multi-tenant support
-- [ ] Advanced analytics
-- [ ] Integration API
-- [ ] Microservices architecture
-
----
-
-## 🤝 Wkład w projekt
-
-1. Fork projektu
-2. Utwórz branch (`git checkout -b feature/amazing-feature`)
-3. Commit changes (`git commit -m 'Add amazing feature'`)
-4. Push to branch (`git push origin feature/amazing-feature`)
-5. Otwórz Pull Request
-
----
-
-## 📝 Licencja
-
-Ten projekt jest licencjonowany pod **MIT License** - szczegóły w pliku `LICENSE`.
-
----
-
-## 📞 Kontakt & Wsparcie
-
-- **🐛 Błędy**: [GitHub Issues](https://github.com/your-username/rentiva/issues)
-- **💡 Propozycje**: [GitHub Discussions](https://github.com/your-username/rentiva/discussions)
-- **📧 Email**: support@rentiva.com
-
----
-
-## 🎉 Status projektu
-
-![Build Status](https://img.shields.io/badge/build-passing-brightgreen)
-![Deployment](https://img.shields.io/badge/deployment-active-brightgreen)
-![License](https://img.shields.io/badge/license-MIT-blue)
-![Version](https://img.shields.io/badge/version-1.0.0-blue)
-
-**🚀 Rentiva jest gotowa do produkcji!**
-
----
-
-*Ostatnia aktualizacja: Czerwiec 2025*
+For issues or questions, check the GitHub Actions logs or create an issue in this repository.
