@@ -29,12 +29,34 @@ public class AuthController {
     @PostMapping("/login")
     public ResponseEntity<?> login(@Valid @RequestBody LoginRequest loginRequest) {
         try {
+            System.out.println("=== LOGIN REQUEST ===");
+            System.out.println("Email: " + loginRequest.getEmail());
+            System.out.println("Password length: " + (loginRequest.getPassword() != null ? loginRequest.getPassword().length() : "null"));
+            
             LoginResponse response = authService.authenticate(loginRequest);
+            
+            System.out.println("Login successful for user: " + loginRequest.getEmail());
+            System.out.println("=== LOGIN COMPLETED ===");
+            
             return ResponseEntity.ok(response);
         } catch (RuntimeException e) {
+            System.err.println("=== LOGIN ERROR ===");
+            System.err.println("Error: " + e.getMessage());
+            e.printStackTrace();
+            System.err.println("=== END LOGIN ERROR ===");
+            
             Map<String, String> error = new HashMap<>();
             error.put("error", e.getMessage());
             return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(error);
+        } catch (Exception e) {
+            System.err.println("=== UNEXPECTED LOGIN ERROR ===");
+            System.err.println("Error: " + e.getMessage());
+            e.printStackTrace();
+            System.err.println("=== END UNEXPECTED ERROR ===");
+            
+            Map<String, String> error = new HashMap<>();
+            error.put("error", "Internal server error during login");
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(error);
         }
     }
     

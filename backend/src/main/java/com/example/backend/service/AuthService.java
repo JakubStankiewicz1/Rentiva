@@ -25,33 +25,57 @@ public class AuthService {
      * Authenticate user and return login response
      */
     public LoginResponse authenticate(LoginRequest loginRequest) {
-        // Find user by email
-        Optional<User> userOptional = userRepository.findByEmail(loginRequest.getEmail());
-        
-        if (userOptional.isEmpty()) {
-            throw new RuntimeException("Invalid email or password");
+        try {
+            System.out.println("=== AUTHENTICATE START ===");
+            System.out.println("Looking for user with email: " + loginRequest.getEmail());
+            
+            // Find user by email
+            Optional<User> userOptional = userRepository.findByEmail(loginRequest.getEmail());
+            
+            if (userOptional.isEmpty()) {
+                System.out.println("User not found with email: " + loginRequest.getEmail());
+                throw new RuntimeException("Invalid email or password");
+            }
+            
+            User user = userOptional.get();
+            System.out.println("User found: " + user.getName() + " (ID: " + user.getId() + ")");
+            
+            // Check if user is active
+            if (!user.getIsActive()) {
+                System.out.println("User account is deactivated: " + user.getEmail());
+                throw new RuntimeException("User account is deactivated");
+            }
+            
+            System.out.println("User is active, verifying password...");
+            
+            // Verify password (in production, use proper password hashing like BCrypt)
+            if (!verifyPassword(loginRequest.getPassword(), user.getPassword())) {
+                System.out.println("Password verification failed for user: " + user.getEmail());
+                throw new RuntimeException("Invalid email or password");
+            }
+            
+            System.out.println("Password verified successfully");
+            
+            // Update last login time
+            user.setLastLogin(LocalDateTime.now());
+            userRepository.save(user);
+            System.out.println("Last login time updated");
+            
+            // Generate token (in production, use JWT)
+            String token = generateToken(user);
+            System.out.println("Token generated successfully");
+            
+            System.out.println("=== AUTHENTICATE COMPLETED ===");
+            
+            return new LoginResponse(token, user);
+            
+        } catch (Exception e) {
+            System.err.println("=== AUTHENTICATE ERROR ===");
+            System.err.println("Error during authentication: " + e.getMessage());
+            e.printStackTrace();
+            System.err.println("=== END AUTHENTICATE ERROR ===");
+            throw e;
         }
-        
-        User user = userOptional.get();
-        
-        // Check if user is active
-        if (!user.getIsActive()) {
-            throw new RuntimeException("User account is deactivated");
-        }
-        
-        // Verify password (in production, use proper password hashing like BCrypt)
-        if (!verifyPassword(loginRequest.getPassword(), user.getPassword())) {
-            throw new RuntimeException("Invalid email or password");
-        }
-        
-        // Update last login time
-        user.setLastLogin(LocalDateTime.now());
-        userRepository.save(user);
-        
-        // Generate token (in production, use JWT)
-        String token = generateToken(user);
-        
-        return new LoginResponse(token, user);
     }
     
     /**
