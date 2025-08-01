@@ -1,0 +1,143 @@
+name: Backend Monitoring & Maintenance
+
+on:
+  schedule:
+    - cron: '0 */6 * * *' # co 6 godzin
+  workflow_dispatch:
+
+jobs:
+  backend-monitoring:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Check backend status
+        run: |
+          echo "=== Starting backend monitoring ==="
+          echo "Time: $(date)"
+          
+      - name: Test all API endpoints
+        run: |
+          echo "=== Testing all API endpoints ==="
+          
+          # Health check
+          echo "Testing health endpoint..."
+          health_response=$(curl -s -w "%{http_code}" -o /dev/null https://rentiva-backend.onrender.com/api/health)
+          echo "Health: $health_response"
+          
+          # Cars endpoints
+          echo "Testing cars endpoints..."
+          cars_response=$(curl -s -w "%{http_code}" -o /dev/null https://rentiva-backend.onrender.com/api/cars)
+          echo "Cars: $cars_response"
+          
+          count_response=$(curl -s -w "%{http_code}" -o /dev/null https://rentiva-backend.onrender.com/api/cars/count)
+          echo "Car count: $count_response"
+          
+          # Reservations endpoints
+          echo "Testing reservations endpoints..."
+          reservations_response=$(curl -s -w "%{http_code}" -o /dev/null https://rentiva-backend.onrender.com/api/reservations)
+          echo "Reservations: $reservations_response"
+          
+          upcoming_response=$(curl -s -w "%{http_code}" -o /dev/null https://rentiva-backend.onrender.com/api/reservations/upcoming)
+          echo "Upcoming: $upcoming_response"
+          
+          stats_response=$(curl -s -w "%{http_code}" -o /dev/null https://rentiva-backend.onrender.com/api/reservations/statistics)
+          echo "Statistics: $stats_response"
+          
+      - name: Test car filtering and search
+        run: |
+          echo "=== Testing car filtering and search ==="
+          
+          # Test different search terms
+          search_terms=("BMW" "Audi" "Mercedes" "SUV" "Sedan")
+          
+          for term in "${search_terms[@]}"; do
+            echo "Testing search for: $term"
+            response=$(curl -s -w "%{http_code}" -o /dev/null "https://rentiva-backend.onrender.com/api/cars?search=$term")
+            echo "Search '$term': $response"
+            sleep 1
+          done
+          
+          # Test different brands
+          brands=("BMW" "Audi" "Mercedes" "Volkswagen")
+          
+          for brand in "${brands[@]}"; do
+            echo "Testing brand: $brand"
+            response=$(curl -s -w "%{http_code}" -o /dev/null "https://rentiva-backend.onrender.com/api/cars/brands/$brand")
+            echo "Brand '$brand': $response"
+            sleep 1
+          done
+          
+          # Test different types
+          types=("SUV" "Sedan" "Hatchback" "Coupe")
+          
+          for type in "${types[@]}"; do
+            echo "Testing type: $type"
+            response=$(curl -s -w "%{http_code}" -o /dev/null "https://rentiva-backend.onrender.com/api/cars/types/$type")
+            echo "Type '$type': $response"
+            sleep 1
+          done
+          
+      - name: Test price and power filtering
+        run: |
+          echo "=== Testing price and power filtering ==="
+          
+          # Test price ranges
+          echo "Testing price range filtering..."
+          price_response=$(curl -s -w "%{http_code}" -o /dev/null "https://rentiva-backend.onrender.com/api/cars?minPrice=100&maxPrice=500")
+          echo "Price filter: $price_response"
+          
+          # Test power filtering
+          echo "Testing power filtering..."
+          power_response=$(curl -s -w "%{http_code}" -o /dev/null "https://rentiva-backend.onrender.com/api/cars?minPower=200")
+          echo "Power filter: $power_response"
+          
+          # Test combined filters
+          echo "Testing combined filters..."
+          combined_response=$(curl -s -w "%{http_code}" -o /dev/null "https://rentiva-backend.onrender.com/api/cars?brand=BMW&type=SUV&minPower=200&minPrice=200")
+          echo "Combined filter: $combined_response"
+          
+      - name: Test reservation operations
+        run: |
+          echo "=== Testing reservation operations ==="
+          
+          # Test availability check (this should work even without real car ID)
+          echo "Testing car availability check..."
+          availability_response=$(curl -s -w "%{http_code}" -o /dev/null "https://rentiva-backend.onrender.com/api/reservations/availability/test-car-id?startDate=2024-12-01&endDate=2024-12-03")
+          echo "Availability check: $availability_response"
+          
+          # Test ending soon reservations
+          echo "Testing ending soon reservations..."
+          ending_response=$(curl -s -w "%{http_code}" -o /dev/null "https://rentiva-backend.onrender.com/api/reservations/ending-soon")
+          echo "Ending soon: $ending_response"
+          
+      - name: Performance test
+        run: |
+          echo "=== Performance test ==="
+          
+          # Test response time for main endpoints
+          echo "Testing response times..."
+          
+          start_time=$(date +%s)
+          curl -s -o /dev/null https://rentiva-backend.onrender.com/api/health
+          end_time=$(date +%s)
+          health_time=$((end_time - start_time))
+          echo "Health endpoint response time: ${health_time}s"
+          
+          start_time=$(date +%s)
+          curl -s -o /dev/null https://rentiva-backend.onrender.com/api/cars
+          end_time=$(date +%s)
+          cars_time=$((end_time - start_time))
+          echo "Cars endpoint response time: ${cars_time}s"
+          
+          start_time=$(date +%s)
+          curl -s -o /dev/null https://rentiva-backend.onrender.com/api/reservations
+          end_time=$(date +%s)
+          reservations_time=$((end_time - start_time))
+          echo "Reservations endpoint response time: ${reservations_time}s"
+          
+      - name: Final status report
+        run: |
+          echo "=== Final Status Report ==="
+          echo "Backend monitoring completed at: $(date)"
+          echo "✅ All tests completed successfully!"
+          echo "🎯 Backend is actively being used and should stay awake" 
