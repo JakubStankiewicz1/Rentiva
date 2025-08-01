@@ -6,7 +6,7 @@
   background: linear-gradient(135deg, #181818 0%, #232323 100%);
   min-height: 100vh;
   width: calc(100vw - 300px);
-  margin-left: 40px;
+  margin-left: 0px;
   position: relative;
   padding-bottom: 60px;
   position: absolute;
