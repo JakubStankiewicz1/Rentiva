@@ -66,7 +66,7 @@ function App() {
           <Route path="/login" element={<LoginPage />} />
             {/* Protected Routes */}
 
-          {/* <Route element={<ProtectedRoute />}> */}
+          <Route element={<ProtectedRoute />}>
 
           
             {/* Main application layout with nested routes */}
@@ -86,7 +86,7 @@ function App() {
               </Route>
             </Route>
 
-          {/* </Route> */}
+          </Route>
 
           {/* Redirect any unknown paths to dashboard */}
           <Route path="*" element={<Navigate to="/" replace />} />
