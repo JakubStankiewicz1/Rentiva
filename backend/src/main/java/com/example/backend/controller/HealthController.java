@@ -18,7 +18,7 @@ public class HealthController {
         Map<String, Object> response = new HashMap<>();
         response.put("status", "UP");
         response.put("timestamp", LocalDateTime.now());
-        response.put("service", "Rentiva Backend API");
+        response.put("service", "Rentiva Backend");
         response.put("version", "1.0.0");
         return ResponseEntity.ok(response);
     }
@@ -26,9 +26,17 @@ public class HealthController {
     @GetMapping("/")
     public ResponseEntity<Map<String, String>> root() {
         Map<String, String> response = new HashMap<>();
-        response.put("message", "Welcome to Rentiva Backend API");
-        response.put("documentation", "/api/cars - Car management endpoints");
-        response.put("health", "/api/health - Health check endpoint");
+        response.put("message", "Rentiva Backend API is running");
+        response.put("timestamp", LocalDateTime.now().toString());
+        return ResponseEntity.ok(response);
+    }
+    
+    @GetMapping("/keep-alive")
+    public ResponseEntity<Map<String, Object>> keepAlive() {
+        Map<String, Object> response = new HashMap<>();
+        response.put("status", "ALIVE");
+        response.put("timestamp", LocalDateTime.now());
+        response.put("message", "Service is active and responding");
         return ResponseEntity.ok(response);
     }
 }

@@ -10,13 +10,23 @@ services:
     startCommand: |
       cd backend
       java -jar target/backend-0.0.1-SNAPSHOT.jar --spring.profiles.active=prod
+    healthCheckPath: /api/health
+    healthCheckTimeout: 300
+    autoDeploy: true
+    # Add scaling configuration to help with stability
+    scaling:
+      minInstances: 1
+      maxInstances: 1
+    # Add environment variables for better stability
     envVars:
+      - key: JAVA_OPTS
+        value: "-Xmx512m -Xms256m -XX:+UseG1GC"
       - key: SPRING_PROFILES_ACTIVE
         value: prod
       - key: PORT
         value: 8080
       - key: CORS_ORIGINS
-        value: https://rentiva-frontend.onrender.com,https://rentiva-admin.onrender.com
+        value: https://rentiva-frontend-k1ss.onrender.com,https://rentiva-admin-zmr9.onrender.com
       - key: DATABASE_URL
         value: postgresql://rentiva_database_user:MOTsewR9SbhIDRJAsd4y9RZA4mqaac3N@dpg-d260hbbe5dus73cu2g90-a.oregon-postgres.render.com/rentiva_database
       # Additional database environment variables
@@ -30,7 +40,6 @@ services:
         value: rentiva_database_user
       - key: RENDER_DATABASE_PASSWORD
         value: MOTsewR9SbhIDRJAsd4y9RZA4mqaac3N
-    healthCheckPath: /api/health
 
   # Frontend Static Site
   - type: web
@@ -44,7 +53,7 @@ services:
     staticPublishPath: frontend/dist
     envVars:
       - key: VITE_API_URL
-        value: https://rentiva-backend.onrender.com
+        value: https://rentiva.onrender.com
       - key: NODE_ENV
         value: production
 
@@ -60,7 +69,7 @@ services:
     staticPublishPath: admin/dist
     envVars:
       - key: VITE_API_URL
-        value: https://rentiva-backend.onrender.com
+        value: https://rentiva.onrender.com
       - key: NODE_ENV
         value: production
       - key: NODE_OPTIONS

@@ -9,5 +9,69 @@ jobs:
   ping:
     runs-on: ubuntu-latest
     steps:
-      - name: Send HTTP request to Render backend
-        run: curl -s rentiva-admin-zmr9.onrender.com > /dev/null
+      - name: Check backend health
+        run: |
+          echo "🔍 Checking backend service health..."
+          
+          # Try the health endpoint first
+          echo "Testing /api/health endpoint..."
+          health_response=$(curl -s -w "%{http_code}" https://rentiva.onrender.com/api/health)
+          health_code="${health_response: -3}"
+          health_body="${health_response%???}"
+          
+          if [ "$health_code" -eq 200 ]; then
+            echo "✅ Health endpoint is responding (HTTP $health_code)"
+          else
+            echo "⚠️  Health endpoint responded with HTTP $health_code"
+            echo "Response: $health_body"
+          fi
+          
+          # Try the keep-alive endpoint
+          echo "Testing /api/keep-alive endpoint..."
+          keepalive_response=$(curl -s -w "%{http_code}" https://rentiva.onrender.com/api/keep-alive)
+          keepalive_code="${keepalive_response: -3}"
+          keepalive_body="${keepalive_response%???}"
+          
+          if [ "$keepalive_code" -eq 200 ]; then
+            echo "✅ Keep-alive endpoint is responding (HTTP $keepalive_code)"
+          else
+            echo "⚠️  Keep-alive endpoint responded with HTTP $keepalive_code"
+            echo "Response: $keepalive_body"
+          fi
+          
+          # Try the cars endpoint
+          echo "Testing /api/cars endpoint..."
+          cars_response=$(curl -s -w "%{http_code}" https://rentiva.onrender.com/api/cars)
+          cars_code="${cars_response: -3}"
+          cars_body="${cars_response%???}"
+          
+          if [ "$cars_code" -eq 200 ]; then
+            echo "✅ Cars endpoint is responding (HTTP $cars_code)"
+          else
+            echo "⚠️  Cars endpoint responded with HTTP $cars_code"
+            echo "Response: $cars_body"
+          fi
+          
+          # Try the root endpoint
+          echo "Testing root endpoint..."
+          root_response=$(curl -s -w "%{http_code}" https://rentiva.onrender.com/)
+          root_code="${root_response: -3}"
+          root_body="${root_response%???}"
+          
+          if [ "$root_code" -eq 200 ] || [ "$root_code" -eq 404 ]; then
+            echo "✅ Root endpoint is responding (HTTP $root_code)"
+          else
+            echo "⚠️  Root endpoint responded with HTTP $root_code"
+            echo "Response: $root_body"
+          fi
+          
+          echo "🎯 Backend service monitoring completed!"
+          
+          # If any endpoint is working, consider it a success
+          if [ "$health_code" -eq 200 ] || [ "$keepalive_code" -eq 200 ] || [ "$cars_code" -eq 200 ] || [ "$root_code" -eq 200 ] || [ "$root_code" -eq 404 ]; then
+            echo "✅ Backend service is alive and responding"
+            exit 0
+          else
+            echo "❌ Backend service appears to be down"
+            exit 1
+          fi
