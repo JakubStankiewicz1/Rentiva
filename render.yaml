@@ -18,30 +18,18 @@ services:
       - key: CORS_ORIGINS
         value: https://rentiva-frontend.onrender.com,https://rentiva-admin.onrender.com
       - key: DATABASE_URL
-        fromDatabase:
-          name: rentiva-db
-          property: connectionString
-      # Additional database environment variables for fallback
+        value: postgresql://rentiva_database_user:MOTsewR9SbhIDRJAsd4y9RZA4mqaac3N@dpg-d260hbbe5dus73cu2g90-a.oregon-postgres.render.com/rentiva_database
+      # Additional database environment variables
       - key: RENDER_DATABASE_HOST
-        fromDatabase:
-          name: rentiva-db
-          property: host
+        value: dpg-d260hbbe5dus73cu2g90-a.oregon-postgres.render.com
       - key: RENDER_DATABASE_PORT
-        fromDatabase:
-          name: rentiva-db
-          property: port
+        value: 5432
       - key: RENDER_DATABASE_NAME
-        fromDatabase:
-          name: rentiva-db
-          property: database
+        value: rentiva_database
       - key: RENDER_DATABASE_USER
-        fromDatabase:
-          name: rentiva-db
-          property: user
+        value: rentiva_database_user
       - key: RENDER_DATABASE_PASSWORD
-        fromDatabase:
-          name: rentiva-db
-          property: password
+        value: MOTsewR9SbhIDRJAsd4y9RZA4mqaac3N
     healthCheckPath: /api/health
 
   # Frontend Static Site
