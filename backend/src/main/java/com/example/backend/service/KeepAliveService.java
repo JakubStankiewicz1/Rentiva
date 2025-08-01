@@ -20,28 +20,28 @@ public class KeepAliveService {
     }
     
     /**
-     * Scheduled task that runs every 2 minutes to keep the service alive
+     * Scheduled task that runs every 30 seconds to keep the service alive
      * This helps prevent the service from going idle on Render.com
      */
-    @Scheduled(fixedRate = 120000) // 2 minutes
+    @Scheduled(fixedRate = 30000) // 30 seconds
     public void keepAlive() {
         try {
-            logger.info("🔄 Performing keep-alive health check...");
+            logger.debug("🔄 Performing keep-alive health check...");
             
             // Call our own keep-alive endpoint to keep the service active
             String keepAliveUrl = "http://localhost:8080/api/keep-alive";
             restTemplate.getForObject(keepAliveUrl, Object.class);
             
-            logger.info("✅ Keep-alive check completed successfully");
+            logger.debug("✅ Keep-alive check completed successfully");
         } catch (Exception e) {
             logger.warn("⚠️ Keep-alive check failed: {}", e.getMessage());
         }
     }
     
     /**
-     * Additional scheduled task that runs every 5 minutes to perform a more comprehensive check
+     * Additional scheduled task that runs every 2 minutes to perform a more comprehensive check
      */
-    @Scheduled(fixedRate = 300000) // 5 minutes
+    @Scheduled(fixedRate = 120000) // 2 minutes
     public void comprehensiveHealthCheck() {
         try {
             logger.info("🔍 Performing comprehensive health check...");
@@ -57,9 +57,9 @@ public class KeepAliveService {
     }
     
     /**
-     * Simple ping task that runs every 1 minute
+     * Simple ping task that runs every 15 seconds
      */
-    @Scheduled(fixedRate = 60000) // 1 minute
+    @Scheduled(fixedRate = 15000) // 15 seconds
     public void ping() {
         try {
             logger.debug("🏓 Performing ping...");
@@ -71,6 +71,24 @@ public class KeepAliveService {
             logger.debug("✅ Ping completed");
         } catch (Exception e) {
             logger.warn("⚠️ Ping failed: {}", e.getMessage());
+        }
+    }
+    
+    /**
+     * Wake up task that runs every minute
+     */
+    @Scheduled(fixedRate = 60000) // 1 minute
+    public void wakeUp() {
+        try {
+            logger.debug("🌅 Performing wake-up...");
+            
+            // Call the wake endpoint
+            String wakeUrl = "http://localhost:8080/api/wake";
+            restTemplate.getForObject(wakeUrl, Object.class);
+            
+            logger.debug("✅ Wake-up completed");
+        } catch (Exception e) {
+            logger.warn("⚠️ Wake-up failed: {}", e.getMessage());
         }
     }
 } 

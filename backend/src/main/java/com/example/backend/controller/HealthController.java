@@ -58,4 +58,14 @@ public class HealthController {
         response.put("service", "Rentiva Backend");
         return ResponseEntity.ok(response);
     }
+    
+    @GetMapping("/heartbeat")
+    public ResponseEntity<Map<String, Object>> heartbeat() {
+        Map<String, Object> response = new HashMap<>();
+        response.put("heartbeat", true);
+        response.put("timestamp", LocalDateTime.now());
+        response.put("status", "ALIVE");
+        response.put("service", "Rentiva Backend");
+        return ResponseEntity.ok(response);
+    }
 }
