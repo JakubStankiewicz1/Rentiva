@@ -5,7 +5,10 @@
   width: calc(100vw - 240px);
   margin-left: 240px;
   font-family: 'Bai Jamjuree', sans-serif;
-  position: relative;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translateX(-240px);
 }
 
 .car-details-header {
