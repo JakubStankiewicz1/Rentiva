@@ -34,48 +34,74 @@ public class CarController {
             @RequestParam(value = "search", required = false) String search,
             @RequestParam(value = "sortBy", required = false) String sortBy) {
 
-        List<CarDTO> cars;
+        try {
+            System.out.println("=== GET /api/cars called ===");
+            System.out.println("Parameters: brand=" + brand + ", type=" + type + ", minPower=" + minPower + 
+                             ", minPrice=" + minPrice + ", maxPrice=" + maxPrice + ", search=" + search + ", sortBy=" + sortBy);
 
-        // Handle search query
-        if (search != null && !search.trim().isEmpty()) {
-            cars = carService.searchCars(search.trim());
-        }
-        // Handle filtering by brand and type
-        else if (brand != null && type != null) {
-            cars = carService.getCarsByBrandAndType(brand, type);
-        }
-        // Handle filtering by brand only
-        else if (brand != null) {
-            cars = carService.getCarsByBrand(brand);
-        }
-        // Handle filtering by type only
-        else if (type != null) {
-            cars = carService.getCarsByType(type);
-        }
-        // Handle filtering by minimum power
-        else if (minPower != null) {
-            cars = carService.getCarsByMinimumPower(minPower);
-        }
-        // Handle filtering by price range
-        else if (minPrice != null && maxPrice != null) {
-            cars = carService.getCarsByPriceRange(minPrice, maxPrice);
-        }
-        // Handle sorting
-        else if ("price-asc".equals(sortBy)) {
-            cars = carService.getAllCarsSortedByPriceAsc();
-        }
-        else if ("price-desc".equals(sortBy)) {
-            cars = carService.getAllCarsSortedByPriceDesc();
-        }
-        else if ("power".equals(sortBy)) {
-            cars = carService.getAllCarsSortedByPower();
-        }
-        // Default: get all cars
-        else {
-            cars = carService.getAllCars();
-        }
+            List<CarDTO> cars;
 
-        return ResponseEntity.ok(cars);
+            // Handle search query
+            if (search != null && !search.trim().isEmpty()) {
+                System.out.println("Searching cars with query: " + search);
+                cars = carService.searchCars(search.trim());
+            }
+            // Handle filtering by brand and type
+            else if (brand != null && type != null) {
+                System.out.println("Filtering cars by brand: " + brand + " and type: " + type);
+                cars = carService.getCarsByBrandAndType(brand, type);
+            }
+            // Handle filtering by brand only
+            else if (brand != null) {
+                System.out.println("Filtering cars by brand: " + brand);
+                cars = carService.getCarsByBrand(brand);
+            }
+            // Handle filtering by type only
+            else if (type != null) {
+                System.out.println("Filtering cars by type: " + type);
+                cars = carService.getCarsByType(type);
+            }
+            // Handle filtering by minimum power
+            else if (minPower != null) {
+                System.out.println("Filtering cars by min power: " + minPower);
+                cars = carService.getCarsByMinimumPower(minPower);
+            }
+            // Handle filtering by price range
+            else if (minPrice != null && maxPrice != null) {
+                System.out.println("Filtering cars by price range: " + minPrice + " - " + maxPrice);
+                cars = carService.getCarsByPriceRange(minPrice, maxPrice);
+            }
+            // Handle sorting
+            else if ("price-asc".equals(sortBy)) {
+                System.out.println("Sorting cars by price ascending");
+                cars = carService.getAllCarsSortedByPriceAsc();
+            }
+            else if ("price-desc".equals(sortBy)) {
+                System.out.println("Sorting cars by price descending");
+                cars = carService.getAllCarsSortedByPriceDesc();
+            }
+            else if ("power".equals(sortBy)) {
+                System.out.println("Sorting cars by power");
+                cars = carService.getAllCarsSortedByPower();
+            }
+            // Default: get all cars
+            else {
+                System.out.println("Getting all cars");
+                cars = carService.getAllCars();
+            }
+
+            System.out.println("Successfully retrieved " + cars.size() + " cars");
+            System.out.println("=== GET /api/cars completed ===");
+            
+            return ResponseEntity.ok(cars);
+            
+        } catch (Exception e) {
+            System.err.println("=== ERROR in GET /api/cars ===");
+            System.err.println("Error message: " + e.getMessage());
+            e.printStackTrace();
+            System.err.println("=== END ERROR ===");
+            throw e;
+        }
     }
 
     /**

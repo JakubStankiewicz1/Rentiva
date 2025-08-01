@@ -19,13 +19,21 @@ public class CorsConfig implements WebMvcConfigurer {
     private String corsOrigins;
 
     private List<String> getAllowedOrigins() {
-        return Arrays.asList(corsOrigins.split(","));
+        List<String> origins = Arrays.asList(corsOrigins.split(","));
+        System.out.println("=== CORS CONFIGURATION ===");
+        System.out.println("CORS_ORIGINS: " + corsOrigins);
+        System.out.println("Allowed origins: " + origins);
+        System.out.println("==========================");
+        return origins;
     }
 
     @Override
     public void addCorsMappings(CorsRegistry registry) {
+        List<String> allowedOrigins = getAllowedOrigins();
+        System.out.println("Configuring CORS with origins: " + allowedOrigins);
+        
         registry.addMapping("/**")
-                .allowedOrigins(getAllowedOrigins().toArray(new String[0]))
+                .allowedOrigins(allowedOrigins.toArray(new String[0]))
                 .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS")
                 .allowedHeaders("*")
                 .allowCredentials(true)
@@ -34,8 +42,11 @@ public class CorsConfig implements WebMvcConfigurer {
 
     @Bean
     public CorsConfigurationSource corsConfigurationSource() {
+        List<String> allowedOrigins = getAllowedOrigins();
+        System.out.println("Creating CORS configuration source with origins: " + allowedOrigins);
+        
         CorsConfiguration configuration = new CorsConfiguration();
-        configuration.setAllowedOrigins(getAllowedOrigins());
+        configuration.setAllowedOrigins(allowedOrigins);
         configuration.setAllowedMethods(Arrays.asList("GET", "POST", "PUT", "DELETE", "OPTIONS"));
         configuration.setAllowedHeaders(Arrays.asList("*"));
         configuration.setAllowCredentials(true);
