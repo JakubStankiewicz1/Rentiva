@@ -2,7 +2,7 @@ name: Keep Render Server Alive
 
 on:
   schedule:
-    - cron: '*/5 * * * *' # co 10 minut
+    - cron: '*/5 * * * *' # co 5 minut
   workflow_dispatch:
 
 jobs:
@@ -10,4 +10,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Send HTTP request to Render backend
-        run: curl -s https://rentiva-backend.onrender.com > /dev/null
+        run: curl -s https://rentiva-admin-zmr9.onrender.com > /dev/null
