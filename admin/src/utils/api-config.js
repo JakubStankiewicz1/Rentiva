@@ -3,8 +3,15 @@
  */
 
 const API_BASE_URL = import.meta.env.PROD 
-  ? import.meta.env.VITE_API_URL || 'https://rentiva.onrender.com/api'
+  ? 'https://rentiva.onrender.com/api'
   : 'http://localhost:8081/api';
+
+// Debug logging
+console.log('=== ADMIN API CONFIG DEBUG ===');
+console.log('Environment:', import.meta.env.PROD ? 'PRODUCTION' : 'DEVELOPMENT');
+console.log('VITE_API_URL:', import.meta.env.VITE_API_URL);
+console.log('API_BASE_URL:', API_BASE_URL);
+console.log('=============================');
 
 export const API_ENDPOINTS = {
   // Base URL for the API
