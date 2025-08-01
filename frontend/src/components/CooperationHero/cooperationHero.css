@@ -141,7 +141,6 @@
   transition: background 0.3s;
 }
 
-/* Responsive Design */
 @media (max-width: 1400px) {
     .cooperationHero {
         padding-top: 220px;
@@ -561,13 +560,11 @@
     }
 }
 
-/* Performance optimizations */
 .cooperationHeroContainerBottomContainerImage,
 .cooperationHeroContainerBottomContainerOverlay {
     will-change: transform;
 }
 
-/* Image loading optimization */
 .cooperationHeroContainerBottomContainerImage {
     transition: transform 0.3s ease;
 }
@@ -582,7 +579,6 @@
     }
 }
 
-/* Text readability improvements */
 @media (max-width: 768px) {
     .cooperationHeroContainerTopContainerOneContainerText,
     .cooperationHeroContainerTopContainerTwoContainerText,

@@ -3,8 +3,8 @@ import "./carDetailsPayment.css";
 import assets from '../../assets/assets';
 
 const CarDetailsPayment = ({ car }) => {
-  // This component doesn't use car data but accepts the prop for consistency
-  return (
+
+    return (
     <div className='carDetailsPayment'>
         <div className="carDetailsPaymentContainer">
             {/* Top Part */}

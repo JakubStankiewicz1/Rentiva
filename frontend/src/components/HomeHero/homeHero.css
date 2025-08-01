@@ -52,7 +52,6 @@
     pointer-events: none;
 }
 
-/* Info Layer */
 .homeHeroContainerInfo {
     width: 100vw;
     height: 100vh;
@@ -403,12 +402,10 @@
     }
 }
 
-/* Animate text elements */
 .animate-text {
     animation: slideInFromLeft 0.6s ease-out forwards;
 }
 
-/* Large Desktop */
 @media (max-width: 1400px) {
     .homeHeroContainerInfoContainerLeftContainerMiddleContainerText {
         font-size: 90px;
@@ -423,7 +420,6 @@
     }
 }
 
-/* Desktop */
 @media (max-width: 1200px) {
     .homeHeroContainerInfoContainer {
         padding-left: 30px;
@@ -472,7 +468,6 @@
     }
 }
 
-/* Tablet */
 @media (max-width: 1024px) {
     .homeHeroContainerInfoContainer {
         padding-left: 20px;
@@ -524,7 +519,6 @@
     }
 }
 
-/* Mobile Landscape & Small Tablet */
 @media (max-width: 900px) {
     .homeHeroContainerInfoContainer {
         flex-direction: column;
@@ -596,7 +590,6 @@
     }
 }
 
-/* Mobile Portrait */
 @media (max-width: 768px) {
     .homeHeroContainerInfoContainer {
         padding: 15px;
@@ -675,7 +668,6 @@
     }
 }
 
-/* Small Mobile */
 @media (max-width: 480px) {
     .homeHeroContainerInfoContainer {
         padding: 10px;
@@ -748,7 +740,6 @@
     }
 }
 
-/* Enhanced Mobile Touch Interactions */
 @media (max-width: 768px) {
     .homeHeroContainerInfoContainerLeftDotsContainerOne {
         -webkit-tap-highlight-color: transparent;
@@ -770,7 +761,6 @@
     }
 }
 
-/* Smooth performance optimizations */
 .homeHeroContainerImageContainerImage {
     will-change: opacity;
 }
@@ -783,7 +773,6 @@
     will-change: transform, opacity;
 }
 
-/* Ensure proper stacking and smooth transitions */
 * {
     box-sizing: border-box;
 }

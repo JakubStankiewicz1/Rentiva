@@ -93,15 +93,11 @@ a {
   font-style: italic;
 }
 
-/* GLOBAL RESPONSIVE OPTIMIZATIONS */
-
-/* Prevent horizontal scroll on all devices */
 html, body {
   overflow-x: hidden;
   width: 100%;
 }
 
-/* Improved touch targets for mobile */
 @media (hover: none) and (pointer: coarse) {
   button, 
   [role="button"], 
@@ -112,7 +108,6 @@ html, body {
   }
 }
 
-/* Better text rendering on high DPI displays */
 @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
   * {
     -webkit-font-smoothing: antialiased;
@@ -120,7 +115,6 @@ html, body {
   }
 }
 
-/* Smooth scrolling with reduced motion support */
 @media (prefers-reduced-motion: no-preference) {
   html {
     scroll-behavior: smooth;
@@ -141,7 +135,6 @@ html, body {
   }
 }
 
-/* Focus styles for accessibility */
 *:focus {
   outline: 2px solid #E8A075;
   outline-offset: 2px;
@@ -151,15 +144,13 @@ html, body {
   outline: none;
 }
 
-/* Better image handling for responsive design */
 img {
   max-width: 100%;
   height: auto;
 }
 
-/* Improved input styling for mobile */
 input, textarea, select {
-  font-size: 16px; /* Prevents zoom on iOS */
+  font-size: 16px;
 }
 
 @media (max-width: 480px) {
@@ -168,9 +159,6 @@ input, textarea, select {
   }
 }
 
-/* GLOBAL RESPONSIVE ENHANCEMENTS */
-
-/* Enhanced smooth scrolling with mobile support */
 html {
   scroll-behavior: smooth;
   -webkit-text-size-adjust: 100%;
@@ -178,14 +166,12 @@ html {
   text-size-adjust: 100%;
 }
 
-/* Enhanced box-sizing for better mobile experience */
 *,
 *::before,
 *::after {
   box-sizing: border-box;
 }
 
-/* Improved viewport handling */
 body {
   min-height: 100vh;
   text-rendering: optimizeSpeed;
@@ -194,18 +180,15 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Better focus styles for accessibility */
 *:focus-visible {
   outline: 2px solid #E8A075;
   outline-offset: 2px;
 }
 
-/* Remove default focus for mouse users */
 *:focus:not(:focus-visible) {
   outline: none;
 }
 
-/* Enhanced selection colors */
 ::selection {
   background-color: #E8A075;
   color: #000000;
@@ -216,14 +199,12 @@ body {
   color: #000000;
 }
 
-/* Improved image handling */
 img {
   max-width: 100%;
   height: auto;
   display: block;
 }
 
-/* Better button styling */
 button {
   cursor: pointer;
   border: none;
@@ -236,7 +217,6 @@ button:disabled {
   opacity: 0.6;
 }
 
-/* Enhanced input styling */
 input,
 textarea,
 select {
@@ -244,7 +224,6 @@ select {
   font-size: inherit;
 }
 
-/* Responsive typography scale */
 @media (max-width: 768px) {
   html {
     font-size: 14px;
@@ -263,7 +242,6 @@ select {
   }
 }
 
-/* Reduced motion for accessibility */
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
@@ -278,7 +256,6 @@ select {
   }
 }
 
-/* Enhanced scrollbar styling */
 ::-webkit-scrollbar {
   width: 8px;
 }
@@ -296,16 +273,13 @@ select {
   background: #C4845E;
 }
 
-/* Mobile scrollbar */
 @media (max-width: 768px) {
   ::-webkit-scrollbar {
     width: 4px;
   }
 }
 
-/* Touch device optimizations */
 @media (hover: none) and (pointer: coarse) {
-  /* Larger touch targets */
   button,
   a,
   input,
@@ -314,7 +288,6 @@ select {
     min-height: 44px;
   }
   
-  /* Remove hover effects on touch devices */
   button:hover,
   a:hover {
     transform: none;

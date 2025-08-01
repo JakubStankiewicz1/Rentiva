@@ -10,7 +10,7 @@ services:
     startCommand: |
       cd backend
       java -jar target/backend-0.0.1-SNAPSHOT.jar --spring.profiles.active=prod
-    env:
+    envVars:
       - key: SPRING_PROFILES_ACTIVE
         value: prod
       - key: PORT
@@ -41,7 +41,8 @@ services:
       - key: RENDER_DATABASE_PASSWORD
         fromDatabase:
           name: rentiva-db
-          property: password    healthCheckPath: /actuator/health
+          property: password
+    healthCheckPath: /api/health
 
   # Frontend Static Site
   - type: web
@@ -51,13 +52,15 @@ services:
     buildCommand: |
       cd frontend
       npm ci
-      npx vite build
+      npm run build
     staticPublishPath: frontend/dist
-    env:
+    envVars:
       - key: VITE_API_URL
         value: https://rentiva-backend.onrender.com
       - key: NODE_ENV
-        value: production  # Admin Panel Static Site
+        value: production
+
+  # Admin Panel Static Site
   - type: web
     name: rentiva-admin
     env: static
@@ -67,7 +70,7 @@ services:
       npm ci
       npm run build
     staticPublishPath: admin/dist
-    env:
+    envVars:
       - key: VITE_API_URL
         value: https://rentiva-backend.onrender.com
       - key: NODE_ENV

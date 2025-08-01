@@ -10,7 +10,7 @@ const CarDeliveryMain = () => {
   const [filteredCars, setFilteredCars] = useState([]);
   const [selectedCarType, setSelectedCarType] = useState("all");
   const [selectedBrand, setSelectedBrand] = useState("all");
-  const [openDropdown, setOpenDropdown] = useState(null); // 'carType' lub 'brand' lub null
+  const [openDropdown, setOpenDropdown] = useState(null);
   const dropdownRef = useRef(null);
 
   useEffect(() => {

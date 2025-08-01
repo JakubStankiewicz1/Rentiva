@@ -126,25 +126,9 @@
     transition: all 0.3s ease-in-out;
 }
 
-
 .ourCollectionListContainerTopContainerBottomContainerElement:hover .ourCollectionListContainerTopContainerBottomContainerElementContainerText {
-    /* color: #EFAF33; */
     color: #FFFFFF;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 .ourCollectionListContainerBottom {
     width: 94%;
@@ -163,15 +147,6 @@
     justify-items: center;
     align-items: start;
 }
-
-
-
-
-
-
-
-
-
 
 .ourCollectionListContainerBottomContainerElement {
     width: 100%;
@@ -235,8 +210,6 @@
     line-height: 28px;
 }
 
-
-
 .ourCollectionListContainerBottomContainerElementContainerBottomContainerTwo {
     margin-top: 30px;
 }
@@ -251,7 +224,6 @@
 
 .ourCollectionListContainerBottomContainerElementContainerBottomContainerTwoContainerElement {
     border: 1px solid #454545;
-    /* border-radius: 8px; */
     padding-left: 8px;
     padding-right: 10px;
     padding-top: 5px;
@@ -284,8 +256,6 @@
     line-height: 21px;
     text-transform: uppercase;
 }
-
-
 
 .ourCollectionListContainerBottomContainerElementContainerBottomContainerThree {
     display: flex;
@@ -353,7 +323,6 @@
     align-items: center;
     justify-content: center;
     padding-left: 15px;
-    /* background-color: #C3845E; */
 }
 
 .ourCollectionListContainerBottomContainerElementContainerBottomContainerThreeContainerRightContainer {
@@ -373,9 +342,6 @@
     text-transform: uppercase;
 }
 
-/* RESPONSIVE STYLES - COMPREHENSIVE MOBILE-FIRST DESIGN */
-
-/* Large Desktop - 1440px and up */
 @media (min-width: 1440px) {
     .ourCollectionListContainerTopContainerTopContainer {
         max-width: 1200px;
@@ -390,7 +356,6 @@
     }
 }
 
-/* Desktop - 1024px to 1439px */
 @media (max-width: 1439px) and (min-width: 1024px) {
     .ourCollectionListContainerBottomContainer {
         grid-template-columns: repeat(3, 1fr);
@@ -412,7 +377,6 @@
     }
 }
 
-/* Tablet Landscape - 768px to 1023px */
 @media (max-width: 1023px) and (min-width: 768px) {
     .ourCollectionList {
         padding-top: 80px;
@@ -467,7 +431,6 @@
     }
 }
 
-/* Tablet Portrait - 481px to 767px */
 @media (max-width: 767px) and (min-width: 481px) {
     .ourCollectionList {
         padding-top: 60px;
@@ -529,7 +492,6 @@
     }
 }
 
-/* Mobile Large - 361px to 480px */
 @media (max-width: 480px) and (min-width: 361px) {
     .ourCollectionList {
         padding-top: 50px;
@@ -591,7 +553,6 @@
     }
 }
 
-/* Mobile Small - 320px to 360px */
 @media (max-width: 360px) {
     .ourCollectionList {
         padding-top: 40px;
@@ -657,7 +618,6 @@
     }
 }
 
-/* Touch Device Optimizations */
 @media (hover: none) and (pointer: coarse) {
     .ourCollectionListContainerTopContainerTopContainerElement:hover .ourCollectionListContainerTopContainerTopContainerElementContainerImageContainerImage {
         transform: none;

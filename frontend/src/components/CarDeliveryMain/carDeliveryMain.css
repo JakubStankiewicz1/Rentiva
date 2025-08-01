@@ -229,9 +229,6 @@
   box-shadow: 0 8px 25px rgba(184, 134, 11, 0.3);
 }
 
-/* COMPREHENSIVE RESPONSIVE DESIGN */
-
-/* Large Desktop - 1440px and up */
 @media (min-width: 1440px) {
   .carDeliveryMain {
     padding: 50px 0;
@@ -275,7 +272,6 @@
   }
 }
 
-/* Desktop - 1024px to 1439px */
 @media (max-width: 1439px) and (min-width: 1024px) {
   .carDeliveryMain {
     padding: 45px 0;
@@ -313,7 +309,6 @@
   }
 }
 
-/* Tablet Landscape - 768px to 1023px */
 @media (max-width: 1023px) and (min-width: 768px) {
   .carDeliveryMain {
     padding: 35px 0;
@@ -375,7 +370,6 @@
   }
 }
 
-/* Tablet Portrait - 481px to 767px */
 @media (max-width: 767px) and (min-width: 481px) {
   .carDeliveryMain {
     padding: 30px 0;
@@ -465,7 +459,6 @@
   }
 }
 
-/* Mobile Large - 361px to 480px */
 @media (max-width: 480px) and (min-width: 361px) {
   .carDeliveryMain {
     padding: 25px 0;
@@ -555,7 +548,6 @@
   }
 }
 
-/* Mobile Small - 320px to 360px */
 @media (max-width: 360px) {
   .carDeliveryMain {
     padding: 20px 0;
@@ -646,7 +638,6 @@
   }
 }
 
-/* Touch Device Optimizations */
 @media (hover: none) and (pointer: coarse) {
   .filterDropdownButton {
     min-height: 44px;
@@ -691,7 +682,6 @@
   }
 }
 
-/* High contrast mode support */
 @media (prefers-contrast: high) {
   .filterDropdownButton {
     border: 2px solid #fff;
@@ -706,7 +696,6 @@
   }
 }
 
-/* Reduced motion support */
 @media (prefers-reduced-motion: reduce) {
   .filterDropdownButtonIcon {
     transition: none;

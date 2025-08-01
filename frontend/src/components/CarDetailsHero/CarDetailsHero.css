@@ -60,7 +60,7 @@
   height: 100%;
   object-fit: contain;
   object-position: center;
-  user-select: none;
+  /* user-select: none; */
   border-radius: 8px;
 }
 
@@ -140,9 +140,6 @@
   transition: width 0.25s cubic-bezier(0.4, 0, 0.2, 1), background 0.2s;
 }
 
-/* COMPREHENSIVE RESPONSIVE DESIGN */
-
-/* Large Desktop - 1440px and up */
 @media (min-width: 1440px) {
   .carDetailsHero {
     max-width: 900px;
@@ -160,7 +157,6 @@
   }
 }
 
-/* Desktop - 1024px to 1439px */
 @media (max-width: 1439px) and (min-width: 1024px) {
   .carDetailsHero {
     max-width: 750px;
@@ -178,7 +174,6 @@
   }
 }
 
-/* Tablet Landscape - 768px to 1023px */
 @media (max-width: 1023px) and (min-width: 768px) {
   .carDetailsHero {
     max-width: 100%;
@@ -206,7 +201,6 @@
   }
 }
 
-/* Tablet Portrait - 481px to 767px */
 @media (max-width: 767px) and (min-width: 481px) {
   .carDetailsHero {
     max-width: 100%;
@@ -235,7 +229,6 @@
   }
 }
 
-/* Mobile Large - 361px to 480px */
 @media (max-width: 480px) and (min-width: 361px) {
   .carDetailsHero {
     max-width: 100%;
@@ -264,7 +257,6 @@
   }
 }
 
-/* Mobile Small - 320px to 360px */
 @media (max-width: 360px) {
   .carDetailsHero {
     max-width: 100%;
@@ -293,7 +285,6 @@
   }
 }
 
-/* Touch Device Optimizations */
 @media (hover: none) and (pointer: coarse) {
   .carDetailsHeroContainerImageContainerIndicatorsOne {
     min-width: 32px;
@@ -327,7 +318,6 @@
   }
 }
 
-/* Reduce motion for accessibility */
 @media (prefers-reduced-motion: reduce) {
   .carDetailsHeroContainerImageContainerStackLayerActive .carDetailsHeroContainerImageContainerStackLayerImage {
     animation: none;

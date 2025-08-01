@@ -20,6 +20,7 @@ const ContactUsHero = () => {
             {/* Info */}
             <div className="contactUsHeroContainerInfo">
                 <div className="contactUsHeroContainerInfoContainer">
+
                     {/* Top Part */}
                     <div className="contactUsHeroContainerInfoContainerTop">
                         <div className="contactUsHeroContainerInfoContainerTopContainer">
@@ -56,6 +57,7 @@ const ContactUsHero = () => {
                             </div>
                         </div>
                     </div>
+                    
                 </div>
             </div>
 

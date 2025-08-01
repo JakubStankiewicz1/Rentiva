@@ -15,7 +15,6 @@ const OurCollectionHero = () => {
                     <div className="ourCollectionHeroContainerImageOverlay"></div>
                 </div>
 
-                {/* Info przeniesione tutaj, aby było nad zdjęciem */}
                 <div className="ourCollectionHeroContainerInfo">
                     <div className="ourCollectionHeroContainerInfoContainer">
 

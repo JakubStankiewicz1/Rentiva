@@ -17,12 +17,14 @@ const OurCollectionCar = ({ id, image, images, title, engine, power, acceleratio
   return (
     <div className="ourCollectionCar" onClick={handleClick} tabIndex={0} style={{ cursor: "pointer" }}>
       <div className="ourCollectionCarContainer">
+
         {/* Top Part */}
         <div className="ourCollectionCarContainerTop">
           <div className="ourCollectionCarContainerTopContainer">
             <img src={displayImage} alt={title} className="ourCollectionCarContainerTopContainerImage" />
           </div>
         </div>
+        
         {/* Bottom Part */}
         <div className="ourCollectionCarContainerBottom">
           <div className="ourCollectionCarContainerBottomContainer">

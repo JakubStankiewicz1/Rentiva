@@ -194,9 +194,6 @@
   height: 25px;
 }
 
-/* COMPREHENSIVE RESPONSIVE DESIGN */
-
-/* Large Desktop - 1440px and up */
 @media (min-width: 1440px) {
   .carDetailsInfo {
     padding-top: 140px;
@@ -240,7 +237,6 @@
   }
 }
 
-/* Desktop - 1024px to 1439px */
 @media (max-width: 1439px) and (min-width: 1024px) {
   .carDetailsInfo {
     padding-top: 130px;
@@ -277,7 +273,6 @@
   }
 }
 
-/* Tablet Landscape - 768px to 1023px */
 @media (max-width: 1023px) and (min-width: 768px) {
   .carDetailsInfo {
     padding-top: 100px;
@@ -333,7 +328,6 @@
   }
 }
 
-/* Tablet Portrait - 481px to 767px */
 @media (max-width: 767px) and (min-width: 481px) {
   .carDetailsInfo {
     padding-top: 80px;
@@ -413,7 +407,6 @@
   }
 }
 
-/* Mobile Large - 361px to 480px */
 @media (max-width: 480px) and (min-width: 361px) {
   .carDetailsInfo {
     padding-top: 60px;
@@ -494,7 +487,6 @@
   }
 }
 
-/* Mobile Small - 320px to 360px */
 @media (max-width: 360px) {
   .carDetailsInfo {
     padding-top: 50px;
@@ -575,7 +567,6 @@
   }
 }
 
-/* Touch Device Optimizations */
 @media (hover: none) and (pointer: coarse) {
   .carDetailsInfoContainerBottomContainerButton {
     min-height: 44px;

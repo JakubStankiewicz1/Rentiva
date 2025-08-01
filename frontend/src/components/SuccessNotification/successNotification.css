@@ -1,4 +1,3 @@
-/* Success Notification Styles */
 .success-notification {
   position: fixed;
   top: 20px;
@@ -76,9 +75,6 @@
   opacity: 1;
 }
 
-/* COMPREHENSIVE RESPONSIVE DESIGN */
-
-/* Large Desktop - 1440px and up */
 @media (min-width: 1440px) {
   .success-notification {
     top: 30px;
@@ -106,7 +102,6 @@
   }
 }
 
-/* Desktop - 1024px to 1439px */
 @media (max-width: 1439px) and (min-width: 1024px) {
   .success-notification {
     top: 25px;
@@ -119,7 +114,6 @@
   }
 }
 
-/* Tablet Landscape - 768px to 1023px */
 @media (max-width: 1023px) and (min-width: 768px) {
   .success-notification {
     top: 20px;
@@ -151,7 +145,6 @@
   }
 }
 
-/* Tablet Portrait - 481px to 767px */
 @media (max-width: 767px) and (min-width: 481px) {
   .success-notification {
     top: 15px;
@@ -185,7 +178,6 @@
   }
 }
 
-/* Mobile Large - 361px to 480px */
 @media (max-width: 480px) and (min-width: 361px) {
   .success-notification {
     top: 10px;
@@ -221,7 +213,6 @@
   }
 }
 
-/* Mobile Small - 320px to 360px */
 @media (max-width: 360px) {
   .success-notification {
     top: 5px;
@@ -258,7 +249,6 @@
   }
 }
 
-/* Animation adjustments for mobile */
 @media (max-width: 767px) {
   @keyframes slideInRight {
     from {
@@ -272,7 +262,6 @@
   }
 }
 
-/* Touch Device Optimizations */
 @media (hover: none) and (pointer: coarse) {
   .success-close {
     min-width: 32px;
@@ -293,7 +282,6 @@
   }
 }
 
-/* High DPI display optimizations */
 @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
   .success-notification-content {
     box-shadow: 0 10px 25px rgba(16, 185, 129, 0.4);

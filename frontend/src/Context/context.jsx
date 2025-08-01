@@ -4,10 +4,10 @@ import assets from '../assets/assets';
 import CarService from '../services/car.service';
 import ImageService from '../services/image.service';
 
-// Tworzymy kontekst
+
 const RentivaContext = createContext();
 
-// Hook do używania kontekstu
+
 export const useRentiva = () => {
   const context = useContext(RentivaContext);
   if (!context) {
@@ -16,14 +16,12 @@ export const useRentiva = () => {
   return context;
 };
 
-// Provider komponent
 export const RentivaProvider = ({ children }) => {
   const [cars, setCars] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [selectedCar, setSelectedCar] = useState(null);
 
-  // Hero cars data for homepage carousel
   const heroCars = [
     {
       id: 'hero-lamborghini-huracan',
@@ -50,21 +48,20 @@ export const RentivaProvider = ({ children }) => {
       acceleration: "2.5",
     },
   ];
-  // Inicjalizacja danych samochodów z backendu
+
   useEffect(() => {
     const initializeCars = async () => {
       try {
         setLoading(true);
         setError(null);
         
-        // Pobierz dane samochodów z backendu
-        const carsData = await CarService.getAllCars();        // Przetwórz dane - dodaj obrazy
+        const carsData = await CarService.getAllCars();
         const processedCars = carsData.map((car) => {
-          // Use images directly from backend data
+
           let finalImages = [];
           
           if (car.images && car.images.length > 0) {
-            // Filter out any empty or invalid URLs
+
             finalImages = car.images.filter(imageUrl => 
               imageUrl && 
               typeof imageUrl === 'string' && 
@@ -76,7 +73,7 @@ export const RentivaProvider = ({ children }) => {
             ...car,
             images: finalImages,
             mainImage: finalImages[0] || null,
-            // Keep original images for reference
+
             originalImages: car.originalImages || car.images || []
           };
         });
@@ -88,10 +85,10 @@ export const RentivaProvider = ({ children }) => {
         console.error('Błąd podczas ładowania danych samochodów z backendu:', err);
         setError('Nie udało się załadować danych samochodów z serwera');
         
-        // Fallback - możemy spróbować załadować dane z JSON jako backup
+
         try {
           console.log('Próba fallback - ładowanie z lokalnych danych...');
-          // Tu można dodać fallback do lokalnych danych jeśli potrzebne
+
           setError('Połączenie z serwerem niedostępne. Pracujesz w trybie offline.');
         } catch (fallbackError) {
           console.error('Fallback również nie udany:', fallbackError);
@@ -102,23 +99,20 @@ export const RentivaProvider = ({ children }) => {
     };
 
     initializeCars();
-  }, []);  // Funkcja do pobierania samochodu po ID - z backendu lub cache
+  }, []);
   const getCarById = useCallback(async (id) => {
-    // Najpierw sprawdź w cache (lokalny stan)
     const cachedCar = cars.find(car => car.id === id);
     if (cachedCar) {
       return cachedCar;
     }
     
-    // Jeśli nie ma w cache, pobierz z backendu
     try {
       const carData = await CarService.getCarById(id);
       
-      // Use images directly from backend data instead of separate API call
       let finalImages = [];
       
       if (carData.images && carData.images.length > 0) {
-        // Filter out any empty or invalid URLs
+
         finalImages = carData.images.filter(imageUrl => 
           imageUrl && 
           typeof imageUrl === 'string' && 
@@ -133,16 +127,13 @@ export const RentivaProvider = ({ children }) => {
         originalImages: carData.originalImages || carData.images || []
       };
       
-      // Dodaj do cache
       setCars(prevCars => {
         const existingIndex = prevCars.findIndex(car => car.id === id);
         if (existingIndex >= 0) {
-          // Zaktualizuj istniejący
           const newCars = [...prevCars];
           newCars[existingIndex] = processedCar;
           return newCars;
         } else {
-          // Dodaj nowy
           return [...prevCars, processedCar];
         }
       });
@@ -153,17 +144,16 @@ export const RentivaProvider = ({ children }) => {
       return null;
     }
   }, [cars]);
-  // Funkcja do pobierania samochodów po typie/kategorii
+
   const getCarsByType = async (type) => {
     try {
       const carsData = await CarService.getCarsByType(type);
       
-      // Process data similar to initializeCars - use direct URLs from backend
       const processedCars = carsData.map((car) => {
         let finalImages = [];
         
         if (car.images && car.images.length > 0) {
-          // Filter out any empty or invalid URLs
+
           finalImages = car.images.filter(imageUrl => 
             imageUrl && 
             typeof imageUrl === 'string' && 
@@ -184,21 +174,20 @@ export const RentivaProvider = ({ children }) => {
       return [];
     }
   };
-  // Funkcja do wyszukiwania samochodów
+
   const searchCars = async (query) => {
     if (!query || query.trim() === '') {
-      return cars; // Zwróć wszystkie samochody jeśli brak query
+      return cars;
     }
     
     try {
       const searchResults = await CarService.searchCars(query);
       
-      // Process results - use direct URLs from backend
       const processedResults = searchResults.map((car) => {
         let finalImages = [];
         
         if (car.images && car.images.length > 0) {
-          // Filter out any empty or invalid URLs
+
           finalImages = car.images.filter(imageUrl => 
             imageUrl && 
             typeof imageUrl === 'string' && 
@@ -218,7 +207,6 @@ export const RentivaProvider = ({ children }) => {
     } catch (error) {
       console.error('Błąd podczas wyszukiwania:', error);
       
-      // Fallback - wyszukaj lokalnie
       const lowercaseQuery = query.toLowerCase();
       return cars.filter(car => 
         car.title?.toLowerCase().includes(lowercaseQuery) ||
@@ -228,31 +216,26 @@ export const RentivaProvider = ({ children }) => {
       );
     }
   };
-  // Funkcja do pobierania dostępnych brandów
+
   const getAvailableBrands = async () => {
     try {
-      // Spróbuj pobrać z backendu
       const brands = await CarService.getAvailableBrands();
       return brands;
     } catch (error) {
       console.error('Błąd podczas pobierania marek z backendu:', error);
       
-      // Fallback - wyciągnij z lokalnych danych
       const brands = cars.map(car => car.brand || car.title?.split(' ')[0]).filter(Boolean);
-      return [...new Set(brands)]; // Usuń duplikaty
+      return [...new Set(brands)];
     }
   };
 
-  // Funkcja do filtrowania po brandzie
   const getCarsByBrand = async (brand) => {
     try {
       const carsData = await CarService.getCarsByBrand(brand);
-        // Process data - use direct URLs from backend
       const processedCars = carsData.map((car) => {
         let finalImages = [];
         
         if (car.images && car.images.length > 0) {
-          // Filter out any empty or invalid URLs
           finalImages = car.images.filter(imageUrl => 
             imageUrl && 
             typeof imageUrl === 'string' && 
@@ -272,29 +255,24 @@ export const RentivaProvider = ({ children }) => {
     } catch (error) {
       console.error(`Błąd podczas pobierania samochodów marki ${brand}:`, error);
       
-      // Fallback - filtruj lokalnie
       return cars.filter(car => 
         car.brand?.toLowerCase() === brand.toLowerCase() ||
         car.title?.toLowerCase().includes(brand.toLowerCase())
       );
     }
   };
-  // Stan dla wybranego samochodu (przydatne dla CarDetails)
   const selectCar = useCallback((carId) => {
     const car = cars.find(car => car.id === carId);
     setSelectedCar(car);
     return car;
   }, [cars]);
-  // Funkcja do pobierania obrazów samochodu
   const getCarImages = (car) => {
     if (!car) return [];
     
-    // Zwróć obrazy z backendu jeśli są dostępne
     if (car.images && car.images.length > 0) {
       return car.images;
     }
     
-    // Fallback - spróbuj zmapować oryginalne nazwy
     if (car.originalImages && car.originalImages.length > 0) {
       return car.originalImages.map(imageName => assets[imageName]).filter(Boolean);
     }
@@ -302,21 +280,17 @@ export const RentivaProvider = ({ children }) => {
     return [];
   };
 
-  // Funkcja do pobierania głównego obrazu samochodu
   const getCarMainImage = (car) => {
     if (!car) return null;
     
-    // Zwróć główny obraz z backendu
     if (car.mainImage) {
       return car.mainImage;
     }
     
-    // Fallback - pierwszy obraz z listy
     const images = getCarImages(car);
     return images.length > 0 ? images[0] : null;
   };
 
-  // Dodatkowa funkcja do odświeżania danych samochodu
   const refreshCarData = async (carId) => {
     try {
       const updatedCar = await getCarById(carId);
@@ -327,7 +301,6 @@ export const RentivaProvider = ({ children }) => {
     }
   };
 
-  // Funkcja do sprawdzania dostępności samochodu
   const checkCarAvailability = async (carId, startDate, endDate) => {
     try {
       return await CarService.checkCarAvailability(carId, startDate, endDate);
@@ -336,16 +309,13 @@ export const RentivaProvider = ({ children }) => {
       throw error;
     }
   };
-  // Dane kontekstu
   const contextValue = {
-    // Stan
     cars,
     heroCars,
     loading,
     error,
     selectedCar,
     
-    // Funkcje async (z backendu)
     getCarById,
     getCarsByType,
     getCarsByBrand,
@@ -354,16 +324,13 @@ export const RentivaProvider = ({ children }) => {
     refreshCarData,
     checkCarAvailability,
     
-    // Funkcje sync (pomocnicze)
     selectCar,
     getCarImages,
     getCarMainImage,
     
-    // Services (dostęp bezpośredni jeśli potrzebny)
     CarService,
     ImageService,
     
-    // Assets helper (fallback)
     assets,
   };
 

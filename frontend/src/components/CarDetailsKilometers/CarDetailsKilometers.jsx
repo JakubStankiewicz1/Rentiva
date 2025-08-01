@@ -11,6 +11,7 @@ const CarDetailsKilometers = ({ car }) => {
   return (
     <div className='carDetailsKilometers'>
         <div className="carDetailsKilometersContainer">
+
             {/* Top Part */}
             <div className="carDetailsKilometersTop">
                 <div className="carDetailsKilometersTopContainer">
@@ -67,6 +68,7 @@ const CarDetailsKilometers = ({ car }) => {
                     </div>
                 </div>
             </div>
+            
         </div>
     </div>
   )

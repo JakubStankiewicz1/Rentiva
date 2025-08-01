@@ -150,7 +150,6 @@
   height: 100%;
   display: flex;
   flex-direction: column;
-  /* align-items: center; */
   justify-content: center;
 }
 
@@ -302,7 +301,7 @@
   font-family: "Bai Jamjuree", sans-serif;
   font-weight: 400;
   cursor: pointer;
-  user-select: none;
+  /* user-select: none; */
 }
 
 .contactUsFormFormCheckboxLabel b {
@@ -354,18 +353,9 @@
   background: #e8a075;
 }
 
-/* Responsive Design */
 @media (max-width: 1400px) {
-    .contactUsFormContainer {
-        /* max-width: 1200px; */
-    }
-    
     .contactUsFormContainerLeft {
         padding: 56px 40px 56px 56px;
-    }
-    
-    .contactUsFormContainerRight {
-        /* padding: 56px 56px 56px 40px; */
     }
     
     .contactUsFormHeaderTitle {
@@ -379,18 +369,10 @@
 }
 
 @media (max-width: 1200px) {
-    .contactUsFormContainer {
-        /* max-width: 1000px; */
-    }
-    
     .contactUsFormContainerLeft {
         padding: 48px 32px 48px 48px;
     }
-    
-    .contactUsFormContainerRight {
-        /* padding: 48px 48px 48px 32px; */
-    }
-    
+
     .contactUsFormHeaderTitle {
         font-size: 34px;
         margin-bottom: 16px;
@@ -532,7 +514,6 @@
     .contactUsFormCompanyBoxTextFive,
     .contactUsFormCompanyBoxTextSix {
         font-size: 16px;
-        /* color: #BDBDBD; */
     }
     
     .contactUsFormFormInput,
@@ -977,7 +958,6 @@
     }
 }
 
-/* Touch device optimizations */
 @media (max-width: 1024px) {
     .contactUsFormFormInput,
     .contactUsFormFormTextarea,
@@ -999,7 +979,6 @@
     }
 }
 
-/* Performance optimizations */
 .contactUsFormFormInput,
 .contactUsFormFormTextarea,
 .contactUsFormFormButton,
@@ -1008,7 +987,6 @@
     will-change: transform;
 }
 
-/* ReCAPTCHA responsive adjustments */
 @media (max-width: 480px) {
     .contactUsFormFormRecaptcha {
         transform: scale(0.85);

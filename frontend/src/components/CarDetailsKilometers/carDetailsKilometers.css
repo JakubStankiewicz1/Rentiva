@@ -94,9 +94,6 @@
     text-transform: uppercase;
 }
 
-/* COMPREHENSIVE RESPONSIVE DESIGN */
-
-/* Large Desktop - 1440px and up */
 @media (min-width: 1440px) {
   .carDetailsKilometers {
     margin-top: 85px;
@@ -132,7 +129,6 @@
   }
 }
 
-/* Desktop - 1024px to 1439px */
 @media (max-width: 1439px) and (min-width: 1024px) {
   .carDetailsKilometers {
     margin-top: 75px;
@@ -160,7 +156,6 @@
   }
 }
 
-/* Tablet Landscape - 768px to 1023px */
 @media (max-width: 1023px) and (min-width: 768px) {
   .carDetailsKilometers {
     margin-top: 60px;
@@ -201,7 +196,6 @@
   }
 }
 
-/* Tablet Portrait - 481px to 767px */
 @media (max-width: 767px) and (min-width: 481px) {
   .carDetailsKilometers {
     margin-top: 50px;
@@ -243,7 +237,6 @@
   }
 }
 
-/* Mobile Large - 361px to 480px */
 @media (max-width: 480px) and (min-width: 361px) {
   .carDetailsKilometers {
     margin-top: 40px;
@@ -286,7 +279,6 @@
   }
 }
 
-/* Mobile Small - 320px to 360px */
 @media (max-width: 360px) {
   .carDetailsKilometers {
     margin-top: 35px;
@@ -329,7 +321,6 @@
   }
 }
 
-/* Horizontal scroll indicator for small screens */
 @media (max-width: 767px) {
   .carDetailsKilometersTableWrapper {
     position: relative;
@@ -349,7 +340,6 @@
   }
 }
 
-/* Touch Device Optimizations */
 @media (hover: none) and (pointer: coarse) {
   .carDetailsKilometersTableWrapper {
     scroll-behavior: smooth;

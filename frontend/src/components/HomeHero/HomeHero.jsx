@@ -12,7 +12,6 @@ const HomeHero = () => {
 
     const svgRefs = useRef([]);
 
-    // Progress animation
     useEffect(() => {
         let running = true;
         function animate() {
@@ -122,6 +121,7 @@ const HomeHero = () => {
 
                             <div className="homeHeroContainerInfoContainerLeftContainerBottom">
                                 <div className="homeHeroContainerInfoContainerLeftContainerBottomContainer">
+
                                     {/* Left Part */}
                                     <div className="homeHeroContainerInfoContainerLeftContainerBottomContainerLeft">
                                         <div className="homeHeroContainerInfoContainerLeftContainerBottomContainerLeftContainer">
@@ -137,6 +137,7 @@ const HomeHero = () => {
                                             <GoArrowRight className='homeHeroContainerInfoContainerLeftContainerBottomContainerRightContainerIcon' />
                                         </div>
                                     </div>
+
                                 </div>
                             </div>
                         </div>
@@ -147,6 +148,7 @@ const HomeHero = () => {
                     <div className="homeHeroContainerInfoContainerRight">
                         <div className="homeHeroContainerInfoContainerRightContainer">
                             <div className="homeHeroContainerInfoContainerRightContainerContainer">
+
                                 {/* Top Part */}
                                 <div className="homeHeroContainerInfoContainerRightContainerContainerTop">
                                     <div className="homeHeroContainerInfoContainerRightContainerContainerTopContainer">
@@ -201,6 +203,7 @@ const HomeHero = () => {
                                         </div>
                                     </div>
                                 </div>
+                                
                             </div>
                         </div>
                     </div>

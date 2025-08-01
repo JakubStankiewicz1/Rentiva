@@ -21,7 +21,7 @@ const CarDetailsInfo = ({ car }) => {
     setIsReservationModalOpen(true);
   };
   const handleReservationSubmit = (reservation) => {
-    // Handle successful reservation
+    
     setReservationData(reservation);
     setShowSuccessNotification(true);
     console.log("Reservation created:", reservation);

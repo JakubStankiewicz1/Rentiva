@@ -16,6 +16,7 @@ const ContactUsRent = () => {
             {/* Main Part */}
             <div className="contactUsRentContainerMain">
                 <div className="contactUsRentContainerMainContainer">
+
                     {/* Top Part */}
                     <div className="contactUsRentContainerMainContainerTop">
                         <div className="contactUsRentContainerMainContainerTopContainer">
@@ -49,6 +50,7 @@ const ContactUsRent = () => {
                             </div>
                         </div>
                     </div>
+                    
                 </div>
             </div>
             

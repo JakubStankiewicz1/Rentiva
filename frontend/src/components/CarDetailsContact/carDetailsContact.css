@@ -362,7 +362,7 @@
   line-height: 19px;
   margin: 0;
   font-family: "Bai Jamjuree", sans-serif;
-  user-select: text;
+  /* user-select: text; */
 }
 
 .carDetailsContactContainerTopContainerRightContainerFourContainerOneContainerTwoText b,
@@ -376,7 +376,7 @@
   align-items: flex-start;
   gap: 10px;
   cursor: pointer;
-  user-select: none;
+  /* user-select: none; */
   width: 100%;
   font-size: inherit;
   font-family: inherit;
@@ -598,9 +598,6 @@
   margin-top: 5px;
 }
 
-/* COMPREHENSIVE RESPONSIVE DESIGN */
-
-/* Large Desktop - 1440px and up */
 @media (min-width: 1440px) {
   .carDetailsContact {
     padding-top: 120px;
@@ -628,7 +625,6 @@
   }
 }
 
-/* Desktop - 1024px to 1439px */
 @media (max-width: 1439px) and (min-width: 1024px) {
   .carDetailsContact {
     padding-top: 110px;
@@ -655,7 +651,6 @@
   }
 }
 
-/* Tablet Landscape - 768px to 1023px */
 @media (max-width: 1023px) and (min-width: 768px) {
   .carDetailsContact {
     padding-top: 80px;
@@ -700,7 +695,6 @@
   }
 }
 
-/* Tablet Portrait - 481px to 767px */
 @media (max-width: 767px) and (min-width: 481px) {
   .carDetailsContact {
     padding-top: 60px;
@@ -759,7 +753,6 @@
   }
 }
 
-/* Mobile Large - 361px to 480px */
 @media (max-width: 480px) and (min-width: 361px) {
   .carDetailsContact {
     padding-top: 50px;
@@ -819,7 +812,6 @@
   }
 }
 
-/* Mobile Small - 320px to 360px */
 @media (max-width: 360px) {
   .carDetailsContact {
     padding-top: 40px;
@@ -880,7 +872,6 @@
   }
 }
 
-/* Touch Device Optimizations */
 @media (hover: none) and (pointer: coarse) {
   .carDetailsContactContainerTopContainerRightContainerOneContainerOneInput,
   .carDetailsContactContainerTopContainerRightContainerOneContainerTwoInput,

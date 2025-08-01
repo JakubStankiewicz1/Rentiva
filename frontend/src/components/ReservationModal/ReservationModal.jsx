@@ -53,7 +53,6 @@ const ReservationModal = ({ car, isOpen, onClose, onSubmit }) => {
       onSubmit(reservation);
       onClose();
       
-      // Reset form
       setFormData({
         firstName: '',
         lastName: '',
@@ -75,7 +74,6 @@ const ReservationModal = ({ car, isOpen, onClose, onSubmit }) => {
 
   if (!isOpen) return null;
 
-  // Get today's date for min date validation
   const today = new Date().toISOString().split('T')[0];
 
   return (

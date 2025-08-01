@@ -1,11 +1,10 @@
 import apiRequest from '../utils/api-config';
 
-const CarService = {  // Pobierz wszystkie samochody
+const CarService = { 
   getAllCars: async (filters = {}) => {
     try {
       const queryParams = new URLSearchParams();
       
-      // Dodaj filtry do query params jeśli istnieją
       Object.entries(filters).forEach(([key, value]) => {
         if (value !== null && value !== undefined && value !== '') {
           queryParams.append(key, value);
@@ -15,7 +14,6 @@ const CarService = {  // Pobierz wszystkie samochody
       const endpoint = `/cars${queryParams.toString() ? `?${queryParams.toString()}` : ''}`;
       const data = await apiRequest(endpoint);
       
-      // Parsuj obrazy z JSON stringów jeśli potrzebne
       if (Array.isArray(data)) {
         return data.map(car => ({
           ...car,
@@ -29,7 +27,7 @@ const CarService = {  // Pobierz wszystkie samochody
       throw new Error('Nie udało się pobrać listy samochodów');
     }
   },
-  // Pobierz samochód po ID
+
   getCarById: async (id) => {
     try {
       const data = await apiRequest(`/cars/${id}`);
@@ -43,7 +41,7 @@ const CarService = {  // Pobierz wszystkie samochody
     }
   },
 
-  // Wyszukaj samochody
+
   searchCars: async (searchTerm) => {
     try {
       const queryParams = new URLSearchParams({ search: searchTerm });
@@ -54,7 +52,7 @@ const CarService = {  // Pobierz wszystkie samochody
     }
   },
 
-  // Pobierz dostępne marki
+
   getAvailableBrands: async () => {
     try {
       return await apiRequest('/cars/brands');
@@ -64,7 +62,7 @@ const CarService = {  // Pobierz wszystkie samochody
     }
   },
 
-  // Pobierz dostępne typy
+
   getAvailableTypes: async () => {
     try {
       return await apiRequest('/cars/types');
@@ -74,7 +72,7 @@ const CarService = {  // Pobierz wszystkie samochody
     }
   },
 
-  // Pobierz samochody po marce
+
   getCarsByBrand: async (brand) => {
     try {
       return await apiRequest(`/cars?brand=${encodeURIComponent(brand)}`);
@@ -84,7 +82,7 @@ const CarService = {  // Pobierz wszystkie samochody
     }
   },
 
-  // Pobierz samochody po typie
+
   getCarsByType: async (type) => {
     try {
       return await apiRequest(`/cars?type=${encodeURIComponent(type)}`);
@@ -93,7 +91,7 @@ const CarService = {  // Pobierz wszystkie samochody
       throw new Error('Nie udało się pobrać samochodów dla wybranego typu');
     }
   },
-  // Sprawdź dostępność samochodu
+
   checkCarAvailability: async (carId, startDate, endDate) => {
     try {
       const queryParams = new URLSearchParams({
@@ -108,20 +106,20 @@ const CarService = {  // Pobierz wszystkie samochody
     }
   },
 
-  // Helper funkcja do parsowania obrazów z JSON stringa
+
   parseImages: (images) => {
     if (!images) return [];
     
-    // Jeśli to już tablica, zwróć ją
+
     if (Array.isArray(images)) return images;
     
-    // Jeśli to string, spróbuj sparsować jako JSON
+
     if (typeof images === 'string') {
       try {
         const parsed = JSON.parse(images);
         return Array.isArray(parsed) ? parsed : [images];
       } catch (e) {
-        // Jeśli nie da się sparsować, zwróć jako pojedynczy element
+
         return [images];
       }
     }

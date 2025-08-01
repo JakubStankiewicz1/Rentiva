@@ -114,7 +114,6 @@
   letter-spacing: 0.2px;
 }
 
-/* Responsive Design */
 @media (max-width: 1400px) {
     .contactUsBusinessOfferContainer {
         width: 92%;
@@ -492,13 +491,11 @@
     }
 }
 
-/* Performance optimizations */
 .contactUsBusinessOfferContainerLeftContainerImage,
 .contactUsBusinessOfferContainerRightContainerBottomContainerLeftContainerDiv {
     will-change: transform;
 }
 
-/* Image loading optimization */
 .contactUsBusinessOfferContainerLeftContainerImage {
     transition: transform 0.3s ease;
 }

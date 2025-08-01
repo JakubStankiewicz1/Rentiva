@@ -31,9 +31,11 @@ const Fotter = () => {
             {/* Main Container */}
             <div className="fotterContainerMain">
                 <div className="fotterContainerMainContainer">
+
                     {/* Left Part */}
                     <div className="fotterContainerMainContainerLeft">
                         <div className="fotterContainerMainContainerLeftContainer">
+
                             {/* Top Part */}
                             <div className="fotterContainerMainContainerLeftContainerTop">
                                 <div className="fotterContainerMainContainerLeftContainerTopContainer">
@@ -216,6 +218,7 @@ const Fotter = () => {
             {/* Bottom Part */}
             <div className="fotterContainerBottom">
                 <div className="fotterContainerBottomContainer">
+
                     {/* Left Part */}
                     <div className="fotterContainerBottomContainerLeft">
                         <div className="fotterContainerBottomContainerLeftContainer">
@@ -247,6 +250,7 @@ const Fotter = () => {
                             </p>
                         </div>
                     </div>
+                    
                 </div>
             </div>
 

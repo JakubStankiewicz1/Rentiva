@@ -47,9 +47,6 @@
   flex-shrink: 0;
 }
 
-/* COMPREHENSIVE RESPONSIVE DESIGN */
-
-/* Large Desktop - 1440px and up */
 @media (min-width: 1440px) {
   .carDetails {
     padding-top: 180px;
@@ -70,7 +67,6 @@
   }
 }
 
-/* Desktop - 1024px to 1439px */
 @media (max-width: 1439px) and (min-width: 1024px) {
   .carDetails {
     padding-top: 160px;
@@ -94,7 +90,6 @@
   }
 }
 
-/* Tablet Landscape - 768px to 1023px */
 @media (max-width: 1023px) and (min-width: 768px) {
   .carDetails {
     padding-top: 120px;
@@ -124,7 +119,6 @@
   }
 }
 
-/* Tablet Portrait - 481px to 767px */
 @media (max-width: 767px) and (min-width: 481px) {
   .carDetails {
     padding-top: 100px;
@@ -153,7 +147,6 @@
   }
 }
 
-/* Mobile Large - 361px to 480px */
 @media (max-width: 480px) and (min-width: 361px) {
   .carDetails {
     padding-top: 80px;
@@ -183,7 +176,6 @@
   }
 }
 
-/* Mobile Small - 320px to 360px */
 @media (max-width: 360px) {
   .carDetails {
     padding-top: 70px;
@@ -213,7 +205,6 @@
   }
 }
 
-/* High DPI display optimizations */
 @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
   .carDetails {
     -webkit-font-smoothing: antialiased;
@@ -221,7 +212,6 @@
   }
 }
 
-/* Smooth scrolling for better UX */
 @media (prefers-reduced-motion: no-preference) {
   .carDetails {
     scroll-behavior: smooth;

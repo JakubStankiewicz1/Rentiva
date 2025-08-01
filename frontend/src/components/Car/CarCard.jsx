@@ -19,12 +19,11 @@ const CarCard = ({ car }) => {
   };
 
   const handleBookCar = (e) => {
-    e.stopPropagation(); // Prevent card click navigation
+    e.stopPropagation();
     setIsReservationModalOpen(true);
   };
 
   const handleReservationSubmit = (reservation) => {
-    // Handle successful reservation
     setReservationData(reservation);
     setShowSuccessNotification(true);
     console.log("Reservation created:", reservation);
@@ -44,9 +43,9 @@ const CarCard = ({ car }) => {
         {/* Bottom Part */}
         <div className="carCardContainerBottom">
           <div className="carCardContainerBottomContainer">
-            <div className="carCardContainerBottomContainerTitle">              <p className="carCardContainerBottomContainerTitleText bai-jamjuree-regular">
-                {car.title}
-              </p>
+            <div className="carCardContainerBottomContainerTitle">
+              {" "}
+              <p className="carCardContainerBottomContainerTitleText bai-jamjuree-regular">{car.title}</p>
             </div>
             <div className="carCardContainerBottomContainerSpecs">
               <div className="carCardContainerBottomContainerSpecsContainer">
@@ -54,49 +53,49 @@ const CarCard = ({ car }) => {
                   <div className="carCardContainerBottomContainerSpecsContainerOneIcon">
                     <PiEngineBold />
                   </div>
-                  <div className="carCardContainerBottomContainerSpecsContainerOneValue">                    <p className="carCardContainerBottomContainerSpecsContainerOneValueText bai-jamjuree-regular">
-                      {car.engine}
-                    </p>
+                  <div className="carCardContainerBottomContainerSpecsContainerOneValue">
+                    {" "}
+                    <p className="carCardContainerBottomContainerSpecsContainerOneValueText bai-jamjuree-regular">{car.engine}</p>
                   </div>
                 </div>
                 <div className="carCardContainerBottomContainerSpecsContainerTwo">
                   <div className="carCardContainerBottomContainerSpecsContainerTwoIcon">
                     <IoMdSpeedometer />
                   </div>
-                  <div className="carCardContainerBottomContainerSpecsContainerTwoValue">                    <p className="carCardContainerBottomContainerSpecsContainerTwoValueText bai-jamjuree-regular">
-                      {car.power}
-                    </p>
+                  <div className="carCardContainerBottomContainerSpecsContainerTwoValue">
+                    {" "}
+                    <p className="carCardContainerBottomContainerSpecsContainerTwoValueText bai-jamjuree-regular">{car.power}</p>
                   </div>
                 </div>
                 <div className="carCardContainerBottomContainerSpecsContainerThree">
                   <div className="carCardContainerBottomContainerSpecsContainerThreeIcon">
                     <MdOutlineTimer />
                   </div>
-                  <div className="carCardContainerBottomContainerSpecsContainerThreeValue">                    <p className="carCardContainerBottomContainerSpecsContainerThreeValueText bai-jamjuree-regular">
-                      {car.acceleration}
-                    </p>
+                  <div className="carCardContainerBottomContainerSpecsContainerThreeValue">
+                    {" "}
+                    <p className="carCardContainerBottomContainerSpecsContainerThreeValueText bai-jamjuree-regular">{car.acceleration}</p>
                   </div>
                 </div>
               </div>
-            </div>            <div className="carCardContainerBottomContainerCta" onClick={handleBookCar}>
+            </div>{" "}
+            <div className="carCardContainerBottomContainerCta" onClick={handleBookCar}>
               <div className="carCardContainerBottomContainerCtaContainer">
                 <div className="carCardContainerBottomContainerCtaContainerLeft">
                   <div className="carCardContainerBottomContainerCtaContainerLeftContainer">
-                    <p className="carCardContainerBottomContainerCtaContainerLeftContainerText">
-                      Book Car
-                    </p>
+                    <p className="carCardContainerBottomContainerCtaContainerLeftContainerText">Book Car</p>
                   </div>
                 </div>
                 <div className="carCardContainerBottomContainerCtaContainerRight">
                   <div className="carCardContainerBottomContainerCtaContainerRightContainer">
                     <GoArrowRight className="carCardContainerBottomContainerCtaContainerRightContainerIcon" />
                   </div>
-                </div>              </div>
+                </div>{" "}
+              </div>
             </div>
           </div>
         </div>
       </div>
-      
+
       {/* Reservation Modal */}
       <ReservationModal
         car={car}
@@ -104,7 +103,7 @@ const CarCard = ({ car }) => {
         onClose={() => setIsReservationModalOpen(false)}
         onSubmit={handleReservationSubmit}
       />
-      
+
       {/* Success Notification */}
       <SuccessNotification
         isVisible={showSuccessNotification}

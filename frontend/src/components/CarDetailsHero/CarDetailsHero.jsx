@@ -12,7 +12,7 @@ const CarDetailsHero = ({ car }) => {
   const [fade, setFade] = useState(true);
   const autoSlideRef = useRef(null);
   const pauseTimeoutRef = useRef(null);
-  // Auto-slide functionality
+  
   useEffect(() => {
     if (!car || !car.images || car.images.length <= 1) return;
 
@@ -36,7 +36,7 @@ const CarDetailsHero = ({ car }) => {
     };
   }, [car, isDragging, isTransitioning, isAutoSliding, userInteracted]);
 
-  // Resume auto-slide after user interaction
+  
   useEffect(() => {
     if (userInteracted) {
       if (pauseTimeoutRef.current) clearTimeout(pauseTimeoutRef.current);

@@ -24,7 +24,6 @@
     align-items: stretch;
     justify-content: stretch;
     position: relative;
-    /* Usuń wszelkie padding/margins jeśli są */
 }
 
 .contactUsHeroContainerImageContainerImage {
@@ -46,7 +45,6 @@
     background: linear-gradient(120deg, rgba(32, 32, 32, 5.68) 0%, rgba(195, 132, 94, 0.13) 100%);
     pointer-events: none;
     z-index: 2;
-    /* Możesz zmienić opacity/kolor wg gustu */
 }
 
 .contactUsHeroContainerInfo {
@@ -118,7 +116,6 @@
     height: 20px;
 }
 
-/* Responsive Design */
 @media (max-width: 1400px) {
     .contactUsHeroContainerInfoContainerMiddleContainerText {
         font-size: 56px;
@@ -362,7 +359,6 @@
     }
 }
 
-/* Touch device optimizations */
 @media (max-width: 768px) {
     .contactUsHeroContainerInfoContainerBottomContainerButton:active {
         transform: scale(0.95);
@@ -370,7 +366,6 @@
     }
 }
 
-/* Performance optimizations */
 .contactUsHeroContainerImageContainerImage,
 .contactUsHeroContainerImageOverlay,
 .contactUsHeroContainerInfoContainerBottomContainerButton {

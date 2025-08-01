@@ -95,7 +95,6 @@
   letter-spacing: 0.8px;
 }
 
-/* Responsive Design */
 @media (max-width: 1400px) {
     .contactUsRentContainerMainContainerTopContainerText {
         font-size: 28px;
@@ -393,7 +392,6 @@
     }
 }
 
-/* Touch device optimizations */
 @media (hover: none) and (pointer: coarse) {
   .contactUsRentContainerMainContainerBottomContainerButton {
     min-height: 44px;
@@ -405,12 +403,10 @@
   }
 }
 
-/* Performance optimizations */
 .contactUsRentContainerMainContainerBottomContainerButton {
   will-change: transform, background-color;
 }
 
-/* Additional mobile touch enhancements */
 @media (max-width: 1024px) {
     .contactUsRentContainerMainContainerBottomContainerButton {
         border-radius: 2px;
