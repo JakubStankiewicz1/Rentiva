@@ -23,14 +23,12 @@
 }
 
 .rentivaAdminLayout__content {
-  margin-left: 240px;
+  margin-left: 241px;
   margin-top: 64px;
-  /* padding: 24px; */
   min-height: calc(100vh - 64px);
   position: relative;
   z-index: 1;
-  /* background-color: red; */
-  /* back */
+  padding: 0;
 }
 
 .rentivaAdminLayout__content--mobile {
@@ -38,9 +36,9 @@
 }
 
 .rentivaAdminLayout__main {
-  /* max-width: 1400px; */
-  margin: 0 auto;
+  margin: 0;
   width: 100%;
+  padding: 24px;
 }
 
 /* Toast container customization */
@@ -107,14 +105,14 @@
   .rentivaAdminLayout__content {
     margin-left: 0;
     margin-top: 56px;
-    padding: 8px;
+    padding: 0;
     min-height: calc(100vh - 56px);
   }
   
   .rentivaAdminLayout__main {
     width: 100%;
     max-width: none;
-    padding: 0;
+    padding: 8px;
   }
   
   .rentivaAdminLayout .Toastify__toast-container {
@@ -144,14 +142,14 @@
   .rentivaAdminLayout__content {
     margin-left: 0;
     margin-top: 60px;
-    padding: 12px;
+    padding: 0;
     min-height: calc(100vh - 60px);
   }
   
   .rentivaAdminLayout__main {
     width: 100%;
     max-width: none;
-    padding: 0;
+    padding: 12px;
   }
   
   .rentivaAdminLayout .Toastify__toast-container {
@@ -181,14 +179,14 @@
   .rentivaAdminLayout__content {
     margin-left: 0;
     margin-top: 64px;
-    padding: 16px;
+    padding: 0;
     min-height: calc(100vh - 64px);
   }
   
   .rentivaAdminLayout__main {
     width: 100%;
     max-width: none;
-    padding: 0;
+    padding: 16px;
   }
   
   .rentivaAdminLayout .Toastify__toast-container {
@@ -218,7 +216,7 @@
   .rentivaAdminLayout__content {
     margin-left: 0;
     margin-top: 64px;
-    padding: 20px;
+    padding: 0;
     min-height: calc(100vh - 64px);
   }
   
@@ -226,7 +224,7 @@
     width: 100%;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0;
+    padding: 20px;
   }
   
   .rentivaAdminLayout .Toastify__toast-container {
@@ -254,9 +252,9 @@
 /* Small Desktop (900px-1199px) */
 @media screen and (min-width: 900px) and (max-width: 1199px) {
   .rentivaAdminLayout__content {
-    margin-left: 240px;
+    margin-left: 241px;
     margin-top: 64px;
-    padding: 24px;
+    padding: 0;
     min-height: calc(100vh - 64px);
   }
   
@@ -268,6 +266,7 @@
     width: 100%;
     max-width: 1200px;
     margin: 0 auto;
+    padding: 24px;
   }
   
   .rentivaAdminLayout .Toastify__toast-container {
@@ -294,9 +293,9 @@
 /* Medium Desktop (1200px-1599px) */
 @media screen and (min-width: 1200px) and (max-width: 1599px) {
   .rentivaAdminLayout__content {
-    margin-left: 260px;
+    margin-left: 261px;
     margin-top: 64px;
-    padding: 28px;
+    padding: 0;
     min-height: calc(100vh - 64px);
   }
   
@@ -308,6 +307,7 @@
     width: 100%;
     max-width: 1400px;
     margin: 0 auto;
+    padding: 28px;
   }
   
   .rentivaAdminLayout .Toastify__toast-container {
@@ -334,9 +334,9 @@
 /* Large Desktop (1600px+) */
 @media screen and (min-width: 1600px) {
   .rentivaAdminLayout__content {
-    margin-left: 280px;
+    margin-left: 281px;
     margin-top: 72px;
-    padding: 32px;
+    padding: 0;
     min-height: calc(100vh - 72px);
   }
   
@@ -348,6 +348,7 @@
     width: 100%;
     max-width: 1600px;
     margin: 0 auto;
+    padding: 32px;
   }
   
   .rentivaAdminLayout .Toastify__toast-container {
@@ -411,8 +412,12 @@
 @media screen and (orientation: landscape) and (max-height: 500px) {
   .rentivaAdminLayout__content {
     margin-top: 52px;
-    padding: 12px;
+    padding: 0;
     min-height: calc(100vh - 52px);
+  }
+  
+  .rentivaAdminLayout__main {
+    padding: 12px;
   }
   
   .rentivaAdminLayout .Toastify__toast-container {
