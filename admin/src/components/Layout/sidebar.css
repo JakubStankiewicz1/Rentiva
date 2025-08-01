@@ -447,17 +447,30 @@
 }
 
 /* Medium Desktop (1200px-1599px) */
-/* @media screen and (min-width: 1200px) and (max-width: 1599px) {
+@media screen and (min-width: 1200px) and (max-width: 1599px) {
   .rentivaAdminSidebar {
     width: 260px;
+    transform: translateX(0);
+    position: fixed;
+    box-shadow: none;
+  }
+  
+  .rentivaAdminSidebar--mobile {
+    transform: translateX(0);
+  }
+  
+  .rentivaAdminSidebar__overlay {
+    display: none !important;
   }
   
   .rentivaAdminSidebar__header {
+    height: 64px;
     padding: 0 28px;
   }
   
   .rentivaAdminSidebar__logo {
     font-size: 25px;
+    font-weight: 600;
     letter-spacing: 0.6px;
   }
   
@@ -478,6 +491,7 @@
     padding: 14px 18px;
     gap: 14px;
     font-size: 15px;
+    font-weight: 500;
   }
   
   .rentivaAdminSidebar__menuIcon {
@@ -487,6 +501,7 @@
   
   .rentivaAdminSidebar__menuText {
     font-size: 15px;
+    font-weight: 500;
   }
   
   .rentivaAdminSidebar__divider {
@@ -501,18 +516,30 @@
     padding: 14px 18px;
     gap: 14px;
     font-size: 15px;
+    font-weight: 500;
   }
   
   .rentivaAdminSidebar__logoutIcon {
     width: 22px;
     height: 22px;
   }
-} */
+}
 
 /* Large Desktop (1600px+) */
-/* @media screen and (min-width: 1600px) {
+@media screen and (min-width: 1600px) {
   .rentivaAdminSidebar {
     width: 280px;
+    transform: translateX(0);
+    position: fixed;
+    box-shadow: none;
+  }
+  
+  .rentivaAdminSidebar--mobile {
+    transform: translateX(0);
+  }
+  
+  .rentivaAdminSidebar__overlay {
+    display: none !important;
   }
   
   .rentivaAdminSidebar__header {
@@ -543,6 +570,7 @@
     padding: 16px 20px;
     gap: 16px;
     font-size: 16px;
+    font-weight: 500;
   }
   
   .rentivaAdminSidebar__menuIcon {
@@ -552,6 +580,7 @@
   
   .rentivaAdminSidebar__menuText {
     font-size: 16px;
+    font-weight: 500;
   }
   
   .rentivaAdminSidebar__divider {
@@ -566,13 +595,14 @@
     padding: 16px 20px;
     gap: 16px;
     font-size: 16px;
+    font-weight: 500;
   }
   
   .rentivaAdminSidebar__logoutIcon {
     width: 24px;
     height: 24px;
   }
-} */
+}
 
 /* High DPI/Retina Display Optimizations */
 @media screen and (-webkit-min-device-pixel-ratio: 2),

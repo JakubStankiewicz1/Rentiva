@@ -3,11 +3,12 @@ import './sidebar.css';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useAuth } from '../../context/AuthContext';
 
-const Sidebar = ({ mobileOpen, handleDrawerToggle }) => {
+const Sidebar = ({ mobileOpen, handleDrawerToggle, isDesktop }) => {
   const location = useLocation();
   const navigate = useNavigate();
   const { logout, currentUser } = useAuth();
-    const menuItems = [
+  
+  const menuItems = [
     { text: 'Dashboard', icon: '📊', path: '/' },
     { text: 'Cars', icon: '🚗', path: '/cars' },
     { text: 'Reservations', icon: '📋', path: '/reservations' },
@@ -18,16 +19,25 @@ const Sidebar = ({ mobileOpen, handleDrawerToggle }) => {
     navigate('/login');
   };
 
+  // Determine sidebar class based on screen size and state
+  const getSidebarClass = () => {
+    if (isDesktop) {
+      return 'rentivaAdminSidebar';
+    } else {
+      return `rentivaAdminSidebar ${mobileOpen ? 'rentivaAdminSidebar--mobileOpen' : 'rentivaAdminSidebar--mobile'}`;
+    }
+  };
+
   return (
     <>
-      {mobileOpen && (
+      {!isDesktop && mobileOpen && (
         <div 
           className="rentivaAdminSidebar__overlay rentivaAdminSidebar__overlay--visible"
           onClick={handleDrawerToggle}
         />
       )}
       
-      <nav className={`rentivaAdminSidebar ${mobileOpen ? 'rentivaAdminSidebar--mobileOpen' : 'rentivaAdminSidebar--mobile'}`}>
+      <nav className={getSidebarClass()}>
         <div className="rentivaAdminSidebar__header">
           <p className="rentivaAdminSidebar__logo">Rentiva Admin</p>
         </div>
@@ -41,7 +51,7 @@ const Sidebar = ({ mobileOpen, handleDrawerToggle }) => {
                   className={`rentivaAdminSidebar__menuLink ${
                     location.pathname === item.path ? 'rentivaAdminSidebar__menuLink--active' : ''
                   }`}
-                  onClick={mobileOpen ? handleDrawerToggle : undefined}
+                  onClick={!isDesktop && mobileOpen ? handleDrawerToggle : undefined}
                 >
                   {/* <span className="rentivaAdminSidebar__menuIcon">{item.icon}</span> */}
                   <p className="rentivaAdminSidebar__menuText">{item.text}</p>

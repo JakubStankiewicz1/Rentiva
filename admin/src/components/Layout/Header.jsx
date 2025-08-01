@@ -7,7 +7,20 @@ const Header = ({ handleDrawerToggle }) => {
   const { currentUser, logout } = useAuth();
   const navigate = useNavigate();
   const [anchorEl, setAnchorEl] = React.useState(null);
+  const [isDesktop, setIsDesktop] = React.useState(false);
   const userMenuRef = useRef(null);
+  
+  // Check screen size
+  useEffect(() => {
+    const checkScreenSize = () => {
+      setIsDesktop(window.innerWidth >= 900);
+    };
+
+    checkScreenSize();
+    window.addEventListener('resize', checkScreenSize);
+
+    return () => window.removeEventListener('resize', checkScreenSize);
+  }, []);
   
   const handleMenu = (event) => {
     setAnchorEl(event.currentTarget);
@@ -16,6 +29,7 @@ const Header = ({ handleDrawerToggle }) => {
   const handleClose = () => {
     setAnchorEl(null);
   };
+  
   const handleLogout = () => {
     handleClose();
     logout();
@@ -38,15 +52,17 @@ const Header = ({ handleDrawerToggle }) => {
   }, [anchorEl]);
 
   return (
-    <header className={`rentivaAdminHeader ${!handleDrawerToggle ? 'rentivaAdminHeader--mobile' : ''}`}>
+    <header className={`rentivaAdminHeader ${!isDesktop ? 'rentivaAdminHeader--mobile' : ''}`}>
       <div className="rentivaAdminHeader__left">
-        {/* <button
-          className={`rentivaAdminHeader__menuButton ${handleDrawerToggle ? 'rentivaAdminHeader__menuButton--mobile' : ''}`}
-          onClick={handleDrawerToggle}
-          aria-label="Open navigation menu"
-        >
-          ☰
-        </button> */}
+        {!isDesktop && (
+          <button
+            className="rentivaAdminHeader__menuButton rentivaAdminHeader__menuButton--mobile"
+            onClick={handleDrawerToggle}
+            aria-label="Open navigation menu"
+          >
+            ☰
+          </button>
+        )}
         <p className="rentivaAdminHeader__title">Admin Panel</p>
       </div>
       
@@ -55,7 +71,7 @@ const Header = ({ handleDrawerToggle }) => {
           🔔
           <span className="rentivaAdminHeader__notificationsBadge">4</span>
         </button> */}
-          <div className="rentivaAdminHeader__userSection" ref={userMenuRef}>
+        <div className="rentivaAdminHeader__userSection" ref={userMenuRef}>
           <button
             className="rentivaAdminHeader__userButton"
             onClick={handleMenu}
@@ -64,7 +80,7 @@ const Header = ({ handleDrawerToggle }) => {
             <div className="rentivaAdminHeader__avatar">
               {currentUser?.name?.charAt(0) || 'A'}
             </div>
-            <p className={`rentivaAdminHeader__userName ${!handleDrawerToggle ? 'rentivaAdminHeader__userName--mobile' : ''}`}>
+            <p className={`rentivaAdminHeader__userName ${!isDesktop ? 'rentivaAdminHeader__userName--mobile' : ''}`}>
               {currentUser?.name || 'Administrator'}
             </p>
           </button>
