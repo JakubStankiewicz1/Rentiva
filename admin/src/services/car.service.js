@@ -168,6 +168,26 @@ const CarService = {
   getCarsByPriceRange: async (minPrice, maxPrice) => {
     const response = await apiClient.get(API_ENDPOINTS.CARS_BY_PRICE(minPrice, maxPrice));
     return response.data;
+  },
+
+  /**
+   * Sprawdza czy samochód ma rezerwacje
+   * @param {string} id - ID samochodu
+   * @returns {Promise<boolean>} - Czy samochód ma rezerwacje
+   */
+  carHasReservations: async (id) => {
+    const response = await apiClient.get(`${API_ENDPOINTS.CAR_BY_ID(id)}/has-reservations`);
+    return response.data;
+  },
+
+  /**
+   * Pobiera rezerwacje dla samochodu
+   * @param {string} id - ID samochodu
+   * @returns {Promise<Array>} - Lista rezerwacji
+   */
+  getReservationsForCar: async (id) => {
+    const response = await apiClient.get(`${API_ENDPOINTS.CAR_BY_ID(id)}/reservations`);
+    return response.data;
   }
 };
 

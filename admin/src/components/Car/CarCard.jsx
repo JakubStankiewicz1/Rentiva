@@ -1,8 +1,29 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import './carCard.css';
 import { Link } from 'react-router-dom';
+import CarService from '../../services/car.service';
 
-const CarCard = ({ car, onDelete }) => {  // Function to extract the first image from the list
+const CarCard = ({ car, onDelete }) => {
+  const [hasReservations, setHasReservations] = useState(false);
+  const [loadingReservations, setLoadingReservations] = useState(true);
+
+  // Check if car has reservations
+  useEffect(() => {
+    const checkReservations = async () => {
+      try {
+        const hasRes = await CarService.carHasReservations(car.id);
+        setHasReservations(hasRes);
+      } catch (error) {
+        console.error('Error checking reservations:', error);
+      } finally {
+        setLoadingReservations(false);
+      }
+    };
+
+    checkReservations();
+  }, [car.id]);
+
+  // Function to extract the first image from the list
   const getFirstImage = () => {
     if (car.images && car.images.length > 0 && car.images[0]) {
       // Check if it's already a full URL
@@ -14,6 +35,25 @@ const CarCard = ({ car, onDelete }) => {  // Function to extract the first image
     }
     return '/images/car-placeholder.jpg'; // Default image
   };
+
+  const handleDeleteClick = () => {
+    if (hasReservations) {
+      // Show warning toast
+      const { toast } = require('react-toastify');
+      toast.warning(
+        <div>
+          <div>Cannot delete car with reservations</div>
+          <div style={{ marginTop: '8px', fontSize: '12px' }}>
+            Please delete all reservations for this car first in the Reservations section.
+          </div>
+        </div>,
+        { autoClose: 6000 }
+      );
+      return;
+    }
+    onDelete(car.id);
+  };
+
   return (
     <div className="rentivaAdminCarCard">
       <img
@@ -56,6 +96,17 @@ const CarCard = ({ car, onDelete }) => {  // Function to extract the first image
         <p className="rentivaAdminCarCard__price">
           {car.grossPrice} PLN / day
         </p>
+
+        {/* Show warning if car has reservations */}
+        {hasReservations && (
+          <div className="rentivaAdminCarCard__warning">
+            <span className="warning-icon">⚠️</span>
+            <span>Has reservations - </span>
+            <Link to="/reservations" className="warning-link">
+              View Reservations
+            </Link>
+          </div>
+        )}
       </div>
       
       <div className="rentivaAdminCarCard__actions">
@@ -77,8 +128,10 @@ const CarCard = ({ car, onDelete }) => {  // Function to extract the first image
           </Link>
           
           <button 
-            className="rentivaAdminCarCard__deleteButton"
-            onClick={() => onDelete(car.id)}
+            className={`rentivaAdminCarCard__deleteButton ${hasReservations ? 'rentivaAdminCarCard__deleteButton--disabled' : ''}`}
+            onClick={handleDeleteClick}
+            disabled={hasReservations}
+            title={hasReservations ? 'Cannot delete car with reservations' : 'Delete car'}
           >
             <span className="rentivaAdminCarCard__icon">🗑️</span>
             Delete

@@ -751,3 +751,45 @@
     margin-top: 8px;
   }
 }
+
+.rentivaAdminCarCard__warning {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 12px;
+  padding: 8px 12px;
+  background-color: #fff3cd;
+  border: 1px solid #ffeaa7;
+  border-radius: 6px;
+  font-size: 12px;
+  color: #856404;
+}
+
+.rentivaAdminCarCard__warning .warning-icon {
+  font-size: 14px;
+}
+
+.rentivaAdminCarCard__warning .warning-link {
+  color: #007bff;
+  text-decoration: underline;
+  font-weight: 500;
+}
+
+.rentivaAdminCarCard__warning .warning-link:hover {
+  color: #0056b3;
+  text-decoration: none;
+}
+
+.rentivaAdminCarCard__deleteButton--disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  background-color: #6c757d !important;
+  border-color: #6c757d !important;
+}
+
+.rentivaAdminCarCard__deleteButton--disabled:hover {
+  background-color: #6c757d !important;
+  border-color: #6c757d !important;
+  transform: none !important;
+  box-shadow: none !important;
+}

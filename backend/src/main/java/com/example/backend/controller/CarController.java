@@ -1,6 +1,7 @@
 package com.example.backend.controller;
 
 import com.example.backend.dto.CarDTO;
+import com.example.backend.dto.ReservationDTO;
 import com.example.backend.service.CarService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -138,6 +139,24 @@ public class CarController {
     public ResponseEntity<Void> deleteCar(@PathVariable String id) {
         carService.deleteCar(id);
         return ResponseEntity.noContent().build();
+    }
+
+    /**
+     * GET /api/cars/{id}/reservations - Get reservations for a car
+     */
+    @GetMapping("/{id}/reservations")
+    public ResponseEntity<List<ReservationDTO>> getReservationsForCar(@PathVariable String id) {
+        List<ReservationDTO> reservations = carService.getReservationsForCar(id);
+        return ResponseEntity.ok(reservations);
+    }
+
+    /**
+     * GET /api/cars/{id}/has-reservations - Check if car has reservations
+     */
+    @GetMapping("/{id}/has-reservations")
+    public ResponseEntity<Boolean> carHasReservations(@PathVariable String id) {
+        boolean hasReservations = carService.carHasReservations(id);
+        return ResponseEntity.ok(hasReservations);
     }
 
     /**
