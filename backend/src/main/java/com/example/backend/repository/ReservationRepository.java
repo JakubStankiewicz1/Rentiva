@@ -20,11 +20,6 @@ public interface ReservationRepository extends JpaRepository<Reservation, Long> 
     List<Reservation> findByCarIdOrderByStartDateDesc(String carId);
     
     /**
-     * Count reservations for a specific car
-     */
-    long countByCarId(String carId);
-    
-    /**
      * Find all reservations by status
      */
     List<Reservation> findByStatusOrderByCreatedAtDesc(ReservationStatus status);

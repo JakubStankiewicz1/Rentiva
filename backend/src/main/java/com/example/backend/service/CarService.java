@@ -1,13 +1,10 @@
 package com.example.backend.service;
 
 import com.example.backend.dto.CarDTO;
-import com.example.backend.dto.ReservationDTO;
 import com.example.backend.entity.Car;
 import com.example.backend.exception.CarNotFoundException;
 import com.example.backend.mapper.CarMapper;
-import com.example.backend.mapper.ReservationMapper;
 import com.example.backend.repository.CarRepository;
-import com.example.backend.repository.ReservationRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
@@ -22,16 +19,12 @@ import java.util.stream.Collectors;
 public class CarService {
 
     private final CarRepository carRepository;
-    private final ReservationRepository reservationRepository;
     private final CarMapper carMapper;
-    private final ReservationMapper reservationMapper;
 
     @Autowired
-    public CarService(CarRepository carRepository, ReservationRepository reservationRepository, CarMapper carMapper, ReservationMapper reservationMapper) {
+    public CarService(CarRepository carRepository, CarMapper carMapper) {
         this.carRepository = carRepository;
-        this.reservationRepository = reservationRepository;
         this.carMapper = carMapper;
-        this.reservationMapper = reservationMapper;
     }
 
     /**
@@ -87,13 +80,6 @@ public class CarService {
         if (!carRepository.existsById(id)) {
             throw new CarNotFoundException("Car not found with id: " + id);
         }
-        
-        // Check if car has any reservations
-        long reservationCount = reservationRepository.countByCarId(id);
-        if (reservationCount > 0) {
-            throw new IllegalStateException("Cannot delete car with ID " + id + " because it has " + reservationCount + " associated reservation(s). Please delete all reservations for this car first.");
-        }
-        
         carRepository.deleteById(id);
     }
 
@@ -210,27 +196,5 @@ public class CarService {
     @Transactional(readOnly = true)
     public long getCarCount() {
         return carRepository.count();
-    }
-
-    /**
-     * Get reservations for a specific car
-     */
-    @Transactional(readOnly = true)
-    public List<ReservationDTO> getReservationsForCar(String carId) {
-        if (!carRepository.existsById(carId)) {
-            throw new CarNotFoundException("Car not found with id: " + carId);
-        }
-        
-        return reservationRepository.findByCarIdOrderByStartDateDesc(carId).stream()
-                .map(reservationMapper::toDTO)
-                .collect(Collectors.toList());
-    }
-
-    /**
-     * Check if car has any reservations
-     */
-    @Transactional(readOnly = true)
-    public boolean carHasReservations(String carId) {
-        return reservationRepository.countByCarId(carId) > 0;
     }
 }

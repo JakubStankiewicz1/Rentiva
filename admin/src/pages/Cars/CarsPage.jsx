@@ -124,32 +124,7 @@ const CarsPage = () => {
       setDeleteDialog({ open: false, carId: null, carTitle: "" });
     } catch (error) {
       console.error("Error deleting car:", error);
-      
-      // Handle specific error message from backend
-      if (error.response && error.response.data && error.response.data.message) {
-        const errorMessage = error.response.data.message;
-        toast.error(
-          <div>
-            <div>{errorMessage}</div>
-            <div style={{ marginTop: '8px', fontSize: '12px' }}>
-              Please delete all reservations for this car first in the Reservations section.
-            </div>
-          </div>,
-          { autoClose: 8000 }
-        );
-      } else if (error.message && error.message.includes("associated reservation")) {
-        toast.error(
-          <div>
-            <div>{error.message}</div>
-            <div style={{ marginTop: '8px', fontSize: '12px' }}>
-              Please delete all reservations for this car first in the Reservations section.
-            </div>
-          </div>,
-          { autoClose: 8000 }
-        );
-      } else {
-        toast.error("Failed to delete the car. Please try again.");
-      }
+      toast.error("Failed to delete the car. Please try again.");
     }
   };
 
