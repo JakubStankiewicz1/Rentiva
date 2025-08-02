@@ -18,13 +18,25 @@ const CarDetailsInfo = ({ car }) => {
   const rightImage = images && images.length > 3 ? images[3] : images[0];
 
   const handleBookCar = () => {
+    console.log('=== BOOK CAR CLICKED ===');
+    console.log('Car:', car);
+    console.log('Opening reservation modal...');
     setIsReservationModalOpen(true);
   };
+
   const handleReservationSubmit = (reservation) => {
+    console.log('=== RESERVATION SUBMITTED ===');
+    console.log('Reservation data:', reservation);
     
     setReservationData(reservation);
     setShowSuccessNotification(true);
     console.log("Reservation created:", reservation);
+  };
+
+  const handleReservationError = (error) => {
+    console.error('=== RESERVATION ERROR ===');
+    console.error('Error:', error);
+    // Możemy tu dodać dodatkową obsługę błędów
   };
 
   return (
@@ -122,7 +134,10 @@ const CarDetailsInfo = ({ car }) => {
       <ReservationModal
         car={car}
         isOpen={isReservationModalOpen}
-        onClose={() => setIsReservationModalOpen(false)}
+        onClose={() => {
+          console.log('Closing reservation modal');
+          setIsReservationModalOpen(false);
+        }}
         onSubmit={handleReservationSubmit}
       />
 

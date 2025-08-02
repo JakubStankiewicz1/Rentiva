@@ -12,6 +12,7 @@ const apiRequest = async (endpoint, options = {}) => {
   console.log('API_BASE_URL:', API_BASE_URL);
   console.log('Endpoint:', endpoint);
   console.log('Full URL:', url);
+  console.log('Options:', options);
   console.log('========================');
   
   const config = {
@@ -23,18 +24,41 @@ const apiRequest = async (endpoint, options = {}) => {
   };
 
   try {
+    console.log('Sending request to:', url);
     const response = await fetch(url, config);
     
+    console.log('Response received:', {
+      status: response.status,
+      statusText: response.statusText,
+      headers: Object.fromEntries(response.headers.entries())
+    });
+    
     if (!response.ok) {
+      let errorMessage = `HTTP error! status: ${response.status}`;
+      let errorData = null;
+      
+      try {
+        errorData = await response.json();
+        console.error('Error response data:', errorData);
+        errorMessage = errorData.message || errorData.error || errorMessage;
+      } catch (parseError) {
+        console.error('Could not parse error response:', parseError);
+      }
+      
       console.error(`API request failed for ${endpoint}:`, {
         status: response.status,
         statusText: response.statusText,
-        url: url
+        url: url,
+        errorMessage: errorMessage,
+        errorData: errorData
       });
-      throw new Error(`HTTP error! status: ${response.status}`);
+      
+      throw new Error(errorMessage);
     }
     
-    return await response.json();
+    const data = await response.json();
+    console.log('Success response data:', data);
+    return data;
   } catch (error) {
     console.error(`API request failed for ${endpoint}:`, error);
     throw error;

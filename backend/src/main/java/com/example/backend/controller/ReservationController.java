@@ -17,6 +17,7 @@ import java.util.Map;
 
 @RestController
 @RequestMapping("/api/reservations")
+@CrossOrigin(origins = "*") // Tymczasowo pozwalamy wszystkim originom
 public class ReservationController {
     
     private static final Logger logger = LoggerFactory.getLogger(ReservationController.class);
@@ -34,13 +35,19 @@ public class ReservationController {
     public ResponseEntity<ReservationDTO> createReservation(
             @Valid @RequestBody CreateReservationDTO createReservationDTO) {
         
+        logger.info("=== RESERVATION CREATE REQUEST ===");
         logger.info("Creating new reservation for car: {}", createReservationDTO.getCarId());
+        logger.info("Customer: {} {} ({})", createReservationDTO.getFirstName(), createReservationDTO.getLastName(), createReservationDTO.getEmail());
+        logger.info("Dates: {} to {}", createReservationDTO.getStartDate(), createReservationDTO.getEndDate());
+        logger.info("Phone: {}", createReservationDTO.getPhone());
+        logger.info("==================================");
         
         try {
             ReservationDTO reservation = reservationService.createReservation(createReservationDTO);
+            logger.info("Reservation created successfully with ID: {}", reservation.getId());
             return ResponseEntity.status(HttpStatus.CREATED).body(reservation);
         } catch (Exception e) {
-            logger.error("Error creating reservation: {}", e.getMessage());
+            logger.error("Error creating reservation: {}", e.getMessage(), e);
             throw e;
         }
     }
@@ -233,6 +240,7 @@ public class ReservationController {
      */
     @GetMapping("/health")
     public ResponseEntity<Map<String, String>> healthCheck() {
+        logger.info("Health check requested for ReservationService");
         return ResponseEntity.ok(Map.of(
             "status", "UP",
             "service", "ReservationService",

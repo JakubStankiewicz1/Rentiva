@@ -16,7 +16,7 @@ import java.util.List;
 @Configuration
 public class CorsConfig implements WebMvcConfigurer {
 
-    @Value("${CORS_ORIGINS:http://localhost:3000,http://localhost:3001,http://localhost:5173}")
+    @Value("${CORS_ORIGINS:http://localhost:3000,http://localhost:3001,http://localhost:5173,https://rentiva-frontend-k1ss.onrender.com,https://rentiva-admin-zmr9.onrender.com,*}")
     private String corsOrigins;
 
     private List<String> getAllowedOrigins() {
@@ -33,11 +33,13 @@ public class CorsConfig implements WebMvcConfigurer {
         List<String> allowedOrigins = getAllowedOrigins();
         System.out.println("Configuring CORS with origins: " + allowedOrigins);
         
+        // Tymczasowo pozwalamy wszystkim originom dla testowania
         registry.addMapping("/**")
-                .allowedOrigins(allowedOrigins.toArray(new String[0]))
-                .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS")
+                .allowedOriginPatterns("*") // Używamy pattern zamiast origins
+                .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS", "PATCH")
                 .allowedHeaders("*")
-                .allowCredentials(true);
+                .allowCredentials(true)
+                .maxAge(3600);
     }
 
     @Bean
@@ -46,10 +48,11 @@ public class CorsConfig implements WebMvcConfigurer {
         System.out.println("Creating CORS configuration source with origins: " + allowedOrigins);
         
         CorsConfiguration configuration = new CorsConfiguration();
-        configuration.setAllowedOrigins(allowedOrigins);
-        configuration.setAllowedMethods(Arrays.asList("GET", "POST", "PUT", "DELETE", "OPTIONS"));
+        configuration.setAllowedOriginPatterns(Arrays.asList("*")); // Tymczasowo wszystkie originy
+        configuration.setAllowedMethods(Arrays.asList("GET", "POST", "PUT", "DELETE", "OPTIONS", "PATCH"));
         configuration.setAllowedHeaders(Arrays.asList("*"));
         configuration.setAllowCredentials(true);
+        configuration.setMaxAge(3600L);
         
         UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
         source.registerCorsConfiguration("/**", configuration);

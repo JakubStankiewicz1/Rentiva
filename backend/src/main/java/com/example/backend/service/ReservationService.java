@@ -46,15 +46,22 @@ public class ReservationService {
      * Create a new reservation
      */
     public ReservationDTO createReservation(CreateReservationDTO createDTO) {
+        logger.info("=== RESERVATION SERVICE DEBUG ===");
         logger.info("Creating reservation for car {} from {} to {}", 
                    createDTO.getCarId(), createDTO.getStartDate(), createDTO.getEndDate());
+        logger.info("Customer: {} {} ({})", createDTO.getFirstName(), createDTO.getLastName(), createDTO.getEmail());
+        logger.info("Phone: {}", createDTO.getPhone());
+        logger.info("Notes: {}", createDTO.getNotes());
+        logger.info("Pickup: {}, Dropoff: {}", createDTO.getPickupLocation(), createDTO.getDropoffLocation());
         
         // Validate dates
         validateReservationDates(createDTO.getStartDate(), createDTO.getEndDate());
+        logger.info("Date validation passed");
         
         // Check if car exists
         Car car = carRepository.findById(createDTO.getCarId())
                 .orElseThrow(() -> new CarNotFoundException("Car not found with ID: " + createDTO.getCarId()));
+        logger.info("Car found: {} {} ({})", car.getBrand(), car.getModel(), car.getTitle());
         
         // Check for duplicate reservation
         Optional<Reservation> existingReservation = reservationRepository.findExistingReservation(
@@ -62,19 +69,27 @@ public class ReservationService {
                 createDTO.getStartDate(), createDTO.getEndDate());
         
         if (existingReservation.isPresent()) {
+            logger.warn("Duplicate reservation found for car {}, customer {}, dates {} to {}", 
+                       createDTO.getCarId(), createDTO.getEmail(), createDTO.getStartDate(), createDTO.getEndDate());
             throw new IllegalStateException("A reservation already exists for this car, customer, and date range");
         }
+        logger.info("No duplicate reservation found");
         
         // Check car availability
         if (!isCarAvailable(createDTO.getCarId(), createDTO.getStartDate(), createDTO.getEndDate())) {
+            logger.warn("Car {} is not available for dates {} to {}", 
+                       createDTO.getCarId(), createDTO.getStartDate(), createDTO.getEndDate());
             throw new IllegalStateException("Car is not available for the requested dates");
         }
+        logger.info("Car availability confirmed");
         
         // Create reservation
         Reservation reservation = reservationMapper.toEntity(createDTO, car);
+        logger.info("Reservation entity created, saving to database...");
         Reservation savedReservation = reservationRepository.save(reservation);
         
         logger.info("Reservation created successfully with ID: {}", savedReservation.getId());
+        logger.info("=== RESERVATION SERVICE DEBUG END ===");
         return reservationMapper.toDTO(savedReservation);
     }
     
@@ -355,7 +370,9 @@ public class ReservationService {
             throw new IllegalArgumentException("Start date and end date are required");
         }
         
-        if (startDate.isBefore(LocalDate.now())) {
+        LocalDate today = LocalDate.now();
+        
+        if (startDate.isBefore(today)) {
             throw new IllegalArgumentException("Start date cannot be in the past");
         }
         
@@ -366,6 +383,11 @@ public class ReservationService {
         if (endDate.equals(startDate)) {
             // Allow same-day rentals but log a warning
             logger.warn("Same-day rental requested: {}", startDate);
+        }
+        
+        // Allow reservations for today
+        if (startDate.equals(today)) {
+            logger.info("Reservation for today allowed: {}", startDate);
         }
     }
     
