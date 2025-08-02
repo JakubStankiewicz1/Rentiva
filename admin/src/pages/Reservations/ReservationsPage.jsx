@@ -30,7 +30,7 @@ const ReservationsPage = () => {
   const fetchReservations = async () => {
     try {
       setLoading(true);
-      const response = await fetch("https://rentiva-backend.onrender.com/api/reservations");
+      const response = await fetch("https://rentiva.onrender.com/api/reservations");
 
       if (!response.ok) {
         throw new Error("Failed to fetch reservations");
@@ -50,7 +50,7 @@ const ReservationsPage = () => {
   // Update reservation status
   const updateReservationStatus = async (id, newStatus) => {
     try {
-      const response = await fetch(`https://rentiva-backend.onrender.com/api/reservations/${id}/status`, {
+      const response = await fetch(`https://https://rentiva.onrender.com/api/reservations/${id}/status`, {
         method: "PATCH",
         headers: {
           "Content-Type": "application/json",
@@ -97,7 +97,7 @@ const ReservationsPage = () => {
   // Delete reservation
   const deleteReservation = async (id) => {
     try {
-      const response = await fetch(`https://rentiva-backend.onrender.com/api/reservations/${id}`, {
+      const response = await fetch(`https://rentiva.onrender.com/api/reservations/${id}`, {
         method: "DELETE",
       });
 
