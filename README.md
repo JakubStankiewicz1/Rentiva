@@ -4,9 +4,9 @@ A modern car rental application with React frontend, admin panel, and Spring Boo
 
 ## 🚀 Live Applications
 
-- **Frontend**: https://rentiva-frontend.onrender.com
-- **Admin Panel**: https://rentiva-admin.onrender.com  
-- **Backend API**: https://rentiva-backend.onrender.com
+- **Frontend**: https://rentiva-frontend-k1ss.onrender.com
+- **Admin Panel**: https://rentiva-admin-zmr9.onrender.com
+- **Backend API**: https://rentiva.onrender.com
 
 ## 📊 Backend Health Status
 
@@ -20,11 +20,11 @@ The backend is automatically monitored by GitHub Actions workflows:
 ### Manual Health Check
 You can manually check backend health by visiting:
 ```
-https://rentiva-backend.onrender.com/api/health
+https://rentiva.onrender.com/api/health
 ```
 
 ### Workflow Status
-Check the latest workflow runs at: [GitHub Actions](https://github.com/[your-username]/Rentiva/actions)
+Check the latest workflow runs at: [GitHub Actions](https://github.com/JakubStankiewicz1/Rentiva/actions)
 
 ## 🏗️ Project Structure
 
@@ -39,8 +39,8 @@ Rentiva/
 
 ## 🛠️ Technologies
 
-- **Frontend**: React, Vite, Tailwind CSS
-- **Admin Panel**: React, Material-UI
+- **Frontend**: React, Vite
+- **Admin Panel**: React
 - **Backend**: Spring Boot, Java 21, PostgreSQL
 - **Deployment**: Render
 - **Monitoring**: GitHub Actions
@@ -121,7 +121,7 @@ GET /api/reservations/statistics
 If the backend appears to be down:
 
 1. Check GitHub Actions for recent workflow runs
-2. Verify the health endpoint: `https://rentiva-backend.onrender.com/api/health`
+2. Verify the health endpoint: `https://rentiva.onrender.com/api/health`
 3. Check Render dashboard for service status
 4. Review workflow logs for error details
 
