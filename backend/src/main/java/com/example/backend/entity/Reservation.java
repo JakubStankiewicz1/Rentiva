@@ -49,10 +49,12 @@ public class Reservation {
     
     // Reservation dates
     @NotNull(message = "Start date is required")
+    @Future(message = "Start date must be in the future")
     @Column(name = "start_date", nullable = false)
     private LocalDate startDate;
     
     @NotNull(message = "End date is required")
+    @Future(message = "End date must be in the future")
     @Column(name = "end_date", nullable = false)
     private LocalDate endDate;
     
