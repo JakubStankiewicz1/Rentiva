@@ -1,27 +1,27 @@
-name: Keep Render Server Alive
+# name: Keep Render Server Alive
 
-on:
-  schedule:
-    - cron: '*/3 * * * *' # co 3 minuty
-  workflow_dispatch:
+# on:
+#   schedule:
+#     - cron: '*/3 * * * *' # co 3 minuty
+#   workflow_dispatch:
 
-jobs:
-  ping:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Ping backend service
-        run: |
-          echo "🏓 Pinging backend service..."
+# jobs:
+#   ping:
+#     runs-on: ubuntu-latest
+#     steps:
+#       - name: Ping backend service
+#         run: |
+#           echo "🏓 Pinging backend service..."
           
-          # Simple ping with timeout
-          response=$(curl -s -w "%{http_code}" --max-time 30 https://rentiva.onrender.com/api/ping)
-          http_code="${response: -3}"
+#           # Simple ping with timeout
+#           response=$(curl -s -w "%{http_code}" --max-time 30 https://rentiva.onrender.com/api/ping)
+#           http_code="${response: -3}"
           
-          if [ "$http_code" -eq 200 ]; then
-            echo "✅ Backend is alive (HTTP $http_code)"
-          else
-            echo "⚠️  Backend responded with HTTP $http_code"
-          fi
+#           if [ "$http_code" -eq 200 ]; then
+#             echo "✅ Backend is alive (HTTP $http_code)"
+#           else
+#             echo "⚠️  Backend responded with HTTP $http_code"
+#           fi
           
-          echo "✅ Ping completed successfully"
-          exit 0
+#           echo "✅ Ping completed successfully"
+#           exit 0
